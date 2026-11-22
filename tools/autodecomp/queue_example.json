@@ -1,0 +1,3 @@
+[
+ {"name": "autodecomp_game", "cmd": ["py", "-3.13", "-I", "C:/Users/USER/Documents/Tools/decomp/autodecomp.py", "C:/Users/USER/Downloads/GAME.zip", "--name", "Game"], "gpu": false, "timeout": 3600}
+]

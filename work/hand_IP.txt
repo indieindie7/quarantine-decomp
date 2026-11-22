@@ -1,0 +1,7 @@
+0x060023e6 func ip0_LoopCalc_023e6 hand provisional structural name: LoopCalc near ip0 code, 22 bytes, 0 callees, 1 callers
+0x0600245c func ip0_LoopCalc_0245c hand provisional structural name: LoopCalc near ip0 code, 42 bytes, 0 callees, 1 callers
+0x060024d8 func ip0_SetupObj_024d8 hand provisional structural name: SetupObj near ip0 code, 56 bytes, 0 callees, 1 callers
+0x06002510 func ip0_ForEach_02510 hand provisional structural name: ForEach near ip0 code, 68 bytes, 4 callees, 0 callers
+0x06002594 func ip0_ForEach_02594 hand provisional structural name: ForEach near ip0 code, 278 bytes, 1 callees, 0 callers
+0x0600270a func ip0_FillLoop_0270a hand provisional structural name: FillLoop near ip0 code, 98 bytes, 0 callees, 0 callers
+0x06002ff0 func ip0_Access_02ff0 hand provisional structural name: Access near ip0 code, 16 bytes, 0 callees, 0 callers
