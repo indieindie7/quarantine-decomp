@@ -18,3 +18,6 @@ Function names for three builds of **Quarantine**, plus the tools that produced 
 Paths inside the scripts are from the author's machine (`C:/Users/USER/...`); adjust them.
 
 No game data is included. Research and preservation only.
+
+## Decompiled code (`src/`)
+Raw Ghidra decompiler output with the provisional names applied, one file per program: `src/dos/decomp_q.c`, `src/saturn/decomp_ADT.c` + `decomp_IP.c`, `src/3do/decomp_launchme.c`. It is pseudo-C for reading and study: it does not compile and has not been checked against the running game.
