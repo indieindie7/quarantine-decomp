@@ -7,6 +7,16 @@
   pp.py fn <addr> [out]           cut one function out of ghidra/decomp_q.c -> file (default %TEMP%/fn_<addr>.c), prints path + line count.
   pp.py ask <addr> "<question>"   local model (Sage, localread.py) answers ONE single-step question about that function; Claude then reads
                                   only the cited lines. Set LOCALREAD_GPU=<idx> first (hoggate.py status --gpu auto --gb N).
+  pp.py try "<what + DOS line>"   ONE call per render edit: gate once; any case worse -> port/shaders + main.gd restored from the last kept
+                                  state (port/tests/.keep), prints REVERTED; else keeps the edit (new .keep), accepts regress + chkparity,
+                                  logs one line to port/tests/trylog.md. Takes up to 10 min: run it in the background. No hand backups.
+  pp.py poke <case> <cx> <cy> <hexword> [cx cy hexword ...] [--at x y ...] [--keep-dos]
+                                  DOS side test in one call: DOSBox start if needed -> live map checked against the city json -> cells
+                                  written -> snap at the case pose -> diff vs the case's dos.png (count, box, colours at --at px)
+                                  -> cells restored, temp case deleted, DOSBox stopped. hexword = cell value, e.g. 9003, 0 = empty.
+  pp.py grow [N=8] [prefix=g]     new KCITY cases without asking: N random road cells (>= 3 cells from every stored case), 4 headings
+                                  cycled, snap each (invalid / refused poses skipped), then gate. Prints saved cases + their px.
+  pp.py keep                      store the current port/shaders + main.gd as the kept state without testing (after a hand revert).
 Rule: Claude reads decomp text itself only after `ask` named the lines."""
 import sys, os, re, json, subprocess
 T = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, T)
@@ -55,6 +65,81 @@ def triage(a):
         g = run([os.path.join(T, 'idp.py'), n]).stdout.splitlines(); out += ['## %s px %s' % (n, rows.get(n, ('?',))[0])] + g
         print(n, rows.get(n, ('?',))[0], judge(L, n, c, g, out))
     open(REP, 'w').write('\n'.join(out)); print('detail', REP)
+KEEP = os.path.join(ROOT, 'port', 'tests', '.keep')
+def tracked():
+    import glob
+    return sorted(glob.glob(os.path.join(ROOT, 'port', 'shaders', '*.gdshader'))) + [os.path.join(ROOT, 'port', 'main.gd'), os.path.join(ROOT, 'tools', 'paritylib.py')]
+def keep():
+    import shutil
+    os.makedirs(KEEP, exist_ok=True); open(os.path.join(KEEP, '.gdignore'), 'w').close()
+    for f in tracked(): shutil.copy2(f, os.path.join(KEEP, os.path.basename(f)))
+def tryedit(note):
+    import shutil, time, filecmp
+    if not os.path.isdir(KEEP): print('no kept state: run `pp.py keep` on a known-good tree first'); return 2
+    ch = [os.path.basename(f) for f in tracked() if not filecmp.cmp(f, os.path.join(KEEP, os.path.basename(f)), False)]
+    if not ch: print('nothing changed since the kept state'); return 0
+    rows, tot = gate(); bad = [k + ' ' + v[2] for k, v in rows.items() if 'WORSE' in v[2] or 'FAIL' in v[2]]
+    log = lambda v: open(os.path.join(ROOT, 'port', 'tests', 'trylog.md'), 'a', encoding='utf-8').write('- %s %s | %s | %s | %s' % (time.strftime('%m-%d %H:%M'), v, tot, ','.join(ch), note) + chr(10))
+    if bad or not tot.startswith('total'):
+        rej = os.path.join(TMP, 'pp_rejected'); os.makedirs(rej, exist_ok=True)
+        for f in tracked(): shutil.copy2(f, os.path.join(rej, os.path.basename(f))); shutil.copy2(os.path.join(KEEP, os.path.basename(f)), f)
+        log('REVERTED'); print('REVERTED', tot, '| worse:', '; '.join(bad[:8]), '| rejected files in', rej); return 1
+    r1 = run([os.path.join(T, 'regress.py'), '--accept', '--force'], env=dict(os.environ, JOBS=os.environ.get('JOBS', '6'))).stdout.strip().splitlines()[-1:]
+    r2 = [l for l in run([os.path.join(T, 'chkparity.py'), '--accept']).stdout.splitlines() if l.startswith('ticks')]
+    keep(); log('KEPT'); print('KEPT', tot, '|', (r1 or ['regress: no output'])[0][:90], '|', (r2 or ['chkparity: no output'])[0][:170]); return 0
+CASES = os.path.join(ROOT, 'port', 'tests', 'cases')
+def dos_up():
+    """DOSBox in game with the city of the json loaded -> (Reader, map base, city dict); starts DOSBox when needed."""
+    from dosrd import Reader, DELTA
+    import struct
+    d = json.load(open(os.path.join(ROOT, 'port', 'data', 'KCITY.json')))
+    for t in range(2):
+        try:
+            R = Reader(); base = R.u32(0x830a8) - DELTA; w = R.u32(0x8356a) >> 16; n = d['w'] * 4
+            if w == d['w'] and struct.unpack('<%dH' % n, R.rd(base + d['w'] * 40 * 2, n * 2)) == tuple(d['cells'][d['w'] * 40:d['w'] * 40 + n]): return R, base, d
+        except Exception: pass
+        if t == 0: run([os.path.join(T, 'parity.py'), 'stop']); run([os.path.join(T, 'parity.py'), 'start'])
+    sys.exit('DOS: live map does not match KCITY.json (not in game, or another city)')
+def snap(name, pose):
+    r = run([os.path.join(T, 'parity.py'), 'snap', name, '--pose', *map(str, pose)])
+    try: return json.loads(r.stdout.strip().splitlines()[-1])
+    except Exception: return {'valid': False, 'err': (r.stdout + r.stderr).strip()[-160:]}
+def poke(a):
+    import shutil, struct, paritylib as L
+    stop = '--keep-dos' not in a; a = [v for v in a if v != '--keep-dos']; at = []
+    if '--at' in a: k = a.index('--at'); at = [int(v) for v in a[k + 1:]]; a = a[:k]
+    n = a[0]; c = json.load(open(os.path.join(CASES, n, 'case.json')))['cam']; R, base, d = dos_up(); old = []
+    wr = lambda ad, v: run([os.path.join(T, 'dosmem.py'), 'wr', '%x' % ad, struct.pack('<H', v).hex()])
+    try:
+        for i in range(1, len(a) - 2, 3):
+            ad = base + (int(a[i]) + d['w'] * int(a[i + 1])) * 2; old.append((ad, struct.unpack('<H', R.rd(ad, 2))[0])); wr(ad, int(a[i + 2], 16))
+        j = snap('zz_poke', [c['x'], c['y'], c['head']])
+    finally:
+        for ad, v in old: wr(ad, v)
+        bad = [hex(ad) for ad, v in old if struct.unpack('<H', R.rd(ad, 2))[0] != v]
+        if stop: run([os.path.join(T, 'parity.py'), 'stop'])
+    f = os.path.join(CASES, 'zz_poke', 'dos.png')
+    if not j.get('valid') or not os.path.exists(f): print('POKE snap invalid:', str(j)[:200], '| restore failed at' if bad else '', *bad); shutil.rmtree(os.path.join(CASES, 'zz_poke'), True); return 1
+    x, y0 = L.load_pair(f, os.path.join(CASES, n, 'dos.png')); x = x.convert('RGB').resize((320, 200), 0).load(); y = y0.convert('RGB').resize((320, 200), 0).load()
+    df = [(i, k) for k in range(37, 149) for i in range(320) if x[i, k] != y[i, k]]; shutil.copy(f, os.path.join(TMP, 'pp_poke.png')); shutil.rmtree(os.path.join(CASES, 'zz_poke'), True)
+    print('POKE', n, 'cells', [(hex(ad), '%04x' % v) for ad, v in old], '| DOS px changed vs case (rows 37-148):', len(df), ('box x %d-%d rows %d-%d' % (min(i for i, k in df), max(i for i, k in df), min(k for i, k in df), max(k for i, k in df))) if df else '',
+          '|', ' '.join('(%d,%d) poked %02x%02x%02x case %02x%02x%02x' % (at[i], at[i + 1], *x[at[i], at[i + 1]], *y[at[i], at[i + 1]]) for i in range(0, len(at) - 1, 2)), '| frame', os.path.join(TMP, 'pp_poke.png'), '| RESTORE FAILED ' + ' '.join(bad) if bad else '| restored')
+    return 0
+def grow(a):
+    import random, glob
+    N = int(a[0]) if a else 8; pre = a[1] if len(a) > 1 else 'g'; R, base, d = dos_up(); W = d['w']
+    have = [json.load(open(f))['cam'] for f in glob.glob(os.path.join(CASES, '*', 'case.json'))]; have = [(c['x'] >> 9, c['y'] >> 9) for c in have]
+    road = [(i % W, i // W) for i, v in enumerate(d['cells']) if v & 0x7f == 0 and 3 <= i % W < W - 3 and 3 <= i // W < d['h'] - 3]
+    road = [c for c in road if any(d['cells'][(c[1] + dy) * W + c[0] + dx] & 0x7f for dx in (-1, 0, 1) for dy in (-1, 0, 1))]  # next to a block = street, not open void
+    random.seed(len(have)); random.shuffle(road); got = []; tried = 0
+    for cx, cy in road:
+        if len(got) >= N or tried >= N * 4: break
+        if any(abs(cx - hx) < 3 and abs(cy - hy) < 3 for hx, hy in have): continue
+        tried += 1; h = (360, 1800, 3240, 4680)[tried % 4]; nm = '%s%d_%d_%d' % (pre, cx, cy, h); j = snap(nm, [cx * 512 + 256, cy * 512 + 256, h])
+        if j.get('case_saved'): got.append((nm, j.get('px'))); have.append((cx, cy))
+    run([os.path.join(T, 'parity.py'), 'stop']); rows, tot = gate(['--accept', '--force'])
+    print('GROW tried', tried, 'saved', len(got), '|', tot); print(' '.join('%s %s' % (n, rows[n][0] if n in rows else px) for n, px in got) or 'no case saved (poses refused: see parity.py snap output by hand)')
+    return 0
 def fn(addr, out=None):
     addr = '%08x' % int(addr, 16); L = open(DEC, errors='replace').read().split('\n')
     s = next((i for i, l in enumerate(L) if l.startswith('// ====') and '@ ' + addr in l), None)
@@ -83,4 +168,8 @@ if __name__ == '__main__':
     elif cmd == 'ask':
         o, s, e = fn(a[1]); r = subprocess.run([sys.executable, r'C:\Games\Tools\llm\localread.py', o, a[2] + ' Cite the line numbers shown at the start of the lines.'], capture_output=True, text=True)
         print('fn lines', s, '-', e); print((r.stdout or r.stderr)[-1500:])
+    elif cmd == 'try': sys.exit(tryedit(' '.join(a[1:])))
+    elif cmd == 'poke': sys.exit(poke(a[1:]))
+    elif cmd == 'grow': sys.exit(grow(a[1:]))
+    elif cmd == 'keep': keep(); print('kept', len(tracked()), 'files in', KEEP)
     else: print(__doc__)

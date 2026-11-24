@@ -37,6 +37,7 @@ uniform bool prev = false;
 uniform int anim_n = 0;
 uniform ivec2 anim_from[20];
 uniform ivec2 anim_to[20];
+uniform int wkey[180]; // Q.EXE 0x7f3a8 flags[file * 12 + tile] & 1: 1 = keyed column (index 0 see-through), 0 = opaque column (0x425ec picks 0x83074)
 uniform sampler2D pal : source_color, filter_nearest;
 uniform sampler2D shade : filter_nearest;
 vec3 shaded(float i, float depth){
@@ -55,7 +56,7 @@ ivec2 fspan(int VX[6], int VY[6], int n, int top, int bot, int y){
 	int lc = top;
 	int li = (top + n - 1) % n;
 	for (int t = 0; t < 6; t++){
-		if (lc == bot ? VY[li] == y : VY[li] <= y){
+		if (VY[li] <= y && VY[li] >= VY[lc]){ /* DOS filler 0x4a6e4 switches an edge only when y == its end row: a vertex above the current one is never taken (bottom-row wrap drew 1 stray px, 11-23) */
 			lc = li;
 			li = (li + n - 1) % n;
 		}
@@ -64,7 +65,7 @@ ivec2 fspan(int VX[6], int VY[6], int n, int top, int bot, int y){
 	int rc = top;
 	int ri = (top + 1) % n;
 	for (int t = 0; t < 6; t++){
-		if (rc == bot ? VY[ri] == y : VY[ri] <= y){
+		if (VY[ri] <= y && VY[ri] >= VY[rc]){
 			rc = ri;
 			ri = (ri + 1) % n;
 		}
@@ -547,7 +548,7 @@ void fragment(){
 		vec2 u = clamp(fract(UV), 0.008, 0.992);
 		i = floor(texture(tex, (ac + u) / 16.0).r * 255.0 + 0.5);
 	}
-	if (i < 0.5 && UV2.y < 14.5) discard;
+	if (i < 0.5 && UV2.y < 14.5 && (prev || (wkey[clamp(int(ac.y + 0.5), 0, 14) * 12 + clamp(int(ac.x + 0.5), 0, 11)] & (wnt > 0.5 ? 255 : 1)) != 0)) discard;
 	float c = UV2.y > 14.5 ? floor(SCREEN_UV.y * 200.0) : floor(SCREEN_UV.x * 320.0);
 	ALBEDO = shadedlv(i, flv >= 0.0 ? flv : sh.y + sh.z * (c - sh.x));
 	if (painter && cam_cell.x > -50.0){

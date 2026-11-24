@@ -98,6 +98,11 @@ func _ready() -> void:
 	# DOS shade (table 0x98430, value = depth * 256 / 110, row = value >> 6): wall 0x425ec = linear in screen x between the first and last point of the WHOLE wall (ends clipped at depth 12, int step); floor polygon 0x4a6e4 = linear in screen y between top and bottom vertex (clipped at depth 15). CUSTOM0/1 = wall ends / quad corners xz
 	wsh.code = FileAccess.get_file_as_string("res://shaders/wall.gdshader")  # shaders live in port/shaders/*.gdshader, one statement per line (split 11-23, tools/shfmt.py)
 	mat = ShaderMaterial.new(); mat.shader = wsh; mat.set_shader_parameter("tex", ImageTexture.create_from_image(img)); mat.set_shader_parameter("pal", palt); mat.set_shader_parameter("cullflip", cullflip); mat.set_shader_parameter("doswall", doswall); mat.set_shader_parameter("shade", shdt)
+	if d.has("wf"):
+		var wk: PackedInt32Array = []
+		for r in d["wf"]:
+			for v in r: wk.append(int(v))
+		mat.set_shader_parameter("wkey", wk)
 	set_anim(mat)
 	if area_map != null:
 		add_child(area_map)
@@ -413,7 +418,7 @@ func build_objs(d: Dictionary) -> ArrayMesh:
 				var u0: float = (float(r[0]) + 0.01) / 1024.0; var u1: float = (float(r[0]) + float(r[2]) - 0.01) / 1024.0
 				var v0: float = (float(r[1]) + 0.01) / 1024.0; var v1: float = (float(r[1]) + float(r[3]) - 0.01) / 1024.0
 				var Q := [[-hw, hh, u0, v0], [hw, hh, u1, v0], [hw, 0.0, u1, v1], [-hw, 0.0, u0, v1]]
-				for i in [0, 1, 2, 0, 2, 3]: st.set_custom(0, Color(float(b["q"].size() + b["w"].size() + oi), 0, 0, 0)); st.set_color(Color(cx / 255.0, cy / 255.0, float(r[2]) / 255.0, float(r[3]) / 255.0)); st.set_uv(Vector2(float(r[0]), float(r[1]))); st.set_uv2(Vector2(float(o[5]) * signf(Q[i][0]), 1.0 if Q[i][1] > 0.0 else 0.0)); st.add_vertex(c)  # COLOR.ba = sprite w,h px; UV = atlas origin px; UV2 = (+-size, top)
+				for i in [0, 1, 2, 0, 2, 3]: st.set_custom(0, Color(float(b["q"].size() + b["w"].size() + oi), float(spr[t + 1][0]) if t + 1 < spr.size() and int(spr[t + 1][2]) > 0 else -1.0, float(spr[t + 1][1]) if t + 1 < spr.size() else 0.0, 0)); st.set_color(Color(cx / 255.0, cy / 255.0, float(r[2]) / 255.0, float(r[3]) / 255.0)); st.set_uv(Vector2(float(r[0]), float(r[1]))); st.set_uv2(Vector2(float(o[5]) * signf(Q[i][0]), 1.0 if Q[i][1] > 0.0 else 0.0)); st.add_vertex(c)  # COLOR.ba = sprite w,h px; UV = atlas origin px; UV2 = (+-size, top)
 	return st.commit()
 
 func build(d: Dictionary) -> ArrayMesh:

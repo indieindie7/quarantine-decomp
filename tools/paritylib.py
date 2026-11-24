@@ -15,7 +15,7 @@ def blips(case):
     c = case['cam']; f0, f1 = -dsin(c['head']), dsin(c['head'] + 1440); out = []
     for x, y, ty, sub, st in case.get('radar', []):
         if st in (0, 3) or not (ty == 3 or (ty == 4 and st == 2)): continue
-        rx, ry = x - c['x'], y - c['y']; dx = t64((-f1 * rx - f0 * ry) >> 11); dy = t64(-((-f0 * rx + f1 * ry) >> 11))
+        rx, ry = x - c['x'], y - c['y']; dx = t64(-((f1 * rx + f0 * ry) >> 11)); dy = t64(-((-f0 * rx + f1 * ry) >> 11))  # dx: 0x370f8 (decomp_q.c 26580-26582) negates AFTER the >> 11
         if -12 < dx < 12 and -11 < dy < 11: out.append([10 if ty == 4 else (8 + (sub != 11)), dx + 0xc5, dy + 0x10])
     return out
 def port_shot(case, out, ents='res://data/ents_live.json', extra=''):

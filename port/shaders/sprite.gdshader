@@ -15,6 +15,7 @@ varying flat float sd;
 varying vec2 pix;
 varying flat vec4 dims;
 varying flat vec2 org;
+varying flat vec2 nxo;
 uniform ivec4 fcam = ivec4(0, -2048, 0, 0);
 uniform int fcamz = 0;
 uniform float ws = 0.0625;
@@ -44,6 +45,7 @@ void vertex(){
 	sd = -vp.z;
 	org = UV;
 	oid = CUSTOM0.x;
+	nxo = CUSTOM0.yz;
 	fcl = COLOR.rg;
 	float siz = abs(UV2.x);
 	dims = vec4(round(COLOR.b * 255.0), round(COLOR.a * 255.0), 1.0, 1.0);
@@ -110,14 +112,16 @@ void fragment(){
 			row -= H;
 			col += 1;
 		}
-		if (col >= W || ci >= wq) discard;
+		if (col > W || ci >= wq || (col == W && nxo.x < 0.0)) discard;
 		sp = vec2(float(col), float(row));
+		if (col == W) sp = nxo - org + vec2(0.0, float(row)); /* DOS blit 0x41ef0: row h of the last column reads past the sprite = first byte of the next sprite in the bank (e8, e19 11-23) */
 	}
 	else{
 		sp = min(floor(floor(pix) * dims.xy / dims.zw + 0.0001), dims.xy - 1.0);
 	}
 	float i = floor(texelFetch(tex, ivec2(org + sp), 0).r * 255.0 + 0.5);
 	if (i < 0.5) discard;
+	if (floor(FRAGCOORD.y / VIEWPORT_SIZE.y * 200.0) >= 149.0) discard;
 	ALBEDO = shaded(i, sd);
 	if (painter && cam_cell.x > -50.0){
 		ivec2 oc = ivec2(floor(fcl * 255.0 + 0.5)) - ivec2(cam_cell);
