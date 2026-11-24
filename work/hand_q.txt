@@ -1,0 +1,1447 @@
+0x350e8 func dash_DrawCompass hand NOTES 11-23 compass ported: CABFONT glyph 0x80 + frame at 138,11
+0x35150 func dash_DrawRadarBlips hand NOTES paritylib.blips model: view rotate with dsin table, glyph per type
+0x3547c func dash_DrawDamage hand NOTES: pct = short 0x836d0 >> 2
+0x35744 func dash_DrawOdometer hand NOTES: short 0x81394, digits at x 178/186/194 y 144
+0x35c9c func dash_DrawGauge2Digit hand NOTES: short 0x82344, glyph 0x17+d
+0x35f0c func dash_DrawCarIcon hand NOTES: glyph short 0x82348 at 240,5
+0x36db0 func math_Atan2Deg hand NOTES: 36db0(p1,p2) = atan2(p2,p1) in degrees
+0x36f14 func math_SinCosHeading hand NOTES view maths: A = cos h, B = -sin h from word 0x8362c (16 units/deg)
+0x37008 func view_TransformPoint hand NOTES view maths (one of 0x372c0/0x37368/0x371f8/0x37008)
+0x370f8 func view_TransformEntity hand NOTES: entity transform, point table C 0x7eab8 S 0x7eabc
+0x371f8 func view_TransformPointB hand NOTES view maths sibling
+0x372c0 func view_TransformPointTable hand NOTES point table transform (decomp ~26610)
+0x37368 func view_TransformPointTableB hand NOTES point table transform sibling
+0x373e0 func view_RotateCellList hand NOTES: 7x7 cell list 0x7acc8 rotated by heading
+0x37430 func view_ProjectPoint hand NOTES: x = (..<<8)/max(depth,12)+0xa0, y = ..+100
+0x3925c func spr_LoadBank hand NOTES: disk count + [w,h] + pixels -> 4-byte entries [w,h,off]
+0x39368 func spr_LoadBankColumnMajor hand NOTES: file (w,h) row-major -> memory (h,w,u16 off) column-major
+0x3958c func spr_LoadBankTransposed hand NOTES: loader storing pixels column-major
+0x3a16c func floor_LoadImg hand NOTES: floor.img loader -> 0x83120
+0x3aaa0 func floor_CutTiles hand NOTES: 15 floor tiles 64x64 cut from FLOOR.IMG into 0x83198
+0x3c5cc func anim_TimerStep hand NOTES: timer callback, counter 0x893d0++, per-anim state step
+0x3c664 func floor_DrawSpan hand NOTES: self-modifying unrolled span drawer, 64x64 tile
+0x3f830 func sky_Blit0 hand NOTES: sky blit wrapper param 0
+0x3f844 func sky_Blit1 hand NOTES: sky blit wrapper param 1
+0x3f85c func sky_BlitModeX hand NOTES: Mode X planar copy from 0x83108
+0x3fd10 func wall_DrawColumnOpaque hand NOTES: unrolled self-modified column code
+0x3fd73 func wall_DrawColumnKeyed hand NOTES: alt column drawer (flag bit 0/1; transparent = provisional)
+0x41ef0 func spr_BlitScaled hand NOTES: sprite blit via ptr 0x83094
+0x425ec func wall_DrawSegment hand NOTES: (tex, screen, npoints, b0, b1, flag) Mode X, one tile per segment
+0x42a44 func wall_DrawSegmentMultiTex hand NOTES: via ptr 0x83098, multi-texture walls from 0x487b8
+0x4350c func spr_Draw hand NOTES: bank entry (u8 h, u8 w, u16 off), scaled
+0x435d0 func spr_DrawMirrored hand NOTES: mirrored twin of 0x4350c
+0x454cc func bsp_Load hand NOTES: .BSP loader
+0x45720 func city_ListBlockWallsObjs hand NOTES: fills draw list per block (walls/objects)
+0x464c0 func bsp_LeafSortCompare hand NOTES: qsort comparator dist[b] - dist[a]
+0x464d0 func bsp_LeafSortObjects hand NOTES: leaf objects sorted far first (qsort 0x5490d)
+0x4668c func bsp_Walk hand NOTES: (blk, cam x y z, texbase, walls ptr ..) emits draw list
+0x4699c func city_ListBlock hand NOTES: per-block draw list fill -> 0x45720 + 0x4668c
+0x46ce8 func city_AngularOcclusion hand NOTES: 360-entry angle mask, walks the list backwards
+0x46d8e func city_CullEntry hand NOTES: visibility cull per entry, zeroes rec ptr
+0x46ec4 func city_DrawList hand NOTES: draws list 0x8e440 (decomp 39759)
+0x4736c func city_Render hand NOTES: city draw, cell order, sky at tail
+0x47840 func ent_ListAddA hand NOTES: adds to count 0x9141a (guard < 0x28)
+0x478ec func ent_ListAddB hand NOTES: adds to count 0x9141a (guard < 0x28)
+0x479b0 func ent_ListReset hand NOTES: count 0x9141a = 0 after each render
+0x47d10 func floor_DrawQuad hand NOTES: floor quad tile draw, kind 3..0x31
+0x482fc func wall_Draw hand NOTES: walls with ti >= 0
+0x487b8 func wall_DrawMultiTex hand NOTES: walls with ti < 0
+0x48c90 func spr_DrawObject hand NOTES: object sprite, shade i = min(63, depth*4/110)
+0x4a6e4 func floor_Cast hand NOTES: floor caster
+0x4af98 func city_CullObject hand NOTES: cull test objects/quads
+0x4b0e0 func city_CullWall hand NOTES: cull test walls
+0x4bd08 func mission_Load hand NOTES 11-23: reads missil%d.img record n into 0x8368c + 0x82ef0
+0x16adc func ent_Spawn hand NOTES 11-23: called per mission spawn row with type (provisional)
+0x52da0 func memset hand NOTES: memset (16000 bytes per call for sky fill)
+0x5490d func qsort hand NOTES: Watcom qsort
+0x10003 func ___begtext hand watcom sig cstart full
+0x5330c func __CHP hand watcom sig modf87 callee
+0x5385a func ftell hand watcom sig fgetpos.c callee
+0x54578 func _setjmp hand watcom sig setjmp prefix24
+0x5460a func segread hand watcom sig segread.c full
+0x55bd8 func __CHK hand watcom sig stk full
+0x57a06 func fgetpos hand watcom sig fgetpos.c full
+0x58183 func tolower hand watcom sig tolower.c full
+0x58457 func __lseek hand watcom sig tell.c callee
+0x58602 func hook_pharlap hand watcom sig dosinite.asm full
+0x586e9 func unhook_pharlap hand watcom sig dosinite.asm prefix32
+0x58c20 func fmt4hex hand watcom sig prtf.c prefix24
+0x59b68 func tell hand watcom sig tell.c full
+0x59c62 func __getctime hand watcom sig gtctm.c prefix24
+0x5a682 func strcpy hand watcom sig strcpy.c full
+0x5c128 func __int7_pl3 hand watcom sig emu387 prefix32
+0x5c14c func __int7_X32VM hand watcom sig emu387 prefix32
+0x5d8e0 func __FLDS hand watcom sig flda386 prefix24
+0x5d90a func __FLDAC hand watcom sig flda386 prefix24
+0x5daa6 func __FLDC hand watcom sig fldc386 full
+0x5db3f func __FLDS hand watcom sig flda386 prefix24
+0x5dd14 func __FLDS hand watcom sig flda386 prefix24
+0x5de3f func __RLDI4 hand watcom sig ldi4386 prefix24
+0x5de94 func __LDU4 hand watcom sig ldi4386 full
+0x5defe func __I4LD hand watcom sig i4ld386 full
+0x5df0f func __U4LD hand watcom sig i4ld386 full
+0x5dfc4 func __EmuLDFS hand watcom sig emu387 full
+0x5e043 func __EmuLDFD hand watcom sig emu387 prefix32
+0x5e10a func __EmuFSLD hand watcom sig emu387 full
+0x5e1cf func __frndint hand watcom sig emu387 prefix32
+0x5e35c func __fpatan hand watcom sig emu387 prefix32
+0x5e412 func __atan hand watcom sig emu387 prefix32
+0x5e575 func __fprem hand watcom sig emu387 full
+0x5e7a0 func __log hand watcom sig emu387 prefix32
+0x5ea38 func __sincos hand watcom sig emu387 prefix32
+0x5ec7c func __f2xm1 hand watcom sig emu387 prefix32
+0x5ee50 func __sqrt hand watcom sig sqrt386 full
+0x5ef1c func __EvalPoly hand watcom sig emu387 full
+0x5ef8e func __OddPoly hand watcom sig emu387 prefix24
+0x5f190 func itoa hand watcom sig prtf.c callee
+0x5f234 func toupper hand watcom sig toupper.c full
+0x5fd21 func getpow10 hand watcom sig i64tos full
+0x60582 func modf hand watcom sig modf87 full
+0x10000 func stub_Int3A hand int 3 stub at image start
+0x10001 func stub_Int3B hand int 3 stub
+0x10010 func shop_WeapSelectSlot hand sound 5, unhighlight old, highlight new weapon slot, cursor from owned table 0x81368
+0x100c7 func shop_RepairSelectInit hand highlights repair row, resets cursor
+0x100f4 func shop_WeapSlotHighlight hand 3 box draws from table 0x73c6e for a slot
+0x10180 func shop_WeapSlotUnhighlight hand redraws slot boxes with colour 0x74
+0x101c8 func shop_WeapUnhighlightAll hand loop over table 0x73c70 until 0
+0x101e8 func shop_RepairSlotHighlight hand box draws from table 0x73cde
+0x10228 func shop_RepairSlotUnhighlight hand colour 0x74 over table 0x73ce0
+0x10260 func shop_RepairUnhighlightAll hand loop over table 0x73ce0 until 0
+0x102a4 func shop_EnterBays hand loads bays0001.img + bays.kpg, palette fade
+0x106c8 func shop_EnterWeapKing hand loads weapking.img, draws weapon shop
+0x10728 func shop_EnterRepairMan hand loads repairma.img, draws repair shop
+0x10788 func shop_Frame hand per-frame: input, text, slots, money
+0x10800 func shop_HandleInput hand key polling dispatch for both shops (mode 0x73ab4 == 3 weapons)
+0x108f4 func shop_WeapDrawSlots hand 6 weapon rows, glyphs from 0x73d38/0x73d80
+0x109ec func shop_WeapDrawDescription hand strings ROOF MOUNTED RAIL GUN.., item text
+0x10b10 func shop_DrawPrice hand price digits glyph 0x3b+d at y 0xaa
+0x10d48 func shop_DrawMoney hand money 0x836d4 as 5 digits at y 0x5a
+0x111dc func shop_RepairDrawSlots hand repair rows, glyph table 0x73ec8
+0x11334 func shop_RepairDrawDescription hand strings IN NEED OF REPAIR..
+0x114b0 func shop_WeapBuy hand writes owned slot 0x81368 + ammo 0x8136c from price table 0x82364
+0x11504 func shop_RepairBuy hand writes 0x82338/0x8233c from table 0x8130c
+0x1154c func tbl81398_Clear16 hand zeroes 16 records of 0x14 at 0x81398 (+0x22)
+0x115f8 func shop_DrawStatusGlyph hand picks glyph 0x56..0x5c by state, draws at 0x87,0x71
+0x116c8 func shop_WeapPollFKeys hand scancodes 0x3b..0x40 (F1-F6) select weapon slot
+0x11708 func shop_KeyUp hand scancode 0x48 (key table 0x81208) moves category
+0x11810 func shop_RepairPollFKeys hand scancodes 0x3b..0x3e select repair row
+0x1188c func shop_KeysAmount hand right arrow 0x4d adjusts amount, sound 0x21 when no money
+0x11b94 func shop_KeysPrevNext hand left 0x4b / right 0x4d step item, sound 5
+0x11c0c func shop_NextValidItem hand steps cursor +1 until table 0x73ac4/0x73afc entry nonzero
+0x11c7c func shop_PrevValidItem hand steps cursor -1 until table entry nonzero
+0x11cf0 func shop_ConfirmPurchase hand sound 5, calls shop_WeapBuy / shop_RepairBuy
+0x11f4c func shop_ShowConfirm hand sets confirm flag 0x7e4a8, highlights box 7
+0x11faa func frag_11faa hand misdecoded bytes, no callers
+0x11fe8 func stub_Ret_11fe8 hand bare return
+0x11fec func shop_SelectAction hand price 0x7e49c vs money 0x836d6, opens confirm
+0x12058 func shop_LoadStock hand reads bstock.enc into price tables
+0x121a8 func exit_Enter hand loads bayl0001.img + baylink.kpg (exit / password screen)
+0x12438 func exit_DrawScreen hand WELCOME TO THE EXIT text states (0x7e474)
+0x12620 func exit_HandleInput hand esc/enter, compares typed password
+0x126f4 func exit_TypeKeys hand scancode to char table 0x73fd0 into buffer 0x7e440
+0x127e8 func exit_ClearInput hand 40 spaces into 0x7e440
+0x12818 func exit_GetPassword hand copies level password (THE MEEK SHALL INHERIT ZILCH..) into 0x7e440
+0x12860 func vid_SaveMode hand int 10h ah=0f, saves mode to 0x7e4ac
+0x12890 func vid_SetMode13 hand int 10h ax=0013
+0x128b8 func vid_RestoreMode hand int 10h set mode 0x7e4ac
+0x128f0 func game_Pause hand GAME PAUSED banner, waits for key
+0x12924 func game_BannerFrameLoop hand frame loop with WELCOME TO QUARANTINE / GAME OVER banner by 0x836da
+0x129a0 func cur_SpawnScripted hand allocs entity slot, handler 0x1ac5c, sets state 0x8361c
+0x12b54 func cur_ScriptedUpdate hand per-frame update of current entity (0x836fb), state 0x8361c
+0x132ac func cur_ScriptedStateStep hand switch on 0x8361c 1..7
+0x1347a func cur_ScriptedState5 hand sets state 5, target 1000
+0x134dc func cur_ScriptedState7 hand sets state 7
+0x13554 func cur_ScriptedState2 hand sets state 2
+0x135d2 func cur_SetAnimAndTarget hand writes +0x1e/+0x04 then cur_SetTarget(-0x30,4)
+0x13685 func frag_13685 hand misdecoded bytes, no callers
+0x136e9 func frag_136e9 hand switch tail: timer +0x04 = 0x1e
+0x13700 func cur_FacePlayerFire hand atan2 to player, spawns shot (0x2548c) with cooldown 8
+0x137b4 func cur_SetTarget hand target value +0x30 and signed step +0x32 vs current 0x7f9d4
+0x13808 func ent_AimAtPlayer hand bearing class then atan2, float step
+0x13930 func dash_DrawWeaponFx hand cockpit weapon animations by weapon 0x81368
+0x13a14 func dash_AnimWeapon3 hand frame counter 0x83656, glyph table 0x74036
+0x13af8 func dash_AnimWeapon1 hand 14 frames, glyph table 0x74040
+0x13bc8 func dash_AnimWeapon2 hand offsets from table 0x74076
+0x13c3c func dash_AnimStripA hand glyph strip table 0x7408e, ends on 99
+0x13c90 func dash_DrawGlyph7a hand glyph 0x7a at x 0x114
+0x13cf8 func dash_AnimStripB hand glyph strip tables 0x7409e/0x740ac
+0x13d90 func dash_AnimStripC hand anim with timer calls 0x52c33..0x52b5a
+0x13f3d func dash_DrawGlyph28 hand glyph at 0x7f,0x28 when view mode 2
+0x13f70 func tbl83244_IncTo4 hand 50 shorts at 0x83244 incremented up to 4
+0x13fac func ent_AiSteer hand per-entity AI: bearing, atan2, float turn
+0x145b0 func ent_BearingClass hand angle to player vs heading, returns 0/1/3
+0x14670 func cur_MoveStep hand moves current entity by heading sin/cos
+0x14aa4 func cur_DecayTimers hand counts down +0x28 and byte +0x1d
+0x14b98 func cur_HitOthers hand loop over 20 entity list 0x82ea6, damage, sound
+0x14e48 func cur_CollideOthers hand transforms others into view, proximity test
+0x1502a func frag_1502a hand abs + range test fragment, no callers
+0x1506c func ent_AnyInFront hand returns 0 when an entity is inside the front box
+0x15174 func ent_ImpactResponse hand two-entity collision response (atan2, sin/cos)
+0x157a0 func car_TurnTo hand target heading 0x83622, state 5, turn dir 0x83602 by shortest arc
+0x157f0 func car_TryTurnAtCenter hand lane centre test then start turn
+0x15854 func car_PickHeadingInBlock hand position mod 0x200 in block picks new heading
+0x15990 func car_TurnStep hand rotates heading by speed band table 0x7410c until target
+0x15a30 func car_AtLaneCenter hand (dir, tol) position in block vs lane line 0xb0
+0x15b74 func frag_15b74 hand misdecoded head, no callers
+0x15bb8 func car_TryTurnFromTile hand turn table 0x79496 [tile kind-3][dir/90]
+0x15c99 func frag_15c99 hand misdecoded bytes
+0x15cb0 func car_MaybeWait hand random, state 6 timer 0x3c
+0x15d84 func car_PickRandomTurn hand rand %3 picks left/straight/right
+0x15de4 func car_PickTurnFromTile hand reads turn options from 0x79496
+0x15eec func car_RotateTowardTarget hand heading 0x83604 +- rate table 0x7f750, wraps 360
+0x15f90 func car_RotateNeg hand heading minus rate, clamp at target
+0x15fe8 func car_RotatePos hand heading plus rate, clamp at target
+0x16084 func frag_16084 hand misdecoded head, no callers
+0x162e9 func frag_162e9 hand switch tail sets turn flags
+0x16314 func stub_Ret_16314 hand bare return
+0x1631c func car_TileTurnSoft hand tile table heading, dir * 0xc
+0x16378 func car_TileTurnNow hand tile table heading, state 5
+0x163d0 func car_TurnDirToTarget hand returns +1/-1 shortest direction heading to target
+0x16418 func car_SetTurnDir hand writes 0x83602 = +1/-1
+0x16460 func traffic_SpawnForSlot hand slot -> pick cell -> spawn
+0x16478 func traffic_PickSpawnCell hand cell near player 0x83230/0x83234
+0x16618 func traffic_SpawnAt hand alloc, place, type, ent_Spawn
+0x16738 func traffic_PlaceOnRoad hand lane position + heading by side of player
+0x16a2c func ent_ClearState hand zeroes state fields of slot 0x835da
+0x16cec func traffic_SpawnLevelCar hand type from per-level table 0x74146
+0x16dcc func traffic_SpawnNear hand random offset then ent_Spawn
+0x16e60 func traffic_SpawnFromEnt hand spawns at another entity position
+0x16f58 func traffic_NextCarType hand cycles 7 types, per-level table 0x83410 (99 = none)
+0x16fe0 func car_Think hand main NPC car AI, loads entity fields into 0x836xx work vars
+0x17694 func car_AddToDrawList hand view angle frame pick, ent_ListAddA/B
+0x180fc func car_AddToDrawListSimple hand atan2 to camera, ent_ListAddB
+0x181ec func car_AddOverlay hand ent_ListAddA with z offset
+0x182e9 func frag_182e9 hand misdecoded head
+0x1833c func car_Drive hand per-tick driving: avoid, lane keep, navigate, tile switch
+0x18550 func car_Accelerate hand speed 0x83610 toward target +0x1e by accel table 0x7ebf4
+0x185ec func car_SlowForTurn hand speed -4 when above 8
+0x1860c func car_KeepInLane hand nudges position toward lane line in block
+0x18a2c func car_AtBlockCenter hand returns 1 inside the junction box
+0x18b98 func car_ClampToLane hand lane clamp by heading quadrant
+0x18ce4 func car_DespawnIfFar hand more than 6 blocks from player -> ent_Remove
+0x18d74 func car_AvoidAhead hand ent_AnyInFront then lane shift 0x90/0x170
+0x18ecc func car_AvoidAheadB hand variant of car_AvoidAhead
+0x18f74 func car_CheckJunction hand at centre -> car_PickHeadingInBlock
+0x18f88 func car_StartFlee hand state 0x11
+0x19008 func car_FinishTurn hand heading == target: snap lane dir, tile behaviour
+0x190ac func car_BeginFlee hand atan2 away, speed 8
+0x1920c func car_TileBehaviour hand switch on tile kind 0x8356e
+0x192ec func car_BrakeNearEdge hand speed -8 near block edge against heading
+0x19398 func ent_Remove hand frees handle +0x3c, sets handler 0x20cb0
+0x193e8 func car_SetSpeedTarget hand writes +0x1e, capped by type table 0x7ebf0
+0x19464 func car_SetCruiseSpeed hand +0x1e = type cruise 0x7ebf2
+0x194a4 func ent_StartAnim hand starts anim counter +0x0a
+0x19554 func car_AnimStep hand anim table 0x7510a until 99
+0x195b8 func car_HeightToward hand +0x00 steps toward 0x7e4ca
+0x19618 func car_HeightBob hand bob on +0x0a/+0x0c
+0x19700 func car_RandomReroute hand random pick heading, speed 1000
+0x19768 func car_Navigate hand route choice per tile, random
+0x198b4 func map_SetZoneFlags hand flags 0x835f2/0x7e4c8 by level and cell 0x83560
+0x19938 func map_CellHeadingA hand returns 0x5a or 0x10e by cell id 0x83560
+0x1998c func map_CellHeadingB hand returns 0x10e or 0x5a by cell id 0x83560
+0x199c8 func car_AvoidAheadC hand ent_AnyInFront then lane shift
+0x19adc func car_AvoidIfClose hand guard then car_AvoidAheadC
+0x19b04 func frag_19b04 hand switch tail: speed target 0x28
+0x19b28 func car_CheckDangerBox hand point-in-box 0x494fc around 0x83220/0x8321c then 0x4dbc4
+0x19c90 func car_HonkNearPlayer hand sound 0xf with cooldown 0x8358a
+0x19d1c func car_ReactPlayerAhead hand speed up / sidestep by relative flags 0x835d6/0x835e4
+0x19e2c func car_ReactPlayerBehind hand speed 1000, junction turn
+0x19f98 func frag_19f98 hand misdecoded head
+0x19fc4 func car_Sidestep hand sin/cos of heading+offset moves pos by 8
+0x1a048 func car_ReverseTurn hand road test 0x2cdd4 fails -> heading +180
+0x1a104 func car_StateStopped hand speed 0, timer +0x04, height
+0x1a1c0 func car_StateWreck hand counts +0x0a then ent_Remove
+0x1a2e8 func vga_SeqWrite_1a2e8 hand out to port + 0x3c5 plane mask loop
+0x1a481 func vga_PlaneColumn hand 0x3c4 map mask, writes at 0xa0000 step 0x50
+0x1a4e8 func vga_PlaneSpan hand plane mask span fill
+0x1a570 func player_ResetState hand zeroes player motion vars 0x831c8.., defaults 0x835xx
+0x1a608 func player_Move hand player physics, sin/cos, writes pos 0x83230/0x83234
+0x1abb0 func player_ViewTransform hand view angle 0x8362c from heading then view_TransformPoint
+0x1ac5c func obj_Think hand think handler: far test, switch by kind to object updaters, writes back pos/state
+0x1aefc func obj_Think_case4a hand switch case -> 0x1d1a4
+0x1af06 func obj_Think_case2a hand switch case -> 0x1d0c4
+0x1af1a func obj_Think_case3 hand switch case -> turret_Update
+0x1af24 func obj_Think_case4 hand switch case -> 0x1c180
+0x1af5d func obj_Think_case5 hand switch case -> 0x1cdf8
+0x1af64 func obj_Think_case6 hand switch case -> 0x1c80c
+0x1af6b func obj_Think_case9 hand switch case -> 0x1e7e0
+0x1af72 func obj_Think_caseB hand switch case -> cur_ScriptedUpdate
+0x1af79 func obj_Think_caseC hand switch case -> 0x1fc2c
+0x1af80 func obj_Think_caseD hand switch case -> 0x1ff2c
+0x1af87 func obj_Think_caseE hand switch case -> 0x200a4
+0x1af8e func obj_Think_caseF hand switch case -> 0x201e0, common tail
+0x1b05c func walker_Update hand states 1..6, random, wander, facing sprite
+0x1b620 func walker_Wander hand road test, random turn, remove off map
+0x1b94c func ent_AddFacingSprite hand atan2 to player + heading picks direction frame, ent_ListAddB
+0x1bacc func walker2_Update hand states, random, 0x1eccc/0x1eb2c helpers
+0x1c130 func frag_1c130 hand ent_ListAddB tail, no callers
+0x1c180 func obj_AddSpriteT7593c hand ent_ListAddB frame table 0x7593c
+0x1c1e9 func obj_AddSpriteT75a1c hand ent_ListAddB frame table 0x75a1c
+0x1c24c func obj_FarFromPlayer hand 1 when more than 6 blocks from player
+0x1c2d4 func turret_AddSprite hand ent_ListAddB frame table 0x7597c
+0x1c35c func turret_Update hand states 1..5, fires 0x2548c, sound, random delay table 0x7f57c
+0x1c758 func obj_AnimTick hand timer +0x10, frame +0x06
+0x1c7a8 func objB_AddSprite hand ent_ListAddB frame table 0x75a2c
+0x1c80c func objB_Update hand timer/frame states
+0x1ca2c func spawner_Think hand far -> remove; timer then spawns child (0x2ba60, 0x1e718)
+0x1cb20 func spawner_Init hand sets handler spawner_Think, height -100
+0x1cb88 func spawner2_Think hand timer random 0xf+, spawns child
+0x1cce4 func spawner2_Init hand sets handler spawner2_Think, height -60
+0x1cd84 func objC_AddSprite hand ent_ListAddB frame table 0x759a8
+0x1cdf8 func objC_Update hand timer then fires 0x2548c
+0x1cf34 func fx_AnimA hand frame table 0x75b88 until 99
+0x1d004 func fx_AnimB hand frame table 0x75b98, remove at 99
+0x1d0c4 func fx_AnimC hand frame table 0x75bac, remove at 99
+0x1d1a4 func fx_AnimD hand frame table 0x75bbc, speed 0
+0x1d2bc func fx_AnimMove hand moving sprite, ent_ListAddB + 0x48e14
+0x1d544 func ent_OnHit hand damage by kind, sound 0x52908, random
+0x1d774 func fx_SpawnKind1 hand 0x1e718(idx,1), random timer
+0x1d808 func fx_SpawnKind3 hand 0x1e718(idx,3), random offset
+0x1d890 func obj_InitWandererAt hand cell lookup, obj_Init, random heading
+0x1d8d8 func obj_RandomHeadingSpeed hand random heading from view, speed rand%4+6
+0x1da18 func obj_InitKind3At hand cell lookup, obj_Init, place
+0x1da80 func obj_PlaceOnSidewalk hand sidewalk offsets + random side
+0x1dca0 func objK4_Init hand obj_Init(idx,4), random
+0x1dd30 func objK5_Init hand obj_Init(idx,5), random, timer 0x1e
+0x1ddb0 func objK5_InitGroup hand obj_Init(idx,5) plus extra slots
+0x1de9c func objK10_Init hand obj_Init(idx,10) when 0x8368c set
+0x1df14 func objK9_Init hand obj_Init(idx,9), random
+0x1df90 func objK2_SpawnNew hand alloc slot, obj_Init(slot,2)
+0x1e050 func fx_MoveA hand timer +0x04, ent_ListAddB + 0x48e14
+0x1e258 func fx_MoveB hand moves then ent_ListAddB + 0x48e14
+0x1e3d4 func obj_RandomSpawnChild hand rand%4 == 0 allocs child with handler
+0x1e510 func obj_SpawnChildSound hand alloc slot, sound 0x52908, handler obj_Think
+0x1e628 func obj_SpawnChild hand alloc slot, handler obj_Think
+0x1e718 func obj_Init hand (idx, kind): handler obj_Think, clears fields
+0x1e7e0 func objK9_Update hand state 1 sprite table 0x75a00 else objK9_Anim
+0x1e8b0 func objK9_Anim hand frame table 0x75c10, atan2, random
+0x1eb2c func walker2_PickMove hand tile kind 1/2, random, speed 4
+0x1ebac func walker2_TileTest hand position-in-tile test returns 0/1
+0x1eccc func walker2_AtEdge hand tile edge test returns 0/1
+0x1ed87 func thunk_fx_MoveA hand jump to 0x1e050
+0x1ed8e func thunk_fx_MoveB hand jump to 0x1e258
+0x1ed95 func thunk_fx_AnimA hand jump to 0x1cf34
+0x1ed9c func thunk_fx_AnimB hand jump to 0x1d004
+0x1eda3 func thunk_fx_AnimD hand jump to 0x1d1a4
+0x1edaa func thunk_fx_AnimC hand jump to 0x1d0c4
+0x1edb1 func thunk_fx_AnimMove hand jump to 0x1d2bc
+0x1edb8 func fx_AnimE hand frame from +0x02, remove at end, ent_ListAddB
+0x1eee0 func obj_Kill hand sound 0x52908, state 0x8361a = 2
+0x1f184 func stub_Ret_1f184 hand bare return
+0x1f188 func obj_DeathAnim hand frames, remove, sound 0x52985, random
+0x1f2f0 func obj_AnimF hand frame +0x08, ent_ListAddB, flag 0x8368a
+0x1f43c func walker_TurnTimer hand timers +0x2a, random delay table 0x7f550
+0x1f5f0 func walker_TurnCountdown hand +0x28 countdown then walker_ApplyTurn
+0x1f62c func walker_PickTurn hand tile kind, random turn delay
+0x1f818 func walker_TurnAtEdge hand heading 90/270 edge tests
+0x1f938 func walker_ApplyTurn hand heading -= +0x2a, wrap, random timer
+0x1f9d8 func obj_CheckDangerBox hand point-in-box 0x494fc then state
+0x1fa5c func map_SetSidewalkOffsets hand 0x835e2/0x835fe = 0xa0/0x160 by cell id
+0x1faf0 func walker_Step hand turn step, view test, move 0x4d300
+0x1fb80 func walker_FleeIfSeen hand ent_InViewBox then speed 6
+0x1fbc0 func ent_InViewBox hand view_TransformEntity then box test
+0x1fc2c func objKC_Update hand sprite table 0x759ec, 0x2cf48, handler change
+0x1fd14 func walker_StepB hand variant of walker_Step
+0x1fdb0 func spawner3_Think hand timer, spawns child, removes self
+0x1ff05 func frag_1ff05 hand misdecoded bytes
+0x1ff2c func objKD_Update hand sprite table 0x7599c via 0x75c44, random delay
+0x200a4 func objKE_Update hand timer under 0x18, ent_ListAddB
+0x201e0 func objKF_Update hand counts +0x0a then ent_Remove
+0x2025c func event8_Start hand allocs task 0x2033c, 0x836ba = 8, message 10
+0x2033c func event8_Think hand spawns objects at random until timer
+0x20528 func obj_HeightStep hand +0x00 height step, speed 2
+0x20588 func event6_Start hand allocs task 0x20648, 0x836ba = 6
+0x20648 func event6_Think hand spawns objects at random until timer
+0x207b8 func event_ReleaseEnt hand clears +0x40, counter 0x836bc
+0x2080c func eventA_Start hand allocs task 0x208e0, counter 0x836bc
+0x208e0 func eventA_Think hand spawns objects at random until timer
+0x20a50 func eventB_Start hand allocs task 0x20b24
+0x20b24 func eventB_Think hand spawns objects at random until timer
+0x20cb0 func ent_ClearState48 hand rec +0x48 = 0
+0x20ccc func projA_OnHit hand state +0x48 not 3 then 0x38450 + 0x38474(0x1e)
+0x20d38 func projA_Think hand handler set by projA_Init, cull test 0x2bc1c, ent_ListAddA
+0x20dc8 func projA_InitPlace hand projA_Init then place 0x2bc80
+0x20df4 func projA_Init hand sets handler 0x20d38, size 0xe
+0x20e70 func projB_OnHit hand state not 3 then 0x33a7c + 0x384b8
+0x20f50 func projB_Think hand handler set by projB_Init
+0x21064 func projB_InitOffset hand projB_Init then pos + 0x100
+0x210a8 func projB_Init hand sets handler 0x20f50, height 0xffe8
+0x2112c func projC_Think hand handler set by projC_Init
+0x211c4 func projC_InitPlace hand projC_Init then 0x2bd4c
+0x211ec func projC_Init hand sets handler 0x2112c, height 0xfff4
+0x21260 func projD_OnHit hand state not 3 then 0x33a7c + 0x384b8
+0x21401 func projD_ThinkTail hand tail of handler 0x21344, misdecoded entry
+0x2155c func projD_InitPlace hand projD_Init then place 0x2bc80
+0x21588 func projD_Init hand sets handler 0x21344
+0x21608 func obj_Think_21608 hand cull test, allocs task, countdown +0x36
+0x21758 func obj_Init_21758 hand 0x2ccc4 place, handler, timer 0x1e
+0x217f4 func obj_RandomSetup_217f4 hand height 0xffc4, random heading fields
+0x21904 func frag_21904 hand misdecoded bytes
+0x21910 func obj_Think_21910 hand state toggle, ent_ListAddA, handler 0x43f7c at end
+0x21b7e func frag_21b7e hand misdecoded entry, atan2 to player then 0x21ea8
+0x21d2b func frag_21d2b hand misdecoded bytes
+0x21d53 func obj_AimDraw_21d53 hand atan2 then ent_ListAddA
+0x21ea8 func task22284_Start hand allocs task 0x22284 when 0x831fa/0x831f8 under 0x14
+0x2200c func obj_Init_2200c hand cell lookup 0x4b230, handler, obj_SetDir_22108
+0x22108 func obj_SetDir_22108 hand switch on direction sets heading and pos offset
+0x22284 func task22284_Think hand countdown +0x38, switch, ends task 0x390f0
+0x22420 func obj_Update_22420 hand +0x4c zero then random, sound, 0x384b8(0xc)
+0x22597 func frag_22597 hand misdecoded bytes (float garbage)
+0x226c8 func obj_Init_226c8 hand handler 0x224ec, height 0xffb0, timer 5
+0x22740 func cur_AimAtPlayer hand atan2 player minus entity 0x836fb, ent_ListAddA
+0x22824 func obj_Think_22824 hand cull test, 0x2548c, atan2, countdown
+0x22a3c func obj_Init_22a3c hand 0x2cc60 place, handler, timer 10
+0x22acc func obj_Think_22acc hand countdown +0x3a, random, cur_AimAtPlayer
+0x22b8c func eventObj_Think hand handler set by eventObj_Init, obj_SpawnChildSound, event_ReleaseEnt
+0x22cd0 func eventObj_Init hand when 0x836ca == 2 sets handler 0x22b8c else ent_Remove
+0x22d74 func ent_TakeHit_22d74 hand +0x46 above 0, sound 0x10
+0x22dd8 func ent_OnHit_22dd8 hand table 0x82e70 by +0x36, 0x38450 + 0x38474(0x14)
+0x22e30 func projE_Think hand handler set by projE_Init
+0x22edc func projE_InitPlace hand projE_Init then place 0x2bc80
+0x22f50 func projE_Init hand sets handler 0x22e30, life 1000
+0x22fcc func fire_Pattern_22fcc hand fire_SpawnE(2) + projE_Init + place
+0x23018 func fire_Pattern_23018 hand fire_SpawnE(1), fire_SpawnE(2), projE_Init
+0x23074 func fire_Pattern_23074 hand fire_SpawnD(2) + projD_Init
+0x230a0 func fire_Pattern_230a0 hand fire_SpawnA(2) + projA_Init
+0x230cc func fire_Pattern_230cc hand fire_SpawnC(2) + projC_Init
+0x230f8 func fire_Pattern_230f8 hand fire_SpawnB(2) + projB_Init
+0x23124 func fire_Pattern_23124 hand fire_SpawnE(1, table 0x75fde) + projA_Init
+0x23188 func fire_Pattern_23188 hand fire_SpawnA(1), fire_SpawnE(0), projA_Init
+0x231cc func fire_Pattern_231cc hand fire_SpawnE(1), fire_SpawnD(2), projA_Init
+0x23200 func fire_SpawnE hand alloc slot (5,0x14), projE_Init, place
+0x23278 func fire_SpawnD hand alloc slot (5,0x14), projD_Init, place
+0x232e8 func fire_SpawnA hand alloc slot (5,0x14), projA_Init, place
+0x23358 func fire_SpawnC hand alloc slot (5,0x14), projC_Init, place
+0x233c8 func fire_SpawnB hand alloc slot (5,0x14), projB_Init, place
+0x23438 func obj_Think_23438 hand countdown +0x36, 0x2591c, task237d8_Start
+0x2354c func obj_Init_2354c hand 0x2cc60 place, atan2, random, handler 0x23438
+0x236ec func task237d8_Start hand allocs task 0x237d8
+0x237d8 func task237d8_Think hand +0x34 up to 0x7f770, then handler 0x43f7c
+0x23958 func obj_Think_23958 hand cull test, allocs task, sound, countdown
+0x23b10 func obj_Init_23b10 hand cell lookup 0x4b230, handler 0x23958
+0x23bc8 func task23c80_Start hand allocs task 0x23c80, 0x836aa = 5, message 0xd
+0x23c80 func task23c80_Think hand spawns slots while +0x36 under 0xf and event 0x836ba set
+0x23da0 func cur_ViewRelPos hand entity 0x836fb pos to 0x82ea0 then view_TransformEntity
+0x23e24 func cur_AimSetup hand cur_ViewRelPos, abs, atan2, stores 0x83628/0x8362a
+0x23f7c func shotA_Think hand task set by shotA_Spawn, ent_ListAddA, ends via 0x43f7c
+0x24114 func shotA_Fall hand height under -5 changes handler, else drops
+0x2426c func cur_SetHeightHeading hand +0x04 = arg, heading from 0x83604, timer 0x78
+0x242c8 func shotA_Spawn hand allocs task 0x23f7c, sound, timer 0x78
+0x24398 func shotB_Think hand +0x4c countdown, ent_ListAddA, 0x48e14
+0x24685 func frag_24685 hand misdecoded entry (index times 4)
+0x246ec func shotC_Spawn hand allocs task 0x247f0, sound, rand%8 + 0x38
+0x247f0 func shotC_Think hand +0x4c hit then 0x33bec, ends via 0x43f7c
+0x24950 func shotD_Think hand homing test 0x15eec, 0x34288, ends via 0x43f7c
+0x24bb8 func shotD_Spawn hand allocs task 0x24950, sound, atan2, 0x163d0
+0x24d70 func cur_SetWeaponState hand +0x64 = arg, +0x30 = 0
+0x24da0 func cur_FireBurst hand +0x2a counter, shotC_Spawn, state 0x8361c = 2
+0x24e60 func cur_TryFireRandom hand reload +0x32 zero, random, cur_FireWeapon
+0x24efc func cur_TryFireInRange hand state 2/x and range 0x83628 under 4, cur_FireWeapon
+0x24fbc func cur_FireWeapon hand by weapon kind: shotA_Spawn / shotD_Spawn / 0x2591c, reload 0x7f5e0
+0x25138 func cur_FireByKind hand +0x5c kind 1 shotA_Spawn else shotD_Spawn, reload
+0x251f4 func cur_FireSpread hand sin/cos heading, shotE_Spawn, counter +0x30
+0x2532c func cur_FirePattern hand table 0x762f8 by +0x30, random, shotE_Spawn
+0x2548c func shotE_Spawn hand allocs task, sound, flags 0x80, life 0x7f564
+0x25580 func cur_WeaponCycle hand reload zero then state +0x64 = 5
+0x2569c func shotF_Think hand distance 0x47af4, 0x34288, shotF_Draw
+0x2591c func shotF_Spawn hand alloc slot (0,0x12), handler, kind 6
+0x25a98 func shotF_Draw hand atan2 to player, ent_ListAddB
+0x25c2c func gfx_GlyphB hand glyph draw, 6-bit row step (28 callers)
+0x25cc1 func gfx_GlyphC hand glyph draw, 8-bit row step
+0x25d59 func gfx_GlyphD hand glyph draw variant, no caller
+0x25e1c func gfx_GlyphA hand glyph draw (80 callers)
+0x25eb2 func gfx_GlyphE hand glyph draw variant
+0x25f4b func gfx_GlyphF hand glyph draw, colour arg
+0x25ff0 func gfx_GlyphG hand glyph draw, colour arg (23 callers)
+0x261a8 func frag_261a8 hand misdecoded loop
+0x26210 func player_FireWeapon hand switch on weapon 0x81380, allocs task, ammo -1, sound 7
+0x26368 func pshotA_Think hand 0x34288(4) hit test, pshot_HitTest, ent_ListAddA
+0x26470 func pshotA_Init hand size 0x18, 0x33da4, handler 0x26368
+0x26530 func pshotB_Think hand +0x4c hit, pshot_HitTest, ent_ListAddA
+0x26664 func pshotB_Init hand speed 0x100, size 0xc, handler 0x26530
+0x26750 func pshotC_Think hand flame: spark_Add, pshot_HitTest, ends task
+0x26974 func pshotC_Init hand speed 0x180, handler 0x26750
+0x26a5c func spark_ClearAll hand 12 slots at 0x7e4d0 = -1
+0x26a8c func spark_DrawAll hand 12 slots, ent_ListAddA
+0x26b74 func spark_Add hand free slot, random, sin/cos heading
+0x26d0c func spark_AddBurst hand fills all free slots, random
+0x26e8c func pshotD_Think hand pshot_HitTest, homing 0x15eec, atan2
+0x27121 func pshotD_ThinkCase1 hand switch case tail, pos from 0x831e4
+0x27294 func pshotD_Init hand height from 0x83238 + 10, handler 0x26e8c
+0x27380 func cur_AimAtPlayerB hand atan2 player minus entity, ent_ListAddA
+0x27478 func cur_MoveToward hand target 0x83204/0x83208, 0x2e7d0
+0x27544 func cur_DropHeight hand height +0x04 minus 1 when not paused 0x836e4
+0x27594 func pshot_HitTest hand 0x479e4 distance test for entity 0x836fb
+0x27680 func bay_LoadFile hand sprintf bay%d.dat, open, read
+0x276e8 func gfx_SaveRect4 hand saves 4 planes of a rect (0x3aca6)
+0x27774 func gfx_SaveRect4B hand 4 plane rect copy variant
+0x2787c func gfx_RestoreRect4 hand restores 4 planes (0x3ac94/0x3ac9d)
+0x2791c func gfx_PutRect4 hand 4 plane rect put (18 callers)
+0x279d0 func gfx_SwapRect4 hand 4 plane rect save + put (0x3ac94/0x3aca6/0x3ac9d)
+0x27aa7 func frag_27aa7 hand misdecoded entry of a 4 plane rect loop
+0x27ba4 func stub_Ret_27ba4 hand bare return
+0x27bc7 func frag_27bc7 hand misdecoded loop
+0x27c35 func stub_Ret_27c35 hand bare return
+0x27c3c func gfx_SaveRectAt hand gfx_SaveRect4B at y*0xa0 + x/4
+0x27c88 func mapscr_ScrollTo hand clamps scroll 0x7e656 then set start 0x75529
+0x27dec func text_SaveCursor hand 0x7e63a from 0x8dc18/0x8dc1a, 0x7e63e = arg
+0x27e18 func text_TypeChar hand typewriter text via gfx_GlyphC, pointer 0x7e614
+0x27f50 func fare_LoadText hand opens fare.enc / fare%d.enc, reads, decodes
+0x28080 func mapscr_DrawMarkers hand marker glyphs by mode 0x836be, gfx_SwapRect4
+0x28190 func mapscr_DrawIcons3 hand three gfx_GlyphB from 0x75130..0x75138
+0x281ec func fare_Cancel hand ent_Remove passenger 0x8367a, clears fare state 0x7940c
+0x282a0 func mapscr_Run hand map screen: mapicons.spr, fare_LoadText, mission_Load
+0x29588 func mapscr_Input hand key flag 0x8121c, mapscr_FindNearest
+0x29728 func ent_SetPosFromTable hand pos from 0x832c0 and table 0x76434 by level
+0x29780 func mapscr_WorldToMap hand player pos to map pixels by level table 0x76434
+0x29844 func mapscr_FindNearest hand nearest of 0x14-word records, atan2
+0x299a8 func mapscr_SelectLoc hand 0x7e638 = idx, pos from 0x8139c + idx*0x28
+0x29a2a func frag_29a2a hand misdecoded bytes
+0x29a4c func bay_LoadAll hand loop 5 levels: city load 0x32670, bay_Place, bay%d.dat write
+0x29ae0 func bay_DrawAll hand bay_LoadFile then gfx_GlyphE per bay
+0x29bd0 func bay_Place hand scans map cells 0x83574, random, 0x2ccc4
+0x29da8 func mapscr_DrawTarget hand TARGET LOCATION / GROUP LOCATION / DESTINATION text
+0x2a41c func mapscr_DrawInfo hand CURRENT LOCATION, money $%d, panels
+0x2b04c func stub_Ret_2b04c hand bare return
+0x2b05c func fare_PickRandom hand random loop over 0x830b4/0x830ac, rand%0x13 + 1
+0x2b178 func time_TickDay hand 0x83676 vs 0x831a4, counter 0x832ac
+0x2b21d func frag_2b21d hand misdecoded bytes
+0x2b2ab func frag_2b2ab hand misdecoded entry of file read + palette (0x3c3c8)
+0x2b4bc func pic_LoadShow hand file read 0x52f4f/0x52fe5, 0x3b1b8, palette calls
+0x2b7c0 func spawn_Tick hand state 0x836ea == 2: counter 0x7689e, spawn helpers
+0x2b8d0 func spawn_ByTileTable hand table 0x768a0 by level, alloc slot, obj_Init_2200c / obj_Init_23b10
+0x2b968 func spawn_AtCell hand cell flags 0x4b230, sets handlers for 0x14 slots
+0x2ba60 func ent_AllocSlot hand first free slot in [a,b) else -1 (27 callers)
+0x2bad6 func frag_2bad6 hand misdecoded tail of spawn_ByTileTable
+0x2bb10 func spawn_PickAhead hand heading quadrant 0x2c250, cell ahead to 0x830bc/0x830b8
+0x2bc1c func cur_FarFromPlayer hand cell distance player vs entity 0x836fb, returns 1 when far
+0x2bc80 func ent_PlaceInCell hand 0x2ccc4 tile, random offset in cell (20 callers)
+0x2bd4c func cur_OffsetByDir hand pos += table 0x76904[dir+3]
+0x2bda8 func spawn_AroundPlayer hand player cell, random, spawn_FindCell, handlers for 0x14 slots
+0x2bf2c func ent_UpdateList10 hand 10 ids from 0x82ea8, state test, 0x16460
+0x2bfbc func spawn_FindCell hand walks cells from player by heading, random
+0x2c250 func math_HeadingQuadrant hand heading ranges 0x2d0/0x870/0xd70/0x13b0 (22 callers)
+0x2c290 func trail_Reset hand fills 0x82e78..0x82e9c with player pos
+0x2c2fc func player_SlideDecay hand 0x836a8 with sin/cos of 0x836be, clamp 0
+0x2c3b0 func player_ReadGear hand switch on 0x7eed0 input record, speed cap 0x831c8
+0x2c648 func player_Drive hand angle ERROR!!!, sin/cos, atan2, sounds, collision 0x48e14
+0x2ca94 func player_EngineState hand 0x835ca rpm, 0x382a0, gear state 0x835bc
+0x2cc14 func player_EngineReset hand 0x835bc = 1, speed 0, 0x835b2 by 0x836b8
+0x2cc60 func cur_ReadTile hand tile under entity 0x836fb to 0x83560, kind 0x8356e
+0x2ccc4 func map_ReadTile hand tile at (x,y) to 0x83560, kind 0x8356e via 0x82f70 (17 callers)
+0x2cd2c func cur_TileAhead hand 0x33a7c along heading then tile kind
+0x2cdd4 func car_TileAheadBlocked hand 0x33a7c along 0x83626 then tile_IsSolid
+0x2ce50 func tile_IsSolid hand kind table 0x82f70, kinds 0xd/0xf/0x10
+0x2cecc func cur_InBounds hand entity 0x836fb pos range test returns 0/1 (11 callers)
+0x2cf48 func cur_InBoundsMargin hand same with margin arg
+0x2cfbc func ent_FindInBoxA hand 0x14 ids from 0x82ea8, 0x494fc
+0x2d05c func ent_FindHit hand 0x14 ids from 0x82ea8, 0x495c0, returns id or -1
+0x2d0d8 func ent_FindInBoxB hand 0x14 ids, 0x4955c
+0x2d1c8 func ent_DispatchHits hand 0x14 ids, 0x496a8 test, calls per-kind OnHit (projA/B/D, 0x22420, 0x13fac, 0x1d544)
+0x2d2c0 func wpnA_Start hand ammo 0x81394 and 0x83666 clear: allocs task 0x2d4a8, sound 0xe
+0x2d308 func wpnA_Think hand toggles 0x83668, wpnA_SpawnShot, wpnA_Trace, ends task
+0x2d4a8 func wpnA_Init hand random, handler 0x2d308
+0x2d4f8 func wpnA_Trace hand ray steps 0x33b1c, ent_FindHit, damage 0x34768, 0x48e14
+0x2d7d8 func dash_DrawWeaponA hand spr_Draw / spr_DrawMirrored by 0x836e0, table 0x76a6a
+0x2da2c func wpnA_SpawnShot hand allocs task 0x2dc9c, random, 0x33f0c
+0x2dc9c func wpnA_ShotThink hand countdown +0x3a, ent_ListAddA, ends task
+0x2dd40 func player_FireWeapon2 hand switch on weapon 0x81378, ammo 0x8137c -1, sound 7
+0x2de38 func pshotE_Think hand frame table 0x76bc4, 0x34288 hit, ends via 0x43f7c
+0x2df88 func pshotE_Init hand pshot_InitCommon, handler 0x2de38
+0x2e000 func pshotF_Think hand homing: atan2, 0x16418, 0x15eec, missile_Split, tile ahead
+0x2e3e0 func pshotF_Init hand pshot_InitCommon, quadrant, handler 0x2e000
+0x2e468 func pshotF_InitB hand pshot_InitCommon, handler 0x2e000
+0x2e4d0 func pshot_InitCommon hand clears timers, 0x33da4, 0x33bec, owner 0x83174
+0x2e5d0 func missile_Split hand target 0x83204, ent_ViewRel, missile_SpawnKids, ends via 0x43f7c
+0x2e6fc func missile_FindTargets hand ent_ViewRel over 0x14 ids, missile_SpawnAt
+0x2e7d0 func ent_ViewRel hand entity pos to 0x82ea0 then view_TransformEntity
+0x2e850 func pshotG_Think hand timer vs 0x7f608, missile_FindTargets, 0x34288
+0x2ead8 func pshotG_Init hand pshot_InitCommon, handler 0x2e850
+0x2eb60 func missile_SpawnAt hand allocs task 0x2eca0, atan2, float round
+0x2eca0 func missile_ChildThink hand distance 0x47af4, 0x34288, ends via 0x43f7c
+0x2ee3c func missile_SpawnKids hand 3 tasks 0x2efa8, random
+0x2efa8 func missile_KidThink hand atan2, 0x16418, 0x15eec, 0x34288
+0x2f170 func cur_DrawFacingPlayer hand atan2 player minus entity, ent_ListAddA (6 callers)
+0x2f2c0 func player_FireWeapon3 hand switch on weapon 0x81368, ammo 0x8136c -1, sound 0x16
+0x2f488 func wpnB_Think hand 0x8365c = 1, wpnB_SpawnShot, wpnB_SpawnSpark, wpnB_Trace, ends task
+0x2f5c4 func wpnB_Trace hand ray steps 0x33b1c, ent_FindHit, damage 0x34768
+0x2f834 func wpnB_SpawnShot hand allocs task 0x2f9e8, 0x33f0c, life 10
+0x2f92c func wpnB_SpawnSpark hand random table 0x76c38, allocs task
+0x2f9e8 func wpnB_ShotThink hand countdown +0x3a, ent_ListAddA, ends task
+0x2fa78 func pshotH_Think hand state +0x48 == 1, 0x34288, life 0x7f5b8
+0x2fc2c func wpnC_Think hand table 0x740be by 0x83638, spark_AddBurst, allocs task
+0x2fd3c func wpnC_Init hand 0x83638 = 0, spark_ClearAll, handler 0x2fc2c
+0x2fdc0 func player_FireWeapon4 hand switch on weapon 0x81370, allocs task
+0x30001 func frag_30001 hand misdecoded entry of handler 0x2ff38
+0x30114 func pshotI_Init hand size 0x14, 0x33da4, handler 0x2ff38
+0x30248 func pshotJ_Think hand timer, pshotJ_SpawnTrail, pshotJ_SpawnKids, ends task
+0x30444 func pshotJ_Init hand size 0x14, handler 0x30248
+0x30568 func pshotJ_SpawnKids hand 4 tasks 0x3066c, random
+0x3066c func pshotJ_KidThink hand distance 0x47af4, ent_ListAddA
+0x30768 func wpnD_Think hand 0x83642 = 1, glyphs, sound, ent_FindHit, ends task
+0x30b24 func wpnD_Init hand size 0x50, handler 0x30768
+0x30bbc func pshotJ_SpawnTrail hand allocs task with handler 0x43f7c at entity pos
+0x30c40 func cur_SetSize8 hand +0x42 = 8, +0x3e = 0x14
+0x30c74 func pshotK_Think hand +0x48 hit, 0x34288, sound, 0x34670
+0x30fe9 func frag_30fe9 hand misdecoded bytes
+0x30ffc func options_Open hand option.img, optionc.spr, options_DrawCursor
+0x31128 func options_DrawCursor hand 6 rows, glyph at row 0x7e67c
+0x31180 func options_Input hand key poll, row change sound 5, options_Select
+0x31284 func options_Select hand switch on row 0x7e67c: new game, load, etc
+0x3137c func pic_ShowDrakess hand drakess4.img show, table by arg
+0x3147c func options_Restore hand fade 0x3b850, reload screen, 0x7e682 = 1
+0x3155c func intro_GametekLogo hand gametek.img, explo1.voc
+0x315ec func intro_IeLogo hand ieglow.img, hypno.voc
+0x31664 func intro_PlayTitle hand title.fli with qtitle.voc via 0x5076e
+0x31690 func mem_AllocBuffers hand mallocs 64000 etc, Not enough memory..
+0x318f4 func thunk_128b8 hand calls 0x128b8
+0x319ec func mem_AllocMapBufs hand 0x830a8 = malloc(26000), 0x83108 = malloc(32000)
+0x31a10 func mem_FreeMapBufs hand frees 0x83108, 0x830a8
+0x31a90 func level_LoadAll hand enemy + weapon sprites, WALL1, city map, floor, sky.img
+0x31b1c func kemomap_LoadAll hand kemomap%d.zzz 4 files, malloc, read
+0x31bfc func level_LoadGfx hand WALL1, city map, floor.img load + cut, radar sprites
+0x31c64 func level_Restart hand fade, task reset 0x38f50, level_ResetState, register tasks, cab + floor
+0x31cec func level_ResetLight hand task reset, level_ResetState, counters, 0x8368c = 0x3c
+0x31d3c func floor_LoadCut hand floor.img by level table 0x76e20 then floor_CutTiles
+0x31d74 func floor_LoadSetup hand floor.img by level table 0x76e38, 0x3a3c4, tables 0x3a820..
+0x31e7c func sky_Load hand sky.img by level table 0x76e50, copy 8000 to 0x83108
+0x31ec4 func cab_LoadFull hand cab.img, ldoor35.img, dash_DrawWeapons, radar sprites
+0x31fa8 func gfx_CopyScreen200 hand 200 rows of 0x140 from 0x830f4 to 0x830f0
+0x32004 func cab_LoadSimple hand cab.img, dash_DrawWeapons(0)
+0x32044 func cab_LoadToBack hand cab.img to 0x830cc, 0x3f260
+0x320c8 func door_Load hand ldoor35.img to 0x830f0, 0x3f260(1)
+0x32190 func obj_LoadDat hand obj%d.dat open, read, close
+0x32260 func wall_LoadAll hand WALL1.spr banks, floor%d.dat, data%d.dat
+0x32550 func task_RegisterCore hand registers core tasks 0x37b34, 0x44918, 0x4736c ...
+0x325cc func level_ResetState hand 0x3761c(level), trail_Reset, malloc, clears 0x87290
+0x32670 func citymap_Load hand city.map by level table 0x76e68, read loop
+0x32710 func pic_ShowWait hand wait.img, palette set
+0x32744 func spr_LoadEnemyAndWeapons hand enemy_LoadSprites + weapon_LoadSprites
+0x32754 func enemy_LoadSprites hand enemy.enc 0x4bf68 then spr_LoadBankTransposed list
+0x3283c func radar_LoadSprites hand wradar11.spr per owned weapon 0x81368
+0x328a0 func fx_LoadSprites hand explo.spr, blammog.spr ... tspike.spr
+0x329fc func weapon_LoadSprites hand 6 weapon banks to 0x830dc
+0x32aa8 func dash_DrawWeapons hand 5 weapon slots glyphs, 0x3450c when 0x81388 == 2
+0x32b70 func coll_LoadTables hand colldat.dat, trigdat.dat via csv_LoadShorts
+0x32c20 func csv_LoadShorts hand reads comma separated numbers into shorts
+0x32cc8 func level_Enter hand player start from table 0x7752e, trail_Reset, level gfx loads
+0x32dcc func level_Warp hand fade, level from table, 0x38bd8
+0x32e10 func moni_LoadSprite hand moni0001.spr / pack0001.spr by table 0x7760c
+0x32e90 func kbd_Install hand clears key table 0x81208, getvect/setvect int 9
+0x32eec func kbd_ClearAll hand clears key table and joystick flags
+0x32f54 func joy_ClearFlags hand clears 0x7f998..0x7f989 (5 callers)
+0x32f94 func joy_SetFlags hand sets 0x7f998, 0x7f9a0, 0x7f99b, 0x7f99d = 1
+0x32fb4 func kbd_Remove hand setvect int 9 to saved 0x7e7b0
+0x32fd4 func frag_32fd4 hand no caller, port thunks 0x53c0c..
+0x33068 func kbd_AnyKey hand scans key table 0x81208, 0x80 entries (13 callers)
+0x330d4 func game_HandleKeys hand map screen, weapon select, pause, fire 0x339c4
+0x3347c func game_CheatKeys hand keys 0x81243..0x81245, 0x1abb0, level state 3
+0x33560 func msg_Add hand free slot in 0x7e880, random pos, sound (13 callers)
+0x33684 func msg_DrawAll hand 12 slots, spr_Draw, dash_DrawWeaponA
+0x33850 func debris_Spawn4 hand 4 pieces, random
+0x33918 func msg_ClearAll hand 12 slots 0x7e880 = -1
+0x3397c func weapon_FirstOwned hand first of 5 slots 0x8136c with ammo to 0x83634
+0x339c4 func player_FireSlot hand switch slot: player_FireWeapon / 2 / 3 / 4, ammo msg
+0x33a3c func weapon_NextOwned hand cycles 0x83634 to next slot with ammo
+0x33a7c func cur_SetVelHeading hand sin/cos heading times speed to +0x10/+0x12 (19 callers)
+0x33b1c func cur_SetVelHeadingB hand sin/cos variant for ray steps
+0x33b84 func cur_SetVelHeadingC hand sin/cos variant, no caller
+0x33bec func cur_MoveHeading hand pos += sin/cos heading times dist (30 callers)
+0x33cd0 func ent_MoveHeading hand entity idx pos += sin/cos times dist
+0x33d38 func cur_MoveHeadingB hand pos += sin/cos times dist variant
+0x33da4 func cur_PlaceAheadOfPlayer hand pos = player pos + heading times dist (9 callers)
+0x33e58 func cur_PlaceAheadOfPlayerB hand same, variant
+0x33f0c func ent_PlaceFromPlayer hand entity idx pos = player pos + heading times dist
+0x33fb8 func spr_DrawWorld hand view transform then spr_Draw / spr_DrawMirrored
+0x341bc func cur_AddPlayerVel hand pos += player speed 0x835c6 >> 3 (12 callers)
+0x34288 func cur_HitScan hand ent_FindHit, damage 0x34768, 0x48e14, returns 0/1/2 (14 callers)
+0x343c0 func weapon_AmmoBlink hand 0x8365a countdown, flags 0x83676
+0x34410 func weapon_ShowEmpty hand table 0x777c8, glyph, sound 5
+0x3448c func weapon_ShowName hand glyph from table 0x777d0, allocs task
+0x3450c func dash_DrawAmmoSel hand dash_DrawAmmoIcon old slot 1, new slot 3
+0x3457c func dash_DrawAmmoIcon hand glyph gfx_GlyphF by slot and style
+0x345c8 func ent_PlaceFromPlayerB hand entity idx pos = player pos + heading times dist
+0x34670 func weapon_SetDamage hand 0x83630 = table 0x7f540 by weapon tables 0x777f0 (8 callers)
+0x346e8 func frag_346e8 hand misdecoded bytes
+0x34768 func ent_ApplyDamage hand rec +0x44 flag, damage by weapon slot table 0x81368
+0x347b0 func player_RamCheck hand when 0x83676: place ahead, ent_FindHit, msg_Add, damage 0x82402
+0x348f0 func dash_DrawAll hand view mode 2: lamps, needle, odometer, gauges, radar, text
+0x34988 func dash_DrawBlink hand blinks glyph by 0x82352 when 0x83588
+0x34a44 func dash_DrawFareInfo hand FOR HIRE, fare direction arrow atan2, money
+0x3508c func dash_DrawText8 hand 8 glyph loop from text table
+0x352d4 func dash_DrawNumber hand digits via dash_DrawDigits10, gfx_GlyphG
+0x35454 func player_AddDamageFlash hand 0x7ea12 += n, cap 0x7f554
+0x35614 func dash_ResetCache hand resets cached dash values 0x7ea08.. to -1 (8 callers)
+0x35728 func dash_ResetCacheB hand 0x7ea10 and 0x77910 = -1 (8 callers)
+0x35904 func dash_DrawStatus hand status glyph rows, fare state 0x7940c
+0x35d8c func dash_DrawNeedle hand needle from 0x835ac, clamp -0x15e
+0x35e24 func dash_DrawLamps hand 10 lamps from 0x7e940
+0x35e8c func dash_DrawDigits10 hand 10 glyph loop
+0x36120 func msgline_Set hand 0x8355a = id, resets scroll (13 callers)
+0x36140 func msgline_SetIfFree hand same when none active
+0x36168 func msgline_Draw hand text table 0x7791c, scroll counters
+0x362ec func text_PutDigit hand writes digit char into text table string, returns n/10
+0x36384 func fare_NextSlot hand scans 0x1e slots, wraps 0x77868
+0x363e8 func set_77958 hand 0x77958 = arg
+0x36458 func frag_36458 hand misdecoded bytes
+0x364d0 func game_Main hand args sassy / version, init, main loop
+0x36b3c func pal_FadeStep hand palette step by n over 0x100 entries
+0x36c10 func ending_Play hand end.fli, qcredit2.img
+0x36c9c func frinf_Load hand frinf%d.dat open, read, pal_FadeStep
+0x36da0 func stub_Ret_36da0 hand bare return
+0x36da8 func stub_Ret_36da8 hand bare return
+0x37184 func frag_37184 hand no caller, short copy loop
+0x3726c func mem_CopyStride4 hand copy loop with stride 4
+0x37500 func timer_ResetCounters hand 0x8357e, 0x8357c, 0x83586, 0x8358e = 0
+0x37528 func timer_FrameRate hand tick counter 0x8357e ranges 0x11/0x24 adjust 0x8357c
+0x3759c func timer_Isr hand 0x8357e++, 0x83584++ (int handler body)
+0x375c4 func timer_Install hand DPMI set vector with timer_Isr, old in 0x7ead0
+0x375e4 func timer_Remove hand restores vector from 0x7ead0
+0x37600 func stub_Ret_37600 hand bare return
+0x3761c func player_SetStart hand when pos -1: start from level table, trail_Reset
+0x376b4 func player_SetStartB hand start from table by level*4 + n
+0x37750 func player_Think hand event 0x836ba, key scan, tile read, game_HandleKeys
+0x37b34 func player_TaskInit hand sets handler player_Think
+0x37b44 func fare_TimerTick hand fare 0x835be record 0x7922e, counter 0x835a6
+0x37c00 func water_Update hand wave.spr, tiles around player, sin/cos, drown 0x83706 = 2
+0x382a0 func level_Change hand fade, level_LoadGfx, player_SetStartB, palette
+0x38338 func game_PauseCheck hand game_CheatKeys, dash_ResetCache, dash_DrawWeapons(1)
+0x383b0 func vid_FlipIfPlaying hand state 2: 0x754b4 in view 2, 0x75455
+0x383dc func shake_Update hand 0x8359a shake counter with table
+0x38450 func shake_Start hand 0x8359a = 1, strength arg (16 callers)
+0x38474 func flash_Start hand 0x8359c from arg << 4 when 0x83590 clear
+0x384b8 func player_Damage hand shield 0x8234c minus n, player_AddDamageFlash (20 callers)
+0x38538 func player_SpinUpdate hand 0x835ba countdown turns heading 0x7eae0
+0x38598 func player_SpinStart hand 0x835ba += n, direction arg
+0x385e8 func frag_385e8 hand misdecoded loop
+0x38644 func player_TileDamage hand tile kind 0xe/0xf, player_Damage, sound 0x27
+0x3877c func passenger_Spawn hand allocs task 0x38854 at player pos
+0x38854 func passenger_Think hand walks to cab, 0x479e4, dash_DrawText8, ends task
+0x38bd8 func game_ResetState hand zeroes game state vars, timers, dash caches, random
+0x38eac func weapon_ResetSlots hand 5 slots 0x81368 reset, weapon_FirstOwned
+0x38f50 func task_ClearAll hand clears handler + owner of 0x32 records
+0x38f90 func task_AllocFixed hand finds free record for handler, low range
+0x38ffc func task_Alloc hand finds free record, sets handler, returns idx (56 callers)
+0x39068 func cur_SetHandler hand handler of current record 0x836fb (68 callers)
+0x3908c func ent_SetHandler hand handler of record idx (29 callers)
+0x390a8 func task_RunAll hand calls handler of each of 0x32 records
+0x390f0 func cur_EndTask hand current record handler = 0, owner = 0 (34 callers)
+0x39118 func ent_SetHandlerB hand duplicate of ent_SetHandler, no caller
+0x39140 func file_LoadAlloc hand open, size, malloc, read, close (7 callers)
+0x397b0 func gif_ReadByte hand buffered byte read, error via 0x5a311
+0x397e0 func gif_ReadBlock hand length byte then read block
+0x39834 func gif_SkipBlocks hand reads blocks until length 0
+0x3985c func gif_LzwReset hand clear code, code size, table reset
+0x398a4 func gif_LzwInit hand initial LZW state
+0x3993c func gif_GetCode hand bit reader, Ran out of GIF bits
+0x39a9c func gif_LzwByte hand LZW decode one pixel
+0x39cc4 func gif_ReadColormap hand reads n RGB triples
+0x39d34 func gif_SkipExtension hand Ignoring GIF extension block
+0x39d7c func gif_StartInput hand header, screen desc, nonsquare pixel warning
+0x39fec func gif_GetRows hand row loop via gif_LzwByte
+0x3a078 func gif_GetRowsInterlaced hand interlace passes 8/8/4/2
+0x3a150 func gif_InitSource hand sets start + row callbacks
+0x3a204 func stub_Ret_3a204 hand bare return
+0x3a210 func shade_LoadDat hand data%d.dat open, read, 0x3c12c table build
+0x3a3c4 func pal_BuildShadeTable hand per colour 0x3be80 nearest, 0x3c12c
+0x3a538 func rgb_Grey hand r = g = b = average
+0x3a574 func rgb_GreyB hand grey with weights
+0x3a5e8 func rgb_RedTint hand red scaled, blue 0
+0x3a63c func rgb_TintA hand average times 0x55/0x82
+0x3a6c4 func rgb_TintB hand average, blue 0
+0x3a704 func rgb_TintC hand average times 0x2b/0x82
+0x3a778 func rgb_TintD hand average times 0x3c/100, blue 0
+0x3a7ec func stub_Ret_3a7ec hand bare return
+0x3a7f4 func pal_BuildTint0 hand wrapper of pal_BuildTintTable
+0x3a820 func pal_BuildTint1 hand wrapper of pal_BuildTintTable
+0x3a84c func pal_BuildTint2 hand wrapper of pal_BuildTintTable
+0x3a878 func pal_BuildTint3 hand wrapper of pal_BuildTintTable
+0x3a8a4 func pal_BuildTint4 hand wrapper of pal_BuildTintTable
+0x3a8d0 func pal_BuildTint5 hand wrapper of pal_BuildTintTable
+0x3a8fc func pal_BuildTint6 hand wrapper of pal_BuildTintTable
+0x3a928 func pal_BuildTint7 hand wrapper of pal_BuildTintTable
+0x3a954 func pal_BuildTintTable hand per colour tint then nearest 0x3be80, 0x3c12c (8 callers)
+0x3ac94 func vga_OutSeqIndex hand out 0x3c4
+0x3ac9d func vga_OutSeqData hand out 0x3c5
+0x3aca6 func vga_OutGfxReadMap hand out 0x3ce index 4 + plane (12 callers)
+0x3acb6 func vga_BlitPlanarA hand mode X copy, 4 planes
+0x3ad4a func vga_BlitScreen hand mode X full screen copy from buffer (31 callers)
+0x3aef7 func vga_BlitPartial hand mode X copy n bytes
+0x3b0a6 func vga_BlitView hand mode X view area copy (9 callers)
+0x3b12f func vga_BlitViewB hand mode X copy variant
+0x3b1b8 func vga_BlitViewC hand mode X copy variant (6 callers)
+0x3b241 func vga_ReadPlanar hand reads planes via vga_OutGfxReadMap
+0x3b2d4 func vga_BlitRows hand mode X row copy
+0x3b2dc func vga_BlitRows_e1 hand alternate entry of vga_BlitRows
+0x3b2e4 func vga_BlitRows_e2 hand alternate entry of vga_BlitRows
+0x3b2ec func vga_BlitRows_e3 hand alternate entry of vga_BlitRows
+0x3b3c4 func pal_CopyRange hand copies colours from 0x82870, DAC when 0x7e49a (12 callers)
+0x3b474 func pal_SetEntry hand writes r,g,b into 0x82b70 at idx*3
+0x3b4a4 func dac_ReadEntry hand DAC index out then reads r,g,b into buffer
+0x3b500 func dac_WriteEntry hand DAC index out then writes one r,g,b
+0x3b5ac func dac_WriteRange hand writes n colours from buffer to DAC (3 callers)
+0x3b620 func dac_WriteAllVsync hand waits vsync then writes 256 colours, no caller
+0x3b6e0 func dac_WriteRangeVsync hand waits vsync then writes range (3 callers)
+0x3b734 func pal_Set hand clears 0x82450 work palette then writes range to DAC (24 callers)
+0x3b850 func pal_Fade hand steps palette toward target with vsync (32 callers)
+0x3b964 func vga_WaitFrames hand n times wait vsync start then end (6 callers)
+0x3b980 func task3b980_Think hand 0x79416 hi word down by 5 to 0x78, then end task
+0x3b9ac func task3b9ac_Think hand writes palette 0x82b70, chains task3b980
+0x3b9e4 func flash_WhiteStart hand palette all 0x3f to DAC then handler task3b9ac
+0x3ba28 func pal_SetWorkEntry hand writes r,g,b into 0x82870 at idx*3
+0x3bad0 func pal_CycleRange hand rotates colour range, no caller
+0x3bbd0 func dbg_PrintVertStats hand VERTS WALLS FLOORS ROT debug print
+0x3bc50 func list3bc50_Find hand finds pair in 0x32 entry list 0x838f2, -1 if none
+0x3bcac func list3bc50_Free hand entry = 0xffff, count 0x7952c down
+0x3be20 func frag_3be20 hand loop fragment, no caller
+0x3be40 func stub_Ret_3be40 hand bare return
+0x3be80 func cq_AddColour hand adds colour to 0x872e4 table (10 byte recs), sorts via 0x3c340
+0x3bfe0 func cq_InsertNode hand links node into 0x872e4 colour list
+0x3c12c func cq_NearestColour hand nearest palette index for r,g,b through 0x872e4 (6 callers)
+0x3c340 func cq_ScanTable hand scans 0x200 entries, returns count
+0x3c3c8 func vga_WaitVsyncStart hand in 0x3da until bit 8 set (18 callers)
+0x3c3da func vga_WaitVsyncEnd hand in 0x3da until bit 8 clear (8 callers)
+0x3c3ec func io_OutByte hand out(port, byte) (39 callers)
+0x3c3f5 func stub_Ret_3c3f5 hand bare return (cli/sti slot)
+0x3c3f7 func stub_Ret_3c3f7 hand bare return (cli/sti slot)
+0x3c400 func anim_LoadDat hand anim%d.dat open, read 0x1e records
+0x3c590 func anim_ClearTable hand 0x1e records 0x14 bytes at 0x89100 reset
+0x3c6d6 func frag_3c6d6 hand saves code pointers 0x79554.., no caller
+0x3cfba func frag_3cfba hand data decoded as code
+0x3da00 func frag_3da00 hand data decoded as code
+0x3dae8 func frag_3dae8 hand data decoded as code
+0x3ddfb func frag_3ddfb hand data decoded as code
+0x3e83b func frag_3e83b hand data decoded as code
+0x3e8ba func frag_3e8ba hand data decoded as code
+0x3e8be func frag_3e8be hand data decoded as code
+0x3ebdd func frag_3ebdd hand data decoded as code
+0x3ec45 func frag_3ec45 hand data decoded as code
+0x3ed3b func frag_3ed3b hand data decoded as code
+0x3ed9d func frag_3ed9d hand data decoded as code
+0x3ef00 func frag_3ef00 hand data decoded as code
+0x3f19a func frag_3f19a hand data decoded as code
+0x3f260 func view_SetSize hand sets view rect vars 0x8d280.. per size, plane setup (5 callers)
+0x3f4b0 func view_SyncSize hand copies size dependent vars when 0x836d2 changed
+0x3f518 func vga_ClearViewA hand mode X plane fill of view, no caller
+0x3f620 func vga_ClearViewB hand mode X plane fill variant, no caller
+0x3f724 func vga_ClearViewC hand mode X plane fill variant, no caller
+0x40004 func frag_40004 hand large asm span filler, bad decompile, no caller
+0x40ca8 func floor_SpanAsmA hand asm span inner loop, no direct caller
+0x40e3f func floor_SpanAsmB hand asm span inner loop unrolled, no direct caller
+0x41ea0 func rend_ResetBuffers hand clears 0x4b0 shorts, 0x8d2b0 = 0xffff, calls 0x4a550
+0x4213c func wall_DrawKeyedA hand wall slice loop through wall_DrawColumnKeyed
+0x42390 func wall_DrawKeyedB hand wall slice loop variant
+0x42ef8 func wall_DrawKeyedC hand wall slice loop, long variant
+0x43484 func text_DrawStringAt hand draws string through font 0x83890 (3 callers)
+0x436a0 func text_ShowWelcome hand WELCOME TO QUARANTINE banner
+0x43720 func text_ShowGameOver hand GAME OVER banner
+0x43740 func text_ShowPaused hand GAME PAUSED, press any key
+0x43778 func spr_LoadBankFile hand spr_LoadBankColumnMajor then file_LoadAlloc
+0x437b8 func text_SetClipX hand 0x7a5d0 left, 0x7a5d2 right
+0x437cc func text_SetCursorCell hand cursor 0x8dc18/0x8dc1a = col*8, row*8
+0x437e4 func text_SetCursor hand cursor 0x8dc18 x, 0x8dc1a y (33 callers)
+0x437f8 func text_DrawBig hand draws string with font bank 0x8dc14 at cursor (6 callers)
+0x438e0 func text_DrawSmall hand draws string 4 px glyphs via 0x25cc1 (13 callers)
+0x43964 func text_DrawSmallClip hand draws string 4 px glyphs via 0x25e1c, view mode 3 offset
+0x43a2c func text_DrawStatusLine hand cursor from 0x7e48c then text_DrawSmallClip
+0x43a84 func text_DrawSmallFull hand clip 0..0x140 then text_DrawSmallClip (7 callers)
+0x43ae8 func frag_43ae8 hand byte add fragment, no caller
+0x43b00 func hud_DrawCounter hand draws 0x73ab6 as digits via 0x25e1c
+0x43bc4 func hud_DrawDigit hand draws one digit sprite, view mode 3 table (4 callers)
+0x43d14 func text_DrawSmallB hand draws string 4 px glyphs via 0x25e1c
+0x43d90 func rend_SetDrawFuncsA hand fills renderer function pointers 0x83070..0x83098
+0x43de0 func stub_Ret_43de0 hand bare return
+0x43e44 func rend_SetDrawFuncsB hand same pointer set as rend_SetDrawFuncsA
+0x43e94 func rend_SetDrawFuncsKeyed hand pointer set with keyed wall drawers
+0x43ee0 func expl43ee0_Think hand entity frame 0x7f9f0 advance, draw via 0x44950, end task
+0x43f7c func expl_Think hand frame up to 0xb, draw via expl_DrawA, then end task
+0x43ffc func explB_Think hand frame up to 0xb, draw via expl_DrawB, then end task
+0x4407c func explRemove_Think hand frame advance, at end ent_Remove
+0x4410c func cur_ExplodeByType hand switch on type into four explode handlers
+0x441d4 func cur_ExplodeA hand frames to 0xb with sound, then ent_Remove
+0x44284 func cur_ExplodeDebris hand spawns debris via debris_Spawn, handler explRemove_Think
+0x4436c func cur_ExplodeB hand frames with sound, ent_Remove at 0xb
+0x44438 func cur_ExplodeC hand frames with sound, calls cur_DrawWreck
+0x44514 func cur_DrawWreck hand draws entity with wreck sprite through ent_ListAddA
+0x445a4 func debris_Spawn5 hand five debris_Spawn calls (4 callers)
+0x445c4 func debris_Spawn hand free slot of 8 at 0x8dc20, random velocity (10 callers)
+0x44728 func debris_Think hand moves 8 debris, draws through ent_ListAddA
+0x44918 func debris_Start hand clears 8 slots, handler debris_Think
+0x44950 func expl_DrawA hand draw list add with frame table 0x7a6..
+0x449ac func expl_DrawB hand draw list add with frame table 0x7a7..
+0x44a08 func expl44a08_Think hand 0x345c8 then expl_DrawA or end task
+0x44a80 func expl_SpawnTask hand task_Alloc expl_Think, position setup, end task
+0x44cb8 func frag_44cb8 hand blit loop fragment, no caller
+0x44e4c func gfx_BlitScaledRle hand scaled sprite blit to 0x140 wide buffer (3 callers)
+0x4516c func gfx_BlitRle hand run blit to 0x140 wide buffer, no caller
+0x451f0 func overlayA_Think hand frame table 0x7a768, gfx_BlitScaledRle, end at 0xb
+0x452c4 func overlayA_Start hand frame 0, handler overlayA_Think
+0x45310 func overlayB_Think hand frame table 0x7a768, spr_Draw, end at 0xb
+0x453c4 func overlayB_Start hand frame 0, handler overlayB_Think
+0x453f4 func hud_BlinkIcon hand countdown 0x7a7f4, sound, spr_Draw
+0x454b0 func bsp_AddCount hand 0x8dcf0 += n
+0x45538 func bsp_WriteNode hand two writes via 0x547db to file 0x8dcf8 (5 callers)
+0x45594 func bsp_CloseFile hand close 0x8dcf8
+0x455a4 func bsp_ClassifySeg hand double math, side of segment against partition
+0x457e0 func bsp_Make hand MAKEBSP recursive builder (4 callers)
+0x45d48 func joy_ReadState hand decodes 0x91416 into 0x82fde/0x82fe0 and 0x7ac7c
+0x45e60 func inp_AxisA_Hi1 hand threshold 0x1f, byte +3 up
+0x45ea0 func inp_AxisA_Hi2 hand threshold 0x1f, word +0xe up 1
+0x45ee4 func inp_AxisB_Hi2 hand threshold 0xb, word +0xe up 4
+0x45f28 func inp_AxisB_Hi1 hand threshold 0xb, byte +3 up
+0x45f68 func inp_AxisC_Hi2 hand threshold 0x47, word +0xe up 4
+0x45fac func inp_AxisC_Hi1 hand threshold 0x47, byte +3 up
+0x45fec func inp_AxisD_Hi2 hand threshold 0x6e, word +0xe up 4
+0x46030 func inp_AxisD_Hi1 hand threshold 0x6e, byte +3 up
+0x46070 func inp_AxisE_Lo2 hand threshold 0x66, word +0xe down 4
+0x460b4 func inp_AxisE_Lo1 hand threshold 0x66, byte +3 down
+0x460f4 func inp_AxisF_Lo2 hand threshold 0x45, word +0xe down 4
+0x46138 func inp_AxisF_Lo1 hand threshold 0x45, byte +3 down
+0x46178 func inp_AxisG_Hi2 hand threshold 0x66, word +0xe up 4
+0x461bc func inp_AxisG_Hi1 hand threshold 0x66, byte +3 up
+0x461fc func inp_AxisH_Hi2 hand threshold 0x1f, word +0xe up 4
+0x46240 func inp_TileStep hand map_ReadTile at 0x83230/0x83234, tile 8 check, byte +3 up
+0x462c0 func inp_ClearTableA hand 0x80 bytes cleared
+0x462e8 func inp_ClearTableB hand 0x80 bytes at 0x8e340 cleared
+0x46314 func script_RunTileOps hand walks short list per tile, map_ReadTile
+0x46488 func math_RotProject hand abs then (b*0x7eab8 - a*0x7eabc) >> 0xb
+0x479c0 func rand_Byte hand table 0x7ad8e random byte (201 callers)
+0x479e4 func math_DistTest3 hand distance through table 0x7aeb8, cap 32000 (9 callers)
+0x47af4 func math_Dist2D hand distance of dx,dy, cap 32000 (13 callers)
+0x47bec func math_Dist2DB hand distance variant returning pair
+0x481ba func frag_481ba hand loop fragment around view_TransformPointB, no caller
+0x48dc0 func math_AngleDiff360 hand a - b wrapped into 0..0x168
+0x48e14 func move_Collide hand move with wall test, math_Atan2Deg, slide (14 callers)
+0x494fc func box_OverlapInt hand box overlap test on ints (6 callers)
+0x4955c func box_OverlapShort hand box overlap test on shorts
+0x495c0 func ent_BoxOverlap hand overlap test of two records, +0x3c fields
+0x496a8 func cell_NearView hand cell within 0x20 window of 0x83234
+0x49840 func bump_Alloc hand bump pointer 0x830fc += n
+0x4987c func city_Load hand city.blk, city.bsp, bsp_Load or bsp_Make (3 callers)
+0x4a550 func rend_BuildRowScale hand rows 0x65..200: 0x1400 / (row - 100) table
+0x4a5b0 func stub_Ret_4a5b0 hand bare return
+0x4af90 func stub_Ret_4af90 hand bare return
+0x4afa4 func stub_Ret1_4afa4 hand returns 1
+0x4b087 func frag_4b087 hand fragment, no caller
+0x4b160 func rle_PackHeader hand copies header then rle_PackRow (7 callers)
+0x4b198 func rle_PackRow hand run length pack, returns bytes written
+0x4b230 func cell_Ptr hand 0x830a8 + (x>>9)*2 + width*(y>>9)*2 (3 callers)
+0x4b25c func cell_SetBit7 hand *p |= 0x80
+0x4b264 func cell_ClearBit7 hand *p &= 0x7f
+0x4b280 func rand_Switch_4b280 hand rt_rand 0x53c97 then switch (2 callers)
+0x4b420 func boda_ShowA hand boda%d.spr load, draw to 0xa0000
+0x4b648 func boda_ShowB hand boda%d.spr load, draw to buffer 0x75130
+0x4b984 func frag_4b984 hand fragment then close, no caller
+0x4b9d0 func frag_4b9d0 hand read loop fragment of pic_LoadRaw
+0x4b9f0 func pic_LoadRaw hand pic%d.raw read by planes to 0xa0000
+0x4bb60 func keymap_Apply hand key list 0x7b134 per config, clears 0x91321 entries
+0x4bc04 func cur_IsType830c0 hand 0x8368a = record type equals 0x830c0
+0x4be1c func enc_LoadGame hand game.enc read into tables
+0x4bf68 func enc_LoadEnemy hand enemy.enc read, 0x1c records
+0x4c2a4 func mstate_Reset hand 0x8355c = 2, 0x83688 = 0
+0x4c2c4 func mstate_Code hand packs 0x83688 into code
+0x4c338 func mstate_Step hand 0x8355c down, 0x83688 low bits up (3 callers)
+0x4c378 func mstate_FlagNeg hand sets bit 7 of 0x83688 when 0x832b6 hi negative
+0x4c3bc func mission_RunEvent hand switch on 0x836ba event code, spawns, messages
+0x4c83c func mission_Tick hand per frame mission checks, msgline, player_Damage, bomb_Start
+0x4cc68 func bomb_Think hand allocs expl43ee0 tasks, sound, random spread
+0x4ced4 func marker_Reset hand 0x83558 = 0
+0x4cee4 func bomb_Start hand task_Alloc bomb_Think at 0x82ef2 position
+0x4cf4c func marker_Stamp hand writes 0x7f into cells of 0x83558 markers
+0x4d000 func ai_State0 hand state 2 or 0xe sets record +0x64 field
+0x4d12c func ai_RunState hand switch 0x83618 over eight state handlers
+0x4d180 func ai_TurnToTarget hand ai_SetTurn, copies heading when reached
+0x4d1d8 func ai_SetTurn hand signed turn rate into 0x83624 via math_HeadingQuadrant (17 callers)
+0x4d264 func ai_TurnOrWander hand ai_SetTurn else random ai_Steer
+0x4d300 func ai_Steer hand heading toward target, random jitter, math_Atan2Deg (18 callers)
+0x4d5cc func ai_InBox hand 0x83616/0x83612 inside box 0x836a4..0x836b2 (3 callers)
+0x4d668 func ai_State6 hand turn, random steer, 0x25138
+0x4d748 func ai_State7 hand flag checks then 0x193e8 / 0x18f74
+0x4d7f8 func ai_CombatState hand switch on 0x8361c, random, debris_Spawn5, cur_Die
+0x4dbc4 func cur_Die hand 0x207b8, 0x17694, debris_Spawn5, sound, state 3 (23 callers)
+0x4dccc func ai_HitReact hand switch on record +0x2e, damage count above 3 then cur_Die
+0x4ddf0 func ai_HitCount hand counter up, above 3 then cur_Die
+0x4de28 func ai_TurnTimerDie hand ai_SetTurn, timer below 1 then cur_Die
+0x4de80 func ai_SpinTimerDie hand ai_SpinStep, timer below 1 then cur_Die
+0x4debc func ai_LowHealthDieA hand +0x58 below 0x15 then cur_Die
+0x4dee4 func ai_LowHealthDieB hand same test as ai_LowHealthDieA
+0x4df0c func ai_SpinStep hand heading 0x83604 + 3 on even frames
+0x4df70 func boss_SpawnEscort hand ent_AllocSlot, ent_Spawn, random offset, math_Atan2Deg
+0x4e204 func boss_SpawnParts hand ent_Spawn of parts with type 5
+0x4e3bc func boss_Think hand mission 2 or 3: switch on state over boss handlers
+0x4e424 func boss_Chase hand heading to player, ai_SetTurn, boss_FireShot
+0x4e630 func cur_AccelToward hand speed word 0x7f9d4 stepped toward value (3 callers)
+0x4e688 func boss_Ram hand close range 0x30 test, sound, heading flip
+0x4e758 func boss_Stunned hand timer +0x4e down, then handler 0x20cb0
+0x4e7c0 func boss_Attack hand 0x27544, ai_Steer, sound, boss_FireShot
+0x4e904 func boss_Dying hand timer then cur_Die
+0x4e9ac func boss_Patrol hand cur_AccelToward, heading steps of 0x5a
+0x4ebcc func boss_FireShot hand task_Alloc bossShot_Think, float aim
+0x4eca8 func bossShot_Think hand math_Dist2D to player, player_Damage, msg_Add, cur_MoveHeading
+0x4edc4 func boss_SpawnPartB hand ent_Spawn from table, speed 0x400
+0x4ee98 func boss_ThinkB hand heading to player, ai_SetTurn, boss_FireB
+0x4f024 func boss_FireB hand task_Alloc handler 0x24398, math_Atan2Deg, random
+0x4f170 func boss_ThinkC hand heading swap, ai_SetTurn, boss_FireC, random
+0x4f388 func boss_FireC hand task_Alloc handler 0x24950, sound
+0x4f500 func intro_DrawGlyph hand glyph blit from font bank
+0x4f634 func intro_DrawText hand lines until newline through intro_DrawGlyph
+0x4f740 func intro_Play hand intro.fli, font.spr, fli_PlayKeys, pal_Fade (2 callers)
+0x4f950 func joy_PollAlt hand alternate frames read 0x36458
+0x4f990 func stub_Ret_4f990 hand bare return, null input handler
+0x4f998 func joy_ReadA hand port 0x201 read, axis timing, full variant
+0x4fb84 func joy_ReadB hand port 0x201 read, variant
+0x4fcf4 func joy_ReadC hand port 0x201 read, buttons only variant
+0x4fe10 func input_LoadDat hand input.dat read, picks handler 0x83078
+0x4ffe0 func input_Poll hand joystick port and key state into 0x98fa0.. (10 callers)
+0x50230 func snd_SwapBuffer hand flips 0x7bcac, queues block via 0x54d4a
+0x502a0 func snd_StreamStart hand alloc buffers, 0x54e5d, first block (3 callers)
+0x5040c func snd_StreamPump hand feeds next block when 0x9907c clear (2 callers)
+0x5050c func snd_StreamDrain hand loops snd_StreamPump until 0x99080 is 0
+0x5052c func snd_StreamAbort hand 0x99080 = 2, stops driver
+0x5055c func snd_StreamStop hand 0x99080 = 0, stop, free both buffers
+0x50594 func snd_StreamIrq hand block done callback, clears 0x9907c
+0x505ed func fli_Stub hand __CHK only (4 callers)
+0x505fd func fli_Read hand memcpy from 0x99388 cursor, advances (21 callers)
+0x50628 func fli_Play hand open, read, clear, fli_Frames, palette copy
+0x506bf func fli_PlayKeys hand same as fli_Play with key abort loop fli_FramesKeys
+0x5076e func fli_PlaySound hand fli play with snd_StreamStart
+0x5082b func fli_Frames hand per frame fli_Frame, vga_BlitView
+0x508c4 func fli_FramesKeys hand per frame fli_Frame, kbd_AnyKey abort
+0x50975 func fli_FramesSound hand per frame snd_StreamPump, kbd_AnyKey, snd_StreamStop
+0x50a25 func fli_Frame hand frame header 0x10 then chunks via fli_Chunk (3 callers)
+0x50a8d func fli_Chunk hand switch on chunk type: colour, lc, brun, black, copy
+0x50b80 func fli_ChunkColor hand colour packets then dac_WriteRange
+0x50c8f func fli_ChunkLc hand line compressed delta
+0x50db7 func fli_ChunkBrun hand byte run full frame
+0x50e9f func fli_ChunkCopy hand raw frame copy
+0x50ee0 func save_MakeName hand sprintf save%d.gam (4 callers)
+0x50efc func savescr_Run hand savescr.img / loadscr.img screen loop (2 callers)
+0x510f0 func savescr_Input hand input_Poll, kbd_AnyKey, sound, slot select
+0x51244 func savescr_Confirm hand yes/no step, kbd_AnyKey, sound, save_ReadNames
+0x51408 func text_DrawMenu hand draws string glyphs via 0x25e1c (16 callers)
+0x514a8 func savescr_DrawSlots hand five slot names, highlight 0x993fe
+0x51614 func save_ReadNames hand opens save%d.gam, reads name of one or all 5 slots
+0x516d8 func savescr_DrawPrompt hand centred prompt lines from 0x7bd18
+0x51824 func save_Exists hand opens save%d.gam, reads first byte
+0x51870 func save_ClearNames hand blanks name of one or all 5 slots
+0x518b8 func save_CopyName hand copies 0x28 chars of slot name
+0x518ec func save_Write hand save_PackEnts, save%d.gam fwrite, save_UnpackEnts
+0x51988 func save_Load hand game_ResetState, weapon_ResetSlots, fread, save_UnpackEnts, marker_Stamp
+0x51a20 func save_PackEnts hand handler pointers of 0x32 records to indices
+0x51ab4 func save_UnpackEnts hand indices back to handler pointers
+0x51b0c func text_CentreX hand (0x140 - width of string n) / 2 (14 callers)
+0x51b48 func text_Width hand string width in pixels
+0x51b80 func copyprot_Run hand copy.img, copyfont.spr, question picked with rt_rand
+0x51e50 func copyprot_Check hand returns 1
+0x51ed4 func copyprot_DrawQuestion hand PLEASE GIVE THE RESULT OF A PEDESTRIAN text (3 callers)
+0x5209c func copyprot_DrawLine hand centred line n at y 0xa0
+0x520d4 func text_PutNumber hand writes decimal digits into string
+0x5214c func copyprot_Input hand input_Poll, kbd_AnyKey, sound
+0x521c0 func snd_Init hand sound.dat read, driver setup
+0x523c8 func snd_LoadVocs hand 44mag.voc and other voc files into 0x99420 table
+0x52686 func snd_Play hand plays sample n on driver 0x996e0 (80 callers)
+0x5272c func snd_PlayVol hand plays sample n with volume (2 callers)
+0x527fe func snd_Shutdown hand stops driver, restores, int 0x31 call
+0x52896 func snd_PlayExplAt hand distance from player to record, random of 2 samples from 0x24 (9 callers)
+0x52908 func snd_PlayHitAt hand distance from player to record, random of 3 samples (5 callers)
+0x52985 func snd_PlayRandom4 hand random of 4, else sample 0x2a
+0x529cf func snd_EngineStart hand engine loop sample 0x7c4fa (7 callers)
+0x52aaa func snd_EnginePitch hand rate from speed 0x835ca: *0x745d/0x15e + 0x8ba2
+0x52b21 func snd_EngineStop hand stops voice 0x99670 (5 callers)
+0x52b5a func snd_LoopAStart hand looped sample on voice 0x7c54e
+0x52c33 func snd_LoopAStop hand stops voice 0x7c54e, sets 20000
+0x52c78 func snd_LoopBStart hand looped sample on voice 0x7c552
+0x52d51 func snd_LoopBStop hand stops voice 0x7c552, sets 20000
+0x52db8 func rt_fopen_mode hand watcom: parses fopen mode string
+0x52e6c func rt_doopen hand watcom: fopen worker
+0x52f34 func rt_fsopen hand watcom: alloc FILE then rt_doopen
+0x52f4f func rt_fopen hand watcom fopen (39 callers)
+0x52f59 func rt_freopen_close hand watcom: finds stream in list, closes
+0x52fc1 func rt_freopen hand watcom freopen
+0x52fe5 func rt_fread hand watcom fread (93 callers)
+0x531af func rt_fclose hand watcom fclose (41 callers)
+0x531de func rt_doclose_free hand watcom: close then free FILE
+0x531f3 func rt_hexdigit hand 0..15 to ascii
+0x531ff func rt_tmpname hand watcom: temp file name builder
+0x53268 func rt_doclose hand watcom: flush, lseek, close, remove temp
+0x532f1 func rt_int386 hand watcom int386 wrapper (segread)
+0x5332f func rt_cleanup_5332f hand runtime cleanup thunk, 0x7c914 = 0
+0x53334 func rt_abs hand abs
+0x5333b func rt_sprintf_putc hand stores char, count up
+0x5334e func rt_sprintf hand watcom sprintf (30 callers)
+0x5337e func rt_memcpy hand watcom memcpy (11 callers)
+0x533a3 func rt_fwrite hand watcom fwrite (10 callers)
+0x5358a func rt_printf hand watcom printf (21 callers)
+0x535ac func rt_malloc hand watcom malloc (38 callers)
+0x5368f func rt_exit_hook hand bare return
+0x53690 func rt_exit hand watcom exit (11 callers)
+0x536a8 func rt_exit_dos hand int 0x21 ah 0x4c
+0x536be func rt_free hand watcom free (15 callers)
+0x5371c func rt_fseek_adjust hand runtime, from digest hints
+0x5375e func rt_fseek hand runtime, from digest hints
+0x5388a func rt_atoi hand runtime, from digest hints
+0x538e1 func rt_getsetvect hand runtime, from digest hints
+0x53915 func rt_dos_setvect hand runtime, from digest hints
+0x53940 func rt_cstart_entry hand runtime, from digest hints
+0x539ba func rt_cstart hand runtime, from digest hints
+0x53bd3 func rt_open_con hand runtime, from digest hints
+0x53c0c func rt_53c0c hand region name only, not studied
+0x53c15 func rt_inp hand runtime, from digest hints
+0x53c1d func rt_outp hand runtime, from digest hints
+0x53c2b func rt_stricmp hand runtime, from digest hints
+0x53c64 func rt_time hand runtime, from digest hints
+0x53c91 func rt_rand_seedptr hand runtime, from digest hints
+0x53c97 func rt_rand hand runtime, from digest hints
+0x53cbb func rt_srand hand runtime, from digest hints
+0x53ccc func rt_53ccc hand region name only, not studied
+0x53ce1 func sos_TimerInitSystem hand runtime, from digest hints
+0x53dbd func sos_TimerUnInitSystem hand runtime, from digest hints
+0x53df7 func sos_TimerRegisterEvent hand runtime, from digest hints
+0x53fa1 func sos_TimerRegisterEventB hand runtime, from digest hints
+0x54119 func sos_TimerRemoveEvent hand runtime, from digest hints
+0x542c8 func rt_542c8 hand region name only, not studied
+0x542f2 func sos_TimerSetRate hand runtime, from digest hints
+0x54327 func sos_TimerIrq hand runtime, from digest hints
+0x543e5 func rt_543e5 hand region name only, not studied
+0x543ff func rt_543ff hand region name only, not studied
+0x54414 func rt_54414 hand region name only, not studied
+0x5449d func rt_5449d hand region name only, not studied
+0x544cc func rt_544cc hand region name only, not studied
+0x54632 func rt_strtod hand runtime, from digest hints
+0x547db func rt_fputc hand runtime, from digest hints
+0x5487f func rt_fflush hand runtime, from digest hints
+0x5488f func rt_5488f hand region name only, not studied
+0x548b5 func rt_548b5 hand region name only, not studied
+0x54d4a func rt_read hand runtime, from digest hints
+0x54e5d func rt_open hand runtime, from digest hints
+0x54e81 func rt_sopen hand runtime, from digest hints
+0x55087 func rt_ioctl_setraw hand runtime, from digest hints
+0x550ab func rt_550ab hand region name only, not studied
+0x550c0 func sos_DigiStartSample hand runtime, from digest hints
+0x556d9 func sos_DigiStopSample hand runtime, from digest hints
+0x5573f func sos_DigiContinueSample hand runtime, from digest hints
+0x55ab6 func sos_55ab6 hand region name only, not studied
+0x55acb func sos_55acb hand region name only, not studied
+0x55ae0 func sos_DigiSampleDone hand runtime, from digest hints
+0x55b39 func sos_55b39 hand region name only, not studied
+0x55bb6 func sos_55bb6 hand region name only, not studied
+0x55bcb func rt_close hand runtime, from digest hints
+0x55bd0 func sos_55bd0 hand region name only, not studied
+0x55beb func sos_55beb hand region name only, not studied
+0x55c09 func rt_stack_overflow hand runtime, from digest hints
+0x55c2d func sos_DetectInit hand runtime, from digest hints
+0x55d5b func sos_DetectUnInit hand runtime, from digest hints
+0x55dc6 func sos_DetectFindHardware hand runtime, from digest hints
+0x56041 func sos_56041 hand region name only, not studied
+0x561cf func sos_561cf hand region name only, not studied
+0x56418 func sos_56418 hand region name only, not studied
+0x56635 func sos_DetectGetSettings hand runtime, from digest hints
+0x567bd func sos_567bd hand region name only, not studied
+0x56894 func sos_56894 hand region name only, not studied
+0x568a9 func sos_568a9 hand region name only, not studied
+0x568be func sos_GetErrorString hand runtime, from digest hints
+0x568e8 func sos_568e8 hand region name only, not studied
+0x568fd func sos_568fd hand region name only, not studied
+0x56912 func sos_LockMemory hand runtime, from digest hints
+0x56ac0 func sos_UnlockMemory hand runtime, from digest hints
+0x56c6e func sos_DigiInitSystem hand runtime, from digest hints
+0x56cd6 func sos_DigiUnInitSystem hand runtime, from digest hints
+0x56d04 func sos_DigiInitDriver hand runtime, from digest hints
+0x57568 func sos_DigiUnInitDriver hand runtime, from digest hints
+0x57780 func sos_DigiLoadDriver hand runtime, from digest hints
+0x57859 func sos_57859 hand region name only, not studied
+0x57975 func sos_57975 hand region name only, not studied
+0x579f1 func sos_579f1 hand region name only, not studied
+0x57a19 func rt_int386x hand runtime, from digest hints
+0x57a32 func sos_57a32 hand region name only, not studied
+0x57a4f func sos_57a4f hand region name only, not studied
+0x57a64 func sos_57a64 hand region name only, not studied
+0x57a90 func sos_57a90 hand region name only, not studied
+0x57b14 func sos_57b14 hand region name only, not studied
+0x57b7b func sos_57b7b hand region name only, not studied
+0x57bff func sos_57bff hand region name only, not studied
+0x57c66 func sos_57c66 hand region name only, not studied
+0x57ccc func sos_57ccc hand region name only, not studied
+0x57d33 func sos_57d33 hand region name only, not studied
+0x57db7 func sos_57db7 hand region name only, not studied
+0x57e1e func sos_57e1e hand region name only, not studied
+0x57ea2 func sos_57ea2 hand region name only, not studied
+0x57f09 func sos_DigiSetSampleRate hand runtime, from digest hints
+0x57f8b func sos_57f8b hand region name only, not studied
+0x57ff1 func sos_57ff1 hand region name only, not studied
+0x58029 func sos_58029 hand region name only, not studied
+0x58088 func sos_58088 hand region name only, not studied
+0x580be func sos_580be hand region name only, not studied
+0x580e0 func sos_580e0 hand region name only, not studied
+0x58117 func rt_58117 hand region name only, not studied
+0x58196 func rt_set_errno hand runtime, from digest hints
+0x581a2 func rt_581a2 hand region name only, not studied
+0x581a9 func rt_581a9 hand region name only, not studied
+0x581b9 func rt_581b9 hand region name only, not studied
+0x581cc func rt_allocfp hand runtime, from digest hints
+0x58274 func rt_freefp hand runtime, from digest hints
+0x582cb func rt_582cb hand region name only, not studied
+0x582fc func rt_ioalloc hand runtime, from digest hints
+0x58373 func rt_58373 hand region name only, not studied
+0x58392 func rt_58392 hand region name only, not studied
+0x58398 func rt_flush hand runtime, from digest hints
+0x58498 func rt_close_handle hand runtime, from digest hints
+0x584ca func rt_remove hand runtime, from digest hints
+0x584cf func rt_584cf hand region name only, not studied
+0x584ea func rt_584ea hand region name only, not studied
+0x5851a func rt_init_fpu hand runtime, from digest hints
+0x585e5 func rt_585e5 hand region name only, not studied
+0x5866f func rt_5866f hand region name only, not studied
+0x58724 func rt_58724 hand region name only, not studied
+0x58745 func rt_58745 hand region name only, not studied
+0x5874a func rt_5874a hand region name only, not studied
+0x5874e func rt_5874e hand region name only, not studied
+0x58789 func rt_58789 hand region name only, not studied
+0x587c9 func rt_587c9 hand region name only, not studied
+0x587ca func rt_prtf hand runtime, from digest hints
+0x58a4b func rt_58a4b hand region name only, not studied
+0x58b7e func rt_58b7e hand region name only, not studied
+0x58bd9 func rt_58bd9 hand region name only, not studied
+0x58bfd func rt_58bfd hand region name only, not studied
+0x58c81 func rt_prtf_number hand runtime, from digest hints
+0x58d5c func rt_58d5c hand region name only, not studied
+0x58d63 func rt_prtf_format hand runtime, from digest hints
+0x591ac func rt_591ac hand region name only, not studied
+0x591c4 func rt_591c4 hand region name only, not studied
+0x59395 func rt_59395 hand region name only, not studied
+0x593a6 func rt_593a6 hand region name only, not studied
+0x5942c func rt_5942c hand region name only, not studied
+0x594d4 func rt_594d4 hand region name only, not studied
+0x595df func rt_595df hand region name only, not studied
+0x5961e func rt_5961e hand region name only, not studied
+0x596e9 func rt_596e9 hand region name only, not studied
+0x59766 func rt_59766 hand region name only, not studied
+0x597da func rt_597da hand region name only, not studied
+0x59828 func rt_59828 hand region name only, not studied
+0x598fb func rt_598fb hand region name only, not studied
+0x599aa func rt_599aa hand region name only, not studied
+0x59aee func rt_59aee hand region name only, not studied
+0x59b65 func rt_59b65 hand region name only, not studied
+0x59b79 func rt_59b79 hand region name only, not studied
+0x59bc8 func rt_59bc8 hand region name only, not studied
+0x59c13 func rt_59c13 hand region name only, not studied
+0x59d25 func rt_59d25 hand region name only, not studied
+0x59e79 func rt_59e79 hand region name only, not studied
+0x59f36 func rt_59f36 hand region name only, not studied
+0x5a021 func rt_5a021 hand region name only, not studied
+0x5a0a1 func rt_5a0a1 hand region name only, not studied
+0x5a0e7 func rt_5a0e7 hand region name only, not studied
+0x5a1a9 func rt_pic_mask hand runtime, from digest hints
+0x5a1d5 func rt_pic_unmask hand runtime, from digest hints
+0x5a201 func rt_5a201 hand region name only, not studied
+0x5a27d func rt_5a27d hand region name only, not studied
+0x5a2c0 func rt_5a2c0 hand region name only, not studied
+0x5a2c5 func rt_5a2c5 hand region name only, not studied
+0x5a2f4 func rt_5a2f4 hand region name only, not studied
+0x5a311 func rt_5a311 hand region name only, not studied
+0x5a312 func rt_5a312 hand region name only, not studied
+0x5a3a2 func rt_5a3a2 hand region name only, not studied
+0x5a3ed func rt_5a3ed hand region name only, not studied
+0x5a43e func rt_5a43e hand region name only, not studied
+0x5a47f func rt_5a47f hand region name only, not studied
+0x5a566 func rt_5a566 hand region name only, not studied
+0x5a5bb func rt_5a5bb hand region name only, not studied
+0x5a5dc func rt_5a5dc hand region name only, not studied
+0x5a642 func rt_isatty hand runtime, from digest hints
+0x5a665 func rt_5a665 hand region name only, not studied
+0x5a6a1 func sos_5a6a1 hand region name only, not studied
+0x5a6d9 func sos_DpmiLockRegion hand runtime, from digest hints
+0x5a706 func sos_DpmiUnlockRegion hand runtime, from digest hints
+0x5a733 func sos_5a733 hand region name only, not studied
+0x5a7c2 func sos_DpmiFreeMem hand runtime, from digest hints
+0x5a7fa func sos_5a7fa hand region name only, not studied
+0x5a853 func sos_5a853 hand region name only, not studied
+0x5a883 func sos_5a883 hand region name only, not studied
+0x5a8b9 func sos_5a8b9 hand region name only, not studied
+0x5a8e4 func sos_5a8e4 hand region name only, not studied
+0x5a919 func sos_5a919 hand region name only, not studied
+0x5a967 func sos_5a967 hand region name only, not studied
+0x5a98a func sos_5a98a hand region name only, not studied
+0x5a9ad func sos_5a9ad hand region name only, not studied
+0x5a9f1 func sos_5a9f1 hand region name only, not studied
+0x5aa3f func sos_5aa3f hand region name only, not studied
+0x5aa6f func sos_5aa6f hand region name only, not studied
+0x5aa92 func sos_5aa92 hand region name only, not studied
+0x5aae5 func sos_5aae5 hand region name only, not studied
+0x5ab1a func sos_5ab1a hand region name only, not studied
+0x5ab43 func sos_5ab43 hand region name only, not studied
+0x5ab69 func sos_5ab69 hand region name only, not studied
+0x5ab90 func sos_5ab90 hand region name only, not studied
+0x5abba func sos_5abba hand region name only, not studied
+0x5abef func sos_5abef hand region name only, not studied
+0x5ac24 func sos_5ac24 hand region name only, not studied
+0x5ac63 func sos_5ac63 hand region name only, not studied
+0x5acad func sos_5acad hand region name only, not studied
+0x5ace3 func sos_5ace3 hand region name only, not studied
+0x5ad18 func sos_5ad18 hand region name only, not studied
+0x5ad43 func sos_5ad43 hand region name only, not studied
+0x5ad60 func sos_5ad60 hand region name only, not studied
+0x5ada1 func sos_5ada1 hand region name only, not studied
+0x5adcf func sos_5adcf hand region name only, not studied
+0x5ae3b func sos_5ae3b hand region name only, not studied
+0x5ae88 func sos_5ae88 hand region name only, not studied
+0x5af08 func sos_5af08 hand region name only, not studied
+0x5af38 func sos_FileRead hand runtime, from digest hints
+0x5af69 func sos_5af69 hand region name only, not studied
+0x5afc3 func sos_5afc3 hand region name only, not studied
+0x5afd8 func sos_5afd8 hand region name only, not studied
+0x5b085 func sos_5b085 hand region name only, not studied
+0x5b09a func sos_5b09a hand region name only, not studied
+0x5b0af func sos_LoadDriverFileA hand runtime, from digest hints
+0x5b2a0 func sos_5b2a0 hand region name only, not studied
+0x5b348 func sos_LoadDriverFileB hand runtime, from digest hints
+0x5b4f0 func sos_5b4f0 hand region name only, not studied
+0x5b55e func sos_5b55e hand region name only, not studied
+0x5b585 func sos_5b585 hand region name only, not studied
+0x5b59a func sos_5b59a hand region name only, not studied
+0x5b5af func sos_5b5af hand region name only, not studied
+0x5b60e func sos_5b60e hand region name only, not studied
+0x5b623 func sos_5b623 hand region name only, not studied
+0x5b638 func sos_5b638 hand region name only, not studied
+0x5b69a func sos_5b69a hand region name only, not studied
+0x5b6af func sos_5b6af hand region name only, not studied
+0x5b6e2 func sos_5b6e2 hand region name only, not studied
+0x5b70a func sos_5b70a hand region name only, not studied
+0x5b742 func sos_5b742 hand region name only, not studied
+0x5b7e8 func rt_5b7e8 hand region name only, not studied
+0x5b800 func rt_5b800 hand region name only, not studied
+0x5b807 func rt_5b807 hand region name only, not studied
+0x5b80c func rt_5b80c hand region name only, not studied
+0x5b80f func rt_5b80f hand region name only, not studied
+0x5b81b func rt_5b81b hand region name only, not studied
+0x5b839 func rt_5b839 hand region name only, not studied
+0x5b83d func rt_5b83d hand region name only, not studied
+0x5b842 func rt_5b842 hand region name only, not studied
+0x5b86a func rt_5b86a hand region name only, not studied
+0x5b8c3 func rt_5b8c3 hand region name only, not studied
+0x5b8d2 func rt_5b8d2 hand region name only, not studied
+0x5b8de func rt_5b8de hand region name only, not studied
+0x5b900 func rt_5b900 hand region name only, not studied
+0x5b938 func rt_5b938 hand region name only, not studied
+0x5b9d8 func rt_5b9d8 hand region name only, not studied
+0x5ba02 func rt_5ba02 hand region name only, not studied
+0x5ba17 func rt_5ba17 hand region name only, not studied
+0x5bae5 func rt_5bae5 hand region name only, not studied
+0x5bae8 func rt_5bae8 hand region name only, not studied
+0x5baee func rt_5baee hand region name only, not studied
+0x5bb00 func rt_init_files hand runtime, from digest hints
+0x5bb6c func rt_5bb6c hand region name only, not studied
+0x5bb7d func rt_5bb7d hand region name only, not studied
+0x5bbcf func rt_5bbcf hand region name only, not studied
+0x5bc4b func rt_5bc4b hand region name only, not studied
+0x5bc6a func rt_5bc6a hand region name only, not studied
+0x5bd47 func rt_5bd47 hand region name only, not studied
+0x5bd8f func rt_5bd8f hand region name only, not studied
+0x5bd9d func rt_fp_not_loaded hand runtime, from digest hints
+0x5be05 func rt_5be05 hand region name only, not studied
+0x5c1bc func rt_5c1bc hand region name only, not studied
+0x5c2f0 func rt_5c2f0 hand region name only, not studied
+0x5c32c func rt_5c32c hand region name only, not studied
+0x5c35e func rt_5c35e hand region name only, not studied
+0x5c3b0 func rt_5c3b0 hand region name only, not studied
+0x5c3cc func rt_5c3cc hand region name only, not studied
+0x5c41a func fp_5c41a hand region name only, not studied
+0x5c420 func fp_5c420 hand region name only, not studied
+0x5c426 func fp_5c426 hand region name only, not studied
+0x5c42c func fp_5c42c hand region name only, not studied
+0x5c432 func fp_5c432 hand region name only, not studied
+0x5c43a func fp_5c43a hand region name only, not studied
+0x5c440 func fp_5c440 hand region name only, not studied
+0x5c446 func fp_5c446 hand region name only, not studied
+0x5c44c func fp_5c44c hand region name only, not studied
+0x5c454 func fp_5c454 hand region name only, not studied
+0x5c45c func fp_5c45c hand region name only, not studied
+0x5c464 func fp_5c464 hand region name only, not studied
+0x5c46c func fp_5c46c hand region name only, not studied
+0x5c476 func fp_5c476 hand region name only, not studied
+0x5c480 func fp_5c480 hand region name only, not studied
+0x5c488 func fp_5c488 hand region name only, not studied
+0x5c490 func fp_5c490 hand region name only, not studied
+0x5c499 func fp_5c499 hand region name only, not studied
+0x5c4a2 func fp_5c4a2 hand region name only, not studied
+0x5c4ab func fp_5c4ab hand region name only, not studied
+0x5c4b4 func fp_5c4b4 hand region name only, not studied
+0x5c4bf func fp_5c4bf hand region name only, not studied
+0x5c4ca func fp_5c4ca hand region name only, not studied
+0x5c4d3 func fp_5c4d3 hand region name only, not studied
+0x5c4dc func fp_5c4dc hand region name only, not studied
+0x5c514 func rt_5c514 hand region name only, not studied
+0x5c519 func rt_5c519 hand region name only, not studied
+0x5c538 func rt_5c538 hand region name only, not studied
+0x5ccf0 func rt_5ccf0 hand region name only, not studied
+0x5cd22 func rt_5cd22 hand region name only, not studied
+0x5d3af func rt_5d3af hand region name only, not studied
+0x5d8d2 func rt_5d8d2 hand region name only, not studied
+0x5d93a func rt_5d93a hand region name only, not studied
+0x5db69 func rt_5db69 hand region name only, not studied
+0x5dd3e func rt_5dd3e hand region name only, not studied
+0x5de8f func rt_5de8f hand region name only, not studied
+0x5df44 func rt_5df44 hand region name only, not studied
+0x5e302 func rt_5e302 hand region name only, not studied
+0x5e343 func rt_5e343 hand region name only, not studied
+0x5e344 func rt_5e344 hand region name only, not studied
+0x5e5db func rt_5e5db hand region name only, not studied
+0x5e656 func rt_5e656 hand region name only, not studied
+0x5e744 func rt_5e744 hand region name only, not studied
+0x5e75d func rt_5e75d hand region name only, not studied
+0x5ec2f func rt_5ec2f hand region name only, not studied
+0x5ec39 func rt_5ec39 hand region name only, not studied
+0x5ec46 func rt_5ec46 hand region name only, not studied
+0x5ef3c func rt_5ef3c hand region name only, not studied
+0x5efd6 func rt_5efd6 hand region name only, not studied
+0x5f0a0 func rt_5f0a0 hand region name only, not studied
+0x5f0f9 func rt_5f0f9 hand region name only, not studied
+0x5f0fa func rt_5f0fa hand region name only, not studied
+0x5f146 func rt_utoa hand runtime, from digest hints
+0x5f1d0 func rt_ultoa hand runtime, from digest hints
+0x5f219 func rt_5f219 hand region name only, not studied
+0x5f242 func rt_5f242 hand region name only, not studied
+0x5f24b func rt_5f24b hand region name only, not studied
+0x5f25b func rt_5f25b hand region name only, not studied
+0x5f31a func rt_5f31a hand region name only, not studied
+0x5f3dc func rt_5f3dc hand region name only, not studied
+0x5f3e7 func rt_5f3e7 hand region name only, not studied
+0x5f422 func rt_5f422 hand region name only, not studied
+0x5f507 func rt_5f507 hand region name only, not studied
+0x5f52f func rt_5f52f hand region name only, not studied
+0x5f7d3 func rt_5f7d3 hand region name only, not studied
+0x5f803 func rt_5f803 hand region name only, not studied
+0x5f918 func rt_5f918 hand region name only, not studied
+0x5f934 func rt_5f934 hand region name only, not studied
+0x5f942 func rt_tzset hand runtime, from digest hints
+0x5f955 func rt_5f955 hand region name only, not studied
+0x5f97b func rt_5f97b hand region name only, not studied
+0x5fa91 func rt_5fa91 hand region name only, not studied
+0x5fc12 func rt_5fc12 hand region name only, not studied
+0x5fc4c func rt_5fc4c hand region name only, not studied
+0x5fcb7 func rt_5fcb7 hand region name only, not studied
+0x5fdd6 func rt_5fdd6 hand region name only, not studied
+0x5fdd8 func rt_5fdd8 hand region name only, not studied
+0x5fdea func rt_5fdea hand region name only, not studied
+0x5fdf2 func rt_5fdf2 hand region name only, not studied
+0x5fdfe func rt_5fdfe hand region name only, not studied
+0x5fe12 func rt_5fe12 hand region name only, not studied
+0x5fe6f func rt_5fe6f hand region name only, not studied
+0x5ff16 func rt_5ff16 hand region name only, not studied
+0x5ff79 func rt_5ff79 hand region name only, not studied
+0x5ffe4 func rt_5ffe4 hand region name only, not studied
+0x60208 func rt_60208 hand region name only, not studied
+0x602dc func rt_602dc hand region name only, not studied
+0x60360 func rt_60360 hand region name only, not studied
+0x6039c func rt_6039c hand region name only, not studied
+0x6059b func rt_6059b hand region name only, not studied
+0x75149 func vga_75149 hand region name only, not studied
+0x751ec func vga_751ec hand region name only, not studied
+0x7528d func vga_SetStartAddr hand runtime, from digest hints
+0x7530e func vga_7530e hand region name only, not studied
+0x75455 func vga_CrtcWriteA hand runtime, from digest hints
+0x754b4 func vga_CrtcWriteB hand runtime, from digest hints
+0x75516 func vga_75516 hand region name only, not studied
+0x75529 func vga_75529 hand region name only, not studied
+0x75542 func vga_75542 hand region name only, not studied
+0x7c96c func vga_7c96c hand region name only, not studied

@@ -1,0 +1,1153 @@
+0x800701fc func bios__card_load hand PSX BIOS stub A0(0xac), name from the public BIOS call table (from memory, unchecked)
+0x8007020c func bios__card_info hand PSX BIOS stub A0(0xab), name from the public BIOS call table (from memory, unchecked)
+0x8007024c func bios__card_write hand PSX BIOS stub B0(0x4e), name from the public BIOS call table (from memory, unchecked)
+0x8007025c func bios_InitCARD hand PSX BIOS stub B0(0x4a), name from the public BIOS call table (from memory, unchecked)
+0x8007026c func bios_StartCARD hand PSX BIOS stub B0(0x4b), name from the public BIOS call table (from memory, unchecked)
+0x8007027c func bios__new_card hand PSX BIOS stub B0(0x50), name from the public BIOS call table (from memory, unchecked)
+0x80070fbc func bios_exit hand PSX BIOS stub B0(0x38), name from the public BIOS call table (from memory, unchecked)
+0x8007171c func bios_Krom2RawAdd hand PSX BIOS stub B0(0x51), name from the public BIOS call table (from memory, unchecked)
+0x8007173c func bios_close hand PSX BIOS stub B0(0x36), name from the public BIOS call table (from memory, unchecked)
+0x8007174c func bios_write hand PSX BIOS stub B0(0x35), name from the public BIOS call table (from memory, unchecked)
+0x8007175c func bios_EnableEvent hand PSX BIOS stub B0(0x0c), name from the public BIOS call table (from memory, unchecked)
+0x8007176c func bios_format hand PSX BIOS stub B0(0x41), name from the public BIOS call table (from memory, unchecked)
+0x800718ec func bios_DeliverEvent hand PSX BIOS stub B0(0x07), name from the public BIOS call table (from memory, unchecked)
+0x800718fc func bios__bu_init hand PSX BIOS stub A0(0x70), name from the public BIOS call table (from memory, unchecked)
+0x8007190c func bios_OpenEvent hand PSX BIOS stub B0(0x08), name from the public BIOS call table (from memory, unchecked)
+0x8007191c func bios_read hand PSX BIOS stub B0(0x34), name from the public BIOS call table (from memory, unchecked)
+0x8007192c func bios_TestEvent hand PSX BIOS stub B0(0x0b), name from the public BIOS call table (from memory, unchecked)
+0x8007194c func bios_open hand PSX BIOS stub B0(0x32), name from the public BIOS call table (from memory, unchecked)
+0x80071a0c func bios_PAD_dr hand PSX BIOS stub B0(0x16), name from the public BIOS call table (from memory, unchecked)
+0x80071a1c func bios_StopPAD hand PSX BIOS stub B0(0x14), name from the public BIOS call table (from memory, unchecked)
+0x80071a2c func bios_PAD_init hand PSX BIOS stub B0(0x15), name from the public BIOS call table (from memory, unchecked)
+0x80071a3c func bios_ChangeClearPAD hand PSX BIOS stub B0(0x5b), name from the public BIOS call table (from memory, unchecked)
+0x80071ff4 func bios_HookEntryInt hand PSX BIOS stub B0(0x19), name from the public BIOS call table (from memory, unchecked)
+0x80072004 func bios_ChangeClearRCnt hand PSX BIOS stub C0(0x0a), name from the public BIOS call table (from memory, unchecked)
+0x80072014 func bios_CdRemove hand PSX BIOS stub A0(0x72), name from the public BIOS call table (from memory, unchecked)
+0x80072024 func bios_ReturnFromException hand PSX BIOS stub B0(0x17), name from the public BIOS call table (from memory, unchecked)
+0x800753c0 func bios_GPU_cw hand PSX BIOS stub A0(0x49), name from the public BIOS call table (from memory, unchecked)
+0x80079588 func bios_CloseEvent hand PSX BIOS stub B0(0x09), name from the public BIOS call table (from memory, unchecked)
+0x80079598 func bios_DisableEvent hand PSX BIOS stub B0(0x0d), name from the public BIOS call table (from memory, unchecked)
+0x8007add0 func bios_WaitEvent hand PSX BIOS stub B0(0x0a), name from the public BIOS call table (from memory, unchecked)
+0x80011410 func game_Main hand boot: CdInit, srand, english.enc, main flow, ends in ending movie
+0x80011efc func math_NormShift_80011efc hand guess: shifts a 16 bit value until below 0x100
+0x80012028 func movie_PlayEnding hand plays MOV ENDUCP.STR / END2.STR
+0x800121d8 func gfx_Init hand PadInit, ResetGraph, draw and display env setup
+0x80012430 func gfx_ResetBuffers hand DrawSync then env puts, clears frame counters at +0x9ec/+0x9f4
+0x800124cc func gfx_Flip hand DrawSync, DrawOTag, VSync, swap env, reset prim counters
+0x80012630 func pad_Stop hand PadStop wrapper
+0x80012670 func gfx_EndFrame hand 22 callers: overlays then gfx_Flip
+0x800126f8 func fade_ArmA hand sets fade flag 1 and length 0x32
+0x80012718 func fade_Clear hand clears fade flag and length
+0x80012730 func fade_ArmB hand same body as fade_ArmA
+0x8001275c func gp_SetPair70 hand stores two args to gp+0x70/0x74, meaning unknown
+0x80012774 func nop_80012774 hand empty function
+0x8001277c func nop_8001277c hand empty function
+0x80012784 func nop_80012784 hand empty function
+0x8001278c func nop_8001278c hand empty function
+0x80012794 func gfx_ClearRectWide hand rect w 0x280 h 0xa0 cleared, DrawSync
+0x800127dc func gfx_AddSprite hand 13 callers: builds a prim, merges, adds to OT
+0x8001290c func gfx_MergePrim hand MargePrim wrapper, prints Marge failed
+0x80012a68 func gfx_DrawScreenRGB hand r,g,b args, draws full screen in strips via gfx_AddSprite
+0x80012e14 func tbl_FreeAll_80081d50 hand guess: walks table 80081d50 calling 80019140 per entry
+0x80012ea8 func gfx_DrawStrips hand two args, strip loop via gfx_AddSprite
+0x80013110 func ovl_DrawA hand overlay sprites via gfx_AddSprite, bumps prim counter
+0x800132e8 func ovl_DrawB hand overlay sprites via gfx_AddSprite, bumps prim counter
+0x800133f0 func img_Show hand loads image, clears, draws screen at grey 0x80
+0x800134a0 func prim_SetColors hand leaf writing colour bytes into a prim
+0x80013540 func poly_DrawQuad hand guess: builds textured quad, subdivides when large
+0x800138cc func poly_ClipClass hand leaf returning class 2 or 3 for a poly
+0x80013b8c func poly_Subdivide hand recursive subdivision, adds prims
+0x80014188 func poly_DrawQuadB hand guess: second quad path with clip class test
+0x80014568 func ovl_DrawC hand overlay sprite by mode 800aa35c
+0x80014630 func ovl_DrawD hand guess: overlay polys after ovl_DrawC
+0x80014908 func gfx_ClearRectSmall hand rect 0x50 x 100 cleared, DrawSync
+0x80014d00 func buf_Fill256_80014d00 hand guess: leaf loop over 0x100 entries of two byte buffers
+0x80014e1c func leafloop8_80014e1c hand leaf loop of 8, not studied
+0x80014e6c func jmp_80014ee4_a hand tail call to 80014ee4
+0x80014e7c func jmp_80014ee4_b hand tail call to 80014ee4
+0x80014ee4 func tbl_Dispatch_80014ee4 hand guess: loop then indirect call through table
+0x80014f8c func spx_ShowWait hand spx_etc WAIT_FL2.SPX wait screen
+0x80015080 func img_ShowLoadNow hand IMG2 LOAD_NOW.IMG then flip
+0x800150e8 func vram_LoadImageRect hand builds rect from header, LoadImage, DrawSync
+0x800151e0 func vram_MoveImageRect hand bounds check then MoveImage, DrawSync
+0x8001527c func vram_LoadImageDefault hand vram_LoadImageRect with rect 80081dbc
+0x800152a4 func vram_MoveImageDefault hand wrapper of vram_MoveImageRect
+0x800152cc func vram_LoadImageSlot hand vram_LoadImageRect with slot table index * 0xc
+0x80015304 func vram_MoveImageSlot hand vram_MoveImageRect with slot table index * 0xc
+0x80015344 func vram_Upload hand LoadImage of a block then DrawSync
+0x800153c8 func vram_Download hand StoreImage of a block then DrawSync
+0x8001544c func nop_8001544c hand empty function
+0x80015454 func nop_80015454 hand empty function
+0x8001545c func nop_8001545c hand empty function
+0x80015464 func nop_80015464 hand empty function
+0x8001546c func input_ClearFlag hand zeroes 800a9e28
+0x8001547c func input_PollMenu hand PadRead(1), menu style key state at gp+0x8f8/0xb08
+0x800156e4 func input_Poll hand PadRead into key table 800cdb6c, DOS twin input_Poll
+0x80015a74 func input_PollAny hand input_Poll then scans 0x15 keys
+0x80015b20 func input_GameKeys hand guess: in game pad actions (weapons, pause, view)
+0x80016044 func input_PauseKeys hand guess: reads key bytes 800cdb7e/7f, sets state 3
+0x80016168 func cd_FindFile hand strcpy, strcat, CdSearchFile, stores pos and size
+0x80016298 func cd_FindAllFiles hand walks file table 80082084 (SOUNDS.VB, ANIM0.DAT)
+0x80016374 func cd_LookupFile hand name compare over file table, returns entry
+0x8001662c func cd_BcdToSector hand BCD min sec frame to sector number
+0x8001677c func cd_SectorToBcd hand sector number to BCD min sec frame
+0x80016954 func file_MakePath hand builds upper case CD path, SPX extension handling
+0x80016c7c func file_Open hand 28 callers: path, lookup, CdSearchFile, alloc handle
+0x80017130 func file_Close hand 28 callers: frees handle state
+0x800171dc func cd_ReadSectors hand CdControl, CdRead, CdReadSync
+0x800172b4 func file_FillBuffer hand seeks and reads next sectors into handle buffer
+0x80017538 func file_Read hand 66 callers: buffered read with memcpy, wait screen
+0x80017774 func file_ReadDirect hand guess: direct sector read via cd_ReadSectors
+0x80017838 func file_Stub_80017838 hand empty body returning value
+0x800178ac func file_ReadByte hand guess: file_Read of 1 unit
+0x80017944 func file_Stub_80017944 hand empty body returning value
+0x80017990 func file_GetMode hand returns short at handle+2
+0x800179d0 func file_GetC hand reads one byte, -1 on fail
+0x80017a70 func file_PutC hand write of one byte
+0x80017af0 func math_ScaleDoubleA hand soft float scale, no callers
+0x80017bb8 func math_ScaleDoubleB hand soft float scale, no callers
+0x80017ca8 func gfx_ClearScreen hand 32 callers: gfx_ClearRectWide with colour 800aa460
+0x80017cd0 func mem_CopyLongs hand memcpy of n * 4 bytes
+0x80017cfc func gfx_ClearScreenB hand wrapper of gfx_ClearRectWide
+0x80017d1c func nop_80017d1c hand empty function
+0x80017d2c func nop_80017d2c hand empty function
+0x80017d44 func vram_LoadImageAt hand LoadImage at x,y
+0x80017db8 func spr_DrawPoly hand sprite frame drawn through poly_DrawQuadB
+0x80017e74 func spr_DrawPolyA hand wrapper of spr_DrawPoly
+0x80017e94 func spr_DrawPolyB hand wrapper of spr_DrawPoly
+0x80017eb4 func spr_Blit hand 99 callers: frame lookup then LoadImage to VRAM
+0x80017f48 func spr_BlitA hand wrapper of spr_Blit
+0x80017f68 func spr_BlitB hand wrapper of spr_Blit
+0x80017f88 func spr_BlitMasked hand StoreImage, merge, LoadImage: blit with transparency
+0x80018104 func spr_BlitSync hand spr_Blit with DrawSync
+0x800181a4 func spr_BlitMaskedA hand wrapper of spr_BlitMasked
+0x800181c4 func spr_BlitSyncA hand wrapper of spr_BlitSync
+0x80018214 func nop_80018214 hand empty function
+0x8001823c func nop_8001823c hand empty function
+0x80018244 func mem_AllocGame hand mallocs game buffers, Not enough memory
+0x80018444 func mem_FreeGame hand frees game buffers
+0x8001870c func mem_AllocBuf26000 hand malloc 26000 to 800aa11c
+0x80018734 func mem_FreeBuf26000 hand free 800aa11c
+0x8001875c func mem_ProbeHeap hand debug: mallocs shrinking parts, prints part %d, frees
+0x8001880c func pal_Upload hand loads CLUT 80085ba0 to VRAM in two halves, DOS twin pal_Set tail
+0x8001885c func pal_SetEntry hand 10 callers: one colour from rgb table into CLUT, upload
+0x8001891c func pal_PokeRGB hand leaf writing r,g,b to palette copy
+0x8001896c func pal_ClearEntry hand zeroes one CLUT entry and its rgb
+0x800189d8 func pal_SetEntry15 hand converts and stores one CLUT word, upload
+0x80018a28 func pal_SetEntryRGB hand r,g,b to one CLUT entry, upload
+0x80018a84 func pal_Set hand converts rgb range to CLUT 80085ba0 and uploads, DOS twin pal_Set
+0x80018acc func pal_SetAll hand pal_Set for all 0x100 colours
+0x80018b0c func pal_Black hand clears CLUT, blank screen, flip
+0x80018b58 func pal_FadeIn hand fade loop with redraw and flip, DOS twin pal_Fade
+0x80018c54 func pal_FadeOut hand fade to black loop with redraw and flip
+0x80018d38 func pal_FadeInDefault hand 20 callers: pal_FadeIn(p,0)
+0x80018d58 func pal_FadeOutDefault hand 28 callers: wrapper of pal_FadeOut
+0x80018d78 func sys_WaitFrames hand VSync(0) n times
+0x80018e10 func pal_FlashRestoreCb hand restores palette after flash, re-arms callback
+0x80018e70 func pal_FlashWhite hand sets all colours 0x3f then callback to restore
+0x80018eb8 func pal_PokeRGB2 hand leaf writing r,g,b to second palette copy
+0x80018f08 func tex_InitSlots hand sets up 12 texture slot records at 80085da0
+0x80019140 func tex_FreeSlot hand clears one texture slot and its 0x40 table
+0x800191f0 func tex_FreeAllSlots hand tex_FreeSlot over 12 slots
+0x80019230 func tex_Upload hand finds room in a slot and LoadImage, returns texture ref
+0x80019564 func tex_UploadA hand wrapper of tex_Upload
+0x80019590 func tex_UploadB hand wrapper of tex_Upload
+0x800195e8 func tex_UploadC hand wrapper of tex_Upload
+0x8001961c func snd_Init hand SPU start, common attr, marks sound on gp+0x19a
+0x800196b0 func snd_LoadBank hand SOUNDS.VB samples to SPU ram
+0x800198b4 func snd_PlayVoice hand sample, voice mask, volume: sets voice attr, key on
+0x800199c8 func snd_Play hand 68 callers: voice from table 80087810, DOS twin snd_Play
+0x80019a14 func snd_Stop hand key off the voice of a sample
+0x80019a80 func snd_Shutdown hand all keys off, SPU quit
+0x80019ab8 func snd_PlayAltA hand alternates voice 0x40/0x80 for sample 0x24
+0x80019b0c func snd_PlayAltB hand alternates voices for sample 0x10
+0x80019b88 func snd_PlayRandom hand random sample index clamp 0x2a
+0x80019bf0 func snd_MenuBeepAndMusic hand guess: sample 0x2b then CD music start or stop
+0x80019c78 func snd_EngineUpdate hand guess: sets voice pitch attr while engine loop active
+0x80019d28 func snd_EngineStop hand key off 0x800, CD pause
+0x80019dc0 func snd_PlayOnVoice11A hand sample on voice mask 0x800
+0x80019dec func snd_StopVoice11A hand key off mask 0x800
+0x80019e18 func snd_PlayOnVoice11B hand sample on voice mask 0x800
+0x80019e44 func snd_StopVoice11B hand key off mask 0x800
+0x80019e70 func snd_PlayLoop hand stops previous looped sample gp+0x1a8, plays new
+0x80019ec0 func snd_StopLoop hand stops looped sample gp+0x1a8
+0x80019ef0 func nop_80019ef0 hand empty function
+0x80019ef8 func snd_ResetBank hand resets sample address table 80087840
+0x80019f7c func snd_ClearCount hand zeroes gp+0x1aa
+0x80019f90 func snd_SpuWrite hand SPU transfer to sample address, 64000
+0x80019fd0 func snd_SpuRead hand SPU read from sample address, 64000
+0x8001a014 func cdda_ModeClear80 hand CdControl set mode with bit 0x80 cleared
+0x8001a058 func cdda_ModeSet80 hand CdControl set mode with bit 0x80 set
+0x8001a098 func cdda_ReadToc hand CdGetToc into 8008784c, count gp+0x1b0
+0x8001a0c4 func cdda_Stop hand CdControl 8 (stop), CdSync
+0x8001a100 func cdda_SetVolume hand CdMix with one volume
+0x8001a148 func cdda_PlayTrack hand track from TOC, mode, volume, start play
+0x8001a238 func cdda_Pause hand pause and remember position
+0x8001a31c func cdda_NextTrack hand guess: stop then play track gp+0x1b8 + 1
+0x8001a370 func cdda_StopPlay hand CdControlB pause, clears playing flag
+0x8001a3d8 func cdda_Resume hand guess: resumes state 3 from saved position
+0x8001a43c func cdda_StartAt hand CdControlB play with ready callback
+0x8001a4a4 func cdda_StartAtB hand CdControlB with ready callback, no caller
+0x8001a50c func cdda_GetSeekCount hand returns gp+0x3cc
+0x8001a518 func cdda_RepeatCb hand CD ready callback, cdRepeat error, restarts track at end
+0x8001a620 func cdda_SeekPlay hand CdIntToPos of gp+0x3c0 then CdControlB, counts
+0x8001a674 func cdda_SeekPlayAt hand CdIntToPos of arg then CdControlB, counts
+0x8001a6dc func pal_Rgb6To15 hand 3 six bit bytes to one 15 bit colour
+0x8001a70c func pal_ConvertRange hand rgb triplets to 15 bit words
+0x8001a77c func pal_ConvertRangeFade hand rgb triplets scaled by level to 15 bit words
+0x8001a814 func pal_ConvertRangeB hand rgb triplets to 15 bit words, no caller
+0x8001a8bc func str_ToInt hand decimal digits to int
+0x8001a904 func timer_Reset hand zeroes tick counters 800a9d94, 800aa0ec, 800aa15c
+0x8001a92c func timer_Step hand guess: consumes ticks from 800a9d94 into counters
+0x8001aa0c func timer_SetA hand critical section write of 800aa44c
+0x8001aa44 func timer_SetTicks hand critical section write of 800a9d94
+0x8001aab8 func timer_Install hand root counter 2 event with handler 8001aa7c
+0x8001ab14 func nop_8001ab14 hand empty function
+0x8001ab1c func view_SetWindow hand guess: writes window sizes (0xa0) per view mode
+0x8001abd4 func view_SyncMode hand reapplies view when mode 800aa35c changed
+0x8001ac74 func jmp_ovl_DrawD hand wrapper of ovl_DrawD
+0x8001ac94 func stub_8001ac94 hand calls empty 8001acbc
+0x8001acbc func nop_8001acbc hand empty function
+0x8001accc func nop_8001accc hand empty function
+0x8001acdc func stub_8001acdc hand empty body
+0x8001acf0 func stub_8001acf0 hand empty body
+0x8001ad04 func stub_8001ad04 hand empty body
+0x8001ad18 func shop_WeapSelect hand weapon shop: beep 5, unhighlight old, highlight new
+0x8001adac func shop_RepSelect hand repair shop: beep 5, unhighlight old, highlight new
+0x8001ae00 func shop_WeapHilite hand palette entries from table 8008bab0 for an item
+0x8001aef4 func shop_WeapUnhilite hand palette entry 0x74 base for an item
+0x8001af64 func shop_WeapUnhiliteAll hand shop_WeapUnhilite over table until end
+0x8001afc0 func shop_RepHilite hand palette entries from table 8008bb20
+0x8001b038 func shop_RepUnhilite hand palette entry reset for repair item
+0x8001b090 func shop_RepUnhiliteAll hand shop_RepUnhilite over table until end
+0x8001b0ec func shop_Run hand bays0001.img, bays.kpg: garage bay screen loop
+0x8001b5d4 func shop_WeapScreen hand img2 weapking.img weapon shop screen setup
+0x8001b64c func shop_RepScreen hand repairma.img repair shop screen setup
+0x8001b6c4 func shop_Frame hand per frame: input, redraw weapon or repair panel
+0x8001b770 func shop_Input hand pad poll and dispatch to buy, move, exit
+0x8001b8cc func shop_WeapDrawSlots hand draws 6 weapon slot sprites
+0x8001ba00 func shop_WeapDrawPanel hand text window, item info, price
+0x8001bb88 func shop_DrawItemInfo hand item sprites by mode gp+0x1e0
+0x8001bf60 func shop_DrawMoney hand digits of money 800a9de4 as sprites
+0x8001c628 func shop_RepDrawSlots hand repair item sprites
+0x8001c78c func shop_RepDrawPanel hand text window, repair info, price
+0x8001c930 func shop_BuyWeapon hand guess: adds selected weapon, sets current weapon 800aa454
+0x8001c9ac func shop_PayItem hand guess: subtracts item price from table 800b2fc8
+0x8001ca0c func shop_ScanSlots hand leaf loop over 0x10 slots
+0x8001ca68 func shop_AddAmmoA hand adds gp+0x1e2 to count table 800d1de0
+0x8001caa4 func shop_AddAmmoB hand adds gp+0x1e2 to count table 800b4a0c
+0x8001cae0 func shop_DrawCursor hand cursor sprite 0x71 by shop kind
+0x8001cbdc func nop_8001cbdc hand empty function
+0x8001cbe4 func shop_MoveCursor hand left/right key moves selection gp+0x67c
+0x8001ccd8 func nop_8001ccd8 hand empty function
+0x8001cce0 func shop_RepInput hand repair shop key handling, beep 0x21
+0x8001d0f0 func shop_ConfirmInput hand guess: confirm sub menu up/down via 8001d1a0/8001d254
+0x8001d1a0 func shop_NextValid hand next usable entry of 5 after gp+0x724
+0x8001d254 func shop_PrevValid hand previous usable entry before gp+0x724
+0x8001d2f8 func shop_WeapBuy hand buy action: checks, pays, adds ammo, beeps
+0x8001d4ac func shop_NoMoney hand sets flag gp+0x710, highlight 7
+0x8001d4d8 func shop_CheckPriceA hand price over money 800a9de4 -> shop_NoMoney
+0x8001d550 func shop_CheckPriceB hand price over money 800a9de4 -> shop_NoMoney
+0x8001d5b8 func shop_LoadStock hand bstock.enc: reads stock and price tables
+0x8001d7bc func link_Run hand bayl0001.img, baylink.kpg: bay link (password) screen loop
+0x8001db2c func link_Frame hand text window, input, code entry display
+0x8001dd58 func link_Input hand pad poll, digit entry, checks code via link_CheckCode
+0x8001df40 func link_ClearCode hand zeroes entered code 800b49b0
+0x8001dfa8 func link_CheckCode hand compares 8 digits with code strings (54185654)
+0x8001e010 func body_MakeSprName hand sprintf spx_bd%d boda%d.spr
+0x8001e060 func body_RandomParts hand rand picks of body part values
+0x8001e3a4 func body_Draw hand loads body sprite by name and blits masked
+0x8001e584 func cab_FireWeapon hand guess: by weapon 800d1ddc spawns shot task, plays sound
+0x8001e7d8 func shot_Think_8001e7d8 hand entity think: sound, spawns 8001ee1c/8001ef94, ends task
+0x8001e9f8 func cab_DrawCockpit hand guess: draws view objects from 800aa418 list
+0x8001ee1c func fx_SpawnA_8001ee1c hand task_Alloc of 8001f0f8, places via 8006cf74
+0x8001ef94 func fx_SpawnB_8001ef94 hand random variant of 6, task_Alloc, place
+0x8001f0f8 func fx_ThinkA_8001f0f8 hand entity think: draw, move, end
+0x8001f218 func fx_ThinkB_8001f218 hand entity think: move, collide 8006d478, draw
+0x8001f6d0 func cab_DeathStart hand guess: resets player state, sets handler 8001f518
+0x8001f77c func cab_ResetState hand player start values (0xfc30, 0x1e0)
+0x8001f80c func cab_Drive hand 2944 bytes: pad input, steering, speed, camera: player think
+0x8002038c func cab_UpdateView hand view angle sum then 8004cc5c
+0x80020434 func foe_HurtFlash_80020434 hand entity hit: handler swap, screen shake calls
+0x800204e0 func foeA_Think hand entity think, default 80034d00 when 80026004 nonzero
+0x800205c8 func foeA_Spawn hand foeA_Init then 80026088
+0x8002061c func foeA_Init hand ent_SetHandler foeA_Think, fields 0xe, 1
+0x800206f4 func foeA_Hit hand entity hit reaction with shake
+0x80020890 func foeB_Think hand entity think
+0x80020a78 func foeB_Spawn hand foeB_Init, z + 0x100
+0x80020afc func foeB_Init hand ent_SetHandler foeB_Think
+0x80020bd8 func foeC_Think hand entity think
+0x80020cd0 func foeC_Spawn hand foeC_Init then 800261fc
+0x80020d24 func foeC_Init hand ent_SetHandler foeC_Think
+0x80020dec func foeC_Hit hand entity hit reaction with shake
+0x80020f8c func foeD_Think hand entity think, 996 bytes
+0x80021370 func foeD_Spawn hand foeD_Init then 80026088
+0x800213c4 func foeD_Init hand ent_SetHandler foeD_Think
+0x800214a4 func foeE_Think hand entity think, spawns tasks
+0x80021764 func foeF_Think hand entity think using 80027980 and foeF_Move
+0x80021868 func foeF_Move hand random move step for entity
+0x80021ad4 func foeG_Think hand entity think, sets handler 8003d81c at end
+0x80021e68 func foeH_Think hand entity think, 1216 bytes, uses foeH_Shoot
+0x80022328 func foeH_Shoot hand task_Alloc shot when counters below 0x14
+0x8002255c func foeI_Init hand map lookups 8006b700/8006b734 then ent_SetHandler
+0x80022740 func foeI_SetDir hand switch on direction writes velocity
+0x8002293c func foeI_Die hand entity death: effects, score, ends task
+0x80022c24 func foeI_Hit hand entity hit: shake, sound
+0x80022d34 func foeJ_Think hand entity think, spawns tasks
+0x80023088 func foeJ_Init hand cur_SetHandler foeJ_Think, z + 0x100
+0x8002315c func foe_AimAtPlayer hand angle to player via 8004c91c then draw
+0x8002330c func foeK_Think hand entity think, 1068 bytes
+0x80023738 func foeK_Init hand 800278e0 then cur_SetHandler
+0x80023860 func foeK_Die hand entity death: ends task or respawn
+0x800239a4 func foeL_Think hand entity think with 8005c594, 8005fbd4
+0x80023bfc func foeL_Init hand by 800aa3f4 sets handler
+0x80023d18 func foe_Damage_80023d18 hand subtracts health, sound 0x10
+0x80023dd4 func foe_HurtFlash_80023dd4 hand shake calls on flag table 800a9eb0
+0x80023e78 func foeM_Think hand entity think
+0x80023f98 func foeM_Spawn hand foeM_Init then 80026088
+0x80024068 func foeM_Init hand ent_SetHandler foeM_Think, field 1000
+0x80024134 func foeM_SpawnB hand 800244f4, foeM_Init, 80026088(e,1)
+0x800241c0 func foeM_SpawnC hand 800244f4, foeM_Init, 80026088(e,0)
+0x80024264 func grp_SpawnD2 hand group of 2 foeD then init and place
+0x800242ac func grp_SpawnA2 hand group of 2 foeA then init and place
+0x800242f4 func grp_SpawnC2 hand group of 2 foeC then init and place
+0x8002433c func grp_SpawnB2 hand group of 2 foeB then init and place
+0x80024384 func grp_SpawnMA hand foeM group plus foeA
+0x80024434 func grp_SpawnAMA hand foeA group, foeM group, foeA
+0x800244a0 func grp_SpawnMDA hand foeM, foeD groups plus foeA
+0x800244f4 func grp_AddM hand allocs n entity slots as foeM and places them
+0x800245d0 func grp_AddD hand allocs n entity slots as foeD and places them
+0x80024694 func grp_AddA hand allocs n entity slots as foeA and places them
+0x80024758 func grp_AddC hand allocs n entity slots as foeC and places them
+0x8002481c func grp_AddB hand allocs n entity slots as foeB and places them
+0x800248e0 func foeN_Think hand entity think, spawns foeN_Shot, ends in handler 8003da7c
+0x80024acc func foeN_Init hand road lookup, aim at player, cur_SetHandler foeN_Think
+0x80024dec func foeN_Shot hand task_Alloc shot copying owner position
+0x80024f74 func foeN_ShotThink hand shot think: move, collide, shake on hit
+0x800251e0 func foeO_Think hand entity think, spawns tasks, sound
+0x80025518 func foeO_Init hand map lookups then ent_SetHandler foeO_Think
+0x8002567c func foeP_Spawn hand task_Alloc of 8002576c, calls 8002d508(0xd)
+0x8002576c func foeP_Think hand timed think: allocs slot, sets handler, ends
+0x80025964 func spawn_Tick hand per frame spawn manager, switch on area type
+0x80025b20 func spawn_Fill10 hand loop of 10 calling spawn_One
+0x80025bd0 func spawn_FromMap hand map cells to entities, up to 0x14
+0x80025d6c func ent_AllocSlot hand 25 callers: finds free entity slot in a range, marks 99
+0x80025e20 func spawn_One hand ent_AllocSlot then foeI_Init or foeO_Init
+0x80025eac func spawn_PickRoad hand road type near player via 8002699c, 80027980
+0x80026004 func ent_IsFarFromPlayer hand distance test against player 800b49a4, returns 1
+0x80026088 func ent_PlaceNearPlayer hand 20 callers: road lookup and random offset for position
+0x800261fc func ent_PlaceRow hand position from index + 3
+0x80026294 func spawn_Traffic hand places up to 0x14 entities along road
+0x80026544 func spawn_Loop10_80026544 hand loop of 10 calling 8003b3f0
+0x800265cc func spawn_FindRoadCell hand searches map for a road cell near x,y
+0x8002699c func map_CellKind hand leaf classifying a map value into 0xb40 / 0x10e0
+0x800269e0 func cab_SavePos hand copies player pos 800b49a4/a8 to backup
+0x80026a48 func cab_RestoreView hand when flag 800a9e1c set recomputes view
+0x80026b1c func cab_ApplyControls hand leaf 1280 bytes: accel, brake, steer limits
+0x8002701c func cab_Move hand angle ERROR: movement, wall hit shake and sound
+0x80027674 func cab_CheckPickups hand guess: scans list until 99 against player, 80041e38
+0x800278e0 func map_CellAtCur hand map word under current entity
+0x80027980 func map_CellAt hand 15 callers: map word at x,y, low bits to globals
+0x80027a10 func ent_HitTestMap hand 8006c770 then map lookup for entity
+0x80027b24 func ent_MoveTest hand 8006c770 then map_IsBlocked
+0x80027bec func map_IsBlocked hand leaf: cell code ranges give 0 or 1
+0x80027ca0 func ent_NearPlayer hand current entity within 0x30 of player
+0x80027d50 func ent_NearPlayerN hand entity n within range of player
+0x80027e0c func ent_FindHitA hand loops entities with 80044934, returns index or -1
+0x80027f28 func ent_FindHitB hand loops list with 80044a60, returns index or -1
+0x80028010 func ent_FindHitC hand loops entities with 800449bc, returns index or -1
+0x80028174 func ent_HitAll hand loop of 0x14 entities dispatching hit handlers by type
+0x800282e8 func jmp_rend_DrawColumnSet hand wrapper of 80028a34
+0x80028308 func rend_DrawWallSpan hand 1836 bytes: wall span setup, 8004d464/8004cf04
+0x80028a34 func rend_DrawColumnSet hand loops spans via rend_DrawWallSpan
+0x80028df8 func rend_DrawFloorSpan hand guess: span loop with 8004cf04
+0x8002923c func rend_DrawWall hand 2328 bytes wall quad projection and emit
+0x80029b54 func rend_DrawWallClip hand 2280 bytes wall with clip buffer memcpy
+0x8002a43c func rend_DrawSpriteQuad hand projects and calls poly_DrawQuad
+0x8002a6c0 func rend_DrawSpriteQuadB hand projects and calls poly_DrawQuad, no caller
+0x8002a908 func debris_Spawn hand 12 callers: random debris slots of 12 with sound, DOS twin debris_Spawn
+0x8002ab7c func debris_Think hand moves and draws debris, ends in 80040248
+0x8002aed4 func spark_Spawn hand fills 4 random spark slots
+0x8002b034 func debris_Clear hand clears 12 debris slots
+0x8002b0b4 func hud_LoadIcons hand LoadImage of 7 icon rects
+0x8002b164 func hud_MoveRect hand MoveImage of a 0x8c wide rect
+0x8002b1c4 func hud_Draw hand calls hud parts by view mode
+0x8002b2d0 func hud_DrawDamage hand damage sprite by flag 800a9e04
+0x8002b3ac func hud_DrawMain hand 2340 bytes: map, compass, gauges
+0x8002bcd0 func hud_DrawRow8 hand 8 sprites in a row
+0x8002bd5c func hud_DrawWeaponIcon hand icon from table 8008cf8c
+0x8002bdfc func hud_DrawSpeed hand speed digits and bar
+0x8002c020 func hud_DrawAmmo hand ammo of current weapon 800aa454
+0x8002c238 func hud_SetMsgIcon hand stores 800b6e0c to gp+0x4d8 when arg matches
+0x8002c274 func hud_DrawDamageBar hand bar from 800a9f0c >> 2 via spr_Blit
+0x8002c4a4 func hud_Reset hand 7 callers: clears hud state gp+0x4d8.., 0x73c = -1
+0x8002c638 func hud_ResetTiny hand 8 callers: gp+0x654 and 0x20e = -1
+0x8002c64c func hud_DrawFare hand guess: fare/money 800d1e08 digits
+0x8002c8c4 func hud_DrawDigits hand 1560 bytes digit sprites for counters
+0x8002cedc func hud_DrawTimer hand guess: timer digits from 800b4a..
+0x8002d020 func hud_DrawTilt hand vram move by 800aa37c
+0x8002d0b4 func hud_DrawRow10 hand 10 sprites via spr_BlitA
+0x8002d194 func hud_DrawNumber10 hand number as up to 10 digit sprites at x,y
+0x8002d288 func hud_DrawScore hand digits of 800b4a18
+0x8002d508 func msg_Show hand 13 callers: sets message id 800aa130 and resets timers
+0x8002d528 func msg_ShowIfNone hand sets message id only when none active
+0x8002d55c func msg_Draw hand draws active message sprites, advances timer
+0x8002d7c4 func str_Put2Digits hand writes number as sprite codes based at 0x5b
+0x8002d888 func weap_AutoSwitch hand calls weap_NextAvail when current empty
+0x8002d8fc func weap_NextAvail hand scans up to 0x1f weapons for ammo
+0x8002d9d8 func buf_Fill320Rows hand memset rows of 0x140, no caller
+0x8002db38 func ai_ModeIdle hand current entity idle mode, 80038b84
+0x8002dc98 func ai_ModeSwitch hand switch on 800aa1fc to mode handlers
+0x8002ddec func ai_TurnBy hand 11 callers: turns entity by signed steps with map_CellKind
+0x8002df98 func ai_PickRoute hand 11 callers 1112 bytes: picks direction at junction, DOS twin ai_Steer guess
+0x8002e478 func ai_AtJunction hand leaf test on position bytes, returns 1
+0x8002e580 func ai_ModeCruise hand turn, junction test, random route
+0x8002e6a8 func ai_ModeChase hand guess: calls 80034d88 and ai_Avoid
+0x8002e788 func ai_ClearList50 hand clears 0x32 records
+0x8002e7ec func ent_HitByCab hand 2440 bytes: player ram on entity n, impulse with sqrt, shake
+0x8002f174 func ent_SideOfPlayer hand angle to player to quadrant 0..3
+0x8002f288 func ai_CarMove hand 1664 bytes: car movement, map hit test, crash to cur_Die
+0x8002f908 func ai_CarSpinDown hand leaf decay of spin fields
+0x8002fa6c func ai_CarCollideCars hand loop: car vs entities 80044a60, bounce, sounds
+0x8002fea4 func ai_ScanAhead hand scans cells ahead, random lane change
+0x80030128 func ai_PosInBounds hand clamps and tests 800a9df0/df2
+0x80030180 func ai_ScanAheadSimple hand scans cells ahead, returns hit
+0x80030320 func ai_CarBounce hand 2688 bytes: two car impulse with sqrt
+0x80030da0 func ent_ShakeByDamage hand shake scaled by damage
+0x80030e40 func ai_CarThink hand 1672 bytes: per frame car AI switch, ends in cur_Die
+0x800314c8 func cur_Die hand 15 callers: explosion, sound, clears entity, DOS twin cur_Die
+0x800316f4 func ai_DieIfA hand conditional cur_Die
+0x80031764 func ai_DieIfTurned hand ai_TurnBy then conditional cur_Die
+0x800317f4 func ai_DieIfB hand 80031910 then conditional cur_Die
+0x80031868 func ai_DieIfC hand conditional cur_Die
+0x800318bc func ai_DieIfD hand conditional cur_Die
+0x80031910 func ai_AltDir hand alternates by entity index parity, writes 800a9db4
+0x800319c4 func car_Think hand 1744 bytes: main car entity handler
+0x800321cc func car_Draw hand 4312 bytes: car sprite selection by angle and type, switch
+0x800332a4 func car_DrawShadow hand guess: angle then 800569cc
+0x8003346c func car_DrawSimple hand draw current entity with frame arg
+0x800338fc func ai_SpeedUp hand leaf adjusting 800a9f20 toward target
+0x80033a58 func ai_SpeedDown hand 800a9f20 minus 4 above 8
+0x80033a8c func ai_Follow hand 1292 bytes follow target with random, 800340c8
+0x80033f98 func ai_GapAhead hand leaf distance test using 800aa07c
+0x800340c8 func ai_KeepGap hand leaf adjusting speed for gap
+0x80034250 func ai_SetGapBase hand 800aa07c from entity field + 800aa080
+0x800342b4 func ai_ModeByType hand switch on entity field, default 80034d00
+0x80034388 func ai_LaneChange hand ai_ScanAheadSimple then random lane move
+0x800345dc func ai_LaneChangeB hand ai_ScanAheadSimple then random
+0x80034714 func ai_Avoid hand 7 callers: ai_GapAhead then 8003c788
+0x80034d00 func ent_Despawn hand 34 callers: frees map mark 8006b748, handler 80020408
+0x80034d88 func ai_SetTarget hand leaf copying target fields by index
+0x80034e68 func ai_CopySpeed hand leaf copying field to entity +0x4a
+0x80034ec0 func ent_SetVelocity hand leaf storing 3 values into entity
+0x80034f64 func ai_AnimStep hand by flag byte calls 800350b8/80035144/80035000
+0x80035000 func ai_AnimInc hand leaf frame counter + 1
+0x800350b8 func ai_AnimAdd hand leaf frame add
+0x80035144 func ai_AnimCycle hand leaf frame cycle against 800aa160
+0x800353e0 func ai_ModePatrol hand guess: road rules 80035664/800356bc, move test, turn
+0x800355b4 func ai_SaveMode hand leaf saving 800aa3f4, sets gp+0xc00
+0x80035664 func map_TurnAngleA hand leaf: cell codes to 0x5a
+0x800356bc func map_TurnAngleB hand leaf: cell codes to 0x10e
+0x800356f4 func ai_LaneChangeC hand ai_ScanAheadSimple then random
+0x800358b8 func ai_LaneChangeCIf hand conditional ai_LaneChangeC
+0x80035914 func ai_SetSpeed28 hand entity +0x4a = 0x28
+0x80035948 func ai_HitEntities hand entity vs entity test 80044934, random, cur_Die
+0x80035b58 func ai_Honk hand guess: conditions then snd_Play, timer from 800b6e08
+0x80035c40 func ai_ModeAttackA hand mode handler: avoid, aim 800360d8, fire 80038514
+0x80035dfc func ai_ModeAttackB hand mode handler: target, avoid, fire 80038378
+0x800360d8 func ai_AimGap hand player distance to gap 800aa07c
+0x800361b4 func ai_ModeWander hand turn, move test, random route
+0x800363fc func ai_DespawnTimed hand timer then ent_Despawn
+0x800364e4 func ai_LoadCur hand 800aa3ec etc from current entity, cell coords to 800a9df0/df2
+0x800365b0 func ai_Begin hand 5 callers: ai_LoadCur, cell kind, angle to player
+0x80036acc func shotA_Think hand shot think: near player shake, draw, ends in 8003d81c
+0x80036c90 func shotA_Spawn hand task_Alloc, life 0x78
+0x80036d94 func shotB_Spawn hand task_Alloc with sound, life 0x78
+0x80036ee0 func shotB_Think hand shot think 992 bytes: move, map hit, player hit
+0x800372c0 func shotC_Spawn hand task_Alloc copying position
+0x80037460 func shotD_Spawn hand task_Alloc with sound and random
+0x800375fc func shotD_Think hand shot think: near player shake, draw
+0x80037864 func shotE_Think hand shot think 1084 bytes: turn, collide, player hit
+0x80037ca0 func shotE_Spawn hand task_Alloc with sound, aimed by angle
+0x80037f64 func ai_SetFireDelay hand leaf storing delay, clears counter
+0x80038100 func ai_FireIfClose hand random then ai_FireByType, ai_Avoid
+0x80038230 func ai_ModeAttackC hand mode handler: ai_FireFront or ai_FireByType
+0x80038378 func ai_FireByType hand switch on type 800a9e10: shot spawns
+0x80038514 func ai_FireFront hand by entity field spawns shotB or shotE
+0x800385e0 func ai_ModeTurretA hand guess: aims with 8004cabc, fires 800389e0
+0x800387d4 func ai_ModeTurretB hand guess: random aim, fires 800389e0
+0x800389e0 func shotF_Spawn hand 6 callers: task_Alloc with sound
+0x80038b84 func ai_IdleStep hand leaf state counter, sets mode 5
+0x80038cec func shotF_Think hand shot think 1188 bytes
+0x80039190 func ped_SpawnFromCar hand guess: ent_AllocSlot, ent_SetHandler, field 6
+0x80039438 func ent_DrawFacing hand angle to player then 800569cc
+0x80039600 func spawn_Ambient hand 1000 bytes: slot, handler, random place via 8006cf74
+0x800399e8 func aiT5_Init hand type 5 init: 8003be1c, 8003bcb0
+0x80039db4 func ai_ModeHunt hand angle to player, route, turn, fire 8003aa74
+0x8003a134 func ai_SetHandlerIf hand leaf setting entity handler field
+0x8003a1e4 func ai_Siren hand guess: range test then sound
+0x8003a370 func ai_DespawnIfOut hand sets handler 80020408 when out
+0x8003a430 func ai_ModeFlee hand 8004f81c, route, turn, sound, fire
+0x8003a658 func ai_DamageDie hand health test then cur_Die
+0x8003a7a4 func ai_ModeSelect hand by 800aa1fc sets handler via ai_SetHandlerIf
+0x8003aa74 func shotG_Spawn hand task_Alloc aimed with sqrt speed split
+0x8003ade4 func aiT_InitB hand type init: 8003be1c, 8003bcb0
+0x8003b1f0 func shotH_Spawn hand task_Alloc aimed at player with random
+0x8003b3f0 func spawn_CarAt hand sets 800aa110 then road pick and place
+0x8003b424 func spawn_PickCell hand map cell and turn tables for a new car
+0x8003b630 func spawn_PlaceCar hand finds road cell, hit test, type, init
+0x8003b7d8 func spawn_SetCarDir hand 1240 bytes direction and speed from cell codes
+0x8003bcb0 func ent_InitCommon hand 10 callers: clears entity 800aa110 fields
+0x8003be1c func ent_InitCar hand 9 callers: ent_SetHandler, random type and stats
+0x8003c1e4 func aiT3_Init hand type 3 init
+0x8003c388 func aiTRand_Init hand random type init
+0x8003c48c func aiTMap_Init hand init from map cell
+0x8003c634 func spawn_PickType hand leaf type choice from 800aa3f4
+0x8003c6f8 func ai_SetTurn hand 13 callers: mode 5 with turn arg, DOS twin ai_SetTurn
+0x8003c72c func ai_TurnIfDirChanged hand 8003c950 then ai_SetTurn
+0x8003c788 func ai_Evade hand gap based ai_SetTurn left or right
+0x8003c890 func ai_SlowTurn hand ai_SpeedDown then 8003cfec, mode 2
+0x8003c950 func ai_InBox hand leaf rectangle test +0xb0
+0x8003cb0c func ai_TurnTable hand dir table 800807e8, 8003c950, ai_SetTurn
+0x8003cc7c func ai_RandomTurnTimed hand timer then 8003cd34
+0x8003cd34 func ai_RandomTurn hand random new direction
+0x8003cdf8 func ai_TurnToward hand 500 bytes direction toward 800aa4c4 with random
+0x8003cfec func ai_Rotate hand 7 callers: 8003d030 or 8003d0c8 by sign of 800a9ec0
+0x8003d030 func ai_RotateLeft hand leaf dir minus step, wrap
+0x8003d0c8 func ai_RotateRight hand leaf dir plus step, wrap
+0x8003d164 func ai_LoadAndFlag hand ai_LoadCur, 800aa044 = 1
+0x8003d4a0 func nop_8003d4a0 hand empty function
+0x8003d4b0 func ai_StepDir hand dir table then 8003d5f8
+0x8003d56c func ai_TurnTableB hand dir table 800807e8 then ai_SetTurn
+0x8003d5f8 func ai_TurnSign hand 14 callers: sign of direction difference, -1/0/1
+0x8003d670 func ai_CalcTurnDir hand leaf: turn direction into 800a9ec0
+0x8003d6cc func wreck_ThinkA hand burning wreck: sound, draw 8003ea80, ends task
+0x8003d81c func wreck_ThinkB hand burning wreck: sound, draw, ends task
+0x8003d94c func wreck_ThinkC hand burning wreck with draw 8003eb20
+0x8003da7c func wreck_ThinkD hand wreck then ent_Despawn
+0x8003e37c func expl_Burst3 hand calls expl_AddParts three times
+0x8003e3bc func expl_AddParts hand fills 8 random explosion part slots
+0x8003e64c func expl_Think hand moves and draws 8 parts, DOS twin expl_Think
+0x8003ea10 func expl_Start hand clears parts, cur_SetHandler expl_Think
+0x8003ea80 func wreck_Draw hand draw current entity frame
+0x8003eb20 func wreck_DrawB hand draw current entity frame, variant
+0x8003ebc0 func flash_Think hand 8006d9b8 flash then draw, ends task
+0x8003eca4 func fli_GetPos hand returns gp+0x848
+0x8003ecb0 func fli_Read hand 21 callers: memcpy from memory stream gp+0x848
+0x8003ed00 func fli_PlayFile hand opens file, direct read, plays frames, DOS twin fli_Play
+0x8003ee38 func fli_PlayFileKey hand as fli_PlayFile with key abort
+0x8003efa4 func fli_PlayFileFade hand as fli_PlayFile with fade and wait
+0x8003f13c func fli_RunFrames hand header then frame loop with flip
+0x8003f1f0 func fli_RunFramesKey hand frame loop with pad abort
+0x8003f2c0 func fli_RunFramesSnd hand frame loop with pad abort and loop sound stop
+0x8003f3a8 func fli_Frame hand reads frame header, chunks via fli_Chunk
+0x8003f428 func fli_Chunk hand switch on chunk type: colour, lc, black, brun, copy
+0x8003f5ac func fli_ChunkColor hand palette chunk then pal_Set
+0x8003f700 func fli_ChunkLc hand line compressed delta chunk
+0x8003f854 func fli_ChunkBrun hand byte run chunk
+0x8003f968 func fli_ChunkCopy hand raw copy chunk
+0x8003f9a0 func fare_StartBonus hand guess: when fare 800d1e08 set, task_Alloc and sound 0xe
+0x8003fccc func bonus_Init hand random then cur_SetHandler 8003fa04
+0x8003fd6c func cab_DrawWeaponFx hand 1244 bytes: sparks, view object draw for current entity
+0x80040248 func view_DrawSprites hand sorts and draws sprite list 8006b554/8006b628
+0x80040574 func fx_SpawnC_80040574 hand task_Alloc, random place, 1052 bytes
+0x80040990 func fx_ThinkC_80040990 hand effect think: move, draw, end
+0x80040a88 func cab_SetStartA hand player start pos by index, cab_SavePos
+0x80040b60 func cab_SetStartB hand player start pos by two args, cab_SavePos
+0x80041428 func cur_SetHandler_80040c40 hand cur_SetHandler of 80040c40
+0x80041450 func timer_CountA hand leaf counter 800aa534 under 800aa40c
+0x80041568 func cab_Tick hand 2256 bytes: per frame player state, water wave.spr, damage, shake
+0x80041e38 func area_Change hand fade out, load 8004559c, set start, 80063818, fade in
+0x80041f2c func pause_Check hand pause keys then pause menu 80046834
+0x80041fd0 func fade_ByState hand fade_ArmB or fade_Clear by 800aa1c4
+0x80042024 func shake_Step hand leaf: screen shake decay from 800aa078
+0x800420d8 func shake_Set hand 16 callers: sets shake amount 800aa150
+0x80042104 func shake_SetTimed hand sets timed shake when 800aa294 clear
+0x80042150 func cab_Damage hand 18 callers: subtracts armour, hud icon
+0x80042200 func cab_HealStep hand leaf counter 800aa30c down
+0x800422a8 func cab_AddMoneyTimed hand adds to 800aa30c
+0x800422e8 func list_Count_800422e8 hand leaf loop counting list, sets 800aa4d4
+0x800423c4 func cab_HitHazard hand cab_Damage and sound 0x27 by cell 800aa4c4
+0x80042528 func fx_SpawnD_80042528 hand task_Alloc of 8004268c
+0x8004268c func fx_ThinkD_8004268c hand 1384 bytes effect think with hud row
+0x80042bf4 func game_ResetLevel hand resets timers, hud, random seeds, 80052bb4
+0x80042f50 func ent_ClearAll hand loop 8006c59c over entities
+0x80043050 func rand_Table_80043050 hand random values into table
+0x8004314c func lzw_FillInput hand file_Read into input buffer
+0x80043214 func lzw_GetByte hand 7 callers: next input byte, longjmp on end
+0x800432b4 func lzw_GetBlockByte hand GIF style sub block byte reader
+0x80043324 func lzw_SkipBlocks hand reads until zero length block
+0x80043360 func lzw_ResetTable hand leaf: code size and max code reset
+0x80043390 func lzw_Init hand code size 2, lzw_ResetTable
+0x800433e4 func lzw_GetCode hand reads next variable width code
+0x80043590 func lzw_NextPixel hand decodes next pixel through code stack
+0x800437a4 func gif_ReadPalette hand reads n rgb triplets
+0x8004385c func gif_SkipExtension hand reads byte then lzw_SkipBlocks
+0x800438c8 func gif_ReadHeader hand header, palette, extensions, image descriptor
+0x80043b28 func gif_DecodeRows hand rows via lzw_NextPixel
+0x80043c24 func gif_DecodeInterlaced hand interlaced row passes 8,8,4,2
+0x80043db0 func gif_Load hand setjmp, gif_ReadHeader, gif_DecodeRows
+0x80043e2c func gif_LoadB hand wrapper of gif_Load, no caller
+0x80043e7c func img_Load hand 28 callers: file_Open, gif_Load, file_Close; called with .img names
+0x80043fb0 func move_Collide hand 2436 bytes, 12 callers: movement against map cells, DOS twin move_Collide
+0x80044934 func col_BoxTestA hand leaf: box overlap test, returns 1
+0x800449bc func col_BoxTestB hand leaf: box overlap test with size args
+0x80044a60 func col_BoxTestEnt hand leaf: box test against entity record
+0x80044b58 func col_BoxTestCab hand leaf: box test against player position 800b49a4
+0x80044d34 func demo_PlayFile hand guess: opens file, reads, frame loop with SpuInit and unpack 80047d98
+0x80045160 func map_CalcBounds hand leaf: min and max scan over 0x40 entries, no caller
+0x80045458 func game_InitOnce hand SsInit, area_Load, coll tables, sky
+0x80045498 func map_LoadKemo hand loads kemomap%d.zzz x4 with malloc
+0x8004559c func area_Load hand walls, city.map, floor image, radar sprites
+0x80045624 func area_Start hand palette, tasks, flip, cab image
+0x800456b4 func area_StartEnts hand start pos and entity spawns
+0x80045728 func area_LoadFloor hand floor.img by area into 80069e38
+0x8004578c func rend_ResetMode3 hand 80014e1c then mode byte 3
+0x800457b8 func area_LoadSky hand sky.img then 80014908
+0x80045860 func cab_LoadDashA hand cab_t.img, memcpy, dash redraw, radar sprites
+0x800458ec func nop_800458ec hand empty
+0x800458f4 func cab_LoadDashB hand cab_t.img then dash redraw
+0x80045944 func cab_LoadDashC hand cab_t.img, sets 800aa35c 2
+0x800459c8 func cab_LoadDoor hand ldoor35t.img via 80046f44
+0x80045a08 func obj_LoadDat hand loads dat2 obj%d.dat
+0x80045b30 func area_LoadWalls hand spx_kemo wall sprites WAL1s2.spr per area
+0x80045ef8 func area_StartTasks hand task_Alloc of core tasks
+0x80045fc8 func cab_PlaceAtStart hand cab_SetStartA then 800269e0
+0x80046054 func city_Load hand reads city.map, DOS twin city_Load
+0x8004614c func img_LoadWait hand img2 waite.img with palette
+0x800461e8 func spr_LoadCarsPeds hand spx_car and spx_ped sets after enemy enc
+0x800463d4 func spr_LoadRadar hand spx_war wradar11.spr x5
+0x80046488 func spr_LoadEffects hand spx_etc explo.spr, blammog.spr and others
+0x800466a0 func spr_LoadGuns hand spx_gun sprite sets
+0x80046834 func cab_DrawDash hand 5 callers: redraws dashboard strips
+0x800469c4 func coll_LoadTables hand dat2 colldat.dat and trigdat.dat
+0x80046ab4 func dat_ParseNumbers hand reads text file of comma separated numbers
+0x80046c20 func game_NewGame hand clears state, area_Load, 80051f9c
+0x80046d20 func game_Restart hand palette, flip, game_ResetLevel, player pos -1
+0x80046d98 func spr_LoadToss hand spx_tos toss0001.spr by index
+0x80046e34 func spr_LoadMonitor hand spx_mon moni0001.spr
+0x80046ebc func spr_LoadPack hand spx_mon pack0001.spr
+0x80046f44 func img_LoadToSlot hand img_Load then 80019f90
+0x80046f8c func img_ShowSlot hand 80019fd0 then blit
+0x80047034 func spr_LoadWheel hand spx_etc wheelspr.spr
+0x8004705c func game_ClearFlags hand leaf: zeroes many globals
+0x8004714c func file_LoadAlloc hand open, read, optional malloc and memcpy, DOS twin file_LoadAlloc
+0x80047278 func spr_LoadFile hand 23 callers: file_LoadAlloc flag 1
+0x80047298 func spr_LoadFileB hand 14 callers: file_LoadAlloc flag 0
+0x800472b8 func spr_LoadDirFile hand 16 callers: strcpy dir, strcat name, file_LoadAlloc
+0x80047320 func bsp_InitTables hand leaf 1020 bytes: table setup before bsp load
+0x8004771c func bsp_Load hand malloc, read file, bsp_InitTables
+0x800478dc func bsp_SetBuf hand leaf: stores buffer pointers
+0x800478f4 func bsp_Open hand file_Open into gp+0x424
+0x80047920 func bsp_ReadByte hand 800179d0 on bsp file
+0x80047944 func bsp_ReadWord hand reads bytes into a big endian value
+0x8004799c func nop_8004799c hand empty
+0x800479ac func bsp_Close hand file_Close of gp+0x424
+0x800479d0 func bsp_Walk hand recursive node walk
+0x80047b10 func bsp_Make hand recursive, strings MAKEBSP, DOS twin bsp_Make
+0x80047d08 func file_LoadPacked hand open, read, then rle_Unpack
+0x80047d98 func rle_Unpack hand leaf: run length unpack loop
+0x80047e5c func bay_LoadDat hand loads bay%d.dat, returns count of 0x28 records
+0x80047ee4 func vram_StoreRect hand StoreImage style call 80072e10 then DrawSync
+0x80047f3c func vram_LoadTim hand LoadImage then DrawSync
+0x80047f64 func vram_LoadAt hand LoadImage of rect from args
+0x80047fc4 func vram_LoadAtB hand wrapper of vram_LoadAt, no caller
+0x80047fe4 func vram_StoreRows hand loop of vram_StoreRect
+0x800480d4 func vram_ClearRect hand 18 callers: 80072d18 ClearImage then DrawSync
+0x80048144 func text_BoxSetup hand sets text box fields then 8001275c
+0x800482b4 func text_SetColor hand leaf: colour into gp+0x88c
+0x800482f8 func text_DrawWrapped hand strlen, width 80069bb8, draw 80069d70
+0x80048530 func fare_LoadText hand faree.enc and fare%d%d.enc decode
+0x8004874c func nop_8004874c hand empty
+0x80048754 func vram_ClearPanel hand ClearImage of rect at 800,200
+0x800487a0 func shop_DespawnEnt hand ent_Despawn for saved index, no caller
+0x80048814 func mission_Tick hand 7148 bytes, 6 callers: mission state machine, fare text, mission_Load, kemomap names, DOS twin mission_Tick
+0x8004a400 func gmap_Input hand guess: city map screen input, calls gmap_Scroll
+0x8004a7e4 func gmap_WorldToScreen hand leaf: converts two shorts with halving
+0x8004a8d4 func gmap_Scroll hand map screen cursor move with clear rect
+0x8004ab60 func hud_SetIconPair hand 8001891c and 800189d8, no caller
+0x8004abf8 func bay_LoadArea hand city_Load, bay spawn, bay%d.dat, no caller
+0x8004acc0 func bay_Setup hand bay_LoadDat then places records
+0x8004ae84 func bay_SpawnRandom hand random picks into bay slots
+0x8004b160 func gmap_Screen hand 2644 bytes: map screen loop with vram store and restore
+0x8004bbb4 func gmap_DrawInfo hand draws $%d and %d.%00dKM distance text with sqrt
+0x8004c598 func nop_8004c598 hand empty
+0x8004c5a8 func fare_PickRandom hand random loop, returns 800cddb4
+0x8004c764 func hud_SyncFlag hand leaf: copies 800a9dd8 into 800aa2f4 on change
+0x8004c804 func hud_DrawMonitor hand clear panel, spr_LoadMonitor, spr_Blit, vram rows
+0x8004c90c func nop_8004c90c hand empty
+0x8004c914 func nop_8004c914 hand empty
+0x8004c91c func math_Angle hand 36 callers: leaf, angle from dx dy
+0x8004cabc func math_SinCos hand 33 callers: leaf, angle to two shorts
+0x8004cc5c func math_SetDirVec hand math_SinCos into gp+0x85c
+0x8004cc9c func math_MoveByAngleA hand leaf: step position by angle, no caller
+0x8004cd70 func math_MoveByAngle hand 10 callers: leaf, step position by angle
+0x8004cf04 func math_MoveByAngleS hand 7 callers: leaf, short position variant
+0x8004d108 func math_MoveByAngleB hand leaf variant with 4 args
+0x8004d194 func trail_Update hand leaf loop over 0x11 entries
+0x8004d340 func math_LineStep hand leaf line stepping loop, no caller
+0x8004d464 func math_MoveByAngleU hand 5 callers: leaf variant
+0x8004d528 func math_AddPair hand leaf: sums two shorts
+0x8004d70c func bossA_SpawnCheck hand task_Alloc, 8006dacc, snd_Play; flag 800cdb71
+0x8004d954 func bossA_ThinkA hand think: 8006d478, hit 8004f89c, ends in wreck_ThinkB
+0x8004db48 func bossA_InitA hand entity setup then cur_SetHandler bossA_ThinkA
+0x8004dc70 func bossA_ThinkB hand think variant, ends in wreck_ThinkB
+0x8004de84 func bossA_InitB hand entity setup then cur_SetHandler bossA_ThinkB
+0x8004e398 func bossA_InitC hand entity setup, clears parts, handler 8004dfe8
+0x8004e4ec func bossA_ClearParts hand leaf: clears 0xc part slots
+0x8004e530 func bossA_PartsDraw hand loop over 0xc parts with draw 800568c8
+0x8004e6e8 func bossA_PartsSpawnA hand random parts with math_SinCos
+0x8004e9dc func bossA_PartsSpawnB hand random parts with math_SinCos, variant
+0x8004ec2c func boss_Think hand 1840 bytes: aim, turn, fire, hit check, ends in wreck; DOS twin boss_Think by behaviour
+0x8004f35c func boss_Init hand entity setup then cur_SetHandler boss_Think
+0x8004f504 func boss_AimStep hand math_Angle to player then draw
+0x8004f6c8 func boss_Fire hand sets aim 80050be0 and shot fields
+0x8004f81c func boss_AddDamage hand leaf: adds to counter when 800aa160 clear
+0x8004f89c func foe_HitCheck hand 3 callers: hit test on entity, 80056b08
+0x8004fa50 func bossB_SpawnCheck hand 8006dacc, task_Alloc, snd_Play, counter 800d1df0
+0x8004fb70 func bossB_ThinkA hand think, ends in wreck_ThinkB
+0x8004fdfc func bossB_InitA hand bossB_Setup then cur_SetHandler bossB_ThinkA
+0x8004fe80 func bossB_Think hand 1764 bytes: angle, turn, fire 80050898, ends in wreck
+0x80050564 func bossB_InitB hand bossB_Setup, handler, 80051d50
+0x80050650 func bossB_InitC hand bossB_Setup, handler, 80051d50
+0x80050710 func bossB_Setup hand 4 callers: entity field setup
+0x80050898 func bossB_FireA hand aim, shot spawn 8005178c, sets handler
+0x80050a88 func bossB_FireB hand aim then 8005121c x20
+0x80050be0 func aim_Set hand 3 callers: math_MoveByAngle into 800aa3ec, 800a9df2
+0x80050cac func bossB_ThinkC hand 1160 bytes think with bossB_FireB
+0x80051134 func bossB_InitD hand bossB_Setup then cur_SetHandler bossB_ThinkC
+0x8005121c func shotI_Spawn hand task_Alloc, math_Angle, sqrt distance, speed over 7
+0x800514b4 func shotI_Think hand shot think, ends in wreck_ThinkB
+0x8005178c func shotJ_Spawn3 hand task_Alloc x3 with random
+0x800519e4 func shotJ_Think hand homing think: math_Angle, ai_CalcTurnDir
+0x80051d50 func foe_DrawFacing hand 6 callers: math_Angle to player then draw 800568c8
+0x80051f9c func mission_FindArea hand leaf: scan table by area 800aa3f4
+0x80052274 func mission_Load hand sprintf missil%d.img, read, parse numbers; DOS twin mission_Load
+0x800524f8 func enc_LoadGame hand reads game.enc into 5 tables
+0x800526e8 func enc_LoadEnemy hand reads enemy.enc into 0x1c records
+0x80052bb4 func mission_ResetState hand leaf: 800a9e08 2, 800aa368 0
+0x80052bd0 func mission_PickByArea hand leaf: table lookup by area
+0x80052c1c func mission_NextIndex hand leaf: index from 800aa368 and 0x7f
+0x80052c90 func mission_StepBack hand leaf: 800a9e08 minus 1, bumps index 800aa368
+0x80052cf4 func mission_MarkDone hand leaf: sets bit 0x80 of 800aa368 when 800d1e1c negative
+0x80052d28 func traffic_SpawnSwitch hand 1608 bytes: switch on 800a9fd0, ent_AllocSlot, spawn calls
+0x80053370 func cab_HazardTick hand 1288 bytes: shake_Step, cab_Damage, hud rows, 80053d14
+0x80053878 func fx_ThinkE_80053878 hand 1128 bytes: task_Alloc, rand, cur_EndTask
+0x80053ce0 func trig_Clear hand 3 callers: memset 800b21f4 0xf0, count 800a9f74
+0x80053d14 func fx_SpawnE_80053d14 hand task_Alloc of 80053878
+0x80053dc8 func trig_Scan hand leaf: loop over 800a9f74 entries by area
+0x80053f48 func fx_ThinkF_80053f48 hand think: 80066b7c then cur_EndTask
+0x80054084 func fx_InitF_80054084 hand cur_SetHandler fx_ThinkF
+0x80054110 func fx_ThinkG_80054110 hand think: sprite list add 8006b554, cur_EndTask
+0x80054238 func fx_InitG_80054238 hand cur_SetHandler fx_ThinkG
+0x80054294 func cab_DrawMuzzle hand guess: snd_Play and sprite list add from gp+0x31a
+0x80054544 func view_SetOffset hand leaf: stores value in 800b31dc
+0x80054f1c func vis_ClearA hand leaf: clears 0x80 entries
+0x80054f5c func vis_ClearB hand leaf: clears 0x80 entries at 800d1ed4
+0x80054f9c func vis_MarkCells hand 684 bytes: loop marking cells, counts in 800cda5c
+0x80055298 func vis_Reset hand gp+0x430 0
+0x800552a4 func wall_ClipRecurse hand recursive span clip
+0x80055408 func wall_ClipSpan hand calls wall_ClipRecurse over span list
+0x80055630 func wall_Project hand 1004 bytes: projects wall then wall_ClipSpan
+0x80055a1c func wall_Draw hand bsp_Walk then wall_Project
+0x80055c14 func view_DrawObjects hand 1616 bytes: vis_ClearB, object draw calls from player pos 800b49ac
+0x80056264 func view_Render hand 1636 bytes: from player pos, trail, math_MoveByAngle, wall_Draw; no direct caller
+0x800568c8 func ent_SetFrame hand 45 callers: leaf, writes frame fields of entity
+0x800569cc func ent_SetFrameB hand 30 callers: leaf, variant of ent_SetFrame
+0x80056ad0 func rand_Reset hand gp+0x428 0
+0x80056adc func rand_Byte hand 197 callers: next byte of table 80094b20, DOS twin rand_Byte
+0x80056b08 func map_CellLookupB hand 9 callers: leaf lookup, 32000 as none
+0x80056c64 func map_HeightAt hand 11 callers: leaf lookup in 80095e78 table, 0x8300 as none
+0x80056db4 func map_HeightAtCur hand leaf: map_HeightAt for current entity
+0x80056f54 func ped_Think hand 1420 bytes: pedestrian think by state, ent_Despawn
+0x800574e0 func ped_StateSwitch hand 1508 bytes: switch on 800a9f40
+0x80057ac4 func ped_Wander hand 1192 bytes: random turns, ent_Despawn
+0x80057f6c func ped_FacePlayer hand math_Angle then ent_SetFrameB
+0x800581d0 func ped_Attack hand 2636 bytes: armed pedestrian behaviour
+0x80058cc8 func ped_FrameIdle hand ent_SetFrameB for current entity
+0x80058d70 func ped_FrameArg hand ent_SetFrameB with arg, no caller
+0x80058e28 func ped_InRange hand 4 callers: leaf range test of current entity
+0x80058ef0 func ped_FrameWalk hand 5 callers: frame 0x81 by direction
+0x80058fbc func ped_StateWalk hand 1324 bytes: switch on 800a9f40, snd_Play, random
+0x800594e8 func ped_ResetTimer hand 4 callers: leaf, copies 800b6dfa
+0x80059570 func ped_FrameRun hand 3 callers: ent_SetFrameB
+0x80059620 func ped_StateRun hand 824 bytes: ped_FrameRun and 80059e90
+0x80059958 func pedB_Think hand think: ped_InRange, ent_Despawn, ent_AllocSlot, random
+0x80059afc func pedB_Init hand cur_SetHandler pedB_Think
+0x80059bbc func pedC_Think hand think variant with 800365b0
+0x80059e04 func pedC_Init hand cur_SetHandler pedC_Think
+0x80059e90 func ped_PickDir hand direction pick via 8002699c
+0x80059efc func ped_FrameFlee hand frame 0x81 by direction, variant
+0x80059fc8 func ped_StateFlee hand ped_FrameFlee by state
+0x8005a1f0 func ped_AnimA hand ent_SetFrameB with counter
+0x8005a35c func ped_AnimDie hand ent_Despawn at end of frames
+0x8005a4bc func ped_AnimSplat hand debris_Spawn then ent_Despawn
+0x8005a638 func ped_AnimB hand ent_SetFrameB with counter, variant
+0x8005a814 func ped_Move hand 956 bytes: move_Collide then 8005fbd4
+0x8005abd0 func ped_Hit hand 876 bytes: sound, shake_Set, debris_Spawn, random
+0x8005af3c func ped_InitType1 hand 8005c904 type 1 with random
+0x8005b06c func ped_InitType3 hand 8005c904 type 3 with random
+0x8005b188 func ped_InitGroupA hand 80027980, 8005c904, 8005b210
+0x8005b210 func ped_SetupA hand direction and random fields
+0x8005b430 func ped_InitGroupB hand 80027980, 8005c904, 8005b4ec
+0x8005b4ec func ped_SetupB hand 828 bytes of field setup with random
+0x8005b828 func ped_InitType4 hand 8005c904 type 4
+0x8005b974 func ped_InitType5 hand 8005c904 type 5
+0x8005ba60 func ped_InitType6 hand 8005c904, 80026088, ent_AllocSlot
+0x8005bca8 func ped_InitType9 hand 8005c904 type 9
+0x8005bd8c func ped_SpawnExtra hand ent_AllocSlot then 8005c904
+0x8005bec8 func ped_MoveB hand ent_SetFrameB and move_Collide
+0x8005c1d4 func ped_MoveC hand ent_SetFrameB, move_Collide, 8005fbd4
+0x8005c3b0 func ped_SpawnRandomA hand random, ent_AllocSlot, ent_SetHandler
+0x8005c594 func ped_SpawnRandomB hand ent_AllocSlot, sound, ent_SetHandler
+0x8005c77c func ped_SpawnRandomC hand ent_AllocSlot, ent_SetHandler
+0x8005c904 func ped_InitCommon hand 18 callers: ent_SetHandler and common fields by type
+0x8005ca74 func ped_StateShoot hand ent_SetFrameB then ped_Shoot
+0x8005cbd4 func ped_Shoot hand 1116 bytes: task_Alloc shot, math_Angle, random
+0x8005d030 func ped_TrySee hand random then ped_SeeCab
+0x8005d0d8 func ped_SeeCab hand leaf: distance fields into entity
+0x8005d21c func ped_IsNear hand leaf bool on entity distance
+0x8005d2b0 func ped_AnimSwitch hand switch on 800a9f40 to anim and move states
+0x8005d36c func ped_Die hand ent_Despawn, ent_SetFrameB
+0x8005d58c func ped_RunOver hand 740 bytes: sound, random, 8005fbd4
+0x8005d870 func ped_FareSwitch hand picks 8005d940 or 8005dba4 by state
+0x8005d940 func ped_FareBoard hand fare gets in: ent_Despawn, mission_NextIndex, rand
+0x8005dba4 func ped_FareWait hand fare waits: ent_SetFrameB, clears 800aa1c0
+0x8005ddbc func ped_PickTarget hand 688 bytes of random target fields
+0x8005e06c func ped_TimerCheck hand calls ped_NewTimer on count
+0x8005e0dc func ped_Turn hand 772 bytes random turn
+0x8005e3e0 func ped_TimerCheckB hand calls ped_NewTimer
+0x8005e560 func ped_NewTimer hand random mod 0x14 plus 0x3c
+0x8005e664 func ped_CabTouch hand col_BoxTestA against cab
+0x8005e73c func ped_FlagsStep hand leaf: 800aa2b0 bits into 800a9f34
+0x8005e7ec func ped_PathStepA hand direction change then path calls 8002ddec, 8002e478, 8002df98
+0x8005e878 func ped_OnScreenAct hand 4 callers: ped_OnScreen then 8002df98
+0x8005e8dc func ped_OnScreen hand math_MoveByAngle then screen bounds test
+0x8005e95c func ped_HitCab hand cab_Damage, shake_Set, ent_SetHandler
+0x8005eacc func ped_PathStepB hand variant of ped_PathStepA
+0x8005eb50 func pedD_Think hand think: ped_InRange, ent_AllocSlot, ent_Despawn
+0x8005ed14 func pedD_Init hand cur_SetHandler pedD_Think
+0x8005ede8 func ped_StateIdle hand ent_SetFrameB, ped_PickDir, random
+0x8005eff4 func ped_FrameByDir hand ent_SetFrameB by direction field
+0x8005f1e4 func ped_DespawnFar hand ent_Despawn when out of range
+0x8005f2cc func pedE_Spawn hand task_Alloc of 8005f400, hud 8002d508
+0x8005f400 func pedE_Think hand 864 bytes: ent_AllocSlot, ped_InitCommon, random, cur_EndTask
+0x8005f760 func ped_CheckState2 hand leaf: sets 800a9f20 2
+0x8005f7ec func pedF_Spawn hand task_Alloc of 8005f8e4
+0x8005f8e4 func pedF_Think hand 752 bytes spawner think, cur_EndTask
+0x8005fbd4 func ent_ClearHit hand 9 callers: leaf, clears entity field 0x6c
+0x8005fc6c func pedG_Spawn hand task_Alloc of 8005fd88
+0x8005fd88 func pedG_Think hand 744 bytes spawner think, cur_EndTask
+0x80060070 func pedH_Spawn hand task_Alloc of 8006018c
+0x8006018c func pedH_Think hand 820 bytes spawner think, cur_EndTask
+0x800604c0 func pedI_Spawn hand ent_AllocSlot, ent_SetHandler, hud 8002d508
+0x8006074c func foeQ_Think hand 2852 bytes: state machine on 800a9f40 with path calls
+0x80061270 func foeQ_StateSwitch hand switch to 80061458 or 800614d8
+0x80061310 func foeQ_State5 hand sets state 5, timer 0x1e
+0x800613a4 func foeQ_State7 hand sets state 7, timer 10
+0x80061458 func foeQ_State2 hand sets state 2, 800617e0
+0x800614d8 func foeQ_State3 hand sets state, 800617e0 with -0x30
+0x80061540 func foeQ_State4 hand leaf: state 4, value 1000
+0x800615a0 func foeQ_State1 hand leaf: state 1
+0x80061614 func foeQ_State6 hand state 6, 8002df98, 800617e0
+0x800616a4 func foeQ_Aim hand math_Angle then 800389e0
+0x800617e0 func foeQ_SetVel hand 3 callers: leaf, two velocity fields
+0x80061870 func cab_Knockback hand 8002f174, shake_Set, math_Angle, sqrt
+0x80061ab0 func bossC_SpawnCheck hand task_Alloc, 8006dacc, snd_Play, on 800d1de4
+0x80061cc8 func bossC_ThinkA hand 880 bytes think with map_HeightAt
+0x80062038 func bossC_InitA hand setup then cur_SetHandler bossC_ThinkA
+0x800621d4 func bossC_ThinkB hand 880 bytes: move_Collide, shots 800626c0, cur_EndTask
+0x80062544 func bossC_InitB hand setup then cur_SetHandler bossC_ThinkB
+0x800626c0 func bossC_Spawn4 hand task_Alloc x4 with random
+0x80062a58 func ending_Think hand guess: 1504 bytes, sets 800aa4f8 1, sound, draw 80027f28
+0x80063038 func ending_Init hand cur_SetHandler ending_Think
+0x8006312c func wreck_SpawnAtCur hand task_Alloc of wreck_ThinkB with copy of position
+0x8006321c func bossC_SetupBase hand leaf: fields of current entity
+0x80063264 func bossC_ThinkC hand 1364 bytes think with sound
+0x800637b8 func frame_End hand 80068e24, callback 800aa0fc, gfx_EndFrame
+0x80063818 func frame_Run hand 6 callers: task run 80067778, draw passes, fade
+0x800638c4 func pad_ReadRaw hand guess: decodes buffer through 80063b58, sets gp+0xb78
+0x80063b58 func pad_StoreAxes hand leaf: stores 4 args into tables
+0x80063d28 func pad_DecodeB hand leaf 696 bytes: decodes into 10 byte records, no caller
+0x80063fe0 func pad_CountSet hand leaf: counts set entries
+0x800640ac func save_MakeName hand sprintf bu%d0:B%s%ssave%d
+0x80064144 func save_Screen hand 1348 bytes: savescre.img or loadscre.img screen loop
+0x80064688 func save_ScreenInput hand menu input, sound, 80064f7c
+0x80064854 func text_DrawBig hand 5 callers: per char width 80069bb8 and blit 80017f48, DOS twin text_DrawBig by behaviour
+0x80064a30 func save_DrawSlots hand draws 5 slot lines
+0x80064b28 func save_ReadSlotNames hand opens saves, NO GAME SAVED text
+0x80064cd0 func save_DrawPage hand 5 callers: text width, text_DrawBig, end frame
+0x80064f7c func save_Exists hand open, read, close of slot file
+0x80064ffc func save_SelectSlot hand leaf: slot index store
+0x800650a4 func save_PutBytes hand leaf: copies n bytes, advances pointer
+0x800650f4 func save_Write hand builds header OLD KEMO, writes slot, DOS twin save_Write
+0x80065360 func save_Load hand reads slot, game_ResetLevel, ent_ClearAll, DOS twin save_Load
+0x800654a4 func save_PackEnts hand leaf loop over entity records
+0x80065594 func save_ClearTasks hand leaf: loop over 0x32 task slots
+0x8006562c func text_WidthBig hand 4 callers: leaf, string pixel width
+0x800656ac func card_Init hand InitCARD, StartCARD, _bu_init
+0x800656f4 func card_OpenEvents hand OpenEvent and EnableEvent set
+0x80065864 func card_Check hand 4 callers: _card_info, _card_clear, _card_load with event waits
+0x80065944 func card_Format hand sprintf bu%d0: then format
+0x80065984 func card_WaitSw hand TestEvent loop, software events
+0x800659f8 func card_ClearSw hand TestEvent x4, software events
+0x80065a40 func card_WaitHw hand TestEvent loop, hardware events
+0x80065ab4 func card_ClearHw hand TestEvent x4, hardware events
+0x80065afc func cd_ReadRetryA hand loop of 8007a5a8, 8007a60c, 80079608 until ok
+0x80065b64 func cd_ReadRetryB hand loop of 8007a5a8, 800795a8, 80079608 until ok
+0x80065bd0 func opt_PadScreen hand PADB.IMG and PADA.IMG pad config screen
+0x80065e8c func opt_Screen hand optione.img options menu, returns choice gp+0x7ec
+0x800660d0 func opt_DrawMarks hand 6 callers: spr_Blit x6
+0x80066188 func opt_Input hand menu move with snd_Play, calls opt_Select
+0x800662dc func opt_Select hand switch on gp+0x7ec: new game, save screen, pad screen
+0x800663dc func img_ShowDrakes hand drakess4.img screen, no caller
+0x800665cc func gmap_LoadKemo1 hand reads kemomap1.zzz, hud_DrawMonitor
+0x800666dc func logo_Gametek hand gametek.img with fade and wait 0xb4
+0x8006677c func logo_Ieglow hand ieglow.img with fade and wait
+0x80066808 func intro_Play hand fli_PlayFileFade of title.fli, DOS twin intro_Play
+0x8006683c func spr_BlitScaledB hand leaf 832 bytes scaled column copy, no caller
+0x80066b7c func spr_DrawAt hand 3 callers: 80013540 with sprite size
+0x80066bfc func buf_CopyRows hand leaf: row copy with 0x140 pitch, no caller
+0x80066d5c func rend_InitVecs hand wrapper of rend_SetVecs
+0x80066d7c func nop_80066d7c hand empty
+0x80066d84 func buf_Clear hand memset 64000 of 800aa460, no caller
+0x80066db4 func buf_ClearHalf hand memset of 16000 pieces, no caller
+0x80066e00 func rend_SetVecs hand leaf: stores function pointers 800a9d54 and others
+0x80066e70 func foeR_Aim hand math_Angle, ai_TurnSign, path 8002ddec, fire 80067188
+0x80067188 func foeR_Fire hand task_Alloc, snd_Play, 8006cb94
+0x800673ec func wreck_SpawnTask hand task_Alloc wreck_ThinkB then cur_EndTask
+0x8006746c func wreck_InitTask hand cur_SetHandler wreck_SpawnTask
+0x800674a4 func task_ClearAll hand leaf: clears 0x32 slots
+0x80067510 func task_AllocHigh hand leaf: finds free slot from the top, sets handler
+0x80067618 func task_Alloc hand 56 callers: finds free slot, sets handler
+0x8006771c func cur_SetHandler hand 61 callers: handler of current entity
+0x8006774c func ent_SetHandler hand 29 callers: handler of entity by index
+0x80067778 func task_RunAll hand loop over 0x32 slots calling handlers, DOS twin task_RunAll
+0x80067808 func cur_EndTask hand 27 callers: clears handler of current entity
+0x80067874 func map_AreaFlag hand 6 callers: leaf on 800aa2a0 and 800aa0c8
+0x800678f4 func city_LoadBlocks hand 3992 bytes: reads city.blk and city.bsp
+0x80068894 func anim_LoadDat hand reads anim%d.dat, parses numbers
+0x80068b44 func anim_Clear hand leaf: clears 0x1e entries
+0x80068cac func hud_DrawTextA hand text_SetCursor then text_Draw by 800a9fc0
+0x80068dd8 func hud_DrawTextB hand text_SetCursor then text_Draw of 800cdb10
+0x80068e24 func hud_DrawTextC hand text_SetCursor then text_Draw of 800cdb0c
+0x80068ea8 func font_Load hand spr_LoadFile into 800a9c24
+0x80068ee8 func font_Free hand free of gp+0x388
+0x80068f30 func text_SetOrigin hand leaf: gp+0x392
+0x80068f40 func text_SetCursorCell hand 7 callers: text_SetCursor with x8 scale
+0x80068f6c func text_SetCursor hand 28 callers: leaf, stores x y, DOS twin text_SetCursor
+0x80068f7c func text_Draw hand 6 callers: per char 8006b454
+0x800690a4 func text_HasLower hand guess: leaf scan of string bytes
+0x800690e4 func text_DrawKanji hand 9 callers: per char 80069c44 kanji glyph to vram
+0x80069278 func text_DrawSmall hand 3 callers: per char width and spr_Blit
+0x800694e8 func text_DrawBoxed hand text_SetCursor, text_DrawSmall with frame string
+0x80069568 func text_DrawSmallAt hand 7 callers: text_SetCursor then text_DrawSmall
+0x800695c8 func hud_DrawGauges hand spr_Blit of gauge pieces
+0x800696f4 func hud_DrawWeaponState hand 4 callers: spr_Blit by weapon state
+0x80069920 func hud_DrawString hand per char spr_Blit
+0x800699e0 func kanji_GetGlyph hand Krom2RawAdd then 16 row copy
+0x80069b18 func kanji_Expand hand leaf: expands 1 bit rows into pixels
+0x80069bb8 func kanji_DrawChar hand 10 callers: glyph, expand, LoadImage
+0x80069c44 func kanji_DrawCharBuf hand glyph, expand, vram store and load
+0x80069d70 func kanji_DrawString hand loop of kanji_DrawChar
+0x80069e38 func floor_SetImage hand leaf: fills 5 table entries from image
+0x8006a038 func obj_InitTables hand loop then 8006b75c
+0x8006a0dc func span_DrawA hand 868 bytes with 80018214, no caller
+0x8006a440 func span_DrawB hand 888 bytes with 80018214, no caller
+0x8006a7b8 func span_DrawC hand 920 bytes with 80018214, no caller
+0x8006ab50 func poly_SpriteA hand 788 bytes, emits via 80014188
+0x8006ae64 func poly_SpriteB hand 684 bytes, emits via 80014188, set as vector by rend_SetVecs
+0x8006b110 func poly_SpriteC hand 836 bytes, emits via 80014188
+0x8006b454 func spr_DrawScaledA hand 3 callers: 80013540 with scale
+0x8006b554 func view_AddSprite hand 8 callers: 80013540 flag 0
+0x8006b628 func view_AddSpriteFlip hand 5 callers: 80013540 flag 1
+0x8006b700 func view_ScaleDist hand leaf: product with 800aa2d8
+0x8006b734 func flag_Set80 hand leaf: sets bit 0x80
+0x8006b748 func flag_Clear80 hand leaf: clears bit 0x80
+0x8006b75c func obj_ClearRange hand leaf: loop 0x65 to 200
+0x8006b818 func nop_8006b818 hand empty
+0x8006b828 func poly_SpriteD hand 1224 bytes, emits via 80014188
+0x8006bcf0 func hud_DrawAll hand dash state 800aa35c: calls all hud part draws
+0x8006be24 func hud_DrawPartA hand 80017e94 and 80017e74 on 800aa3d0
+0x8006bf60 func hud_DrawPartB hand 80017e94 and 80017e74 on 800aa3d0, variant
+0x8006c08c func hud_DrawPartC hand 80017e94 on 800aa19c
+0x8006c134 func hud_DrawPartD hand 80017e74 with counter 800aa01c
+0x8006c1b8 func hud_DrawPartE hand on 800a9ec4
+0x8006c230 func hud_DrawPartF hand on 800a9e38 with counter 800a9eac
+0x8006c334 func hud_DrawWarnings hand 500 bytes with sound calls 80019dec group
+0x8006c528 func hud_DrawPartG hand 80017e74 when dash state 2
+0x8006c59c func ent_ClearList hand leaf: clears loop, 800aa454 to 0xffff
+0x8006c600 func boss_SpawnByArea hand calls bossA, bossB, bossC spawn checks by arg
+0x8006c6b4 func ent_FindByType hand leaf scan with arg
+0x8006c770 func cur_SetVelAngle hand 19 callers: math_SinCos times speed, shift 0xb
+0x8006c88c func cur_SetVelAngleB hand variant of cur_SetVelAngle
+0x8006c93c func cur_SetVelAngleC hand variant, no caller
+0x8006c9f8 func cur_MoveByAngle hand 27 callers: math_SinCos, adds to entity position
+0x8006cb94 func ent_PlaceByAngle hand 5 callers: position from angle and distance
+0x8006cc60 func ent_PlaceByAngleB hand variant, 2 callers
+0x8006cd24 func ent_SetPos hand 9 callers: sets entity position from two ints
+0x8006ce4c func ent_SetPosB hand variant of ent_SetPos
+0x8006cf74 func ent_OffsetByAngle hand 6 callers: math_SinCos offset
+0x8006d088 func view_DrawEntity hand 688 bytes: math_MoveByAngle then view_AddSprite
+0x8006d338 func cur_FaceCab hand 11 callers: leaf using 800aa47c
+0x8006d478 func cur_MoveCollide hand 14 callers: 80027f28, 8006dc54, move_Collide; returns 1 on hit
+0x8006d618 func boss_FlagSwitch hand picks 8006d6d8 or 8006d664 on 800d1dfc
+0x8006d664 func boss_FlagSet hand leaf: sets 800aa1b8 when 800cdb71
+0x8006d6d8 func boss_FlagSound hand hud call and snd_Play 5
+0x8006d784 func cab_DeathTask hand guess: clears 800aa054, hud call, task_Alloc
+0x8006d848 func hud_DrawArmour hand 8006d930 then 80017e94
+0x8006d930 func hud_DrawBar hand 4 callers: 80017e94 with value
+0x8006d9b8 func ent_FlashAt hand math_SinCos placement, called by flash_Think
+0x8006dacc func boss_ReadDef hand 8 callers: leaf, copies fields into 800aa184
+0x8006db40 func ent_OffsetByAngleB hand variant, no caller
+0x8006dc54 func map_MarkCell hand 3 callers: leaf writing cell table
+0x8006dcf0 func cab_WaterSplash hand guess: ent_SetPos, 80027f28, debris_Spawn on 800aa41c
+0x8006ded4 func str_Play hand 7 callers, 1128 bytes: CdSearchFile, stream movie loop with VSync
+0x8006e33c func str_SetParams hand leaf: fills decode record
+0x8006e3a4 func str_Start hand StSetRing, StSetStream, 8006e7a4
+0x8006e414 func str_Callback hand StCdInterrupt then LoadImage
+0x8006e548 func str_NextFrame hand 8006e5d0 with StFreeRing
+0x8006e5d0 func str_GetFrame hand StGetNext with timeout
+0x8006e6e0 func str_WaitDecode hand prints time out in decoding
+0x8006e7a4 func str_Seek hand CdControl and CdRead2 retry loop
+0x8006ee28 func start_Main hand clears bss, InitHeap, calls 80011410
+0x8006eec0 func start_InitOnce hand runs init pair once, flag 8009676c
+0x8006ef30 func start_Exit hand empty body after init pair, no caller
+0x80071a4c func etc_80071a4c hand region name only, not studied
+0x80071a7c func etc_80071a7c hand region name only, not studied
+0x80071aac func etc_80071aac hand region name only, not studied
+0x80071adc func etc_80071adc hand region name only, not studied
+0x80071b0c func etc_80071b0c hand region name only, not studied
+0x80071b3c func etc_80071b3c hand region name only, not studied
+0x80071b68 func etc_80071b68 hand region name only, not studied
+0x80071b84 func etc_ResetCallback_impl hand psyq, from the debug string in the function
+0x80071c44 func etc_IntrDispatch hand psyq, from the debug string in the function
+0x80071e38 func etc_80071e38 hand region name only, not studied
+0x80071f60 func etc_80071f60 hand region name only, not studied
+0x80071fc8 func etc_80071fc8 hand region name only, not studied
+0x80072034 func etc_80072034 hand region name only, not studied
+0x80072098 func etc_80072098 hand region name only, not studied
+0x800720e0 func etc_DmaBusError hand psyq, from the debug string in the function
+0x80072244 func etc_80072244 hand region name only, not studied
+0x8007234c func etc_8007234c hand region name only, not studied
+0x80072378 func etc_80072378 hand region name only, not studied
+0x800723f0 func etc_800723f0 hand region name only, not studied
+0x800724ac func etc_800724ac hand region name only, not studied
+0x800726bc func ResetGraph hand psyq, from the debug string in the function
+0x8007288c func SetGraphReverse hand psyq, from the debug string in the function
+0x8007299c func SetGraphDebug hand psyq, from the debug string in the function
+0x80072a04 func SetGraphQueue hand psyq, from the debug string in the function
+0x80072aa0 func gpu_80072aa0 hand region name only, not studied
+0x80072ac0 func DrawSyncCallback hand psyq, from the debug string in the function
+0x80072b1c func SetDispMask hand psyq, from the debug string in the function
+0x80072b94 func DrawSync hand psyq, from the debug string in the function
+0x80072c00 func gpu_CheckRect hand psyq, from the debug string in the function
+0x80072d18 func ClearImage hand psyq, from the debug string in the function
+0x80072dac func LoadImage hand psyq, from the debug string in the function
+0x80072e10 func StoreImage hand psyq, from the debug string in the function
+0x80072e74 func MoveImage hand psyq, from the debug string in the function
+0x80072f18 func ClearOTag hand psyq, from the debug string in the function
+0x80072fc4 func ClearOTagR hand psyq, from the debug string in the function
+0x80073044 func gpu_80073044 hand region name only, not studied
+0x800730a4 func DrawOTag hand psyq, from the debug string in the function
+0x80073114 func PutDrawEnv hand psyq, from the debug string in the function
+0x8007326c func PutDispEnv hand psyq, from the debug string in the function
+0x80073718 func gpu_80073718 hand region name only, not studied
+0x8007374c func gpu_8007374c hand region name only, not studied
+0x80073788 func gpu_80073788 hand region name only, not studied
+0x8007380c func gpu_8007380c hand region name only, not studied
+0x80073878 func gpu_80073878 hand region name only, not studied
+0x800738d0 func gpu_800738d0 hand region name only, not studied
+0x80073b88 func gpu_80073b88 hand region name only, not studied
+0x80073bd8 func gpu_80073bd8 hand region name only, not studied
+0x80073ca4 func gpu_80073ca4 hand region name only, not studied
+0x80073d70 func gpu_80073d70 hand region name only, not studied
+0x80073dac func gpu_80073dac hand region name only, not studied
+0x80073e30 func gpu_80073e30 hand region name only, not studied
+0x80073f08 func gpu_80073f08 hand region name only, not studied
+0x80073f20 func gpu_80073f20 hand region name only, not studied
+0x80074008 func gpu_80074008 hand region name only, not studied
+0x80074254 func gpu_80074254 hand region name only, not studied
+0x800744e0 func gpu_800744e0 hand region name only, not studied
+0x800747b0 func gpu_800747b0 hand region name only, not studied
+0x800747e8 func gpu_800747e8 hand region name only, not studied
+0x80074808 func gpu_80074808 hand region name only, not studied
+0x80074858 func gpu_80074858 hand region name only, not studied
+0x800748a4 func gpu_800748a4 hand region name only, not studied
+0x800748d4 func gpu_800748d4 hand region name only, not studied
+0x800748f8 func gpu_800748f8 hand region name only, not studied
+0x80074b60 func gpu_ExeQue hand psyq, from the debug string in the function
+0x80074e60 func gpu_80074e60 hand region name only, not studied
+0x80074fdc func gpu_80074fdc hand region name only, not studied
+0x800751c8 func gpu_800751c8 hand region name only, not studied
+0x800751fc func gpu_Timeout hand psyq, from the debug string in the function
+0x80075394 func gpu_80075394 hand region name only, not studied
+0x800753f8 func gpu_800753f8 hand region name only, not studied
+0x80075490 func gpu_80075490 hand region name only, not studied
+0x800754a8 func DumpTPage hand psyq, from the debug string in the function
+0x80075544 func DumpClut hand psyq, from the debug string in the function
+0x800755bc func gpu_800755bc hand region name only, not studied
+0x80075634 func gpu_80075634 hand region name only, not studied
+0x80075670 func gpu_80075670 hand region name only, not studied
+0x80075698 func gpu_80075698 hand region name only, not studied
+0x80075788 func gpu_80075788 hand region name only, not studied
+0x800758a8 func gpu_800758a8 hand region name only, not studied
+0x800758dc func DumpDrawEnv hand psyq, from the debug string in the function
+0x80075a2c func DumpDispEnv hand psyq, from the debug string in the function
+0x80075ad8 func gpu_80075ad8 hand region name only, not studied
+0x80075bc4 func gpu_80075bc4 hand region name only, not studied
+0x80075c2c func gpu_80075c2c hand region name only, not studied
+0x80075cbc func gpu_80075cbc hand region name only, not studied
+0x80075cf8 func gpu_80075cf8 hand region name only, not studied
+0x80075d20 func spu_80075d20 hand region name only, not studied
+0x8007641c func spu_8007641c hand region name only, not studied
+0x80076514 func spu_80076514 hand region name only, not studied
+0x80076608 func spu_80076608 hand region name only, not studied
+0x800767f0 func spu_Init hand psyq, from the debug string in the function
+0x80076d7c func spu_80076d7c hand region name only, not studied
+0x80076db0 func spu_80076db0 hand region name only, not studied
+0x80076ddc func spu_80076ddc hand region name only, not studied
+0x80076e44 func spu_Write hand psyq, from the debug string in the function
+0x80077188 func spu_80077188 hand region name only, not studied
+0x800771b4 func spu_800771b4 hand region name only, not studied
+0x800772d4 func spu_800772d4 hand region name only, not studied
+0x8007753c func spu_8007753c hand region name only, not studied
+0x800776f4 func spu_Ioctl hand psyq, from the debug string in the function
+0x800780d8 func spu_800780d8 hand region name only, not studied
+0x8007825c func spu_8007825c hand region name only, not studied
+0x8007872c func spu_8007872c hand region name only, not studied
+0x80078ac4 func spu_80078ac4 hand region name only, not studied
+0x80079308 func spu_80079308 hand region name only, not studied
+0x800793d0 func spu_800793d0 hand region name only, not studied
+0x80079498 func spu_80079498 hand region name only, not studied
+0x80079518 func spu_80079518 hand region name only, not studied
+0x800795a8 func spu_800795a8 hand region name only, not studied
+0x80079608 func spu_80079608 hand region name only, not studied
+0x800799f8 func spu_800799f8 hand region name only, not studied
+0x80079a68 func spu_80079a68 hand region name only, not studied
+0x80079d34 func spu_80079d34 hand region name only, not studied
+0x8007a090 func spu_8007a090 hand region name only, not studied
+0x8007a554 func spu_8007a554 hand region name only, not studied
+0x8007a5a8 func spu_8007a5a8 hand region name only, not studied
+0x8007a60c func spu_8007a60c hand region name only, not studied
+0x8007a66c func spu_8007a66c hand region name only, not studied
+0x8007a6ec func spu_8007a6ec hand region name only, not studied
+0x8007ac00 func spu_8007ac00 hand region name only, not studied
+0x8007ade0 func spu_8007ade0 hand region name only, not studied
+0x8007f6ac func mdec_8007f6ac hand region name only, not studied
+0x8007f6f0 func mdec_8007f6f0 hand region name only, not studied
+0x8007f734 func mdec_8007f734 hand region name only, not studied
+0x8007f7b0 func mdec_8007f7b0 hand region name only, not studied
+0x8007f7d0 func mdec_8007f7d0 hand region name only, not studied
+0x8007f7f0 func mdec_8007f7f0 hand region name only, not studied
+0x8007f810 func mdec_8007f810 hand region name only, not studied
+0x8007f834 func mdec_8007f834 hand region name only, not studied
+0x8007f858 func mdec_Reset hand psyq, from the debug string in the function
+0x8007f960 func mdec_8007f960 hand region name only, not studied
+0x8007f9f4 func mdec_8007f9f4 hand region name only, not studied
+0x8007fa84 func mdec_InSync hand psyq, from the debug string in the function
+0x8007fb1c func mdec_OutSync hand psyq, from the debug string in the function
+0x8007fbb4 func mdec_Timeout hand psyq, from the debug string in the function
+0x8007fce8 func mdec_8007fce8 hand region name only, not studied
+0x8007ff38 func mdec_Vlc hand psyq, from the debug string in the function
+0x80080320 func mdec_80080320 hand region name only, not studied

@@ -1,12 +1,22 @@
 # Quarantine (GameTek / Imagexcel, 1994) reverse-engineering names and tools
 
-Function names for three builds of **Quarantine**, plus the tools that produced them. Every function carries a name (0 `FUN_` placeholders left). All names are provisional: string references and structural rules (size, callees), not verified behaviour. Nothing here has been rebuilt or behaviour-tested.
+Function names for four builds of **Quarantine**, plus the tools that produced them. Every function carries a name (0 `FUN_` placeholders left). The DOS and PlayStation builds are named by hand (2026-11-23, see below); the Saturn and 3DO names are provisional: string references and structural rules (size, callees), not verified behaviour. Nothing here has been rebuilt or behaviour-tested.
 
 | Build | Program | Load base | Functions |
 |---|---|---|---|
-| DOS (DOS4GW LE, Watcom) | `Q.EXE` flattened | 0x10000 | 1443 |
+| DOS (DOS4GW LE, Watcom) | `Q.EXE` flattened | 0x10000 | 1447 |
 | Sega Saturn JA ("Death Throttle") | `ADT.BIN` + IP.BIN | 0x06004000 / 0x06002000 | 1346 + 7 |
 | 3DO | `launchme` (ARM BE) | 0x0 (assumed) | 986 |
+| PlayStation JA ("Hard Rock Cab") | `SLPS_002.xx` (MIPS LE) | exe header t_addr | 1277 |
+
+## Hand names (DOS and PlayStation)
+`work/hand_q.txt` (DOS, 1447 functions) and `work/hand_SLPS_002.txt` (PlayStation, 1153 lines covering all 1277 functions with the library signature matches). One line per function: `0x<addr> func <name> hand <why>`. `funcinfo_q.tsv` / `funcinfo_SLPS_002.tsv` carry the same names with callees and string references.
+
+- The names are descriptive guesses read from the decompiled code. None was verified by playing or by a rebuild.
+- Many PlayStation names are generic (`foeA_Think`, `hud_DrawPartA`, `fx_ThinkE_<addr>`).
+- PlayStation labels shared with DOS (`move_Collide`, `mission_Tick`, `task_RunAll`, `rand_Byte` and others) were matched by behaviour, not by code comparison.
+- Region names only, not studied: 291 DOS runtime functions (`rt_`/`sos_`/`fp_`/`vga_<addr>`, Watcom runtime, HMI SOS sound driver, x87 emulator) from `tools/rtnames.py`, and 104 PlayStation PsyQ library functions (`etc_`/`gpu_`/`spu_`/`mdec_<addr>`) from `tools/psxlibnames.py`. The runtime and library names those two tools do give come from hints and debug strings, not from signatures.
+- `tools/fdigest.py` prints the one-line-per-function digest used for the naming batches.
 
 ## Contents
 - `funcinfo_*.tsv`, `work/`: function lists and names.
@@ -20,7 +30,7 @@ Paths inside the scripts are from the author's machine (`C:/Users/USER/...`); ad
 No game data is included. Research and preservation only.
 
 ## Decompiled code (`src/`)
-Raw Ghidra decompiler output with the provisional names applied, one file per program: `src/dos/decomp_q.c`, `src/saturn/decomp_ADT.c` + `decomp_IP.c`, `src/3do/decomp_launchme.c`. It is pseudo-C for reading and study: it does not compile and has not been checked against the running game.
+Raw Ghidra decompiler output with the names applied, one file per program: `src/dos/decomp_q.c`, `src/psx/decomp_SLPS_002.c` (both with the hand names), `src/saturn/decomp_ADT.c` + `decomp_IP.c`, `src/3do/decomp_launchme.c` (provisional names). It is pseudo-C for reading and study: it does not compile and has not been checked against the running game.
 
 ## Godot port, work in progress (`port/`)
 A Godot 4.7 project that draws the DOS game's city view from the original data files, compared pixel by pixel with the DOS build running in DOSBox. State on 2026-11-23: 85 stored camera poses in the first city, 84 differing pixels in total (320x200 each), 19 frames fully equal.
