@@ -1,7 +1,7 @@
 """qimport.py <flat bin name in ghidra/bin, e.g. q.bin>: import flattened Watcom LE into project Q, find functions, repair, export funcinfo."""
 import os, subprocess, sys
 BAT = os.path.join(os.path.expanduser("~"), "Documents", "Tools", "ghidra-headless.bat")
-G = r"C:\Users\USER\Documents\Quarantine\ghidra"; S = os.path.join(G, "scripts")
+G = r"C:\Games\Quarantine\ghidra"; S = os.path.join(G, "scripts")
 NW = getattr(subprocess, "CREATE_NO_WINDOW", 0)
 def run(args, log):
     p = subprocess.run([BAT, G, "Q", *args], capture_output=True, text=True, errors="replace", creationflags=NW)

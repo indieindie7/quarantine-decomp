@@ -1,0 +1,342 @@
+{
+"e1": {
+"frame": "112d5b79",
+"order": "b3c4970e"
+},
+"e11": {
+"frame": "8fd88044",
+"order": "e5ece059"
+},
+"e17": {
+"frame": "cc116708",
+"order": "5084fa2e"
+},
+"e18": {
+"frame": "e24f3e3b",
+"order": "2e025322"
+},
+"e19": {
+"frame": "4fa0cc7f",
+"order": "aa1d3a84"
+},
+"e2": {
+"frame": "10686580",
+"order": "afe44622"
+},
+"e20": {
+"frame": "ecfe60f1",
+"order": "b92c6c65"
+},
+"e21": {
+"frame": "effe5f5a",
+"order": "c473b064"
+},
+"e22": {
+"frame": "08e7f0d3",
+"order": "163aca9f"
+},
+"e23": {
+"frame": "aaac2c46",
+"order": "98f077f5"
+},
+"e24": {
+"frame": "6cd038d4",
+"order": "dde7cd42"
+},
+"e25": {
+"frame": "90aa6d78",
+"order": "ccb36ed5"
+},
+"e27": {
+"frame": "58952943",
+"order": "8e8fda06"
+},
+"e28": {
+"frame": "e8ecd579",
+"order": "d3c5f4c4"
+},
+"e29": {
+"frame": "92822e84",
+"order": "bf3cc04f"
+},
+"e3": {
+"frame": "99d99df6",
+"order": "de63ae4a"
+},
+"e30": {
+"frame": "387b3e61",
+"order": "ac2c9b82"
+},
+"e31": {
+"frame": "cf035f66",
+"order": "1baa16f7"
+},
+"e32": {
+"frame": "4ffd99e7",
+"order": "c4c55d13"
+},
+"e33": {
+"frame": "eced79df",
+"order": "522990ee"
+},
+"e4": {
+"frame": "ab3ad627",
+"order": "afc912f9"
+},
+"e5": {
+"frame": "ea3b88dc",
+"order": "7f84a6b4"
+},
+"e6": {
+"frame": "170c71ec",
+"order": "b22b8019"
+},
+"e7": {
+"frame": "1e92b850",
+"order": "758ff72a"
+},
+"e8": {
+"frame": "14516685",
+"order": "2a36e819"
+},
+"sA10": {
+"frame": "e2dbf66f",
+"order": "9c88bc67"
+},
+"sA11": {
+"frame": "60d856fa",
+"order": "95e73a19"
+},
+"sA12": {
+"frame": "fd4b4199",
+"order": "84b80d7d"
+},
+"sA13": {
+"frame": "c3765b44",
+"order": "cc4f8857"
+},
+"sA20": {
+"frame": "4a7224d3",
+"order": "4c167b1e"
+},
+"sA21": {
+"frame": "21f680de",
+"order": "3970c55e"
+},
+"sA22": {
+"frame": "a0992ddc",
+"order": "6ef4fd3f"
+},
+"sA23": {
+"frame": "299d67a7",
+"order": "612e2137"
+},
+"sB10": {
+"frame": "82828022",
+"order": "7ec99f09"
+},
+"sB11": {
+"frame": "72cc19d5",
+"order": "a253f991"
+},
+"sB12": {
+"frame": "121e650b",
+"order": "6327207e"
+},
+"sB13": {
+"frame": "299d67a7",
+"order": "db1ef538"
+},
+"sB20": {
+"frame": "3b43c2d3",
+"order": "acd2e7bd"
+},
+"sB21": {
+"frame": "cc6b74aa",
+"order": "d3fa6242"
+},
+"sB22": {
+"frame": "bf2339b1",
+"order": "fbfd964d"
+},
+"sB23": {
+"frame": "c4c0c56d",
+"order": "f7796628"
+},
+"sC10": {
+"frame": "b543fdb0",
+"order": "e8f9a094"
+},
+"sC11": {
+"frame": "1fd76321",
+"order": "6ad27c05"
+},
+"sC12": {
+"frame": "e56156a6",
+"order": "49cd8b2a"
+},
+"sC13": {
+"frame": "857b43bd",
+"order": "dc21e977"
+},
+"sC20": {
+"frame": "8cc54b33",
+"order": "710a0352"
+},
+"sC21": {
+"frame": "97a41690",
+"order": "049bc36d"
+},
+"sC22": {
+"frame": "6c4d2aeb",
+"order": "166ddac1"
+},
+"sC23": {
+"frame": "8a31eb11",
+"order": "5754a0be"
+},
+"sD10": {
+"frame": "b548eac2",
+"order": "0d57052a"
+},
+"sD11": {
+"frame": "2f38dcf2",
+"order": "83c2b212"
+},
+"sD12": {
+"frame": "0dcacc62",
+"order": "bc702f75"
+},
+"sD13": {
+"frame": "c8f91678",
+"order": "c3207186"
+},
+"sD20": {
+"frame": "867fd593",
+"order": "cc7ab427"
+},
+"sD21": {
+"frame": "28515d69",
+"order": "7c25f88f"
+},
+"sD22": {
+"frame": "6c4d2aeb",
+"order": "b8408dd8"
+},
+"sD23": {
+"frame": "298d5dec",
+"order": "8bad1543"
+},
+"sE10": {
+"frame": "4e568715",
+"order": "bba5b8ef"
+},
+"sE11": {
+"frame": "804eb0bd",
+"order": "d13066e2"
+},
+"sE12": {
+"frame": "1134ba51",
+"order": "d17eb483"
+},
+"sE13": {
+"frame": "ff104c5d",
+"order": "32e3ef3f"
+},
+"sE20": {
+"frame": "6ca6672c",
+"order": "1a6c293d"
+},
+"sE21": {
+"frame": "aad93157",
+"order": "1e0c8c27"
+},
+"sE22": {
+"frame": "1a9399e3",
+"order": "50abeb7b"
+},
+"sE23": {
+"frame": "11b5d697",
+"order": "1e724be5"
+},
+"sF20": {
+"frame": "dd8e34fc",
+"order": "399cb847"
+},
+"sF21": {
+"frame": "3cbd35e3",
+"order": "83d6b880"
+},
+"sF22": {
+"frame": "d1a189d9",
+"order": "c27a20c3"
+},
+"sF23": {
+"frame": "32bed473",
+"order": "2b81a753"
+},
+"sG10": {
+"frame": "a9082468",
+"order": "186587ff"
+},
+"sG11": {
+"frame": "20e529b0",
+"order": "7b9137b9"
+},
+"sG12": {
+"frame": "3d78eda9",
+"order": "3edaa3c2"
+},
+"sG13": {
+"frame": "0275d969",
+"order": "10e79e9f"
+},
+"sG20": {
+"frame": "56aed5dc",
+"order": "00000000"
+},
+"sG21": {
+"frame": "01f5d0f8",
+"order": "27c94726"
+},
+"sG22": {
+"frame": "aed0028e",
+"order": "68458bea"
+},
+"sG23": {
+"frame": "4796ea3c",
+"order": "5239c00f"
+},
+"sH10": {
+"frame": "f048eb5b",
+"order": "d0c9a3bc"
+},
+"sH11": {
+"frame": "2714432c",
+"order": "fe06df09"
+},
+"sH12": {
+"frame": "831d3472",
+"order": "818d3ac8"
+},
+"sH13": {
+"frame": "7f6182ba",
+"order": "b360841d"
+},
+"sH20": {
+"frame": "56aed5dc",
+"order": "00000000"
+},
+"sH21": {
+"frame": "01f5d0f8",
+"order": "27c94726"
+},
+"sH22": {
+"frame": "50854bf3",
+"order": "53a00555"
+},
+"sH23": {
+"frame": "c3155bd5",
+"order": "6f968829"
+}
+}

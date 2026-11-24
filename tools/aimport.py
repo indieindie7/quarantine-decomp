@@ -1,7 +1,7 @@
 """aimport.py <file in g3do/bin>: import ARM BE raw at 0 into project QA with full auto-analysis, export funcinfo."""
 import os, subprocess, sys
 BAT = os.path.join(os.path.expanduser("~"), "Documents", "Tools", "ghidra-headless.bat")
-G = r"C:\Users\USER\Documents\Quarantine\g3do"; S = os.path.join(G, "scripts")
+G = r"C:\Games\Quarantine\g3do"; S = os.path.join(G, "scripts")
 def run(args, log):
     p = subprocess.run([BAT, G, "QA", *args], capture_output=True, text=True, errors="replace", creationflags=0x08000000)
     open(os.path.join(G, "logs", log), "w", encoding="utf-8").write(p.stdout + p.stderr); return p.returncode

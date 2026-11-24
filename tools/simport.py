@@ -1,7 +1,7 @@
 """simport.py <file in gsat/bin> <base>: import SH-2 BE raw at base into project QS, find functions, export funcinfo + decomp dump."""
 import os, subprocess, sys
 BAT = os.path.join(os.path.expanduser("~"), "Documents", "Tools", "ghidra-headless.bat")
-G = r"C:\Users\USER\Documents\Quarantine\gsat"; S = os.path.join(G, "scripts")
+G = r"C:\Games\Quarantine\gsat"; S = os.path.join(G, "scripts")
 def run(args, log):
     p = subprocess.run([BAT, G, "QS", *args], capture_output=True, text=True, errors="replace", creationflags=0x08000000)
     open(os.path.join(G, "logs", log), "w", encoding="utf-8").write(p.stdout + p.stderr); return p.returncode

@@ -21,3 +21,13 @@ No game data is included. Research and preservation only.
 
 ## Decompiled code (`src/`)
 Raw Ghidra decompiler output with the provisional names applied, one file per program: `src/dos/decomp_q.c`, `src/saturn/decomp_ADT.c` + `decomp_IP.c`, `src/3do/decomp_launchme.c`. It is pseudo-C for reading and study: it does not compile and has not been checked against the running game.
+
+## Godot port, work in progress (`port/`)
+A Godot 4.7 project that draws the DOS game's city view from the original data files, compared pixel by pixel with the DOS build running in DOSBox. State on 2026-11-23: 85 stored camera poses in the first city, 84 differing pixels in total (320x200 each), 19 frames fully equal.
+
+- `port/main.gd`, `port/shaders/*.gdshader`: renderer (integer ports of the DOS wall, floor, sprite and entity scalers), dash, radar.
+- `port/tests/baseline.json`, `chk.json`: best pixel count and frame checksum per test pose. The DOS screenshots and level data behind them are not included.
+- `tools/cityexport.py`, `entexport.py`, `animexport.py`, `areas.py`: build `port/data` and `port/areas` from your own copy of the DOS game. The port does not run without them.
+- `tools/parity.py`, `regress.py`, `pp.py`, `chkparity.py`, `sceneparity.py`: the parity tests (DOSBox snapshot at a pose, port render at the same pose, diff, gate).
+
+It is a renderer test bed, not a playable game yet. Script paths are again from the author's machine (`C:\Games\...`).
