@@ -18,6 +18,14 @@ Function names for four builds of **Quarantine**, plus the tools that produced t
 - Region names only, not studied: 291 DOS runtime functions (`rt_`/`sos_`/`fp_`/`vga_<addr>`, Watcom runtime, HMI SOS sound driver, x87 emulator) from `tools/rtnames.py`, and 104 PlayStation PsyQ library functions (`etc_`/`gpu_`/`spu_`/`mdec_<addr>`) from `tools/psxlibnames.py`. The runtime and library names those two tools do give come from hints and debug strings, not from signatures.
 - `tools/fdigest.py` prints the one-line-per-function digest used for the naming batches.
 
+## Quarantine II: Road Warrior (DOS CD, 1995)
+`work/hand_RWCD.txt` names all 2102 functions of `RWCD.bin` (the flattened DOS4GW LE executable, load base 0x10000), `funcinfo_RWCD.tsv` lists them with callees and string references, `src/q2dos/decomp_RWCD.c` is the decompiled output with the names applied (2026-11-25).
+
+- 302 names carried over from Quarantine (DOS): Ghidra BSim matches (similarity >= 0.90) plus call-graph propagation (`tools/cgprop.py`).
+- 542 Watcom runtime, HMI SOS and x87-fragment functions (`rt_`/`sos_`/`fp_`/`frag_`) named by a local LLM (Inkling 2 Mini) from the decompiled code (`tools/inkname.py`, comment `inkling guess`). Repeated names (e.g. `rt_empty_stub`) carry an `_<addr>` suffix. These are the least reliable names here.
+- The rest (game code) is named by hand from the digest (`tools/fdigest.py`). Prefixes: `frag_` x87 split fragments, `rend_` asm renderer, `asm_` asm helpers, `vesa_` VESA video.
+- All names are guesses from the code; none was verified by playing or by a rebuild. No runtime library signatures were matched.
+
 ## Contents
 - `funcinfo_*.tsv`, `work/`: function lists and names.
 - `tools/imgdec.py`: DOS `.IMG` ("IMAGEX" header, 256-colour palette, GIF-style LZW) to PNG. 39 of 44 files decode; `MISSIL0-4.IMG` are another variant.
@@ -30,7 +38,7 @@ Paths inside the scripts are from the author's machine (`C:/Users/USER/...`); ad
 No game data is included. Research and preservation only.
 
 ## Decompiled code (`src/`)
-Raw Ghidra decompiler output with the names applied, one file per program: `src/dos/decomp_q.c`, `src/psx/decomp_SLPS_002.c` (both with the hand names), `src/saturn/decomp_ADT.c` + `decomp_IP.c`, `src/3do/decomp_launchme.c` (provisional names). It is pseudo-C for reading and study: it does not compile and has not been checked against the running game.
+Raw Ghidra decompiler output with the names applied, one file per program: `src/dos/decomp_q.c`, `src/psx/decomp_SLPS_002.c` (both with the hand names), `src/saturn/decomp_ADT.c` + `decomp_IP.c`, `src/3do/decomp_launchme.c` (provisional names), `src/q2dos/decomp_RWCD.c` (Quarantine II, all names). It is pseudo-C for reading and study: it does not compile and has not been checked against the running game.
 
 ## Godot port, work in progress (`port/`)
 A Godot 4.7 project that draws the DOS game's city view from the original data files, compared pixel by pixel with the DOS build running in DOSBox. State on 2026-11-23: 85 stored camera poses in the first city, 84 differing pixels in total (320x200 each), 19 frames fully equal.

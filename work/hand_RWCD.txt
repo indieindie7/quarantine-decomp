@@ -1,0 +1,2102 @@
+0x7f8c6 func __EmuFSLD hand from Q1 __EmuFSLD_0005e10a (BSim 1.0)
+0x7f7ff func __EmuLDFD hand from Q1 __EmuLDFD_0005e043 (BSim 1.0)
+0x7f780 func __EmuLDFS hand from Q1 __EmuLDFS_0005dfc4 (BSim 1.0)
+0x7f0c6 func __EvalPoly hand from Q1 __EvalPoly_0005ef1c (BSim 1.0)
+0x7f262 func __FLDC hand from Q1 __FLDC_0005daa6 (BSim 1.0)
+0x7f08e func __FLDS hand from Q1 __FLDS_0005d8e0 (BSim 1.0)
+0x7f6ba func __I4LD hand from Q1 __I4LD_0005defe (BSim 1.0)
+0x7f64b func __LDU4 hand from Q1 __LDU4_0005de94 (BSim 1.0)
+0x8074a func __OddPoly hand from Q1 __OddPoly_0005ef8e (BSim 1.0)
+0x7f6cb func __U4LD hand from Q1 __U4LD_0005df0f (BSim 1.0)
+0x7fbce func __atan hand from Q1 __atan_0005e412 (BSim 1.0)
+0x80438 func __f2xm1 hand from Q1 __f2xm1_0005ec7c (BSim 1.0)
+0x7fb18 func __fpatan hand from Q1 __fpatan_0005e35c (BSim 1.0)
+0x7fd31 func __fprem hand from Q1 __fprem_0005e575 (BSim 1.0)
+0x7f98b func __frndint hand from Q1 __frndint_0005e1cf (BSim 1.0)
+0x785c8 func __getctime hand from Q1 __getctime_00059c62 (BSim 1.0)
+0x7ff5c func __log hand from Q1 __log_0005e7a0 (BSim 1.0)
+0x79065 func __lseek hand from Q1 __lseek_00058457 (BSim 1.0)
+0x801f4 func __sincos hand from Q1 __sincos_0005ea38 (BSim 1.0)
+0x8060c func __sqrt hand from Q1 __sqrt_0005ee50 (BSim 1.0)
+0x5ea00 func ai_InBox hand from Q1 ai_InBox (BSim 1.0)
+0x5ea90 func ai_SetTurn hand from Q1 ai_SetTurn (BSim 1.0)
+0x4d010 func box_OverlapInt hand from Q1 box_OverlapInt (BSim 1.0)
+0x4d070 func box_OverlapShort hand from Q1 box_OverlapShort (BSim 1.0)
+0x490a0 func bsp_ClassifySeg hand from Q1 bsp_ClassifySeg (BSim 1.0)
+0x49030 func bsp_WriteNode hand from Q1 bsp_WriteNode (BSim 1.0)
+0x12c50 func car_RotateNeg hand from Q1 car_RotateNeg (BSim 1.0)
+0x12cb0 func car_RotatePos hand from Q1 car_RotatePos (BSim 1.0)
+0x12ba0 func car_RotateTowardTarget hand from Q1 car_RotateTowardTarget (BSim 1.0)
+0x12d60 func car_SetTurnDir hand from Q1 car_SetTurnDir (BSim 1.0)
+0x5e000 func car_Sidestep hand from Q1 car_Sidestep (BSim 1.0)
+0x12d10 func car_TurnDirToTarget hand from Q1 car_TurnDirToTarget (BSim 1.0)
+0x31540 func cq_AddColour hand from Q1 cq_AddColour (BSim 1.0)
+0x316a0 func cq_InsertNode hand from Q1 cq_InsertNode (BSim 1.0)
+0x31a10 func cq_ScanTable hand from Q1 cq_ScanTable (BSim 1.0)
+0x31c10 func dac_WriteRange hand from Q1 dac_WriteRange (BSim 1.0)
+0x5740e func fli_Chunk hand from Q1 fli_Chunk (BSim 1.0)
+0x57738 func fli_ChunkBrun hand from Q1 fli_ChunkBrun (BSim 1.0)
+0x57501 func fli_ChunkColor hand from Q1 fli_ChunkColor (BSim 1.0)
+0x57610 func fli_ChunkLc hand from Q1 fli_ChunkLc (BSim 1.0)
+0x573a4 func fli_Frame hand from Q1 fli_Frame (BSim 1.0)
+0x571b4 func fli_Frames hand from Q1 fli_Frames (BSim 1.0)
+0x34f50 func floor_DrawSpan hand from Q1 floor_DrawSpan (BSim 1.0)
+0x41133 func floor_SpanAsmA hand from Q1 floor_SpanAsmA (BSim 1.0)
+0x796d2 func fmt4hex_796d2 hand from Q1 fmt4hex_00058c20 (BSim 1.0)
+0x7dc98 func fp_7dc98 hand from Q1 fp_5c4dc (BSim 1.0)
+0x79035 func ftell_79035 hand from Q1 ftell_0005385a (BSim 1.0)
+0x816f7 func getpow10_816f7 hand from Q1 getpow10_0005fd21 (BSim 1.0)
+0x1aec9 func gfx_GlyphA hand from Q1 gfx_GlyphA (BSim 1.0)
+0x1acdc func gfx_GlyphB hand from Q1 gfx_GlyphB (BSim 1.0)
+0x2ecd0 func gif_GetRowsInterlaced hand from Q1 gif_GetRowsInterlaced (BSim 1.0)
+0x2e310 func gif_ReadByte hand from Q1 gif_ReadByte (BSim 1.0)
+0x2e7f0 func gif_ReadColormap hand from Q1 gif_ReadColormap (BSim 1.0)
+0x2e860 func gif_SkipExtension hand from Q1 gif_SkipExtension (BSim 1.0)
+0x783ce func hook_pharlap hand from Q1 hook_pharlap_00058602 (BSim 1.0)
+0x813a4 func itoa_813a4 hand from Q1 itoa_0005f190 (BSim 1.0)
+0x2b660 func joy_PollAlt hand from Q1 joy_PollAlt (BSim 1.0)
+0x5e410 func map_SetZoneFlags hand from Q1 map_SetZoneFlags (BSim 1.0)
+0x496f0 func math_RotProject hand from Q1 math_RotProject (BSim 1.0)
+0x2c270 func math_SinCosHeading hand from Q1 math_SinCosHeading (BSim 1.0)
+0x75831 func qsort_75831 hand from Q1 qsort (BSim 1.0)
+0x2f510 func rgb_Grey hand from Q1 rgb_Grey (BSim 1.0)
+0x2f550 func rgb_GreyB hand from Q1 rgb_GreyB (BSim 1.0)
+0x2f5c0 func rgb_RedTint hand from Q1 rgb_RedTint (BSim 1.0)
+0x2f690 func rgb_TintB hand from Q1 rgb_TintB (BSim 1.0)
+0x2f6d0 func rgb_TintC hand from Q1 rgb_TintC (BSim 1.0)
+0x2f750 func rgb_TintD hand from Q1 rgb_TintD (BSim 1.0)
+0x4fb10 func rle_PackRow hand from Q1 rle_PackRow (BSim 1.0)
+0x75339 func rt_75339 hand from Q1 rt_54414 (BSim 1.0)
+0x753c2 func rt_753c2 hand from Q1 rt_5449d (BSim 1.0)
+0x753f1 func rt_753f1 hand from Q1 rt_544cc (BSim 1.0)
+0x757b3 func rt_757b3 hand from Q1 rt_5488f (BSim 1.0)
+0x757d9 func rt_757d9 hand from Q1 rt_548b5 (BSim 1.0)
+0x78aa7 func rt_78aa7 hand from Q1 rt_58117 (BSim 1.0)
+0x78ea9 func rt_78ea9 hand from Q1 rt_582cb (BSim 1.0)
+0x78f51 func rt_78f51 hand from Q1 rt_58373 (BSim 1.0)
+0x7843b func rt_7843b hand from Q1 rt_5866f (BSim 1.0)
+0x784f0 func rt_784f0 hand from Q1 rt_58724 (BSim 1.0)
+0x78555 func rt_78555 hand from Q1 rt_58789 (BSim 1.0)
+0x794fd func rt_794fd hand from Q1 rt_58a4b (BSim 1.0)
+0x79630 func rt_79630 hand from Q1 rt_58b7e (BSim 1.0)
+0x7968b func rt_7968b hand from Q1 rt_58bd9 (BSim 1.0)
+0x796af func rt_796af hand from Q1 rt_58bfd (BSim 1.0)
+0x79c5e func rt_79c5e hand from Q1 rt_591ac (BSim 1.0)
+0x790ab func rt_790ab hand from Q1 rt_591c4 (BSim 1.0)
+0x78216 func rt_78216 hand from Q1 rt_593a6 (BSim 1.0)
+0x79c76 func rt_79c76 hand from Q1 rt_5942c (BSim 1.0)
+0x79d1e func rt_79d1e hand from Q1 rt_594d4 (BSim 1.0)
+0x79e29 func rt_79e29 hand from Q1 rt_595df (BSim 1.0)
+0x79e68 func rt_79e68 hand from Q1 rt_5961e (BSim 1.0)
+0x79fc9 func rt_79fc9 hand from Q1 rt_59766 (BSim 1.0)
+0x7a03d func rt_7a03d hand from Q1 rt_597da (BSim 1.0)
+0x7a08b func rt_7a08b hand from Q1 rt_59828 (BSim 1.0)
+0x7a15e func rt_7a15e hand from Q1 rt_598fb (BSim 1.0)
+0x7a20d func rt_7a20d hand from Q1 rt_599aa (BSim 1.0)
+0x7a351 func rt_7a351 hand from Q1 rt_59aee (BSim 1.0)
+0x787df func rt_787df hand from Q1 rt_59b79 (BSim 1.0)
+0x7882e func rt_7882e hand from Q1 rt_59bc8 (BSim 1.0)
+0x78879 func rt_78879 hand from Q1 rt_59c13 (BSim 1.0)
+0x7868b func rt_7868b hand from Q1 rt_59d25 (BSim 1.0)
+0x788c8 func rt_788c8 hand from Q1 rt_59e79 (BSim 1.0)
+0x78985 func rt_78985 hand from Q1 rt_59f36 (BSim 1.0)
+0x7a434 func rt_7a434 hand from Q1 rt_5a0a1 (BSim 1.0)
+0x7a58d func rt_7a58d hand from Q1 rt_5a201 (BSim 1.0)
+0x7a663 func rt_7a663 hand from Q1 rt_5a2c0 (BSim 1.0)
+0x7a668 func rt_7a668 hand from Q1 rt_5a2c5 (BSim 1.0)
+0x7a6b6 func rt_7a6b6 hand from Q1 rt_5a312 (BSim 1.0)
+0x7a746 func rt_7a746 hand from Q1 rt_5a3a2 (BSim 1.0)
+0x7a791 func rt_7a791 hand from Q1 rt_5a3ed (BSim 1.0)
+0x7a7e2 func rt_7a7e2 hand from Q1 rt_5a43e (BSim 1.0)
+0x7a823 func rt_7a823 hand from Q1 rt_5a47f (BSim 1.0)
+0x808dd func rt_808dd hand from Q1 rt_5a566 (BSim 1.0)
+0x7ad54 func rt_7ad54 hand from Q1 rt_5a5dc (BSim 1.0)
+0x81237 func rt_81237 hand from Q1 rt_5bb6c (BSim 1.0)
+0x81248 func rt_81248 hand from Q1 rt_5bb7d (BSim 1.0)
+0x8129a func rt_8129a hand from Q1 rt_5bbcf (BSim 1.0)
+0x75f0d func rt_75f0d hand from Q1 rt_5bc4b (BSim 1.0)
+0x7d425 func rt_7d425 hand from Q1 rt_5bc6a (BSim 1.0)
+0x7d502 func rt_7d502 hand from Q1 rt_5bd47 (BSim 1.0)
+0x7d978 func rt_7d978 hand from Q1 rt_5c1bc (BSim 1.0)
+0x7daac func rt_7daac hand from Q1 rt_5c2f0 (BSim 1.0)
+0x7dae8 func rt_7dae8 hand from Q1 rt_5c32c (BSim 1.0)
+0x7db1a func rt_7db1a hand from Q1 rt_5c35e (BSim 1.0)
+0x7db6c func rt_7db6c hand from Q1 rt_5c3b0 (BSim 1.0)
+0x7db88 func rt_7db88 hand from Q1 rt_5c3cc (BSim 1.0)
+0x7f0f6 func rt_7f0f6 hand from Q1 rt_5d93a (BSim 1.0)
+0x7f325 func rt_7f325 hand from Q1 rt_5db69 (BSim 1.0)
+0x7f4fa func rt_7f4fa hand from Q1 rt_5dd3e (BSim 1.0)
+0x7f700 func rt_7f700 hand from Q1 rt_5df44 (BSim 1.0)
+0x7fabe func rt_7fabe hand from Q1 rt_5e302 (BSim 1.0)
+0x7fd97 func rt_7fd97 hand from Q1 rt_5e5db (BSim 1.0)
+0x7fe12 func rt_7fe12 hand from Q1 rt_5e656 (BSim 1.0)
+0x7ff00 func rt_7ff00 hand from Q1 rt_5e744 (BSim 1.0)
+0x7ff19 func rt_7ff19 hand from Q1 rt_5e75d (BSim 1.0)
+0x806f8 func rt_806f8 hand from Q1 rt_5ef3c (BSim 1.0)
+0x80792 func rt_80792 hand from Q1 rt_5efd6 (BSim 1.0)
+0x8085c func rt_8085c hand from Q1 rt_5f0a0 (BSim 1.0)
+0x808b6 func rt_808b6 hand from Q1 rt_5f0fa (BSim 1.0)
+0x81466 func rt_81466 hand from Q1 rt_5f25b (BSim 1.0)
+0x81525 func rt_81525 hand from Q1 rt_5f31a (BSim 1.0)
+0x80947 func rt_80947 hand from Q1 rt_5f3e7 (BSim 1.0)
+0x80982 func rt_80982 hand from Q1 rt_5f422 (BSim 1.0)
+0x80a67 func rt_80a67 hand from Q1 rt_5f507 (BSim 1.0)
+0x80d42 func rt_80d42 hand from Q1 rt_5f7d3 (BSim 1.0)
+0x80d72 func rt_80d72 hand from Q1 rt_5f803 (BSim 1.0)
+0x80ec4 func rt_80ec4 hand from Q1 rt_5f955 (BSim 1.0)
+0x80eea func rt_80eea hand from Q1 rt_5f97b (BSim 1.0)
+0x81000 func rt_81000 hand from Q1 rt_5fa91 (BSim 1.0)
+0x815e8 func rt_815e8 hand from Q1 rt_5fc12 (BSim 1.0)
+0x81622 func rt_81622 hand from Q1 rt_5fc4c (BSim 1.0)
+0x8168d func rt_8168d hand from Q1 rt_5fcb7 (BSim 1.0)
+0x817ae func rt_817ae hand from Q1 rt_5fdd8 (BSim 1.0)
+0x817d4 func rt_817d4 hand from Q1 rt_5fe12 (BSim 1.0)
+0x89827 func rt_89827 hand from Q1 rt_5fe6f (BSim 1.0)
+0x898ce func rt_898ce hand from Q1 rt_5ff16 (BSim 1.0)
+0x89931 func rt_89931 hand from Q1 rt_5ff79 (BSim 1.0)
+0x8999c func rt_8999c hand from Q1 rt_5ffe4 (BSim 1.0)
+0x89bc0 func rt_89bc0 hand from Q1 rt_60208 (BSim 1.0)
+0x89e71 func rt_89e71 hand from Q1 rt_602dc (BSim 1.0)
+0x89f31 func rt_89f31 hand from Q1 rt_6039c (BSim 1.0)
+0x8a14b func rt_8a14b hand from Q1 rt_6059b (BSim 1.0)
+0x78daa func rt_allocfp hand from Q1 rt_allocfp (BSim 1.0)
+0x74ba0 func rt_atoi hand from Q1 rt_atoi (BSim 1.0)
+0x78596 func rt_close_handle hand from Q1 rt_close_handle (BSim 1.0)
+0x74708 func rt_doclose hand from Q1 rt_doclose (BSim 1.0)
+0x7430c func rt_doopen hand from Q1 rt_doopen (BSim 1.0)
+0x74b5f func rt_dos_setvect hand from Q1 rt_dos_setvect (BSim 1.0)
+0x7464f func rt_fclose hand from Q1 rt_fclose (BSim 1.0)
+0x757a3 func rt_fflush hand from Q1 rt_fflush (BSim 1.0)
+0x78f76 func rt_flush hand from Q1 rt_flush (BSim 1.0)
+0x74258 func rt_fopen_mode hand from Q1 rt_fopen_mode (BSim 1.0)
+0x756ff func rt_fputc hand from Q1 rt_fputc (BSim 1.0)
+0x74485 func rt_fread hand from Q1 rt_fread (BSim 1.0)
+0x74acd func rt_free hand from Q1 rt_free (BSim 1.0)
+0x78e52 func rt_freefp hand from Q1 rt_freefp (BSim 1.0)
+0x74461 func rt_freopen hand from Q1 rt_freopen (BSim 1.0)
+0x743f9 func rt_freopen_close hand from Q1 rt_freopen_close (BSim 1.0)
+0x75cb0 func rt_fseek hand from Q1 rt_fseek (BSim 1.0)
+0x75c6e func rt_fseek_adjust hand from Q1 rt_fseek_adjust (BSim 1.0)
+0x743d4 func rt_fsopen hand from Q1 rt_fsopen (BSim 1.0)
+0x74791 func rt_fwrite hand from Q1 rt_fwrite (BSim 1.0)
+0x74b2b func rt_getsetvect hand from Q1 rt_getsetvect (BSim 1.0)
+0x782e6 func rt_init_fpu hand from Q1 rt_init_fpu (BSim 1.0)
+0x78eda func rt_ioalloc hand from Q1 rt_ioalloc (BSim 1.0)
+0x749ea func rt_malloc hand from Q1 rt_malloc (BSim 1.0)
+0x75dac func rt_memcpy hand from Q1 rt_memcpy (BSim 1.0)
+0x7a535 func rt_pic_mask hand from Q1 rt_pic_mask (BSim 1.0)
+0x7a561 func rt_pic_unmask hand from Q1 rt_pic_unmask (BSim 1.0)
+0x7927c func rt_prtf hand from Q1 rt_prtf (BSim 1.0)
+0x79815 func rt_prtf_format hand from Q1 rt_prtf_format (BSim 1.0)
+0x79733 func rt_prtf_number hand from Q1 rt_prtf_number (BSim 1.0)
+0x73f26 func rt_rand hand from Q1 rt_rand (BSim 1.0)
+0x7d2e0 func rt_read hand from Q1 rt_read (BSim 1.0)
+0x78b80 func rt_sopen hand from Q1 rt_sopen (BSim 1.0)
+0x749a7 func rt_sprintf_putc hand from Q1 rt_sprintf_putc (BSim 1.0)
+0x73f4a func rt_srand hand from Q1 rt_srand (BSim 1.0)
+0x73eb5 func rt_stricmp hand from Q1 rt_stricmp (BSim 1.0)
+0x75556 func rt_strtod hand from Q1 rt_strtod (BSim 1.0)
+0x73ef3 func rt_time hand from Q1 rt_time (BSim 1.0)
+0x7469f func rt_tmpname hand from Q1 rt_tmpname (BSim 1.0)
+0x80eb1 func rt_tzset hand from Q1 rt_tzset (BSim 1.0)
+0x8135a func rt_ultoa hand from Q1 rt_ultoa (BSim 1.0)
+0x53a50 func save_ClearNames hand from Q1 save_ClearNames (BSim 1.0)
+0x75f66 func sos_75f66 hand from Q1 sos_57a32 (BSim 1.0)
+0x78a70 func sos_78a70 hand from Q1 sos_580e0 (BSim 1.0)
+0x7d2a9 func sos_7d2a9 hand from Q1 sos_5a6a1 (BSim 1.0)
+0x7c7ba func sos_7c7ba hand from Q1 sos_5a883 (BSim 1.0)
+0x7cabc func sos_7cabc hand from Q1 sos_5abba (BSim 1.0)
+0x7cb65 func sos_7cb65 hand from Q1 sos_5ac63 (BSim 1.0)
+0x7cc2d func sos_7cc2d hand from Q1 sos_5ad60 (BSim 1.0)
+0x7a93d func sos_7a93d hand from Q1 sos_5af69 (BSim 1.0)
+0x7b8a6 func sos_7b8a6 hand from Q1 sos_5b6af (BSim 1.0)
+0x7adba func sos_7adba hand from Q1 sos_5b70a (BSim 1.0)
+0x7d3f4 func sos_FileRead hand from Q1 sos_FileRead (BSim 1.0)
+0x32080 func task3b980_Think hand from Q1 task3b980_Think (BSim 1.0)
+0x320b0 func task3b9ac_Think hand from Q1 task3b9ac_Think (BSim 1.0)
+0x2b5e0 func text_PutDigit hand from Q1 text_PutDigit (BSim 1.0)
+0x2bfa0 func timer_FrameRate hand from Q1 timer_FrameRate (BSim 1.0)
+0x81448 func tolower_81448 hand from Q1 tolower_00058183 (BSim 1.0)
+0x784b5 func unhook_pharlap hand from Q1 unhook_pharlap_000586e9 (BSim 1.0)
+0x2fe68 func vga_BlitPartial hand from Q1 vga_BlitPartial (BSim 1.0)
+0x30017 func vga_BlitView hand from Q1 vga_BlitView (BSim 1.0)
+0x2c470 func view_TransformEntity hand from Q1 view_TransformEntity (BSim 1.0)
+0x28240 func weapon_NextOwned hand from Q1 weapon_NextOwned (BSim 1.0)
+0x219c0 func ent_ViewRel hand from Q1 ent_ViewRel (BSim 0.999)
+0x2e340 func gif_ReadBlock hand from Q1 gif_ReadBlock (BSim 0.998)
+0x2fd32 func vga_BlitScreen hand from Q1 vga_BlitScreen (BSim 0.997)
+0x1efa0 func ent_AllocSlot hand from Q1 ent_AllocSlot (BSim 0.996)
+0x12670 func car_TurnTo hand from Q1 car_TurnTo (BSim 0.994)
+0x1aff8 func gfx_GlyphF hand from Q1 gfx_GlyphF (BSim 0.984)
+0x1b097 func gfx_GlyphG hand from Q1 gfx_GlyphG (BSim 0.982)
+0x73fd4 func rt_cstart hand from Q1 rt_cstart (BSim 0.979)
+0x47aa0 func overlayA_Start hand from Q1 overlayA_Start (BSim 0.967)
+0x281c0 func player_FireSlot hand from Q1 player_FireSlot (BSim 0.965)
+0x31dd0 func dac_WriteRangeVsync hand from Q1 dac_WriteRangeVsync (BSim 0.958)
+0x23720 func options_Input hand from Q1 options_Input (BSim 0.948)
+0x179b0 func event_ReleaseEnt hand from Q1 event_ReleaseEnt (BSim 0.934)
+0x2d390 func task_AllocFixed hand from Q1 task_AllocFixed (BSim 0.934)
+0x7a47a func rt_7a47a hand from Q1 rt_5a0e7 (BSim 0.929)
+0x26920 func frag_26920 hand from Q1 frag_32fd4 (BSim 0.927)
+0x12930 func car_AtLaneCenter hand from Q1 car_AtLaneCenter (BSim 0.924)
+0x811bf func rt_init_files hand from Q1 rt_init_files (BSim 0.921)
+0x31d10 func dac_WriteAllVsync hand from Q1 dac_WriteAllVsync (BSim 0.92)
+0x475b0 func gfx_BlitScaledRle hand from Q1 gfx_BlitScaledRle (BSim 0.92)
+0x2d420 func task_Alloc hand from Q1 task_Alloc (BSim 0.919)
+0x74c0c func sos_TimerInitSystem hand from Q1 sos_TimerInitSystem (BSim 0.91)
+0x95223 func vga_SetStartAddr hand from Q1 vga_SetStartAddr (BSim 0.903)
+0x26830 func kbd_ClearAll hand from Q1 kbd_ClearAll (BSim 0.902)
+0x47930 func gfx_BlitRle hand from Q1 gfx_BlitRle (BSim 0.9)
+0x7eb6b func switchD_0005d37b::rt hand from Q1 switchD_0005d37b::rt_5d3af (BSim 1.0)
+0x7f2fb func __FLDS_7f2fb hand from Q1 __FLDS_0005db3f (callgraph r0)
+0x32194 func io_OutByte hand from Q1 io_OutByte (callgraph r0)
+0x3219d func stub_Ret hand from Q1 stub_Ret_3c3f5 (callgraph r0)
+0x3219f func stub_Ret_3219f hand from Q1 stub_Ret_3c3f7 (callgraph r0)
+0x75dda func __CHK hand from Q1 __CHK_00055bd8 (callgraph r0)
+0x56f96 func fli_Read hand from Q1 fli_Read (callgraph r0)
+0x74240 func memset_74240 hand from Q1 memset (callgraph r0)
+0x7a90a func tell_7a90a hand from Q1 tell_00059b68 (callgraph r0)
+0x7a6b4 func rt_7a6b4 hand from Q1 rt_5a311 (callgraph r0)
+0x2bef9 func frag_2bef9 hand from Q1 frag_36458 (callgraph r0)
+0x78b26 func rt_set_errno hand from Q1 rt_set_errno (callgraph r0)
+0x7a697 func rt_7a697 hand from Q1 rt_5a2f4 (callgraph r0)
+0x811a1 func rt_isatty hand from Q1 rt_isatty (callgraph r0)
+0x81181 func rt_81181 hand from Q1 rt_5f242 (callgraph r0)
+0x8118a func rt_8118a hand from Q1 rt_5f3dc (callgraph r0)
+0x1c010 func game_Main hand from Q1 game_Main (callgraph r0)
+0x74979 func rt_exit hand from Q1 rt_exit (callgraph r0)
+0x80a8f func rt_80a8f hand from Q1 rt_5f52f (callgraph r0)
+0x78b49 func rt_78b49 hand from Q1 rt_581b9 (callgraph r0)
+0x7467e func rt_doclose_free hand from Q1 rt_doclose_free (callgraph r0)
+0x74228 func rt_74228 hand from Q1 rt_53c0c (callgraph r0)
+0x7f4d0 func __FLDS_7f4d0 hand from Q1 __FLDS_0005dd14 (callgraph r0)
+0x80402 func rt_80402 hand from Q1 rt_5ec46 (callgraph r0)
+0x803eb func rt_803eb hand from Q1 rt_5ec2f (callgraph r0)
+0x803f5 func rt_803f5 hand from Q1 rt_5ec39 (callgraph r0)
+0x81195 func rt_81195 hand from Q1 rt_5bae8 (callgraph r0)
+0x89ef5 func rt_89ef5 hand from Q1 rt_60360 (callgraph r0)
+0x73e86 func __CHP hand from Q1 __CHP_0005330c (callgraph r0)
+0x8a132 func modf_8a132 hand from Q1 modf_00060582 (callgraph r0)
+0x80932 func rt_80932 hand from Q1 rt_5a5bb (callgraph r0)
+0x790a6 func rt_remove hand from Q1 rt_remove (callgraph r0)
+0x783b1 func rt_783b1 hand from Q1 rt_585e5 (callgraph r0)
+0x7a3c8 func rt_7a3c8 hand from Q1 rt_59b65 (callgraph r0)
+0x7980e func rt_7980e hand from Q1 rt_58d5c (callgraph r0)
+0x8142d func rt_8142d hand from Q1 rt_5f219 (callgraph r0)
+0x73f20 func rt_rand_seedptr hand from Q1 rt_rand_seedptr (callgraph r0)
+0x78b32 func rt_78b32 hand from Q1 rt_581a2 (callgraph r0)
+0x78f70 func rt_78f70 hand from Q1 rt_58392 (callgraph r0)
+0x74693 func rt_hexdigit hand from Q1 rt_hexdigit (callgraph r0)
+0x2d550 func cur_EndTask hand from Q1 cur_EndTask (callgraph r0)
+0x2d4b0 func cur_SetHandler hand from Q1 cur_SetHandler (callgraph r0)
+0x22090 func player_FireWeapon4 hand from Q1 player_FireWeapon4 (callgraph r0)
+0x1b290 func player_FireWeapon hand from Q1 player_FireWeapon (callgraph r0)
+0x28ec0 func weapon_AmmoBlink hand from Q1 weapon_AmmoBlink (callgraph r0)
+0x74b8a func rt_inp hand from Q1 rt_inp (callgraph r0)
+0x74b92 func rt_outp hand from Q1 rt_outp (callgraph r0)
+0x7a920 func rt_7a920 hand from Q1 rt_5a665 (callgraph r0)
+0x32170 func vga_WaitVsyncStart hand from Q1 vga_WaitVsyncStart (callgraph r0)
+0x75235 func sos_TimerSetRate hand from Q1 sos_TimerSetRate (callgraph r0)
+0x74978 func rt_exit_hook hand from Q1 rt_exit_hook (callgraph r1)
+0x74991 func rt_exit_dos hand from Q1 rt_exit_dos (callgraph r1)
+0x741ed func rt_open_con hand from Q1 rt_open_con (callgraph r1)
+0x73ea9 func rt_dispatcher hand inkling guess: branches on globals, calls handlers/hooks
+0x73eae func rt_abs_int hand inkling guess: returns absolute value of integer input
+0x73eee func rt_int21_wrapper hand inkling guess: calls DOS int 21h, returns shifted value or errno-4 error
+0x73f5c func rt_init_runtime_state hand inkling guess: -
+0x743ef func rt_fsopen_wrapper hand inkling guess: thin wrapper forwarding args to rt_fsopen
+0x749ba func rt_vsprintf hand inkling guess: formats via prtf into caller buffer then NUL-terminates
+0x74bf7 func rt_no_op_stub hand inkling guess: empty function body, no calls or effects
+0x74ce3 func sos_scale_timer_value hand inkling guess: masks PIC, reads timer, returns scaled value
+0x74d1d func sos_TimerAdd hand inkling guess: registers a timer slot and recomputes rates
+0x74f0b func sos_TimerSetRateAndRecompute hand inkling guess: Sets timer rate and recomputes per-channel step values
+0x75073 func sos_TimerRecalc hand inkling guess: recomputes timer rate and per-channel increments from active timers
+0x7520b func sos_lookup_pair hand inkling guess: indexed table lookup concatenating two 32-bit words
+0x7526a func sos_dispatch_callbacks hand inkling guess: iterates 16 slots, adds values, invokes callbacks when odd flag set
+0x7530a func sos_wrapper hand inkling guess: calls rt_7a609, no other logic
+0x75324 func sos_no_op_stub hand inkling guess: empty function body, no calls or effects
+0x7549c func rt_save_context hand inkling guess: stores registers and segment values into a context block
+0x7552e func rt_get_segment_registers hand inkling guess: stores all segment regs to struct
+0x75dd2 func rt_store_ss_global hand inkling guess: stores segment register to global variable
+0x75ded func rt_stack_overflow_handler hand inkling guess: stack overflow check and COMSPEC/COMMAND.COM fallback.
+0x75e0b func rt_stack_overflow hand runtime, from digest strings
+0x75e1a func rt_system hand runtime, from digest strings
+0x75e83 func rt_path_lookup hand inkling guess: builds path and queries sound library
+0x75f2c func rt_sos_wrapper hand inkling guess: forwards args to sos_7adba
+0x75f45 func rt_wrapper hand inkling guess: forwards args to rt_78216 via stack buffer
+0x75f83 func sos_ftell_wrapper hand inkling guess: reads ftell result and stores high word
+0x75f96 func sos_fseek_wrapper hand inkling guess: wraps rt_fseek with four args
+0x75fa2 func sos_noop_stub hand inkling guess: empty function, no side effects or calls
+0x75fb7 func sos_alloc_slot hand inkling guess: find free SOS slot and link it
+0x76137 func sos_mark_channel_active hand inkling guess: sets flag bit on active channel entry
+0x761a9 func sos_set_region_flag hand inkling guess: sets bit 0x40 on region entries or returns default 10 when absent
+0x76217 func sos_noop_stub_76217 hand inkling guess: empty function, no calls or effects
+0x7622c func sos_no_op_stub_7622c hand inkling guess: empty function body, no calls or effects
+0x76241 func sos_timer_load hand inkling guess: loads timer value by index, combines with param_2
+0x76283 func sos_param_swap hand inkling guess: swaps param_3 into active sound slot field
+0x7630b func sos_timer_read hand inkling guess: reads timer/sound state field with fallback 10
+0x76381 func sos_sound_timer_lookup hand inkling guess: resolves timer/sound slot value or default ten
+0x763f7 func sos_sound_channel_lookup hand inkling guess: -
+0x7646d func sos_set_sound_param hand inkling guess: writes param_3 into selected sound object field
+0x764f3 func sos_timer_read_764f3 hand inkling guess: reads timer/event value with fallback default
+0x76569 func sos_set_timer_value hand inkling guess: writes param_3 into timer field if active and enabled
+0x765ef func sos_timer_lookup hand inkling guess: resolves timer/sound slot value or default 10
+0x76665 func sos_sound_param_lookup hand inkling guess: validates param and returns byte field or default 10
+0x766db func sos_timer_lookup_766db hand inkling guess: resolves timer/sound slot value or default 10
+0x7673f func sos_lookup_by_id hand inkling guess: scans table entries for matching id, returns value or sentinel
+0x767c9 func sos_timer_lookup_767c9 hand inkling guess: reads per-index timer value or default 10
+0x7680b func sos_timer_check hand inkling guess: checks SOS timer/object state and returns flag
+0x76885 func sos_noop_stub_76885 hand inkling guess: empty function, no calls or strings
+0x7689a func sos_no_op_stub_7689a hand inkling guess: empty function, no calls or effects
+0x768af func sos_set_timer_or_sound hand inkling guess: starts timer or loads sound when idle
+0x7690b func sos_timer_tick_7690b hand inkling guess: polls SOS timer, clears bit, returns scaled value
+0x76948 func sos_noop hand inkling guess: empty function, no callers/callees/strings
+0x7695d func sos_no_op_stub_7695d hand inkling guess: empty function body, no calls or effects
+0x76972 func sos_init_sos_state hand inkling guess: one-time SOS globals reset guarded by flag
+0x76c05 func sos_empty_sos_stub hand inkling guess: no callers, no callees, empty body
+0x76c08 func sos_noop_stub_76c08 hand inkling guess: empty function, no callers or callees
+0x76c1d func sos_noop_stub_76c1d hand inkling guess: empty function, no calls or effects
+0x76c32 func sos_init_sound_channel hand inkling guess: initializes SOS channel state and buffers
+0x77095 func sos_channel_stop hand inkling guess: stops SOS channel, clears state, frees slot
+0x77272 func sos_wait_or_load hand inkling guess: waits for SOS state then loads/stores result
+0x7733b func sos_init_timer_7733b hand inkling guess: zeroes state, probes SOS timer, sets fields or error code
+0x77457 func sos_timer_init hand inkling guess: initializes SOS timer/sound state via helpers
+0x774c8 func sos_jump_stub hand inkling guess: tail-calls sos_7ce0d then returns
+0x774eb func sos_jump_stub_774eb hand inkling guess: tail-calls sos_7ce0d then returns
+0x7750e func sos_wrapper_7750e hand inkling guess: calls sos_7ce0d, no other logic
+0x77531 func sos_wrapper_77531 hand inkling guess: calls sos_7ce0d, no other logic
+0x77554 func sos_jump_stub_77554 hand inkling guess: tail-calls sos_7ce0d then returns
+0x77577 func sos_noop_77577 hand inkling guess: empty function, no callers/callees/strings
+0x7758c func sos_noop_stub_7758c hand inkling guess: empty function, no callers/callees/strings
+0x775a1 func sos_DetectLoadDriver hand runtime, from digest strings
+0x776ee func sos_timer_wait hand inkling guess: waits for SOS timer, returns flag/value
+0x77776 func sos_load_sound_region hand inkling guess: loads/validates SOS region and initializes playback state
+0x779ed func sos_FileReadById hand inkling guess: reads SOS table entry matching param_1 and loads it
+0x77b67 func sos_file_load_track hand inkling guess: reads SOS file records and loads track data
+0x77da4 func sos_file_load_loop hand inkling guess: reads/loads SOS file records until done
+0x77fb5 func sos_event_dispatch hand inkling guess: iterates event table, calls handlers, validates range
+0x78135 func sos_state_check hand inkling guess: validates param_1 state and returns code/param_2 packing
+0x781f0 func sos_no_op_stub_781f0 hand inkling guess: empty function body, no calls or effects
+0x78205 func sos_fputc_wrapper hand inkling guess: forwards args to rt_fputc, increments counter
+0x7829b func rt_fp_not_loaded_init hand inkling guess: stores two function pointers in a table
+0x782b6 func rt_fpu_init_guard hand inkling guess: initializes FPU if unaff_EBP set, returns zero
+0x78511 func rt_save_fpu_state hand inkling guess: copies FPU control/status/tag/pointers/opcode and ST0-7 into buffer
+0x78516 func rt_load_byte_at_offset_1c hand inkling guess: -
+0x7851a func rt_set_callbacks_and_init hand inkling guess: assigns handlers then calls init routine
+0x78595 func rt_empty_stub hand inkling guess: no calls, no strings, trivial return body
+0x78b13 func rt_int_to_lowercase hand inkling guess: maps A-Z range to a-z by adding 0x20
+0x78b39 func rt_set_errno_9 hand inkling guess: sets errno to 9, no return value
+0x78b5c func rt_sopen_wrapper hand inkling guess: calls rt_sopen then returns void
+0x78d4c func rt_int21_dispatch hand inkling guess (address cut by hand): swi 0x21 calls with stack return value
+0x79ec6 func rt_alloc_and_link_record hand inkling guess: allocates/links record, checks bounds, frees tail
+0x7a3cd func rt_context_save_and_call_rt_74228 hand inkling guess: -
+0x7a609 func rt_swap_words_or_return_args hand inkling guess: swaps via global state or returns args unchanged
+0x7a997 func sos_timer_init_7a997 hand inkling guess: sets timer via int21, writes 0x2f,99,0
+0x7a9bd func sos_check_sound_result hand inkling guess: calls rt_8182c, returns param_2 with flag from result
+0x7a9dc func sos_dispatch_and_flush hand inkling guess: calls rt_819f5 then rt_81a4a cleanup
+0x7aa0f func rt_init_cmdline hand runtime, from digest strings
+0x7ad0d func sos_wrapper_7ad0d hand inkling guess: forwards args to rt_81cf9
+0x7ad23 func sos_strncpy hand inkling guess: copies up to n chars then zero-pads
+0x7ad4f func sos_timer_callback_7ad4f hand inkling guess: sets errno from timer state and returns packed code
+0x7adf2 func sos_timer_read_7adf2 hand inkling guess: reads 32-bit timer/counter from EDI-pointed structure
+0x7ae98 func sos_swi_dispatch_call hand inkling guess: indirect call through swi(0) result
+0x7b198 func sos_noop_stub_7b198 hand inkling guess: empty function, no calls or effects
+0x7b1ad func sos_waitForSoundReady hand inkling guess: polls sos_7c601 until nonzero then returns packed status
+0x7b51f func sos_wait_for_sos_ready hand inkling guess: polls sos_7c63e until nonzero then returns packed status
+0x7b891 func sos_noop_stub_7b891 hand inkling guess: empty function, no effects, no callers/callees
+0x7b8c5 func sos_no_op hand inkling guess: empty function, no calls or effects
+0x7b8da func sos_timer_shift hand inkling guess: repeated sos_7c601 calls then shift param_2 left 32 bits
+0x7bbe4 func sos_timer_tick_7bbe4 hand inkling guess: increments byte counter, calls sos_7c63e repeatedly
+0x7be02 func sos_no_op_stub_7be02 hand inkling guess: empty function with no callers or callees
+0x7be17 func sos_noop_7be17 hand inkling guess: empty function, no callers, no callees, no strings
+0x7be2c func sos_timer_callback hand inkling guess: invokes registered timer/sound callback if set
+0x7be6f func sos_nullsub_7be6f hand inkling guess: empty sos function, no callees or strings
+0x7be88 func sos_nullsub hand inkling guess: empty function, no callees or strings
+0x7bea1 func sos_nullsub_7bea1 hand inkling guess: empty function, no calls or strings
+0x7beba func sos_set_timer_params hand inkling guess: stores timer mode/value into globals
+0x7bee4 func sos_noop_stub_7bee4 hand inkling guess: empty function with no callers or callees
+0x7bef9 func sos_no_op_stub_7bef9 hand inkling guess: empty function body, no calls or effects
+0x7bf0e func sos_nullsub_7bf0e hand inkling guess: empty function, no calls or effects
+0x7bf27 func sos_nullsub_7bf27 hand inkling guess: empty function, no calls or strings
+0x7bf40 func sos_nullsub_7bf40 hand inkling guess: empty function with no calls or effects
+0x7bf59 func sos_nullsub_7bf59 hand inkling guess: empty function, no operations or calls
+0x7bf72 func sos_nullsub_7bf72 hand inkling guess: empty function, no calls or effects
+0x7bf8b func sos_no_op_stub_7bf8b hand inkling guess: empty function, no calls or effects
+0x7bf9a func sos_noop_stub_7bf9a hand inkling guess: empty function body, no calls or effects
+0x7bfaf func sos_nullsub_7bfaf hand inkling guess: empty function with no calls or callees
+0x7bfc8 func sos_nullsub_7bfc8 hand inkling guess: empty function, no calls or effects
+0x7bfe1 func sos_nullsub_7bfe1 hand inkling guess: empty function with no calls or effects
+0x7bffa func sos_nullsub_7bffa hand inkling guess: empty function with no calls or effects
+0x7c013 func sos_nullsub_7c013 hand inkling guess: empty function with no callees or strings
+0x7c02c func sos_noop_stub_7c02c hand inkling guess: empty function, no calls or effects
+0x7c03b func sos_empty_stub hand inkling guess: no body, no callers, no callees, no strings
+0x7c054 func sos_nullsub_7c054 hand inkling guess: empty function, no calls or strings
+0x7c06d func sos_nullsub_7c06d hand inkling guess: empty function, no calls or effects
+0x7c086 func sos_nullsub_7c086 hand inkling guess: empty function, no calls or strings
+0x7c09f func sos_nullsub_7c09f hand inkling guess: empty function, no calls or strings
+0x7c0b8 func sos_nullsub_7c0b8 hand inkling guess: empty function, no calls or effects
+0x7c0e9 func sos_copy_string_to_gs hand inkling guess: copies string bytes into GS-offset buffer with paired writes
+0x7c152 func sos_nullsub_7c152 hand inkling guess: empty function, no calls or effects
+0x7c16b func sos_noop_7c16b hand inkling guess: empty function, no calls or effects
+0x7c180 func sos_DigiLoadDriver hand runtime, from digest strings
+0x7c362 func sos_timer_select hand inkling guess: chooses delay based on flag and sound query
+0x7c428 func sos_noop_stub_7c428 hand inkling guess: empty function body, no calls or effects
+0x7c43d func sos_no_op_stub_7c43d hand inkling guess: empty function body, no calls or effects
+0x7c452 func sos_alloc_or_hook hand inkling guess: allocates via hook or malloc, frees on failure
+0x7c4b6 func sos_free_or_dispatch hand inkling guess: frees or dispatches via callback based on flag
+0x7c4fc func sos_set_param hand inkling guess: stores parameter into global ga0540
+0x7c51c func sos_set_param_7c51c hand inkling guess: stores parameter into global state
+0x7c53c func sos_noop_stub_7c53c hand inkling guess: empty function body, no calls or effects
+0x7c551 func sos_noop_7c551 hand inkling guess: empty function, no callers/callees/strings
+0x7c566 func sos_dispatch_timer hand inkling guess: branches on flag and param_2, calls sos_7c855 otherwise
+0x7c5eb func sos_no_op_stub_7c5eb hand inkling guess: empty function, no calls or effects
+0x7c601 func sos_timer_callback_7c601 hand inkling guess: dispatches SOS timer callback via int 0x31
+0x7c63e func sos_sound_irq_dispatcher hand inkling guess: calls SOS IRQ handler with args
+0x7c67b func sos_timer_query hand inkling guess: reads SOS timer/state via swi calls
+0x7c727 func sos_timer_callback_7c727 hand inkling guess: invokes SOS timer handlers via swi(0x31)
+0x7c75d func sos_timer_init_7c75d hand inkling guess: initializes SOS timer/sound state via interrupt 31h calls
+0x7c7f0 func sos_timer_callback_7c7f0 hand inkling guess: dispatches SOS timer event via swi 0x31
+0x7c81b func sos_timer_tick_copy hand inkling guess: copies 106 bytes from pointer to stack buffer
+0x7c855 func sos_copy_block_and_zero_tail hand inkling guess: -
+0x7c8b1 func sos_timer_callback_7c8b1 hand inkling guess: invokes callback with argument 5
+0x7c8d4 func sos_timer_callback_7c8d4 hand inkling guess: indirect call through stored pointer with zero arg
+0x7c8f7 func sos_timer_callback_7c8f7 hand inkling guess: invokes callback and stores CX/DX bytes/word
+0x7c93b func sos_copy_buffer_and_zero_tail hand inkling guess: -
+0x7c994 func sos_callback_invoke hand inkling guess: invokes callback with packed args
+0x7c9c4 func sos_timer_callback_7c9c4 hand inkling guess: calls stored function pointer with arg 1
+0x7c9e7 func sos_timer_callback_7c9e7 hand inkling guess: invokes callback with packed args
+0x7ca1c func sos_timer_callback_7ca1c hand inkling guess: invokes callback with args 4, param_2, param_3
+0x7ca45 func sos_timer_callback_7ca45 hand inkling guess: invokes timer callback with param_2 and stack arg
+0x7ca6b func sos_timer_callback_7ca6b hand inkling guess: invokes SOS timer callback with args 3,param_2,8
+0x7ca92 func sos_timer_init_7ca92 hand inkling guess: swi 0x2f returns handler, calls with 0x1600
+0x7caf1 func sos_timer_init_7caf1 hand inkling guess: checks DOS version, sets timer via int 4b
+0x7cb26 func sos_set_timer_params_7cb26 hand inkling guess: stores timer fields and invokes callback with 4
+0x7cbaf func sos_set_entry hand inkling guess: writes 6-byte record at indexed offset
+0x7cbe5 func sos_timer_callback_7cbe5 hand inkling guess: dispatches SOS timer callbacks via swi 0x31
+0x7cc10 func sos_timer_callback_7cc10 hand inkling guess: swi 0x2f returns code, calls it with 0x1600
+0x7cc6e func sos_irq_dispatcher hand inkling guess: fetches SOS handler and calls it with param
+0x7cc9c func sos_timer_start hand inkling guess: sets SOS timer via interrupt 0x31
+0x7cd08 func sos_init_timer hand inkling guess: initializes SOS timer/sound state and dispatches swi 0x31
+0x7cd55 func sos_timer_callback_7cd55 hand inkling guess: invokes SOS handler with EDX and param fields
+0x7cdb5 func sos_timer_callback_7cdb5 hand inkling guess: invokes stored callback with 0xb argument
+0x7cddb func sos_noop_stub_7cddb hand inkling guess: empty function, no calls or effects
+0x7cde4 func sos_memcpy hand inkling guess: copies param_5 bytes from source to dest pointers
+0x7ce0d func sos_timer_tick hand inkling guess: advances timer, zeroes buffer, dispatches callback
+0x7d000 func sos_timer_update_loop hand inkling guess: -
+0x7d54a func rt_strtod_wrapper hand inkling guess: converts strtod result to double via float10
+0x7d558 func rt_fp_not_loaded hand runtime, from digest strings
+0x7d586 func rt_byte_array_update hand inkling guess: mutates pointers and bytes with carry-like arithmetic
+0x7d954 func rt_combine_params hand inkling guess: calls runtime then returns concatenated args
+0x7dbd6 func rt_empty_stub_7dbd6 hand inkling guess: no-op function with no callers or callees
+0x7dbdc func rt_empty_stub_7dbdc hand inkling guess: no-op function with no calls or effects
+0x7dbe2 func rt_empty_stub_7dbe2 hand inkling guess: no-op function with no callers or callees
+0x7dbe8 func rt_empty_stub_7dbe8 hand inkling guess: no operations, immediate return
+0x7dbee func rt_empty_function hand inkling guess: no body, no callers, no callees, no strings
+0x7dbf6 func rt_empty_stub_7dbf6 hand inkling guess: no-op function with no callers or callees
+0x7dbfc func rt_empty_stub_7dbfc hand inkling guess: no body, no callers, no callees, no strings
+0x7dc02 func rt_noop_stub hand inkling guess: empty function, no calls or effects
+0x7dc08 func rt_empty_stub_7dc08 hand inkling guess: no statements, returns immediately
+0x7dc10 func rt_empty_stub_7dc10 hand inkling guess: no-op function with no calls or effects
+0x7dc18 func rt_noop_stub_7dc18 hand inkling guess: empty function, no calls or effects
+0x7dc20 func rt_empty_stub_7dc20 hand inkling guess: no calls, no strings, empty body
+0x7dc28 func rt_empty_stub_7dc28 hand inkling guess: no operations, immediate return
+0x7dc32 func rt_no_op_stub_7dc32 hand inkling guess: empty function body, no calls or effects
+0x7dc3c func rt_empty_function_7dc3c hand inkling guess: no operations, immediate return
+0x7dc44 func rt_noop_stub_7dc44 hand inkling guess: empty function, no calls or effects
+0x7dc4c func rt_noop_stub_7dc4c hand inkling guess: empty function body, no calls/strings/callers
+0x7dc55 func rt_no_op_stub_7dc55 hand inkling guess: empty function body, no calls or strings
+0x7dc5e func rt_empty_stub_7dc5e hand inkling guess: function body is empty, no calls/strings/effects
+0x7dc67 func rt_empty_stub_7dc67 hand inkling guess: no body, no callers, no callees, no strings
+0x7dc70 func rt_empty_stub_7dc70 hand inkling guess: no-op function with no callers or callees
+0x7dc7b func rt_empty_stub_7dc7b hand inkling guess: no operations, immediate return
+0x7dc86 func rt_empty_function_7dc86 hand inkling guess: no operations, immediate return
+0x7dc8f func rt_empty_stub_7dc8f hand inkling guess: no instructions, returns immediately
+0x7dcd0 func fp_x87_dispatch hand inkling guess (address cut by hand): x87 float runtime dispatcher
+0x7dcd5 func fp_load_call_indirect hand inkling guess: -
+0x7dcf4 func fp_load_and_call hand inkling guess: x87 load then indirect call
+0x7e4ac func fp_string_parser_dispatcher hand inkling guess: -
+0x7e4de func fp_call_then_dispatch hand inkling guess: x87 runtime helper calls rt_7f09c then invokes stored code pointer
+0x7f09c func rt_copy_pair_result hand inkling guess: stores helper result and saved field to output
+0x7f650 func rt_rotate_word_helper hand inkling guess: rotates 32-bit value by byte count"
+0x7faff func rt_swi_dispatch hand inkling guess: calls code pointer from swi(3)
+0x7fb00 func rt_swi_call_dispatcher hand inkling guess: calls code pointer from swi(3)
+0x806d8 func rt_call_806f8_keep_field hand inkling guess (address cut by hand): calls rt_806f8, preserves second field, stores result first
+0x80800 func rt_dos4g_check hand runtime, from digest strings
+0x808b5 func rt_noop_stub_808b5 hand inkling guess: empty function with no callees or effects
+0x80e87 func rt_clear_and_call_rt_80d72 hand inkling guess: zeroes field then invokes runtime helper
+0x80ea3 func rt_forward_80e87 hand inkling guess (address cut by hand): forwards args to rt_80e87 helper
+0x8119b func rt_return_global_pointer hand inkling guess: returns address of global variable gd94d4
+0x81316 func rt_int21_wrapper_81316 hand inkling guess: calls DOS int 21h with param_1 and returns result/retaddr
+0x813e4 func rt_utoa hand runtime, from digest strings
+0x81456 func tolower_swap_globals_return_concat hand inkling guess: swaps two globals and returns concatenated args
+0x817ac func getpow10_getpow10 hand inkling guess: empty stub matching region name; no callees/strings.
+0x817c0 func rt_nullsub hand inkling guess: empty function with no calls or effects
+0x817c8 func rt_nullsub_817c8 hand inkling guess: empty function with no callees or strings
+0x8182c func rt_int21_wrapper_8182c hand inkling guess: calls DOS interrupts 0x21 with 0x1a/0x4e then runtime cleanup
+0x81849 func rt_int21_wrapper_81849 hand inkling guess: dispatches DOS int21 calls then cleanup routines
+0x81868 func rt_copy_words_on_tab_interrupt hand inkling guess: -
+0x8188b func rt_copy_words_via_swi21 hand inkling guess: -
+0x818ae func rt_strcpy hand inkling guess: copies source string to destination until NUL terminator
+0x818bd func rt_build_string_buffer hand inkling guess: allocates and fills a string buffer from list"}
+0x819f5 func rt_format_string_with_spaces hand inkling guess: builds string inserting spaces between tokens
+0x81a4a func rt_int21_wrapper_81a4a hand inkling guess: DOS int21 calls and stack/global setup
+0x81b18 func rt_strlen hand inkling guess: counts chars until NUL terminator
+0x81b31 func rt_strcpy_81b31 hand inkling guess: copies source to dest with bounds clamp and null terminator
+0x81b75 func rt_path_normalize hand inkling guess: normalizes path segments and resolves dot/dotdot components
+0x81bfe func rt_normalize_path_segment hand inkling guess: collapses separator into empty path buffer
+0x81c10 func rt_normalize_path hand inkling guess: builds path with drive, segments, dot handling
+0x81cdb func rt_init_cmdline_wrapper hand inkling guess: forwards args to rt_init_cmdline
+0x81cf9 func rt_searchenv_path_wrapper hand inkling guess: thin wrapper calling rt_searchenv_path
+0x81d07 func rt_no_op hand inkling guess: empty function body, no calls or effects
+0x81d1c func rt_error_string hand runtime, from digest strings
+0x81d46 func rt_noop_stub_81d46 hand inkling guess: empty function, no calls or effects
+0x8215d func rt_copy_pairs_8215d hand inkling guess: copies bytes from source into destination buffer
+0x8217b func rt_xor_accumulate_loop hand inkling guess: XOR bytes into accumulator across buffer range
+0x8219e func rt_copy_pairs_8219e hand inkling guess: loops copying/adding source into destination until bound
+0x821bd func rt_loop_xor_add_bytes hand inkling guess: iterates pointers XORing 0x8000 and adding bytes
+0x821e1 func rt_copy_pairs_loop hand inkling guess: -
+0x82202 func rt_xor_add_transform_loop hand inkling guess: -
+0x82228 func rt_add_pairs_loop hand inkling guess: adds source values into destination pairs until end bound
+0x8224a func rt_copy_pairs_xor_8000 hand inkling guess: -
+0x82271 func rt_string_concat_copy_loop hand inkling guess: -
+0x82292 func rt_xor_accumulate_loop_82292 hand inkling guess: -
+0x822be func rt_copy_pairs_strided hand inkling guess: copies ESI-strided values into EDI range
+0x822e1 func rt_array_xor_accumulate_step hand inkling guess: loop increments EDI/ESI and XORs 0x8000 into elements
+0x8230f func rt_copy_pairs_8230f hand inkling guess: copies paired bytes between buffers
+0x82336 func rt_xor_add_pair_loop hand inkling guess: XOR-folds and adds 16-bit pairs across buffers
+0x82368 func rt_vector_add hand inkling guess: adds two vectors elementwise until end bound
+0x82391 func rt_xor_pair_loop hand inkling guess: XOR-accumulate pairs until bound reached
+0x823c5 func rt_string_concat_accumulate hand inkling guess: loops copying bytes and accumulating into output buffer
+0x823ec func rt_xor_accumulate_loop_823ec hand inkling guess: -
+0x82418 func rt_add_carry hand inkling guess: adds two short arrays with carry propagation
+0x82445 func rt_transform_words_loop hand inkling guess: indexed XOR-add loop over buffer until bound
+0x82477 func rt_copy_words_with_carry hand inkling guess: copies bytes with carry propagation into output buffer
+0x824a1 func rt_xor_accumulate_words_824a1 hand inkling guess: -
+0x824d0 func rt_sum_strided_pairs_loop hand inkling guess: accumulates strided short pairs until bound
+0x82500 func rt_copy_words_with_carry_advance hand inkling guess: copies words while advancing pointers via carry-dependent offsets
+0x82535 func rt_decode_byte_stream hand inkling guess: decodes bytes via table-driven state machine
+0x82564 func rt_xor_accumulate_advance hand inkling guess: XOR-folds bytes, accumulates, advances pointers
+0x8259e func rt_copy_pairs_with_indexed_offsets hand inkling guess: -
+0x825cf func rt_xor_accumulate_strided_walk hand inkling guess: -
+0x8260b func rt_add_carry_chain hand inkling guess: propagates carry across paired words
+0x82640 func rt_xor_add_loop hand inkling guess: XOR-adjusts and adds paired words across buffers
+0x82680 func rt_add_short_pairs_loop hand inkling guess: adds two shorts per iteration with carry-dependent stride
+0x826b7 func rt_xor_copy_loop hand inkling guess: XOR-accumulate two ushorts, advance pointers, carry-dependent stride
+0x826f9 func rt_transform_bytes_accumulate_826f9 hand inkling guess: loops buffer applying byte-pair multiply and accumulate
+0x82723 func rt_transform_bytes_accumulate_82723 hand inkling guess: per-byte xor-scale accumulate into output buffer
+0x82752 func rt_multiply_accumulate_loop hand inkling guess: -
+0x8277d func rt_accumulate_high_words hand inkling guess: loop accumulates high halves into output array
+0x827ad func rt_scale_and_accumulate_pairs hand inkling guess: -
+0x827eb func rt_transform_bytes_accumulate hand inkling guess: byte-wise multiply-add loop over buffer"}
+0x8282e func rt_scale_and_accumulate_pairs_8282e hand inkling guess: -
+0x8286d func rt_copy_pairs_scaled hand inkling guess: -
+0x828b1 func rt_string_transform_loop hand inkling guess: transforms bytes via multiply and accumulate
+0x828de func rt_xor_scale_accumulate_loop hand inkling guess: -
+0x82916 func rt_mul_accumulate_16x16 hand inkling guess: 16-bit multiply accumulate into output array
+0x82945 func rt_accumulate_pair_sums hand inkling guess: accumulates 16-bit products into output array
+0x8297f func rt_transform_pairs hand inkling guess: loop over buffers applying scaled arithmetic updates
+0x829be func rt_transform_pairs_829be hand inkling guess: xor-shifts and accumulates paired values in loop
+0x82a08 func rt_scale_pairs_loop hand inkling guess: -
+0x82a49 func rt_vector_scale_add hand inkling guess: scales and adds pairs of values in place
+0x82a95 func rt_multiply_add_carry_loop hand inkling guess: -
+0x82ac8 func rt_hash_mix_loop hand inkling guess: iterates buffer applying xor-shift multiply and carry-dependent pointer advance
+0x82b00 func rt_multiply_accumulate_scatter hand inkling guess: indexed multiply-accumulate with carry-dependent index stepping
+0x82b39 func rt_multiply_accumulate_loop_82b39 hand inkling guess: multiplies words, accumulates carries into table
+0x82b77 func rt_process_pairs_accumulate hand inkling guess: loops over pairs, scaling and accumulating into output buffer
+0x82bbe func rt_update_pairs_loop hand inkling guess: iterates pairs, updates accumulators, advances pointers
+0x82c0a func rt_scale_add_pairs_loop hand inkling guess: -
+0x82c57 func rt_copy_pairs_82c57 hand inkling guess: loops copying/transforming pairs until end bound
+0x82ca9 func rt_multiply_accumulate_words hand inkling guess: -
+0x82ce4 func rt_transform_buffer_words hand inkling guess: -
+0x82d2a func rt_multiply_accumulate_indexed_store hand inkling guess: -
+0x82d67 func rt_multiply_accumulate_table_walk_82d67 hand inkling guess: -
+0x82daf func rt_transform_pairs_loop hand inkling guess: iterates pairs applying scaled arithmetic updates
+0x82dfc func rt_transform_pairs_loop_82dfc hand inkling guess: applies XOR/scale transform to paired values until end
+0x82e54 func rt_vector_scale_accumulate hand inkling guess: -
+0x82ea3 func rt_update_pairs_loop_82ea3 hand inkling guess: iterates pairs with carry-dependent offsets
+0x82efd func rt_append_bytes_loop hand inkling guess: -
+0x82f1b func rt_xor_accumulate_buffer hand inkling guess: -
+0x82f3e func rt_add_arrays hand inkling guess: loops pointers adding elements until end bound
+0x82f5d func rt_array_xor_accumulate_loop hand inkling guess: increments pointers while XORing 0x8000 into elements
+0x82f81 func rt_accumulate_pairs_into_buffer hand inkling guess: -
+0x82fa2 func rt_xor_accumulate_words hand inkling guess: -
+0x82fc8 func rt_add_pairs hand inkling guess: accumulates source into destination pairs until bound
+0x82fea func rt_xor_add_stride_loop hand inkling guess: loops copying/xor-adding pairs until bound
+0x83011 func rt_concat_accumulate_loop hand inkling guess: -
+0x83032 func rt_xor_copy_loop_83032 hand inkling guess: -
+0x8305e func rt_copy_pairs_loop_8305e hand inkling guess: -
+0x83081 func rt_copy_pairs_xor_loop hand inkling guess: -
+0x830af func rt_add_16bit_pairs hand inkling guess: adds two 16-bit values into a buffer
+0x830d6 func rt_xor_add_pair_loop_830d6 hand inkling guess: -
+0x83108 func rt_copy_pairs_loop_83108 hand inkling guess: -
+0x83131 func rt_copy_pairs_83131 hand inkling guess: copies/transforms paired words until end bound
+0x83165 func rt_add_carry_chain_83165 hand inkling guess: propagates carry across byte-array elements
+0x8318c func rt_xor_accumulate_loop_8318c hand inkling guess: -
+0x831b8 func rt_add_carry_propagate_loop hand inkling guess: -
+0x831e5 func rt_update_table_entries hand inkling guess: loop updates entries using carry-indexed offsets
+0x83217 func rt_add_words_loop hand inkling guess: accumulates packed words into output buffer
+0x83241 func rt_xor_accumulate_loop_83241 hand inkling guess: -
+0x83270 func rt_add_strided_pairs hand inkling guess: accumulates strided short pairs until end bound
+0x832a0 func rt_copy_pairs_xor hand inkling guess: copies/XORs ushort pairs until end bound
+0x832d5 func rt_big_int_add hand inkling guess: multiword integer addition loop
+0x83304 func rt_decrypt_buffer_step hand inkling guess: xor-decrypts bytes and advances pointers
+0x8333e func rt_copy_pairs_8333e hand inkling guess: copies/accumulates shorts via indexed offsets"}
+0x8336f func rt_xor_accumulate_strided_words hand inkling guess: loops EDI, XORs 0x8000 into words, strides ESI via carry-indexed table
+0x833ab func rt_add_big_numbers hand inkling guess: adds two multiword integers with carry propagation
+0x833e0 func rt_add_words_with_carry hand inkling guess: adds two 16-bit words with carry across array
+0x83420 func rt_pair_swap_loop hand inkling guess: swaps adjacent shorts via carry-indexed strides
+0x83457 func rt_decrypt_xor_block hand inkling guess: XOR-decrypts paired words until end pointer reached
+0x83499 func rt_multiply_accumulate_pairs hand inkling guess: -
+0x834c3 func rt_transform_bytes_accumulate_834c3 hand inkling guess: loops bytes, XORs with 0x8000, scales, accumulates into output
+0x834f2 func rt_multiply_accumulate_loop_834f2 hand inkling guess: -
+0x8351d func rt_process_pairs hand inkling guess: iterates buffer adding shifted products until end
+0x8354d func rt_expand_pair_table hand inkling guess: expands source bytes into doubled output pairs
+0x8358b func rt_transform_pairs_loop_8358b hand inkling guess: applies affine transform over buffer until end"}
+0x835ce func rt_scale_and_accumulate_pairs_835ce hand inkling guess: -
+0x8360d func rt_transform_pairs_x87 hand inkling guess: applies xor-scaled 16-bit multiply-add to buffer pairs
+0x83651 func rt_transform_pairs_accumulate hand inkling guess: loop transforms bytes into words and accumulates high halves
+0x8367e func rt_transform_pairs_8367e hand inkling guess: xor-folds bytes into 16-bit values and accumulates into output buffer
+0x836b6 func rt_accumulate_short_pairs_into_output hand inkling guess: loops over shorts, adds high halves into output array
+0x836e5 func rt_process_table_entries hand inkling guess: iterates table applying XOR/multiply and accumulating carry into output
+0x8371f func rt_array_scale_accumulate hand inkling guess: loops over buffer scaling values and accumulating into output
+0x8375e func rt_transform_pairs_loop_8375e hand inkling guess: iterates buffer applying xor/scale update
+0x837a8 func rt_copy_pairs_837a8 hand inkling guess: copies two-word records with scaled offsets"
+0x837e9 func rt_pair_transform_loop hand inkling guess: -
+0x83835 func rt_multiply_accumulate_words_83835 hand inkling guess: -
+0x83868 func rt_update_table_entries_83868 hand inkling guess: iterates table applying XOR/multiply and carry-dependent index stepping
+0x838a0 func rt_multiply_accumulate_table_walk hand inkling guess: indexed multiply-accumulate loop over table
+0x838d9 func rt_multiply_accumulate_carry hand inkling guess: multiply-accumulate with carry propagation loop
+0x83917 func rt_update_carry_chain hand inkling guess: propagates carry-scaled values across buffer entries
+0x8395e func rt_update_pairs_xor_accumulate hand inkling guess: -
+0x839aa func rt_scale_accumulate_loop hand inkling guess: multiplies values and accumulates into output buffer
+0x839f7 func rt_process_pairs_accumulate_839f7 hand inkling guess: loop over pairs applying xor-scaled add and carry-indexed stride
+0x83a49 func rt_multiply_accumulate_carry_loop hand inkling guess: -
+0x83a84 func rt_decompress_run_length_block hand inkling guess: decodes XOR/multiply run-length data into output buffer
+0x83aca func rt_multiply_accumulate_loop_83aca hand inkling guess: accumulates short*int into 32-bit sum via carry table
+0x83b07 func rt_multiply_accumulate_table_walk_83b07 hand inkling guess: -
+0x83b4f func rt_table_walk_accumulate hand inkling guess: iterates table accumulating scaled values
+0x83b9c func rt_transform_buffer hand inkling guess: applies XOR/multiply transform loop over buffer
+0x83bf4 func rt_copy_pairs_83bf4 hand inkling guess: copies/scales array pairs until bound reached
+0x83c43 func rt_unrolled_vector_update hand inkling guess: indexed ushort-pair accumulation with carry-dependent strides
+0x840a1 func rt_copy_high_bytes hand inkling guess: copies high byte of each word from source to dest
+0x840af func rt_copy_loop hand inkling guess: copies memory forward until count reaches zero
+0x840be func rt_xor_byte_high_bits hand inkling guess: loops bytes, XORs high bit with 0x80
+0x840d1 func rt_xor_buffer hand inkling guess: loops count times flipping bit 15 in bytes
+0x840e5 func rt_swap_bytes hand inkling guess: swaps byte pairs in a buffer via pointer arithmetic
+0x840f9 func rt_copy_pairs hand inkling guess: copies count pairs from ESI to EDI, decrementing ECX
+0x8410f func rt_swap_bytes_xor hand inkling guess: decrements counter XORing byte pairs
+0x8412e func rt_xor_high_bit_words hand inkling guess: loops count times XORing 0x8000 into each 16-bit word pair
+0x8414f func rt_copy_high_bytes_8414f hand inkling guess: copies high byte of each word from source to dest
+0x8415d func rt_copy_loop_8415d hand inkling guess: copies count bytes/words from ESI to EDI, decrementing counter
+0x8416c func rt_byte_xor_loop hand inkling guess: decrements count, XORs high byte with 0x80
+0x8417f func rt_xor_high_bit hand inkling guess: loops over buffer flipping bit 15 of each byte
+0x84193 func rt_copy_bytes_swap hand inkling guess: copies bytes while swapping high bytes and decrementing counter
+0x841a7 func rt_swap_pairs hand inkling guess: swaps adjacent 16-bit elements in a buffer
+0x841bd func rt_xor_word_pairs hand inkling guess: loops count, XORs paired bytes into words
+0x841dc func rt_swap_xor_words hand inkling guess: XOR-swaps adjacent words with 0x8000 until count reaches zero
+0x841fd func rt_clamp_u16_to_i16_bytes hand inkling guess: clamps 16-bit values to signed range and writes high bytes
+0x84227 func rt_clamp_i16_loop hand inkling guess: clamps signed 16-bit values to [-32768,32767] in a loop
+0x84252 func rt_clamp_byte_xor_80 hand inkling guess: clamps 16-bit values to signed range then XORs high byte with 0x80
+0x84281 func rt_clamp_xor_sign hand inkling guess: clamps signed values and flips sign bit
+0x842b1 func rt_clamp_palette_rgb hand inkling guess: clamps signed 16-bit RGB channels to 15-bit range and packs into 31-bit output
+0x842ff func rt_clamp_i16_pairs hand inkling guess: clamps signed 16-bit pairs to [-32768,32767] and advances pointers
+0x8434f func rt_clamp_and_xor_pairs hand inkling guess: clamps int16 pairs then XORs high bytes with 0x8080
+0x843a8 func rt_clamp_xor_sign_pairs hand inkling guess: clamps int16 pairs and XORs sign bit
+0x84403 func rt_clamp_and_emit_bytes hand inkling guess: clamps i16 values to 16-bit range and writes high byte per iteration
+0x8442d func rt_clamp_i16_loop_8442d hand inkling guess: clamps i16 values to [-32768,32767] over buffer
+0x84458 func rt_clamp_byte_xor_loop hand inkling guess: clamps 16-bit values and XORs high byte with 0x80
+0x84487 func rt_clamp_xor_loop hand inkling guess: clamps 16-bit values then XORs sign bit
+0x844b7 func rt_clamp_and_pack_pixels hand inkling guess: clamps int16 pairs to 15-bit and packs into bytes
+0x84505 func rt_clamp_swap_pairs hand inkling guess: clamps int16 pairs and swaps order while decrementing count
+0x84555 func rt_clamp_and_xor_pack_words hand inkling guess: clamps signed words then packs/XORs bytes
+0x845ae func rt_clamp_xor_pair hand inkling guess: clamps signed shorts then XORs high bit into output pair
+0x8460a func rt_empty_stub_8460a hand inkling guess: no statements, returns immediately
+0x8461f func rt_process_child_flags hand inkling guess: checks child nodes and clears flag bit
+0x846fc func rt_find_or_insert_entry hand inkling guess: searches list then inserts/allocates entry and updates fields
+0x8480f func rt_child_flag_check hand inkling guess: checks child flags and returns status code
+0x84889 func rt_lookup_sound_slot hand inkling guess: resolves param_1 via table then checks flags/list and calls rt_846fc
+0x84939 func rt_init_table_entry hand inkling guess: zero-init or dispatch via table pointer
+0x84995 func rt_dispatch_table_call_84995 hand inkling guess: dispatches via table pointer, returns code 10 or 0
+0x849f1 func rt_set_param_via_table hand inkling guess: dispatches param_2 through indexed function pointer table
+0x84a4d func rt_empty_stub_84a4d hand inkling guess: no-op function with no calls or effects
+0x84a62 func rt_empty_stub_84a62 hand inkling guess: no body, no callers, no callees, no strings
+0x84a77 func rt_activate_entity_group hand inkling guess: selects and activates linked entity set
+0x84e98 func rt_decrement_entity_ref hand inkling guess: decrements refcount, clears flag on zero
+0x84eec func rt_sound_param_dispatcher hand inkling guess: dispatches per-index sound parameter writes
+0x85133 func rt_decode_sound_event_stream hand inkling guess: decodes event bytes and dispatches rt_88299 calls
+0x8539e func rt_free_region_tree hand inkling guess: frees nested region node lists recursively
+0x85467 func rt_no_op_85467 hand inkling guess: empty function with no effects
+0x8547c func rt_noop_stub_8547c hand inkling guess: empty function body, no calls or strings
+0x85491 func rt_link_records_into_buffer hand inkling guess: -
+0x855fa func rt_noop_stub_855fa hand inkling guess: empty function with no callers or callees
+0x8560f func rt_empty_stub_8560f hand inkling guess: no instructions, returns immediately
+0x85624 func rt_decode_uleb128 hand inkling guess: decodes unsigned LEB128 from byte stream into uint
+0x8569a func rt_empty_stub_8569a hand inkling guess: no statements, returns immediately
+0x856af func rt_noop_stub_856af hand inkling guess: empty function body, no calls or effects
+0x856c4 func rt_clear_region_state hand inkling guess: zeroes per-index region fields and sets one param_2 field
+0x85792 func rt_noop_stub_85792 hand inkling guess: empty function with no callers or callees
+0x857aa func rt_enqueue_slot hand inkling guess: appends record to ring buffer slot
+0x85862 func rt_find_and_move_to_front hand inkling guess: searches table, moves match to front, decrements count
+0x859d6 func rt_find_and_remove_entry hand inkling guess: Searches ring buffer, shifts entries, clears slot, decrements count.
+0x85b58 func rt_remove_or_insert_entry hand inkling guess: Searches ring buffer, removes match or inserts new value
+0x85cb5 func rt_lookup_entry hand inkling guess: searches table for matching params, returns id or -1
+0x85d5d func rt_dequeue_entry hand inkling guess: pops oldest valid slot, shifts ring buffer, returns value or -1
+0x85ebf func rt_ring_buffer_push hand inkling guess: enqueues slot, copies 4 words, advances ring index
+0x85fd5 func rt_empty_stub_85fd5 hand inkling guess: no body, no callers, no callees, no strings
+0x85fea func rt_empty_stub_85fea hand inkling guess: no statements, immediate return
+0x85fff func rt_entity_state_dispatcher hand inkling guess: -
+0x86d0b func rt_string_decrement_check hand inkling guess: decrements string, updates length, calls callback
+0x86dd3 func rt_dispatch_callback hand inkling guess: invokes callback, updates counter, calls rt_8461f
+0x87000 func rt_set_flag_and_call_rt_8934b hand inkling guess: calls rt_8934b then sets flag and returns value
+0x87020 func rt_empty_stub_87020 hand inkling guess: no callers, no callees, empty body
+0x87035 func rt_empty_stub_87035 hand inkling guess: no instructions, returns immediately
+0x87087 func rt_store_constant_return hand inkling guess: writes 0xb to local and returns it
+0x875f5 func rt_dispatch_sound_event hand inkling guess: dispatches indexed sound/event handlers with cleanup
+0x87711 func rt_sound_play_sequence hand inkling guess: loops entries and triggers three rt_88255 calls per item
+0x87811 func rt_empty_stub_87811 hand inkling guess: no body, no callers, no callees, no strings
+0x87826 func rt_empty_stub_87826 hand inkling guess: no body, no callers, no callees, no strings
+0x8783b func rt_indirect_call_table hand inkling guess: dispatches via indexed function pointer table
+0x8787b func rt_sound_play_loop hand inkling guess: plays sound then dispatches per-index callbacks
+0x87946 func rt_set_flag_ga0ad4 hand inkling guess: sets global flag to one, no callers/callees
+0x87965 func rt_no_op_stub_87965 hand inkling guess: empty function body, no calls or effects
+0x8797a func rt_empty_function_8797a hand inkling guess: no instructions, immediate return
+0x87a20 func rt_load_sound_track_data hand inkling guess: -
+0x87bc5 func rt_sound_irq_dispatcher_wrapper hand inkling guess: dispatches sound IRQ and returns packed flag/count
+0x87c6c func rt_empty_stub_87c6c hand inkling guess: no operations, immediate return
+0x87c81 func rt_noop_stub_87c81 hand inkling guess: empty function with no callers or callees
+0x87c96 func rt_match_token_table hand inkling guess: scans token list against 8-entry table, sets index on match
+0x87dd6 func rt_noop_stub_87dd6 hand inkling guess: empty function, no calls or effects
+0x87deb func rt_empty_stub_87deb hand inkling guess: no-op function with no callers or callees
+0x87e00 func rt_set_flag_bit hand inkling guess: lookup table entry, set bit 0, return status
+0x87e7a func rt_clear_flag_bit hand inkling guess: clears bit 0 and calls helper for small index
+0x87ee2 func rt_noop_stub_87ee2 hand inkling guess: empty function body, no calls or strings
+0x87ef7 func rt_empty_stub_87ef7 hand inkling guess: no-op function with no callers or callees
+0x87f0c func rt_set_flag_bit_or_return_code hand inkling guess: -
+0x87f83 func rt_clear_flag_bit_87f83 hand inkling guess: clears flag bit for index, returns status code
+0x87ffc func rt_empty_stub_87ffc hand inkling guess: no-op function, no callers or callees
+0x88011 func rt_empty_stub_88011 hand inkling guess: no body, no callers, no callees, no strings
+0x88026 func rt_sound_trigger_lookup hand inkling guess: dispatches SOS sound by index/state
+0x880dd func rt_sound_trigger_or_clear hand inkling guess: checks table entry, plays/stops sound, updates state
+0x881e8 func rt_spin_forever hand inkling guess: infinite loop with no exit condition
+0x8822b func rt_noop_stub_8822b hand inkling guess: empty function body, no calls/strings/effects
+0x88240 func rt_no_op_stub_88240 hand inkling guess: empty function body, no calls or effects
+0x88255 func rt_call_table_entry hand inkling guess: indirect call via indexed function pointer table
+0x88299 func rt_dispatch_table_call hand inkling guess: indirect call through indexed function table
+0x882f2 func rt_empty_stub_882f2 hand inkling guess: no calls, no strings, immediate return
+0x88307 func rt_empty_stub_88307 hand inkling guess: no instructions, returns immediately
+0x88586 func rt_link_records_into_buffer_88586 hand inkling guess: links records into buffer, clears fields, returns status
+0x88617 func rt_cleanup_slot hand inkling guess: frees/dispatches runtime slot and counts failures
+0x88701 func rt_cleanup_state hand inkling guess: clears runtime state and returns status code
+0x889e8 func rt_infinite_loop hand inkling guess: empty do-while(true) with no exit or side effects
+0x88b48 func rt_noop_stub_88b48 hand inkling guess: empty function with no callers or callees
+0x88b5d func rt_noop_stub_88b5d hand inkling guess: empty function, no calls or effects
+0x88b72 func rt_sound_trigger_scaled hand inkling guess: -
+0x88c42 func rt_dispatch_small_index_call hand inkling guess: indexes table and calls handler or returns 10
+0x88cae func rt_lookup_and_call_handler hand inkling guess: dispatches by index to handler table
+0x88d5b func rt_compute_sound_mix_params hand inkling guess: iterates linked blocks to accumulate scaled mix values and remainders
+0x88f5e func rt_empty_stub_88f5e hand inkling guess: no statements, returns immediately
+0x88f73 func rt_noop_stub_88f73 hand inkling guess: empty function body, no calls or effects
+0x88f88 func rt_relocate_and_fixup hand inkling guess: rebases pointers and adjusts linked fields
+0x89108 func rt_insert_sorted hand inkling guess: inserts node into sorted linked list by key at +0x77
+0x891ad func rt_unlink_node_by_flags hand inkling guess: unlinks linked list node whose flags bit 0x8010 is clear
+0x89211 func rt_remove_node hand inkling guess: unlinks node from linked list by id
+0x89285 func rt_insert_sorted_89285 hand inkling guess: inserts node into sorted list by field 0x47
+0x89321 func rt_empty_stub_89321 hand inkling guess: no statements, no callers, no callees, no strings
+0x89336 func rt_empty_stub_89336 hand inkling guess: no statements, returns immediately
+0x8934b func rt_apply_volume_change hand inkling guess: scales and applies param_2 to sub-objects
+0x894ce func rt_update_sound_channel_state hand inkling guess: configures channel parameters and applies volume/position update
+0x8965c func rt_apply_volume_change_8965c hand inkling guess: Iterates 32 slots, applies per-slot volume change, returns param_2 shifted.
+0x896d3 func rt_set_param_2_fields hand inkling guess: writes param_2 into byte-array entries then calls rt_8965c
+0x89750 func rt_no_op_89750 hand inkling guess: empty function body, no calls or effects
+0x8980e func rt_call_7ad54_if_carry hand inkling guess (address cut by hand): calls rt_7ad54 when carry flag set, else returns zero
+0x89c94 func rt_searchenv_path hand runtime, from digest strings
+0x89dd0 func rt_memcmp hand inkling guess: compares memory byte-wise returning sign of difference
+0x8a117 func rt_find_byte hand inkling guess: scans bytes until match or NUL, returns null
+0x95059 func rt_io_port_read_concat hand inkling guess: reads port 0x3d4/0x3d5 and merges with param_2
+0x9507c func rt_outb_init_sound hand inkling guess: writes ports to configure sound hardware
+0x951fd func rt_wait_vsync hand inkling guess: waits for vertical retrace flag transitions in status port
+0x9526c func vga_register_swap_out hand inkling guess: swaps VGA pointers/state and emits 0x3d4 register bytes
+0x10000 func stub_Int3A hand int3 stub
+0x10001 func stub_Int3B hand int3 stub
+0x10010 func game_Shutdown hand clears aaf3a/aaf5a after calling teardown chain
+0x10100 func level_Reset hand zeroes level counters, calls many inits, 7 callers
+0x101e0 func vid_GetMode hand int10 ax=0f00
+0x1020f func vid_SetMode13B hand int10 ax=13 (split copy)
+0x10210 func vid_SetMode13 hand int10 ax=13
+0x10240 func vid_RestoreMode hand int10 with saved mode a3e44
+0x10270 func input_HotkeyA hand key code aae7c < 0x40 dispatch
+0x102e8 func stub_102e8 hand flag-test stub
+0x10300 func ui_RunScreenA hand runs screen table 94d5c through 48400
+0x10320 func ui_RunScreenBySel hand switch aae68 picks screen table
+0x103a0 func ui_RunScreenB hand switch aae68, clears ent field
+0x10470 func hud_Update hand calls hud parts 10660/10760/107f0/10890
+0x105c0 func hud_DrawPartE hand draws 0x6c item when aaf34==3
+0x10660 func hud_DrawPartA hand state 99 branch, draws sprites 5f720/5f8c0
+0x10760 func hud_DrawPartB hand sprite 0x77 or other by aaf6c, counter aaed0
+0x107f0 func hud_DrawPartC hand sprite 0x6a, clears aaecc
+0x10890 func hud_DrawPartD hand blinking item, counter aaec8
+0x10940 func ent_ThinkAll hand loop over entities calling move/steer helpers
+0x10ae0 func ent_MoveOpps hand moves entity by heading (SinCos), OPPS! string
+0x10d87 func math_ByteMul hand byte multiply helper
+0x10dc0 func view_Follow hand big camera follow, writes aae76/aae66
+0x1116b func view_SetMode hand param 0 resets aae76
+0x111f0 func ent_WrapAngleA hand angle -0x168 wrap on ent 0xa0 record
+0x1128e func ent_SteerLong hand long heading steer with SinCos
+0x11690 func ent_SetHandlerIfA hand ent 0xa0 record flag -> 2d4e0 with 46120
+0x116f0 func ent_DamageIfFlag hand calls damage-print 2d9c0
+0x11730 func player_DamageB hand damage 2 when aaf44==0
+0x11757 func ent_MoveAndSteer hand calls ent_MoveOpps + 118f0
+0x117a0 func ent_SteerToB hand heading steer, saves a3e50/a3e52
+0x118f0 func ent_MoveBig hand long mover, spawns fx 0x28,0x2d,8000
+0x11ce8 func stub_Ret11ce8 hand empty
+0x11f51 func math_FixAdd hand param4 + param2>>11
+0x11f84 func ent_WrapAngleB hand angle wrap on 0x50 stride
+0x11fe9 func ent_AddHeading hand aaf74 add with 0x1680 wrap
+0x12020 func ent_HeadingStep hand SinCos step, float round to a3e56
+0x122a0 func ent_ClearFlagA hand clears ent byte 64a9
+0x12340 func car_StateTickA hand if aae78==0 -> 12580 then 123c0
+0x12360 func car_StateTickB hand if aae78==0 -> 12510 then 123c0
+0x123c0 func car_StateSwitch hand switch aae78
+0x124b6 func car_CallTimerA hand wrapper of 4b400
+0x124ff func car_SteerWrapA hand calls 126d0
+0x12510 func car_CallTimerB hand wrapper of 4b400
+0x12580 func car_SetSpeedFromTable hand table 98b.. by aadc6
+0x1262b func car_SteerToLaneA hand AtLaneCenter then TurnTo
+0x126d0 func car_SteerToLaneB hand AtLaneCenter then SetTurnDir
+0x12710 func car_ChooseTurn hand mod 0x200 timer, SetTurnDir
+0x12880 func car_RotateTick hand RotateNeg/RotatePos, sets aae7e 2
+0x12a33 func car_SteerToLaneC hand AtLaneCenter then SetTurnDir
+0x12aa0 func car_SteerToLaneD hand AtLaneCenter then SetTurnDir from 98b96 table
+0x12b87 func stub_12b87 hand odd leaf
+0x12db0 func math_AngleHalfTest hand angle < 0xb4 test
+0x12de8 func math_AngleWrapA hand +0x168 wrap
+0x12e38 func math_AngleDiff hand difference wrapped to +-180
+0x12e70 func math_AngleBetween hand three-angle compare
+0x12f00 func car_DriveToward hand calls 130a0, abs
+0x130a0 func car_SteerToPoint hand AtLaneCenter then TurnTo
+0x13230 func cars_ScanAt hand sets aae24, calls scan 13250 then scancars
+0x13250 func cars_ScanZone hand map_SetZoneFlags + 5e4a0/5e4e0
+0x13400 func cars_Scan hand scancars=%d
+0x13570 func cars_SpawnStep hand aa974 < aab54 count check
+0x13730 func ent_ClearRecord hand zeroes fields of ent aae24 (0xa0 record), 14 callers
+0x137f0 func ent_InitDefaults hand sets fields from a3e70, 10 callers
+0x138a7 func ent_SetupTask hand z=%d, task 6f7c0
+0x13a00 func ent_SpawnTypeA hand clear + init, kind 0xe
+0x13ac0 func ent_SpawnTypeB hand clear + init + heading
+0x13c00 func ent_SpawnTypeC hand clear + init + heading
+0x13d40 func ent_SpawnTypeD hand sets +0x100
+0x13dd5 func ent_SpawnTypeE hand init then shift
+0x13e84 func ent_SpawnTypeF hand timer call only
+0x13eba func ent_SpawnTypeG hand clear + init + shift
+0x13f30 func ent_SpawnTypeH hand sets +0x100
+0x13ffb func stub_13ffb hand tiny add stub
+0x14049 func stub_Ret14049 hand empty
+0x14050 func ent_SpawnTypeI hand kind 2
+0x140c6 func stub_Hang140c6 hand endless loop
+0x140ee func ent_ClearByte64ae hand guess
+0x140fe func ent_SpawnTypeJ hand clear + init + heading
+0x14240 func ent_TimerByIndex hand 4b400(i*4, i*5)
+0x14285 func ent_SpawnTypeK hand sets state 0xc
+0x142d0 func tractor_Send hand tractor %d of type %d is going
+0x143c0 func ent_SpawnTypeL hand kind 0xb
+0x14487 func car_Park hand car %d of type %d has been parked
+0x144c0 func ent_SpawnTypeM hand kind 0xb
+0x145b8 func stub_Ret145b8 hand empty
+0x145d0 func ent_SpawnType31 hand g94ff8=0x31
+0x14687 func ent_SetPos64ac hand guess
+0x146b0 func ent_SpawnType32 hand g94ff8=0x32
+0x14746 func ent_SetPosB hand guess
+0x14790 func ent_PlaceRecord hand debug print, 5 callers
+0x14ffd func player_SteerAuto hand TurnDirToTarget/RotateTowardTarget, ent think
+0x15263 func player_CheckZone hand calls 72ad0
+0x152d0 func ent_SetDeathHandler hand 2d4e0 with 1ecd0, by index
+0x15370 func player_SetDeathHandler hand current ent, 2d4b0 with 1ecd0, 25 callers
+0x15484 func player_DieIf hand calls player_SetDeathHandler
+0x154e9 func player_StartTurnaround hand sets aae7e 0x11
+0x155b9 func player_SetStateDrive hand aae7e=2, speed clamp
+0x155f0 func player_TurnToTarget hand TurnDirToTarget, then speed rule
+0x156f0 func player_SpeedRule hand sets aae74 -8 by heading
+0x157e0 func player_SetSpeed hand aae74 = clamp, 8 callers
+0x15800 func player_SetSpeedMin hand aae74 = aae3e
+0x15820 func ent_ClearPairA hand guess
+0x15884 func stub_15884 hand or byte stub
+0x15900 func ent_SetFieldNeg4978 hand guess
+0x15985 func ent_AddField64c4 hand guess
+0x15a84 func game_CopyA6028 hand guess
+0x15af0 func fx_SpawnIfOverflow hand calls 6ecf0
+0x15b88 func player_TimeoutDie hand 17a90 then death
+0x15bd0 func car_FindSlot hand found car %d at slot %d
+0x15d00 func plane_FindSlot hand found plane %d at slot %d of type %d
+0x15e00 func game_InitCountsA hand aa928=0x14 and 5s
+0x15e40 func game_InitCountsB hand clears, aae16=300
+0x15ee0 func player_Tick hand 2506 bytes, calls ent think + angle error check
+0x168b0 func player_ShakeTick hand aadf6 countdown
+0x16930 func player_ShakeStart hand aadf6=0x50, 10 callers
+0x16970 func hud_TickAll hand calls 16c10/16ac0/16d70
+0x169e0 func hud_FlashCounter hand 9543c, aaf4e
+0x16a3c func hud_SetCounterA hand guess
+0x16ac0 func hud_UpdateCounter hand aaf4e from aaf38
+0x16be9 func stub_16be9 hand guess
+0x16c10 func hud_ScanItems hand loop over 0x30 records
+0x16d70 func hud_UpdateMessages hand a8aa6 flag
+0x16e60 func stub_Ret16e60 hand empty, 3 callers
+0x16e90 func hud_SetMessageOnce hand aade4 gate
+0x16f30 func task_Throw hand task %d is thrown
+0x17770 func player_UpdateWeapons hand 58b40/59350/5ce30/5d610
+0x17890 func stub_17890 hand guess
+0x17940 func ent_TimerDecA hand ent 64f8 countdown, 8 callers
+0x17a10 func ent_TimerDecB hand ent 64f8 countdown, 8 callers
+0x17a90 func player_TimerTick hand aae62 vs d1814, 6 callers
+0x17b40 func player_CheckDeath hand calls death handler
+0x17c00 func player_Respawn hand 28730(i,0,0x40), 28f20
+0x17cfa func ent_SetFlag64e0 hand guess
+0x17d60 func level_EndIfNot13 hand aadc6 != 0xd
+0x17da0 func player_UpdateFuel hand aad48 timer, 62b50
+0x17ef3 func ent_CopyType5f74 hand guess
+0x17fe8 func player_SetSpeedPair hand guess
+0x18070 func player_StateSwitchA hand aae7e==2 case table
+0x180b9 func player_StateCaseA hand shared case body
+0x180d8 func player_StateCase0 hand switch 180d0 case 0, 1a2f0(0x200,0x400)
+0x180f1 func player_StateCase2 hand case 2
+0x18107 func player_StateCase1 hand case 1, 1a380(3000)
+0x1810e func player_StateCaseA_ hand case 0xa
+0x1811d func player_StateCase14 hand case 0x14
+0x18160 func gun_FireFrontA hand ga5f88, 189a0/194d0
+0x18290 func gun_FireFrontB hand ga5f9c, 189a0/194d0
+0x183e0 func view_EntityScreenX hand view_TransformEntity
+0x18460 func math_HeadingTo16 hand 2c0e0, /0x2d & 0xf
+0x184f0 func player_AimTarget hand aad48=30000
+0x18760 func shot_Think hand shot task, death handler 46090
+0x189a0 func shot_SpawnA hand task_Alloc, ga5f88
+0x18ac0 func shot_SpawnB hand task_Alloc 18c10
+0x18bcf func shot_SetType hand ga5f88 store
+0x18c10 func shot_ThinkB hand guess
+0x18d90 func missile_Think hand TurnDirToTarget, switch by state
+0x18f6e func missile_Case0 hand guess
+0x18f8b func missile_Case1 hand guess
+0x19009 func missile_Case2 hand guess
+0x190cc func missile_Case3 hand guess
+0x1917c func missile_Case4 hand guess
+0x191ac func missile_Case5 hand guess
+0x19236 func missile_Explode hand missile blew up!!!
+0x19387 func missile_Kill hand 6ecf0 + death
+0x194d0 func missile_Spawn hand task_Alloc, SinCosHeading
+0x19945 func thunk_19945 hand byte or
+0x1998d func shot_SpawnFromRec hand calls 18ac0
+0x19a20 func gun_TimerCheck hand ga64ba
+0x19a87 func thunk_Call5e300 hand guess
+0x19a90 func gun_FireSpread hand SinCosHeading 19f80
+0x19ca0 func gun_SetRate hand ga652x
+0x19d87 func gun_FireAtAngle hand SinCosHeading 19f80
+0x19df0 func bomb_Think hand ga64c
+0x19e72 func bomb_PickKind hand guess
+0x19f80 func bullet_Spawn hand task_Alloc, 7 branches
+0x1a117 func bullet_SetSpeed hand 4b120 0x400
+0x1a1a9 func ent_ClearSlotA8 hand ga64a8
+0x1a208 func bullet_SetSpeedB hand guess
+0x1a250 func ent_PlaySound hand 48aa0
+0x1a2f0 func gun_FireByMode hand aae3x mode, 18160/18290
+0x1a380 func gun_FireByModeB hand aae36==1
+0x1a3fd func gun_FireByte hand 18290
+0x1a450 func gun_FireRear hand SinCosHeading 19f80
+0x1a570 func flame_Think hand guess
+0x1a800 func flame_Spawn hand task_Alloc
+0x1a8dc func gun_SetType6c hand ga5f6c
+0x1a910 func gun_FireSide hand ga4af2
+0x1aa30 func mine_Think hand guess
+0x1ab60 func mine_Spawn hand task_Alloc 1aa30
+0x1ac8e func str_CopyA hand string loop
+0x1ad71 func str_FormatNum hand guess
+0x1ae59 func str_CopyB hand guess
+0x1afa7 func str_CopyC hand guess
+0x1b187 func str_CopyD hand guess
+0x1b287 func stub_Ret1b287 hand empty
+0x1b380 func pickup_Think hand 28b30 1bee0
+0x1b487 func pickup_InitA hand death 1b380
+0x1b550 func pickup_ThinkB hand guess
+0x1b690 func pickup_InitB hand death 1b550
+0x1b780 func pickup_ThinkC hand aaf44 gate
+0x1b9a0 func pickup_InitC hand death 1b780
+0x1ba87 func pickup_ClearSlot hand loop 0xc
+0x1bab0 func pickup_FindFree hand loop 0xc
+0x1bb90 func pickup_Count hand guess
+0x1bce8 func math_ScaleShr11 hand guess
+0x1be00 func timer_SetIf hand 4b400
+0x1be18 func math_SinCosScale hand guess
+0x1bec8 func thunk_1bec8 hand guess
+0x1bed3 func mem_StoreShort hand guess
+0x1bee0 func pickup_Spawn hand 4b430
+0x1c851 func worldmap_Loop hand endless loop
+0x1c970 func worldmap_MarkVisited hand guess
+0x1ca30 func worldmap_NextA hand aadd4 +1
+0x1cb60 func worldmap_NextB hand aadd4 +1
+0x1cc90 func worldmap_Run hand worldmap mapiconf.sga
+0x1d227 func pal_FillRange hand loop < 0x300
+0x1d287 func worldmap_SetPair hand guess
+0x1d2a0 func worldmap_InputTick hand 1e3c0/1e220
+0x1d390 func worldmap_PickCursor hand switch aaf1a
+0x1d420 func worldmap_DrawSprite hand sprite=%d at %d %d
+0x1d530 func worldmap_DrawSymbol hand symbol at %d %d with fspr
+0x1d920 func worldmap_Draw hand 45780/457a0
+0x1dab0 func worldmap_DrawText hand 73ab0
+0x1db50 func worldmap_DrawInfo hand guess
+0x1dc40 func worldmap_DrawCursor hand switch aaf1a
+0x1dd00 func worldmap_DrawIcons hand loop
+0x1def0 func worldmap_DrawSel hand guess
+0x1dfc0 func worldmap_CoordXA hand ga43b8
+0x1dff0 func worldmap_CoordYA hand ga43ba
+0x1e020 func worldmap_CoordXB hand guess
+0x1e050 func worldmap_CoordYB hand guess
+0x1e080 func worldmap_DrawLegend hand guess
+0x1e220 func worldmap_SelectNextA hand guess
+0x1e3c0 func worldmap_SelectNextB hand guess
+0x1e560 func worldmap_SelectNextC hand guess
+0x1e640 func worldmap_SelectNextD hand guess
+0x1e720 func worldmap_DistTo hand guess
+0x1e88f func img_LoadRaw hand fread fclose
+0x1ea87 func scr_SaveShot hand rle_PackRow
+0x1ecd0 func ent_ClearDeath hand ent field = 0, death handler
+0x1ed60 func trig_Tick hand aaf56 mode
+0x1ee80 func trig_Lay hand trig laid of %d type
+0x1f020 func player_UpdateHeading hand 1f630 1ff80
+0x1f190 func math_DivA hand guess
+0x1f200 func path_StepA hand 1ff80 4b400
+0x1f310 func trig_ClearAll hand loop 10
+0x1f3b0 func path_StepB hand switch
+0x1f587 func path_DistTo hand guess
+0x1f630 func math_Div64 hand longlong div, 16 callers
+0x1f690 func view_CalcCenter hand aa718
+0x1f700 func stub_Ret1f700 hand empty
+0x1f720 func player_InitDrive hand clears aaf16
+0x1f970 func player_Physics hand angle ERROR!!! CHECKING
+0x1ff10 func track_CurrentSeg hand aadc2
+0x1ff80 func track_SegAt hand 13 callers
+0x2000b func track_SegAtB hand guess
+0x20090 func track_SegKind hand & 0x7f
+0x20107 func thunk_Div20107 hand guess
+0x20110 func track_SegIsRoad hand guess
+0x20190 func ent_CopyPos hand 4d1b0, 8 callers
+0x201c0 func track_InRange hand guess
+0x20300 func stub_Call20300 hand indirect call
+0x20320 func ent_DistToPlayer hand 4d0d0
+0x203a0 func ent_FindOverlap hand box_OverlapShort
+0x20460 func cop_SpawnTimer hand task_Alloc, 8000
+0x204b0 func cop_Think hand guess
+0x206e0 func thunk_Timer206e0 hand guess
+0x20730 func cop_Drive hand guess
+0x20990 func cop_Spawn hand task_Alloc
+0x20b5b func cop_Reset hand guess
+0x20b8c func cop_TurnCheck hand 0x167
+0x20c87 func timer_Set20c87 hand guess
+0x20ce9 func stub_Ret20ce9 hand empty
+0x20cf0 func cop_Die hand guess
+0x20d80 func cop_Sound hand 450c0
+0x20e10 func cop_Draw hand 5f720
+0x20ec0 func traffic_Spawner hand task_Alloc
+0x210a0 func traffic_Think hand 72ad0 214a0 213e0
+0x211ad func traffic_Case1 hand nx=%d ny=%d
+0x213e0 func traffic_SteerA hand RotateTowardTarget
+0x214a0 func traffic_SteerB hand RotateTowardTarget
+0x21590 func traffic_InitA hand death 210a0
+0x21610 func traffic_InitB hand guess
+0x21690 func traffic_InitC hand guess
+0x21700 func traffic_InitD hand guess
+0x21780 func traffic_Reset hand guess
+0x21890 func ent_SeekPoint hand ent_ViewRel
+0x21a60 func ent_PlaySoundByType hand switch aae7c
+0x21b00 func ent_PlaySoundIf hand guess
+0x21b60 func gang_SpawnTimer hand task_Alloc 8000
+0x21be0 func gang_Think hand guess
+0x21d10 func gang_Drive hand guess
+0x21f20 func thunk_Timer21f20 hand guess
+0x21f87 func gang_Fire hand 284f0
+0x21fe0 func gang_Die hand guess
+0x22280 func tank_Think hand 4b520 28b30
+0x225c0 func tank_Init hand death 22280
+0x226f0 func turret_Think hand guess
+0x22930 func turret_Init hand death 226f0
+0x22a60 func boss_Think hand 6f610 5f8c0
+0x22ee0 func boss_Init hand g95fc, death 22a60
+0x22f8d func boss_SpawnParts hand task_Alloc
+0x23000 func ent_SetState8 hand ent field = 8
+0x23040 func drone_Think hand 280f0
+0x23160 func drone_Spawn hand task_Alloc 28730
+0x23330 func title_Drake hand screens drakebg.img bigchr1.sga
+0x23690 func title_Loop6 hand 45c10 x6
+0x23850 func menu_Main hand switch
+0x23a85 func menu_EnterCab hand dash ldoor
+0x23ac0 func title_Gametek hand screens gametek.img
+0x23c80 func stub_Ret23c80 hand empty
+0x23c84 func title_Flag hand screens flagdim.img flage.sga
+0x23e30 func title_Keyboard hand screens keyb3.img
+0x23f50 func level_StartRun hand 69950 697f0
+0x23f90 func level_Load hand 24a80 24650 24be0 24c80
+0x24010 func level_LoadFloorSky hand 24170 244e0
+0x24040 func level_Init hand 2d340 24a30 249b0
+0x24170 func floor_Load hand floors trakfloo.img
+0x241d0 func floor_Build hand floors trakfloo.img, cq_AddColour
+0x244e0 func sky_Load hand skies traksky.img
+0x24560 func trakobj_Load hand data trakobj.dat
+0x24650 func tiles_Load hand tileg trak / tiles trak
+0x249b0 func level_StartTasks hand task_Alloc task_AllocFixed
+0x24a30 func view_ResetA hand 25530 1f690
+0x24a80 func level_LoadData hand fread level data
+0x24b80 func level_LoadScreen hand guess
+0x24be0 func spr_LoadSetA hand 2d0e0
+0x24c80 func spr_LoadDebris hand defences desdebr.spr muttdebr.spr
+0x24dd0 func spr_LoadRadar hand weapons wradar11.spr
+0x24e70 func spr_LoadEffects hand effects explo.spr blammog.spr
+0x25060 func weapons_Load hand loading weapons %s
+0x25160 func masks_Load hand masks mask%x
+0x251a0 func overlay_Drop hand dropping overlay %d %d, svga off
+0x25330 func leveldat_Load hand data level.dat
+0x25530 func view_SetModeB hand aab50, 2df30
+0x255e0 func view_SetModeXY hand guess
+0x25660 func spr_FreeOne hand 2d0e0
+0x256b0 func spr_LoadSetB hand guess
+0x25800 func spr_LoadSetC hand loop 8
+0x25890 func stub_Ret25890 hand empty
+0x258a0 func dash_DrawCab hand dash cab.img
+0x25980 func dash_LoadMasks hand masks mskl1, 2345678.123 template
+0x26000 func dash_DoorAnimA hand dash ldoor1/ldoor2.img
+0x26320 func bodies_Load hand bodies 12345678.123 template
+0x263c0 func maps_SetNames hand maps trak.blk trak.bsp
+0x26410 func mem_AllocLevel hand Not enough memory..
+0x26787 func mem_FreeLevel hand rt_free
+0x267e8 func stub_Ret267e8 hand empty
+0x267f0 func kbd_Restore hand kbd_ClearAll, setvect 9
+0x268a0 func kbd_ClearFlagsA hand ga6450
+0x268e0 func kbd_SetFlagsA hand ga6455=1
+0x26900 func kbd_SetVect hand rt_dos_setvect
+0x269f0 func math_MulShr hand 9 callers
+0x26a30 func game_MainLoop hand F11 pressed, worldmap, title
+0x26f60 func dash_DoorAnimB hand dash ldoor1/ldoor2.img
+0x27390 func dash_DrawCabB hand dash cab.img
+0x27420 func hud_ClearSlots9 hand loop 9
+0x27485 func hud_ResetIf hand ga8a8b
+0x274f0 func ent_FindNearest hand 16 callers, loop 0xc
+0x27600 func bits_Set5 hand & 0x1f
+0x27687 func stub_Ret27687 hand empty
+0x276a0 func sfx_UpdateEngine hand 451a0 450c0
+0x27b10 func stub_Ret27b10 hand empty
+0x27b87 func thunk_AddPipe hand guess
+0x27c30 func hud_ClearAll hand aaf6a
+0x27cc0 func debris_Think hand guess
+0x27d70 func debris_Spawn hand task_Alloc
+0x27e2a func debris_SetTimer hand guess
+0x27f20 func debris_Tick hand g9711c
+0x27fb8 func debris_SpawnDigit hand % 10
+0x28050 func debris_Clear4 hand loop 4
+0x280f0 func timer_Set280f0 hand guess
+0x280ff func sfx_PlayAt hand 6e4f0 6ecf0
+0x28170 func list_CountA hand guess
+0x28290 func math_RotateA hand SinCosHeading, 11 callers
+0x28330 func math_RotateB hand guess
+0x283e9 func math_RotateC hand guess
+0x28410 func ent_MoveForward hand SinCosHeading, 20 callers
+0x284f0 func math_OffsetByHeading hand guess
+0x28560 func math_RotateD hand guess
+0x285d0 func ent_PlaceOffset hand 6 callers
+0x28680 func math_RotateE hand guess
+0x28730 func ent_PlaceAtHeading hand 5 callers
+0x287e0 func ent_DrawShadow hand view_TransformEntity
+0x28a00 func ent_Decel hand 11 callers
+0x28a60 func ent_DecelB hand 6 callers
+0x28ae8 func math_Wrap1680 hand guess
+0x28b30 func ent_CollideAll hand 20320 29190 4c890
+0x28d00 func missile_HitCheck hand missile hit task%d / wall
+0x28f20 func player_Explode hand 6e4f0 8000
+0x28fe9 func sfx_Play8000 hand guess
+0x290e8 func ent_OffsetSide hand SinCosHeading
+0x29150 func track_TileAt hand 7 callers
+0x29190 func track_HeightAt hand 29220
+0x29220 func track_TileFlags hand 27 callers
+0x292e8 func ent_OffsetFront hand SinCosHeading
+0x29380 func radar_Clear6 hand loop 6
+0x293f0 func radar_Update6 hand loop 6
+0x29490 func ent_DamageArea hand 2d9c0
+0x29600 func dash_Tick hand 29810 2ad10 2aa20
+0x29630 func dash_DrawAll hand guess
+0x29810 func dash_FindCityCar hand find city car from within dash
+0x29e90 func dash_DrawGauge hand 5f9b0
+0x29f00 func dash_DrawMap hand worldmap coords
+0x2a320 func dash_DrawSpeed hand 5f9d0
+0x2a480 func dash_SetShort hand guess
+0x2a4b0 func dash_ResetDirty hand 11 callers
+0x2a5c0 func dash_DrawFuel hand 5f9d0
+0x2a780 func dash_DrawDamage hand 5f9d0
+0x2a900 func dash_DrawRadar hand 5f9b0
+0x2aa20 func dash_DrawWeapons hand 478b0
+0x2ad10 func dash_DrawPanels hand guess
+0x2add0 func dash_PanelA hand 478b0 5f8e0
+0x2aef0 func dash_PanelB hand guess
+0x2b130 func dash_PanelC hand guess
+0x2b200 func dash_DrawPercent hand =000%
+0x2b410 func dash_ClearB2 hand guess
+0x2b431 func dash_SetIdx hand guess
+0x2b460 func dash_PanelD hand guess
+0x2b640 func stub_Ret2b640 hand empty
+0x2b650 func stub_Ret2b650 hand empty
+0x2b6b0 func stub_Ret2b6b0 hand empty
+0x2b6c0 func input_ReadKeysA hand guess
+0x2b8d0 func input_ReadKeysB hand guess
+0x2bb00 func input_ReadJoy hand guess
+0x2bc80 func control_Load hand control.dat
+0x2be31 func math_MulDiv hand guess
+0x2be40 func stub_2be40 hand 8 callers
+0x2be8c func thunk_2be8c hand guess
+0x2bed2 func math_2bed2 hand guess
+0x2bf70 func input_ClearD6 hand guess
+0x2c020 func input_PollJoy hand joy_PollAlt
+0x2c080 func timer_Hook74d1d hand guess
+0x2c0a0 func timer_Hook75073 hand guess
+0x2c0c0 func stub_Ret2c0c0 hand empty
+0x2c0d0 func stub_Ret2c0d0 hand empty
+0x2c0e0 func math_Atan2 hand 68 callers, heading from dx dy
+0x2c370 func math_SinCosVec hand guess
+0x2c500 func blit_RowA hand guess
+0x2c5b0 func blit_RowB hand guess
+0x2c643 func blit_RowC hand guess
+0x2c6d0 func blit_RowD hand guess
+0x2c780 func blit_RowE hand guess
+0x2c820 func blit_Copy4 hand guess
+0x2c890 func blit_Clear hand guess
+0x2c940 func blit_RowF hand guess
+0x2c9d0 func blit_RowG hand guess
+0x2cab0 func blit_Swap hand guess
+0x2cb00 func blit_RowH hand guess
+0x2cc10 func spr_LoadAlloc hand fread malloc, 18 callers
+0x2cd50 func spr_LoadInto hand 30 callers
+0x2ce90 func spr_LoadAllocB hand guess
+0x2d0e0 func spr_LoadSet hand 11 callers
+0x2d340 func ent_ClearTable32 hand guess
+0x2d4e0 func ent_SetHandlerByIdx hand 18 callers
+0x2d500 func ent_ClearTable32B hand guess
+0x2d5a0 func game_Frame hand timer_FrameRate, player_Tick
+0x2d910 func dash_Refresh hand guess
+0x2d9c0 func ent_Damage hand amount= dam=%d and s=%d
+0x2da60 func hud_Draw hand 638f0
+0x2ddd0 func hud_Count hand guess
+0x2de60 func hud_Reset hand guess
+0x2de90 func view_Bob hand 4b520
+0x2df00 func view_Offset32 hand guess
+0x2df30 func view_UpdateCamera hand SinCosHeading
+0x2e180 func pal_Shr4 hand guess
+0x2e210 func sfx_Ambient hand 59930
+0x2e3d0 func gif_SetSize hand guess
+0x2e452 func gif_SetRect hand guess
+0x2e4a0 func gif_GetCode hand Ran out of GIF bits
+0x2e600 func gif_Decode hand guess
+0x2e8b0 func gif_Alloc hand NO GIF MEMORY AVAILABLE
+0x2e920 func gif_ReadHeader hand nonsquare pixels
+0x2eb90 func gif_ReadImage hand guess
+0x2edd0 func img_Load hand trying to load %s, 59 callers
+0x2ef40 func img_Blit hand guess
+0x2f170 func fade_Load hand data trakfade.dat
+0x2f320 func pal_Fill40 hand guess
+0x2f390 func pal_Match hand 317f0
+0x2f610 func pal_Scale hand guess
+0x2f7d0 func stub_Ret2f7d0 hand empty
+0x2f7e0 func pal_FadeA hand 2f960
+0x2f810 func pal_FadeB hand guess
+0x2f840 func pal_FadeC hand guess
+0x2f870 func pal_FadeD hand guess
+0x2f8a0 func pal_FadeE hand guess
+0x2f8d0 func pal_FadeF hand guess
+0x2f900 func pal_FadeG hand guess
+0x2f930 func pal_FadeH hand guess
+0x2f960 func pal_FadeStep hand 317f0, 8 callers
+0x2faa0 func pal_BlendA hand guess
+0x2fb70 func pal_BlendB hand guess
+0x2fc7c func asm_Fixmul2fc7c hand asm helper
+0x2fc85 func asm_Fixdiv2fc85 hand asm helper
+0x2fc8e func asm_Fix2fc8e hand asm helper
+0x2fd03 func asm_Raster2fd03 hand asm fragment
+0x2ff03 func asm_Raster2ff03 hand asm fragment
+0x30002 func asm_Raster30002 hand asm fragment
+0x300a0 func asm_Raster300a0 hand asm fragment
+0x30129 func asm_Ret30129 hand guess
+0x3020e func asm_Raster3020e hand guess
+0x30302 func asm_Raster30302 hand guess
+0x30320 func asm_Ret30320 hand guess
+0x30335 func asm_Set30335 hand guess
+0x30350 func obj_TimerTick hand 4b400
+0x305e4 func obj_Rotate hand SinCosHeading
+0x30730 func obj_RotateFree hand guess
+0x30900 func view_GetA hand guess
+0x30960 func stub_Ret30960 hand empty
+0x30980 func bsp_Walk hand guess
+0x30b00 func bsp_PrintStats hand VERTS WALLS FLOORS ROT
+0x30b50 func bsp_NextId hand guess
+0x30ba5 func bsp_DecCount hand guess
+0x30d30 func derby_Start hand commencederby
+0x30da0 func derby_Tick hand 210/
+0x30e70 func ai_ZoneTick hand ai_InBox
+0x310a0 func timer_Set310a0 hand guess
+0x310ef func ai_ZoneCase0 hand guess
+0x31108 func ai_ZoneCase1 hand guess
+0x31122 func ai_ZoneCase3 hand guess
+0x3113c func ai_ZoneCase2 hand guess
+0x31223 func ai_ZoneSound hand 52990
+0x31280 func ai_SteerToZone hand SinCosHeading
+0x313d6 func thunk_Timer313d6 hand guess
+0x31431 func timer_Set31431 hand guess
+0x314c5 func ent_SetType6a hand guess
+0x314f0 func stub_Ret314f0 hand empty
+0x31500 func stub_Ret31500 hand empty
+0x317f0 func str_ParseInt hand 9 callers, *10
+0x31ae8 func thunk_Or31ae8 hand guess
+0x31b00 func vga_SetModeA hand port io
+0x31beb func vga_SetModeB hand guess
+0x31c85 func thunk_31c85 hand guess
+0x31c90 func vga_SetModeC hand guess
+0x31e30 func pal_Set hand 74240, 20 callers
+0x31f50 func pal_SetAll hand 27 callers
+0x320f0 func pal_FadeIn hand dac_WriteRange
+0x32182 func vga_InStatus hand port & 8
+0x32198 func io_In hand guess
+0x321b0 func stub_Ret321b0 hand empty
+0x321d0 func render_Frame hand 32370
+0x32370 func render_View hand camera is at %d %d
+0x327a0 func render_CamAngle hand guess
+0x32983 func stub_Ret32983 hand empty
+0x32c96 func asm_32c96 hand guess
+0x32cb0 func render_Sort hand 12e70
+0x32e00 func render_ProjectA hand guess
+0x32f00 func render_ProjectB hand guess
+0x33110 func tileanim_Load hand data trakanim.dat
+0x33310 func tileanim_Reset hand guess
+0x33350 func tileanim_Tick hand guess
+0x33400 func scr_BlitMask hand 8 callers
+0x33660 func scr_BlitScaled hand 8 callers
+0x339b0 func scr_SetPitch hand guess
+0x33a00 func scr_CopyA hand guess
+0x33b20 func scr_CopyB hand guess
+0x33ca0 func cfg_Save hand fwrite
+0x33e10 func cfg_Load hand 14 callers
+0x33ee0 func cfg_SaveAll hand guess
+0x33f80 func cfg_Read hand fread
+0x34152 func scr_CopyC hand guess
+0x342a0 func scr_FadeA hand 34360
+0x342b4 func scr_FadeB hand 34360
+0x342e0 func scr_WipeA hand 34810
+0x34360 func scr_Fade hand guess
+0x34810 func scr_Wipe hand guess
+0x34a40 func scr_Present hand 604d0 60970
+0x34c50 func hiscore_Save hand fwrite
+0x34dc0 func hiscore_Load hand fread
+0x34fd3 func asm_34fd3 hand asm fragment
+0x351b5 func frag_351b5 hand x87 split fragment, not studied
+0x35319 func frag_35319 hand x87 split fragment, not studied
+0x353e9 func frag_353e9 hand x87 split fragment, not studied
+0x3552f func frag_3552f hand x87 split fragment, not studied
+0x35797 func frag_35797 hand x87 split fragment, not studied
+0x35b57 func frag_35b57 hand x87 split fragment, not studied
+0x35bbd func frag_35bbd hand x87 split fragment, not studied
+0x35cbc func frag_35cbc hand x87 split fragment, not studied
+0x35d28 func frag_35d28 hand x87 split fragment, not studied
+0x35ee8 func frag_35ee8 hand x87 split fragment, not studied
+0x361db func frag_361db hand x87 split fragment, not studied
+0x36219 func frag_36219 hand x87 split fragment, not studied
+0x362e8 func frag_362e8 hand x87 split fragment, not studied
+0x36387 func frag_36387 hand x87 split fragment, not studied
+0x36cef func frag_36cef hand x87 split fragment, not studied
+0x36dcf func frag_36dcf hand x87 split fragment, not studied
+0x370ea func frag_370ea hand x87 split fragment, not studied
+0x371a6 func frag_371a6 hand x87 split fragment, not studied
+0x37442 func frag_37442 hand x87 split fragment, not studied
+0x374e8 func frag_374e8 hand x87 split fragment, not studied
+0x3756b func frag_3756b hand x87 split fragment, not studied
+0x38554 func frag_38554 hand x87 split fragment, not studied
+0x38d7e func frag_38d7e hand x87 split fragment, not studied
+0x39070 func frag_39070 hand x87 split fragment, not studied
+0x39485 func frag_39485 hand x87 split fragment, not studied
+0x396e8 func frag_copy_values hand inkling guess: copies ESI-loaded value into EDI-pointed location
+0x39800 func frag_char_accumulate_return hand inkling guess: x87 float10 return of byte-accumulated pointers
+0x39862 func frag_float10_load hand inkling guess: loads 80-bit float from memory pointer
+0x3999a func frag_copy_values_3999a hand inkling guess: copies ESI-loaded value into EDI-pointed location
+0x39a80 func frag_copy_values_39a80 hand inkling guess: stores one unaffine value into another
+0x39be3 func frag_load_float10_from_ebx hand inkling guess: dereferences pointer and returns x87 float10 value
+0x39cac func frag_unaff_edi_store hand inkling guess: stores param_4 to unaff_EDI, then corrupts pointers and returns float10
+0x39ced func frag_copy_values_39ced hand inkling guess: copies one unaffine value into another
+0x3a085 func frag_store_value hand inkling guess: copies ESI into EDI-pointed location
+0x3a1e8 func frag_load_float10_from_ebx_3a1e8 hand inkling guess: dereferences pointer and returns float10 value
+0x3a5ef func frag_int_pointer_increment_and_byte_store hand inkling guess: x87 fragment with odd pointer/byte arithmetic, no clear role
+0x3a6be func frag_int_pointer_increment hand inkling guess: x87-ish pointer arithmetic fragment
+0x3a7e9 func frag_int_pointer_increment_3a7e9 hand inkling guess: x87 fragment with pointer arithmetic and casts
+0x3a856 func frag_copy_value hand inkling guess: copies one unaffine value to another with no side effects
+0x3abe8 func frag_store_value_3abe8 hand inkling guess: copies ESI-loaded value to EDI-pointed location
+0x3b100 func frag_load_float10_from_ebx_3b100 hand inkling guess: dereferences pointer and converts to float10
+0x3b13b func frag_copy_values_3b13b hand inkling guess: copies one unaffine value to another
+0x3b380 func frag_char_accumulate_return_3b380 hand inkling guess: adds byte from param_1 shifted into double low byte then returns it
+0x3b518 func frag_copy_value_3b518 hand inkling guess: copies ESI-pointed value to EDI-pointed location
+0x3b78f func frag_load_float10_from_ebx_3b78f hand inkling guess: loads 80-bit float via pointer in EBX
+0x3b86f func frag_swap_and_add_high_byte hand inkling guess: atomic swap then add high byte to float10 accumulator
+0x3b8e8 func frag_load_float10_from_ebx_3b8e8 hand inkling guess: dereferences pointer and returns float10 value
+0x3b8ff func frag_float10_load_from_ebx hand inkling guess: loads 80-bit float from memory pointer in EBX
+0x3b944 func frag_load_float10_from_ebx_3b944 hand inkling guess: dereferences pointer and converts to float10
+0x3b957 func frag_char_add_float10_return hand inkling guess: adds byte from param_1 to float10 and returns it
+0x3b9e5 func frag_float10_load_from_ebx_3b9e5 hand inkling guess: loads 80-bit float from pointer in EBX
+0x3b9fc func frag_float10_deref_load hand inkling guess: loads float10 via EBX pointer
+0x3ba09 func frag_copy_values_3ba09 hand inkling guess: copies one value into another via pointers
+0x3ba26 func frag_char_accumulate_return_3ba26 hand inkling guess: adds byte from param_1 to double low byte, returns it
+0x3ba65 func frag_store_value_3ba65 hand inkling guess: copies ESI-loaded value to EDI-pointed location
+0x3bac1 func frag_copy_values_3bac1 hand inkling guess: copies one unaffine value to another
+0x3bac7 func frag_char_accumulate_return_3bac7 hand inkling guess: adds byte from param_1 to param_3, returns it
+0x3bb00 func frag_copy_value_3bb00 hand inkling guess: copies one unaffine value to another
+0x3bb73 func frag_store_value_3bb73 hand inkling guess: copies ESI value to EDI pointer
+0x3bba1 func frag_copy_values_3bba1 hand inkling guess: copies one memory word to another via unaff registers
+0x3bc03 func frag_copy_values_3bc03 hand inkling guess: copies source value to destination via pointers
+0x3be24 func rend_SetupSpan hand asm renderer
+0x3be87 func rend_DrawWallCol hand asm, 42551
+0x3c6a6 func rend_WallSpanA hand asm 1829 bytes
+0x3d57a func rend_WallSpanB hand asm 2627 bytes
+0x3e91d func rend_FloorCast hand asm 3fbe2 3f625
+0x3f625 func rend_FloorSpanA hand asm
+0x3fb02 func rend_SumPair hand guess
+0x3fbe2 func rend_FloorSpanB hand asm
+0x4021c func rend_DrawFloor hand floor_SpanAsmA 417f0 42041
+0x4108d func rend_Idx2 hand guess
+0x417f0 func rend_FloorSpanC hand asm
+0x42041 func rend_FloorSpanD hand asm
+0x424d1 func rend_Nop424d1 hand guess
+0x42551 func rend_WallSpanC hand asm
+0x42990 func rend_Init hand 4de80
+0x429e8 func rend_WallsN hand 3be87
+0x42c30 func rend_WallsS hand 3be87
+0x42e70 func rend_FloorsN hand 4021c
+0x43060 func rend_FloorsS hand 4021c
+0x4336b func rend_WallsE hand 3be87
+0x434a0 func rend_WallsW hand 3be87
+0x43900 func rend_FloorsE hand 4021c
+0x43f40 func rend_WallsSeg hand 3be87
+0x44420 func rend_FloorsW hand 4021c
+0x44dae func rend_WallsLoop hand 3be87
+0x450c0 func sfx_Stop hand 6 callers
+0x451a0 func mem_CheckAccess hand ERROR: Memory access %d
+0x452d0 func sfx_SetPos hand guess
+0x453e0 func thunk_45460 hand guess
+0x45460 func sfx_Update hand guess
+0x45590 func text_Draw hand 45b40 45ac0
+0x45710 func spr_LoadPair hand 2ce90 2cc10
+0x45780 func text_SetPos hand 6 callers
+0x457a0 func text_Print hand 5f8c0
+0x45840 func text_PrintRle hand gfx_BlitRle
+0x459c0 func font_Read hand read in a %c=%d at %d xloc
+0x45a80 func text_WordLen hand stops at space
+0x45ac0 func text_DrawB hand 450c0
+0x45b40 func text_CharWidthA hand & 0x1f
+0x45ba0 func text_CharWidthB hand guess
+0x45c10 func text_PrintCentered hand 45ba0
+0x45e50 func text_CharWidthC hand guess
+0x45eb0 func text_PrintSmall hand 97 callers
+0x45fc0 func ent_ExplodeThink hand guess
+0x46090 func ent_DeathDefault hand 46ab0 47210, used as death handler
+0x46120 func ent_DeathPlayer hand 15370
+0x461ed func gen_ResetA hand 46530
+0x4621a func thunk_463b0 hand guess
+0x46224 func gen_ResetB hand 46490
+0x46251 func gen_ResetC hand 46280
+0x46280 func gen_TickC hand guess
+0x46320 func gen_TickD hand guess
+0x463b0 func gen_TickA hand 47dd0 46670
+0x46490 func gen_TickB hand guess
+0x46530 func gen_TickE hand 46600 47dd0
+0x46600 func gen_Sound6 hand 48720
+0x46670 func fx_SpawnSmoke hand 468f0, 17 callers
+0x466c0 func fx_SpawnSmokeB hand guess
+0x46720 func fx_SmokeThink hand guess
+0x468f0 func fx_Spawn hand task_Alloc, 10 callers
+0x469e8 func thunk_Or83 hand guess
+0x46a14 func mem_Store46a14 hand guess
+0x46ab0 func fx_SpawnDebris hand guess
+0x46b10 func fx_DebrisThink hand guess
+0x46cd0 func fx_SpawnB hand guess
+0x46de9 func track_FlattenBlock hand flattenblock %d %d with sx sy
+0x46eb0 func fx_FlashThink hand 5a920
+0x47050 func fx_SpawnAtSeg hand 1ff80 69ec0
+0x47140 func fx_ClearAll hand guess
+0x471e0 func fx_Reset hand guess
+0x471f0 func fx_SetDaa hand guess
+0x47210 func timer_Set47210 hand 8 callers
+0x47220 func fx_Kill hand 6ecf0
+0x474ce func fx_DrawLoop hand guess
+0x478b0 func num_Draw hand 16 callers
+0x479d0 func fx_DrawScaled hand gfx_BlitScaledRle
+0x47af0 func fx_ThinkB hand 451a0
+0x47ba0 func fx_SetDeath hand guess
+0x47be0 func fx_Count hand guess
+0x47c30 func fx_SpawnC hand guess
+0x47dd0 func ai_Drive hand 1572 bytes, 48400 48510 48c50
+0x48400 func ai_TurnToward hand 55 callers
+0x48510 func ai_TurnTowardB hand i is less than zero!!
+0x48640 func ai_TurnTowardC hand guess
+0x48720 func ai_SetSpeed hand 4b120
+0x487a0 func ai_Avoid hand 48960
+0x48960 func ai_AvoidB hand guess
+0x48aa0 func ai_SteerA hand 7 callers
+0x48b60 func ai_SteerB hand guess
+0x48c50 func ai_ModeA hand 48aa0 48f20
+0x48cf0 func ai_ModeB hand guess
+0x48dd0 func ai_ModeC hand guess
+0x48f20 func ai_Accel hand guess
+0x48f90 func mem_Store48f90 hand guess
+0x48fb0 func file_Open hand 743ef
+0x48ffa func file_Seek hand guess
+0x49090 func file_Close hand rt_fclose
+0x49230 func bsp_Recurse hand recursive
+0x492f0 func bsp_Make hand MAKEBSP: Should not be here
+0x49730 func bsp_Deref hand guess
+0x49740 func bsp_SortSegs hand qsort
+0x49900 func bsp_Split hand guess
+0x49c10 func bsp_Build hand 49230 49900
+0x49f14 func bsp_Draw hand guess
+0x4a420 func rend_Scene hand 1302 bytes, 4c700 4b700 4c220 4bd40
+0x4a940 func rend_FrameAll hand 4df40 49c10
+0x4ae00 func ent_Move hand 41 callers
+0x4b120 func ent_SetVel hand 23 callers
+0x4b400 func timer_Set hand 177 callers
+0x4b430 func math_DistA hand 17 callers
+0x4b520 func math_DistB hand 12 callers
+0x4b600 func math_DistC hand guess
+0x4b700 func rend_Sprites hand 4e080
+0x4bb8e func rend_SpriteClip hand guess
+0x4bd40 func rend_ObjectsA hand 43900 434a0
+0x4c220 func rend_ObjectsB hand guess
+0x4c700 func rend_ObjectVis hand guess
+0x4c857 func thunk_4c857 hand guess
+0x4c890 func col_Sprites hand SET %d SPRITE %d is collidable
+0x4d0d0 func col_BoxA hand guess
+0x4d1b0 func col_BoxB hand guess
+0x4d280 func mem_PrintUsed hand MEMUSED %d
+0x4d2d0 func maps_Load hand maps trak.blk trak.bsp
+0x4de80 func rend_ResetTables hand guess
+0x4df40 func stub_Ret4df40 hand guess
+0x4df67 func rend_FillTable hand guess
+0x4e080 func rend_SpriteScale hand 3169 bytes
+0x4ed10 func rend_SpriteSpan hand 3007 bytes
+0x4f8d0 func stub_Ret4f8d0 hand empty
+0x4f975 func rend_Loop4f975 hand guess
+0x4fbb0 func trig_Index hand guess
+0x4fbe0 func trig_SetBit80 hand guess
+0x4fbf0 func trig_ClrBit80 hand guess
+0x4fc00 func mission_CamStart hand 54670
+0x4fce0 func mission_Reset hand 54b30
+0x4fd50 func mission_Timer hand 210/
+0x4fe63 func mission_Sound hand guess
+0x4fe90 func mission_TickFlag hand guess
+0x4ff00 func mission_DrawTimer hand text_PutDigit
+0x50080 func mission_TimerA hand guess
+0x50120 func timer_Set50120 hand guess
+0x50160 func mission_TimerB hand guess
+0x50214 func rand_Pick hand rt_rand
+0x50297 func rand_Case0 hand /7
+0x502c6 func rand_Case1 hand guess
+0x502f3 func rand_Case2 hand guess
+0x50333 func rand_Case3 hand guess
+0x50515 func bodies_LoadA hand bodies boda%d.spr
+0x50616 func bodies_LoadB hand bodies boda%d.spr
+0x507c0 func score_Tick hand 508e0
+0x508e0 func score_Draw hand text_PutDigit
+0x50ce0 func math_Div50ce0 hand guess
+0x50d84 func thunk_50d84 hand guess
+0x50d90 func mission_Start hand 511b0
+0x50fa0 func mission_End hand mission over after with %d mission
+0x511b0 func mission_LoadDat hand 000.dat 00.dat
+0x51520 func mission_LoadObjects hand trying to load %d objects
+0x516b0 func mission_DropCars hand dropped mission car %d, mission purpose
+0x51ef0 func mission_PlaceObj hand guess
+0x52060 func mission_DropB hand ent_AllocSlot
+0x52180 func mission_DropC hand guess
+0x522a0 func mission_Clear hand guess
+0x52370 func mission_InitHud hand guess
+0x52400 func mission_Hud hand guess
+0x52420 func stub_Ret52420 hand empty
+0x52430 func mission_DropMarker hand marker dropped
+0x524e0 func mission_CheckNuker hand checking nuker
+0x525d0 func mission_DropD hand guess
+0x526a0 func mission_DropBoss hand boss dropped p=%d t=%d
+0x52840 func bodies_LoadMain hand bodies main.sga main.spr
+0x52870 func str_SetExtA hand dat
+0x528f0 func str_SetExtB hand dat
+0x52990 func timer_Set52990 hand guess
+0x52a4d func thunk_Timer52a4d hand guess
+0x52a84 func cmd_Case0 hand guess
+0x52a93 func cmd_Case1 hand 5e750(0)
+0x52aaf func cmd_Case2 hand 5e750(2)
+0x52ac6 func cmd_Case3 hand 5e750(3)
+0x52ae6 func cmd_Case4 hand guess
+0x52af3 func cmd_Case5 hand 64600
+0x52afe func cmd_Case6 hand 64700
+0x52b10 func save_Name hand savegame save%d.gam
+0x52b60 func save_Menu hand screens drakeb2.img
+0x52e20 func save_MenuInput hand guess
+0x53010 func load_Menu hand guess
+0x53230 func save_DrawSlot hand guess
+0x532c0 func save_DrawList hand guess
+0x53410 func save_ReadName hand fread
+0x534d0 func save_DrawAll hand guess
+0x535c0 func save_ReadHeader hand guess
+0x53610 func save_Write hand fwrite
+0x536c0 func save_Load hand fread
+0x53780 func save_Pack hand guess
+0x53840 func save_Clear hand guess
+0x538a0 func save_Center hand guess
+0x53910 func save_Confirm hand guess
+0x53ae0 func save_Check hand guess
+0x53b50 func enemy_Think hand 994 bytes
+0x53dfa func enemy_Smoke hand 46670
+0x53e43 func enemy_SetA hand guess
+0x53e57 func enemy_TurnTo hand car_TurnDirToTarget
+0x53ea1 func enemy_TurnSmoke hand guess
+0x53ef0 func enemy_ThinkB hand guess
+0x540d0 func enemy_Drive hand 13 callers
+0x54283 func thunk_54283 hand guess
+0x5428f func path_ResetA hand 543e0
+0x542bb func thunk_EnemyDrive hand 540d0
+0x543e0 func path_Reset hand guess
+0x54430 func path_Follow hand 548c0 54510
+0x544a0 func path_AngleTo hand guess
+0x54510 func path_Advance hand guess
+0x54670 func path_Start hand task %d starts on path at %d %d
+0x54850 func path_PrintSeg hand p1x p1y p2x p2y
+0x548c0 func path_Steer hand guess
+0x54b30 func path_Clear hand guess
+0x54b7d func plane_View hand view_TransformEntity
+0x54bd0 func plane_Trigger hand triggered plane %d
+0x54c91 func plane_Case0 hand guess
+0x54cae func plane_Case1 hand guess
+0x54ce7 func plane_Case2 hand guess
+0x54d04 func plane_Case3 hand guess
+0x54d30 func plane_SetState hand guess
+0x54de0 func plane_Add hand added %d plane in mutton
+0x55041 func thunk_15370 hand guess
+0x55049 func thunk_550c0 hand guess
+0x55051 func thunk_12880 hand guess
+0x55059 func thunk_558b0 hand guess
+0x55061 func thunk_46280 hand guess
+0x55069 func plane_Tick hand guess
+0x550ae func stub_Ret550ae hand guess
+0x550c0 func plane_Think hand guess
+0x55240 func plane_Fly hand guess
+0x553e8 func plane_Drop hand guess
+0x55410 func plane_Attack hand guess
+0x55680 func plane_Turn hand car_RotateTowardTarget
+0x558b0 func plane_Hit hand 5a8d0 46670
+0x55a30 func plane_Pos hand guess
+0x55af0 func plane_Alt hand guess
+0x55bc8 func thunk_55bc8 hand guess
+0x55be0 func stub_Ret55be0 hand guess
+0x55bf0 func plane_FireMissile hand 194d0
+0x55c90 func bomb_Fall hand guess
+0x55ec0 func bomb_Spawn hand task_Alloc
+0x55fdd func bomb_Kill hand guess
+0x56070 func plane_Spawn hand task_Alloc
+0x56210 func plane_Bank hand guess
+0x562f0 func plane_Move hand SinCosHeading 55af0
+0x56450 func plane_Get hand guess
+0x564b0 func plane_Set hand guess
+0x56510 func ent_SetAnim hand 34 callers
+0x56560 func plane_Dist hand guess
+0x565d0 func cine_Start hand memcpy 64000
+0x566e8 func cine_Fade hand cq_AddColour
+0x56820 func cine_Play hand guess
+0x56930 func cine_Step hand guess
+0x569e8 func cine_Get hand guess
+0x56a60 func cine_Blit hand guess
+0x56bc0 func cine_Palette hand guess
+0x56dc0 func cine_End hand guess
+0x56f86 func fli_ReadWord hand 75dda
+0x56fdd func fli_Play hand fli_Frames
+0x5745c func fli_CaseColor hand fli_ChunkColor
+0x57486 func fli_CaseLc hand fli_ChunkLc
+0x57499 func fli_CaseCopy hand guess
+0x574ac func fli_CaseBrun hand fli_ChunkBrun
+0x574c4 func fli_CaseSkip hand guess
+0x57800 func fli_Wait hand guess
+0x57820 func fli_ReadB hand guess
+0x57860 func file_OpenLog hand $Opening %s, 27 callers
+0x57900 func cd_PathA hand guess
+0x57928 func cd_PathB hand guess
+0x5795c func cd_Init hand MSCDEX NOT LOADED
+0x57cbc func cd_Tick hand guess
+0x57d93 func cd_Restart hand guess
+0x57dd0 func cd_Check hand guess
+0x57e98 func cd_PlayTrack hand TRACK STARTED %d
+0x57f3c func cd_ProgramA hand PROGRAM START %d
+0x57fdc func cd_ProgramB hand PROGRAM START %d
+0x580bc func cd_Clear hand guess
+0x580cc func cd_MenuTrack hand guess
+0x58138 func cd_ProgramC hand guess
+0x58160 func cd_Stop hand 11 callers
+0x58188 func cd_Play hand 9 callers
+0x581fc func cd_Resume hand guess
+0x58260 func cd_Ioctl hand guess
+0x582d8 func cd_Reset hand guess
+0x582fc func cd_Status hand CD STATUS: %x
+0x58524 func cd_PrintTime hand guess
+0x5857c func cd_Request hand 15 callers
+0x58694 func cd_RequestB hand guess
+0x587ac func cd_TrackTime hand guess
+0x58878 func cd_Msf hand guess
+0x588e9 func cd_InsertDisc hand insert.gif
+0x58b40 func weapon_Tick hand 1317 bytes
+0x59070 func weapon_Timer hand guess
+0x591b0 func weapon_Reset hand guess
+0x59280 func weapon_Ammo hand guess
+0x59350 func weapon_UpdateA hand guess
+0x593b0 func weapon_Pick hand guess
+0x59440 func weapon_Clear hand guess
+0x59460 func weapon_Init hand guess
+0x594a0 func weapon_Fire hand guess
+0x59540 func weapon_Next hand guess
+0x595d0 func ped_Spawn hand fucker is here
+0x596c2 func timer_Set596c2 hand guess
+0x59780 func timer_Set59780 hand guess
+0x59930 func task_Schedule hand sched %d with state %d
+0x59ed0 func task_SetTimer hand guess
+0x59f70 func task_SetState hand guess
+0x5a030 func timer_Set5a030 hand guess
+0x5a0c3 func math_5a0c3 hand guess
+0x5a20d func task_UnderGen hand other task %d is under gen
+0x5a2c4 func task_Wake hand guess
+0x5a400 func ped_Mission hand a mission ped
+0x5a680 func ped_Place hand guess
+0x5a780 func ped_Think hand guess
+0x5a8d0 func timer_Set5a8d0 hand guess
+0x5a920 func ped_Face hand guess
+0x5aaa0 func ped_Walk hand guess
+0x5af30 func ped_SetAnim hand 23 callers
+0x5aff0 func ped_Heading hand /0x2d
+0x5b060 func ped_Run hand guess
+0x5b1a0 func ped_Die hand guess
+0x5b200 func ped_Burn hand draw task %d is burning
+0x5b2d0 func ped_Reset hand guess
+0x5b390 func ped_Flee hand guess
+0x5b480 func ped_Weapon hand guess
+0x5b5e0 func ped_Sound hand guess
+0x5b690 func ped_Timer hand guess
+0x5b742 func ped_SetState6 hand guess
+0x5b780 func ped_Talk hand guess
+0x5b810 func ped_Clear hand guess
+0x5b920 func ped_ClearB hand guess
+0x5b986 func ped_Draw hand 5cbc0
+0x5b9e0 func corpse_ClearA hand guess
+0x5ba20 func corpse_ClearB hand guess
+0x5ba70 func corpse_Reset hand 5b2d0
+0x5bab0 func corpse_Talk hand guess
+0x5bb20 func corpse_Bounce hand 5c810
+0x5bbb0 func corpse_Tick hand guess
+0x5bcc0 func corpse_Spawn hand guess
+0x5bf00 func stub_Ret5bf00 hand guess
+0x5bfc2 func stub_Ret5bfc2 hand guess
+0x5c0d0 func corpse_Think hand 603 bytes
+0x5c430 func corpse_Smoke hand 46670
+0x5c4b0 func corpse_TimerA hand guess
+0x5c530 func corpse_Anim hand 66810
+0x5c5c0 func corpse_Hit hand guess
+0x5c766 func corpse_Set5c766 hand guess
+0x5c780 func corpse_Death hand 15370
+0x5c810 func corpse_Explode hand bouncing corpse caused explosion
+0x5c8b0 func corpse_HitB hand guess
+0x5c950 func corpse_Burst hand 466c0
+0x5ca00 func corpse_TimerB hand guess
+0x5cbc0 func corpse_Draw hand 66810
+0x5cc00 func corpse_Land hand guess
+0x5ccb0 func corpse_Roll hand guess
+0x5cd60 func corpse_Splat hand 72de0
+0x5cda0 func corpse_Kill hand 11 callers, 6ecf0
+0x5ce30 func vehicle_Seek hand 5e750
+0x5cee0 func vehicle_Drive hand 550 bytes
+0x5d182 func vehicle_Set5d182 hand guess
+0x5d203 func timer_Set5d203 hand guess
+0x5d2d0 func vehicle_Move hand 769 bytes
+0x5d610 func vehicle_Zone hand ai_InBox
+0x5d650 func world_TickAll hand 1ed60 30da0 4fd50 63750
+0x5d7b0 func demo_Start hand data demo.fly
+0x5d914 func thunk_63e60 hand guess
+0x5d91f func thunk_5eee0 hand guess
+0x5d92a func ai_Case5d92a hand 5e750
+0x5d97a func thunk_50160 hand guess
+0x5d985 func thunk_30e70 hand guess
+0x5d990 func thunk_66ca0 hand guess
+0x5d99b func ai_Case5d99b hand guess
+0x5d9ce func thunk_5eff0 hand guess
+0x5d9d9 func ai_Case5d9d9 hand guess
+0x5d9ee func ai_Case5d9ee hand guess
+0x5da04 func ai_Case5da04 hand guess
+0x5da1f func ai_Case5da1f hand guess
+0x5da4e func thunk_5f2e0 hand guess
+0x5da59 func thunk_5f380 hand guess
+0x5da5e func thunk_5da5e hand guess
+0x5da89 func ai_Case5da89 hand guess
+0x5dab0 func ai_ClearA hand guess
+0x5db20 func ai_ClearB hand guess
+0x5db50 func ai_PathNext hand 12 callers
+0x5dd00 func ai_PathDist hand guess
+0x5de10 func ai_PathPoint hand guess
+0x5ded0 func ai_PathReset hand guess
+0x5e080 func ai_SeekSeg hand car_TurnDirToTarget
+0x5e24a func thunk_Or5e24a hand guess
+0x5e300 func ai_PathStep hand 8 callers
+0x5e350 func ai_PathStepB hand 12 callers
+0x5e4a0 func ai_TestA hand guess
+0x5e4e0 func ai_TestB hand guess
+0x5e5d2 func ai_Set5e5d2 hand guess
+0x5e690 func ai_Offset hand guess
+0x5e750 func ai_SetSpeedDir hand 24 callers
+0x5e85d func ai_Arc hand guess
+0x5e949 func ai_TurnArc hand guess
+0x5eb20 func ai_AngleTo hand guess
+0x5eb80 func ai_AngleToB hand guess
+0x5ec45 func ai_5ec45 hand guess
+0x5eee0 func ai_Wander hand guess
+0x5ef30 func ai_WanderDist hand guess
+0x5efe8 func ai_5efe8 hand guess
+0x5eff0 func ai_Chase hand guess
+0x5f070 func ai_Wait hand guess
+0x5f11b func ai_AttackRun hand 1a450 194d0
+0x5f2b0 func ai_Stop hand guess
+0x5f2e0 func ai_AnimA hand guess
+0x5f380 func ai_AnimB hand guess
+0x5f445 func shot_SavePPM hand P6
+0x5f5ff func shot_SavePPMB hand P6
+0x5f720 func gfx_TextF hand guess
+0x5f790 func gfx_TextFB hand guess
+0x5f7c0 func gfx_Present hand 43 callers, vga_BlitScreen
+0x5f800 func gfx_PresentView hand vga_BlitView
+0x5f830 func gfx_PresentPart hand guess
+0x5f860 func gfx_PresentB hand guess
+0x5f8c0 func gfx_TextB hand 33 callers
+0x5f8e0 func gfx_TextA hand guess
+0x5f900 func gfx_Flip hand 72 callers, vga_SetStartAddr
+0x5f940 func gfx_FlipB hand guess
+0x5f980 func gfx_FlipC hand guess
+0x5f9b0 func gfx_TextFC hand guess
+0x5f9d0 func gfx_TextG hand guess
+0x5f9f0 func vesa_ParseInfo hand guess
+0x5fc30 func vesa_LoadCfg hand guess
+0x5fd90 func vesa_BufAddr hand real buffer address: %x
+0x5fe10 func vesa_Init hand V%d.%d
+0x60240 func vesa_SetMode hand guess
+0x60300 func vesa_SetBank hand 51 callers
+0x604a5 func vesa_604a5 hand guess
+0x604d0 func vesa_Blit hand 1175 bytes
+0x60970 func vesa_SetStart hand guess
+0x60a30 func vesa_BankOf hand guess
+0x60ab0 func vesa_Bank0 hand guess
+0x60b90 func vesa_GlyphBlit hand guess
+0x60f70 func vesa_GlyphBlitB hand guess
+0x612c0 func vesa_ReadPixel hand guess
+0x61330 func vesa_Detect hand guess
+0x61410 func vesa_BlitRect hand 12 callers
+0x61720 func vesa_Clear hand 17 callers
+0x61920 func thunk_6d2b0 hand guess
+0x61c08 func heli_Spawn hand ent_AllocSlot
+0x61de9 func heli_Move hand guess
+0x61f4f func thunk_61fd0 hand guess
+0x61f57 func thunk_62050 hand guess
+0x61f5f func heli_Turn hand guess
+0x61fbb func thunk_623a0 hand guess
+0x61fd0 func heli_Hover hand guess
+0x62050 func heli_Chase hand guess
+0x6224b func heli_Set6224b hand guess
+0x6225a func thunk_Timer6225a hand guess
+0x6227f func thunk_Timer6227f hand guess
+0x622a7 func thunk_Timer622a7 hand guess
+0x622d1 func thunk_Timer622d1 hand guess
+0x623a0 func heli_Wait hand guess
+0x62420 func turret_Aim hand ai_SetTurn
+0x626d0 func turret_Rotate hand guess
+0x62790 func turret_Reset hand guess
+0x62860 func turret_Clear hand guess
+0x62996 func stub_62996 hand guess
+0x629c0 func popup_Tick hand 62b50 62d20
+0x62a45 func timer_Set62a45 hand guess
+0x62b50 func popup_Fire hand popup currangle=%d
+0x62d20 func popup_Hide hand guess
+0x62e60 func train_Spawn hand ent_AllocSlot
+0x63221 func train_Think hand 1224 bytes
+0x636f0 func train_Hit hand guess
+0x63750 func train_Tick hand guess
+0x63770 func train_Print hand mission train is going
+0x638f0 func hud_Set638f0 hand guess
+0x63920 func train_Track hand guess
+0x63bd0 func train_Move hand guess
+0x63ce8 func civ_PathA hand guess
+0x63d66 func civ_PathB hand guess
+0x63e60 func civ_Think hand guess
+0x64010 func civ_StateA hand guess
+0x64080 func civ_StateB hand guess
+0x641b0 func civ_StateC hand guess
+0x642e0 func civ_StateD hand guess
+0x64320 func civ_StateE hand guess
+0x64360 func civ_StateF hand guess
+0x643e0 func cheat_A hand 64980
+0x64408 func cheat_B hand guess
+0x64430 func cheat_C hand guess
+0x64458 func cheat_D hand 64600
+0x6446b func cheat_E hand 64700
+0x6447e func cheat_F hand 64570
+0x64491 func cheat_G hand 64510
+0x644a4 func cheat_H hand guess
+0x644b5 func thunk_64890 hand guess
+0x644bc func cheat_Run hand 64980 64ae0
+0x64510 func civ_ActA hand guess
+0x64570 func civ_ActB hand guess
+0x64600 func civ_Sidestep hand car_Sidestep
+0x64700 func civ_ActD hand guess
+0x647d0 func cheat_RunB hand guess
+0x64890 func cheat_Reset hand guess
+0x64980 func cheat_Set hand 5 callers
+0x64a10 func cheat_Clear hand guess
+0x64ae0 func cheat_Calc hand guess
+0x64b80 func cheat_Init hand guess
+0x64c30 func cheat_Tick hand guess
+0x64d10 func mouse_Steer hand guess
+0x650f0 func mouse_Print hand mickey ins
+0x65165 func quaz_CaseA hand guess
+0x651c3 func quaz_CaseB hand guess
+0x6522f func quaz_CaseC hand task cancel
+0x652fc func quaz_CaseD hand guess
+0x65351 func quaz_CaseE hand guess
+0x65460 func quaz_Orbit hand guess
+0x65582 func quaz_TaskRun hand guess
+0x655c0 func quaz_Think hand guess
+0x65790 func quaz_Spawn hand task_Alloc
+0x65900 func quaz_Tick hand guess
+0x659e8 func quaz_Speak hand quaz spoke with delay
+0x65a63 func quaz_CaseF hand guess
+0x65bbe func quaz_CaseG hand guess
+0x65c9b func quaz_CaseH hand guess
+0x65cf8 func quaz_CaseI hand guess
+0x65d60 func quaz_CaseJ hand guess
+0x65dcc func quaz_CaseK hand guess
+0x65e17 func quaz_CaseL hand guess
+0x65f50 func spawn_Pair hand guess
+0x65f90 func spawn_A hand 6ff50
+0x660b0 func spawn_B hand 6ff50
+0x661a0 func task_Step hand 646 bytes
+0x66430 func task_ClearAll hand guess
+0x66460 func task_Cancel hand task canceled
+0x664d0 func task_Find hand guess
+0x665e0 func task_Lookup hand guess
+0x666b0 func task_Get hand guess
+0x66740 func task_Add hand guess
+0x66810 func task_Arc hand guess
+0x669b0 func task_Set669b0 hand guess
+0x66b50 func mission_TrainStart hand train
+0x66b90 func mission_TrainClear hand guess
+0x66ca0 func ent_FaceTarget hand guess
+0x66ee8 func ent_CaseA hand guess
+0x66fe8 func ent_CaseB hand guess
+0x6743c func ent_CaseC hand guess
+0x6745a func ent_CaseD hand guess
+0x67478 func ent_CaseE hand guess
+0x67500 func player_TickSub hand guess
+0x67640 func player_Drive hand 5077 bytes
+0x683af func player_Sound hand guess
+0x68b70 func player_Collide hand 1525 bytes
+0x691a0 func player_SaveState hand 7 callers
+0x69210 func player_LoadState hand guess
+0x692e8 func player_Set692e8 hand guess
+0x693e0 func player_Damage hand guess
+0x69690 func mem_Report hand conventional memory
+0x697f0 func block_Clear hand guess
+0x69880 func block_Set hand guess
+0x69950 func block_Reset hand guess
+0x699a0 func block_Build hand guess
+0x69b80 func block_Floor hand reset block floor
+0x69d70 func block_Put hand guess
+0x69ec0 func block_SetB hand guess
+0x69ee0 func block_Fill hand guess
+0x69f50 func block_Init hand guess
+0x6a0d0 func obj_Load hand guess
+0x6a170 func math_Angle hand guess
+0x6a1c0 func screen_SetMode hand 11 callers
+0x6a360 func screen_Fade hand guess
+0x6a3e0 func menu_Title hand 3491 bytes
+0x6b190 func menu_Options hand guess
+0x6ba20 func menu_SetB hand guess
+0x6ba40 func menu_SetItem hand guess
+0x6bae0 func menu_Story hand ST
+0x6bda0 func video_Init hand video
+0x6bde0 func video_DrawA hand guess
+0x6be70 func video_BlitRect hand guess
+0x6bf05 func video_Save hand guess
+0x6c2a0 func video_Palette hand guess
+0x6c664 func video_Loop hand guess
+0x6ca80 func fare_Tick hand guess
+0x6cb00 func fare_Think hand guess
+0x6cd80 func fare_Spawn hand offsets
+0x6d0e0 func runway_Tick hand guess
+0x6d120 func plane_Clear hand guess
+0x6d140 func runway_AddPlane hand added runway plane
+0x6d270 func sla_Free hand guess
+0x6d2b0 func sla_PlayCinema hand cinema%d.sla
+0x6d2f0 func sla_PlayAttract hand attract.sla
+0x6d310 func sla_Play hand SLA
+0x6d730 func sla_PlayB hand SLA
+0x6dec0 func voc_LoadSiren hand siren.voc
+0x6df10 func voc_LoadTorva hand VOCS loaded
+0x6df90 func voc_LoadTrak hand trakarg1.voc
+0x6dfe0 func voc_LoadSlot hand loading into slot
+0x6e220 func snd_TimerInit hand sos_TimerInitSystem
+0x6e240 func snd_Init hand guess
+0x6e4f0 func snd_Play hand 51 callers
+0x6e600 func snd_Shutdown hand guess
+0x6e6b0 func snd_Nop hand guess
+0x6e6c0 func snd_NopB hand guess
+0x6e6f0 func snd_Detect hand guess
+0x6e770 func snd_ClearAll hand guess
+0x6e7e0 func snd_SaveCfg hand guess
+0x6e9c0 func snd_LoadCfg hand guess
+0x6ec40 func snd_Set6ec40 hand guess
+0x6ecf0 func snd_PlayAt hand 50 callers
+0x6ef20 func snd_StopAll hand guess
+0x6ef90 func snd_Stop hand guess
+0x6f020 func snd_Update hand 1518 bytes
+0x6f610 func snd_StopId hand guess
+0x6f7c0 func snd_AddSfx hand added sound effect
+0x6f900 func engine_Start hand STARTING ENGINE
+0x6fa20 func engine_Tick hand guess
+0x6faa0 func snd_Pause hand 11 callers
+0x6fad0 func snd_Resume hand guess
+0x6fba0 func voc_Yell hand yell1.voc
+0x6fc05 func bash_Gen hand gen bash obj
+0x6ff50 func bash_Spawn hand ent_AllocSlot
+0x700c0 func bash_Think hand guess
+0x70310 func bash_Tick hand 4440 bytes, plume sound
+0x70c67 func bash_CaseA hand guess
+0x70f61 func bash_CaseB hand guess
+0x713b3 func bash_CaseC hand guess
+0x715e9 func bash_CaseD hand guess
+0x717c8 func bash_CaseE hand guess
+0x718b5 func bash_CaseF hand guess
+0x718bf func bash_CaseG hand guess
+0x71b70 func bash_CaseH hand guess
+0x71c2d func bash_CaseI hand guess
+0x71e67 func bash_CaseJ hand guess
+0x720e9 func bash_Copy hand guess
+0x72230 func fat_Think hand guess
+0x72560 func fat_Spawn hand task_Alloc
+0x72670 func fat_StateA hand guess
+0x72730 func fat_Init hand guess
+0x72a20 func fat_StateB hand guess
+0x72ad0 func task_New hand guess
+0x72b60 func task_NewB hand guess
+0x72c30 func fat_StateC hand guess
+0x72cd0 func task_NewArc hand guess
+0x72de0 func fat_Tick hand guess
+0x72f20 func fat_Bounce hand fat guy bounced
+0x73180 func dat_LoadPhysical hand physical.dat
+0x73210 func path_Load hand path.xxx
+0x73440 func dat_LoadGame hand game.dat
+0x73570 func dat_ReadTable hand 11 callers
+0x736e0 func dat_LoadColl hand colldat.dat trigdat.dat
+0x73780 func dat_LoadLevel hand level.dat
+0x738d0 func path_Read hand guess
+0x73ab0 func mission_Load hand mis000.dat
+0x73d60 func dat_LoadLevelB hand level.dat
+0x73e49 func rt_Printf3 hand guess
+0x73e64 func dbg_Printf hand 236 callers
