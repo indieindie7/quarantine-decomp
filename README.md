@@ -33,7 +33,7 @@ Data format tools for the Road Warrior disc (2026-11-25; each script's docstring
 - `tools/sldec.py`: `CINEMA` slideshows (IMAGEX / GIF87a slides + 8-bit PCM).
 - `tools/maskdec.py`: `MASKS` windscreen cut-outs (Mode X plane / 64 KiB bank span lists) to PNG (271 of 271 exact fit).
 - `tools/bspdec.py`: `maps/*.BSP` wall/floor BSP trees; a search parser, since the file has no counts. Reads all 16 `.BSP`/`.BSK` files to the last byte.
-- `tools/imgdec.py` (above) loads 338 of 345 Road Warrior `.IMG`/`.VGA`; the other 7 have no name string in the exe (5 empty 6-byte stubs, `MAINBG`/`SOUNDBG.VGA` in an undecoded packing).
+- `tools/imgdec.py` (above) loads 340 of 345 Road Warrior `.IMG`/`.VGA` (byte 10 is the GIF screen flags byte: `MAINBG`/`SOUNDBG.VGA` use 0xF4, a 32-colour palette); the other 5 are empty 6-byte stubs.
 
 ## Contents
 - `funcinfo_*.tsv`, `work/`: function lists and names.
