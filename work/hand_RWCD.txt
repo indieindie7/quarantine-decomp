@@ -1,23 +1,23 @@
-0x7f8c6 func __EmuFSLD hand from Q1 __EmuFSLD_0005e10a (BSim 1.0)
-0x7f7ff func __EmuLDFD hand from Q1 __EmuLDFD_0005e043 (BSim 1.0)
-0x7f780 func __EmuLDFS hand from Q1 __EmuLDFS_0005dfc4 (BSim 1.0)
-0x7f0c6 func __EvalPoly hand from Q1 __EvalPoly_0005ef1c (BSim 1.0)
-0x7f262 func __FLDC hand from Q1 __FLDC_0005daa6 (BSim 1.0)
+0x7f8c6 func __EmuFSLD hand from Q1 __EmuFSLD_0005e10a (BSim 1.0) | sig agrees (omfsig full)
+0x7f7ff func __EmuLDFD hand from Q1 __EmuLDFD_0005e043 (BSim 1.0) | sig agrees (omfsig prefix32)
+0x7f780 func __EmuLDFS hand from Q1 __EmuLDFS_0005dfc4 (BSim 1.0) | sig agrees (omfsig full)
+0x7f0c6 func __FLDAC hand omfsig prefix24 vs Open Watcom 1.9/v2 libs (was __EvalPoly)
+0x7f262 func __FLDC hand from Q1 __FLDC_0005daa6 (BSim 1.0) | sig agrees (omfsig full)
 0x7f08e func __FLDS hand from Q1 __FLDS_0005d8e0 (BSim 1.0)
-0x7f6ba func __I4LD hand from Q1 __I4LD_0005defe (BSim 1.0)
+0x7f6ba func __I4LD hand from Q1 __I4LD_0005defe (BSim 1.0) | sig agrees (omfsig full)
 0x7f64b func __LDU4 hand from Q1 __LDU4_0005de94 (BSim 1.0)
-0x8074a func __OddPoly hand from Q1 __OddPoly_0005ef8e (BSim 1.0)
-0x7f6cb func __U4LD hand from Q1 __U4LD_0005df0f (BSim 1.0)
-0x7fbce func __atan hand from Q1 __atan_0005e412 (BSim 1.0)
-0x80438 func __f2xm1 hand from Q1 __f2xm1_0005ec7c (BSim 1.0)
-0x7fb18 func __fpatan hand from Q1 __fpatan_0005e35c (BSim 1.0)
-0x7fd31 func __fprem hand from Q1 __fprem_0005e575 (BSim 1.0)
-0x7f98b func __frndint hand from Q1 __frndint_0005e1cf (BSim 1.0)
-0x785c8 func __getctime hand from Q1 __getctime_00059c62 (BSim 1.0)
-0x7ff5c func __log hand from Q1 __log_0005e7a0 (BSim 1.0)
+0x8074a func __OddPoly hand from Q1 __OddPoly_0005ef8e (BSim 1.0) | sig agrees (omfsig prefix24)
+0x7f6cb func __U4LD hand from Q1 __U4LD_0005df0f (BSim 1.0) | sig agrees (omfsig full)
+0x7fbce func __atan hand from Q1 __atan_0005e412 (BSim 1.0) | sig agrees (omfsig prefix32)
+0x80438 func __f2xm1 hand from Q1 __f2xm1_0005ec7c (BSim 1.0) | sig agrees (omfsig prefix32)
+0x7fb18 func __fpatan hand from Q1 __fpatan_0005e35c (BSim 1.0) | sig agrees (omfsig prefix32)
+0x7fd31 func __fprem hand from Q1 __fprem_0005e575 (BSim 1.0) | sig agrees (omfsig full)
+0x7f98b func __frndint hand from Q1 __frndint_0005e1cf (BSim 1.0) | sig agrees (omfsig prefix32)
+0x785c8 func __getctime hand from Q1 __getctime_00059c62 (BSim 1.0) | sig agrees (omfsig prefix24)
+0x7ff5c func __log hand from Q1 __log_0005e7a0 (BSim 1.0) | sig agrees (omfsig prefix32)
 0x79065 func __lseek hand from Q1 __lseek_00058457 (BSim 1.0)
-0x801f4 func __sincos hand from Q1 __sincos_0005ea38 (BSim 1.0)
-0x8060c func __sqrt hand from Q1 __sqrt_0005ee50 (BSim 1.0)
+0x801f4 func __sincos hand from Q1 __sincos_0005ea38 (BSim 1.0) | sig agrees (omfsig prefix32)
+0x8060c func __sqrt hand from Q1 __sqrt_0005ee50 (BSim 1.0) | sig agrees (omfsig full)
 0x5ea00 func ai_InBox hand from Q1 ai_InBox (BSim 1.0)
 0x5ea90 func ai_SetTurn hand from Q1 ai_SetTurn (BSim 1.0)
 0x4d010 func box_OverlapInt hand from Q1 box_OverlapInt (BSim 1.0)
@@ -42,18 +42,18 @@
 0x571b4 func fli_Frames hand from Q1 fli_Frames (BSim 1.0)
 0x34f50 func floor_DrawSpan hand from Q1 floor_DrawSpan (BSim 1.0)
 0x41133 func floor_SpanAsmA hand from Q1 floor_SpanAsmA (BSim 1.0)
-0x796d2 func fmt4hex_796d2 hand from Q1 fmt4hex_00058c20 (BSim 1.0)
+0x796d2 func fmt4hex_796d2 hand from Q1 fmt4hex_00058c20 (BSim 1.0) | sig agrees (omfsig prefix24)
 0x7dc98 func fp_7dc98 hand from Q1 fp_5c4dc (BSim 1.0)
-0x79035 func ftell_79035 hand from Q1 ftell_0005385a (BSim 1.0)
-0x816f7 func getpow10_816f7 hand from Q1 getpow10_0005fd21 (BSim 1.0)
+0x79035 func ftell_79035 hand from Q1 ftell_0005385a (BSim 1.0) | sig agrees (omfsig callee)
+0x816f7 func getpow10_816f7 hand from Q1 getpow10_0005fd21 (BSim 1.0) | sig agrees (omfsig full)
 0x1aec9 func gfx_GlyphA hand from Q1 gfx_GlyphA (BSim 1.0)
 0x1acdc func gfx_GlyphB hand from Q1 gfx_GlyphB (BSim 1.0)
 0x2ecd0 func gif_GetRowsInterlaced hand from Q1 gif_GetRowsInterlaced (BSim 1.0)
 0x2e310 func gif_ReadByte hand from Q1 gif_ReadByte (BSim 1.0)
 0x2e7f0 func gif_ReadColormap hand from Q1 gif_ReadColormap (BSim 1.0)
 0x2e860 func gif_SkipExtension hand from Q1 gif_SkipExtension (BSim 1.0)
-0x783ce func hook_pharlap hand from Q1 hook_pharlap_00058602 (BSim 1.0)
-0x813a4 func itoa_813a4 hand from Q1 itoa_0005f190 (BSim 1.0)
+0x783ce func hook_pharlap hand from Q1 hook_pharlap_00058602 (BSim 1.0) | sig agrees (omfsig prefix24)
+0x813a4 func itoa_813a4 hand from Q1 itoa_0005f190 (BSim 1.0) | sig agrees (omfsig callee)
 0x2b660 func joy_PollAlt hand from Q1 joy_PollAlt (BSim 1.0)
 0x5e410 func map_SetZoneFlags hand from Q1 map_SetZoneFlags (BSim 1.0)
 0x496f0 func math_RotProject hand from Q1 math_RotProject (BSim 1.0)
@@ -73,7 +73,7 @@
 0x757d9 func rt_757d9 hand from Q1 rt_548b5 (BSim 1.0)
 0x78aa7 func rt_78aa7 hand from Q1 rt_58117 (BSim 1.0)
 0x78ea9 func rt_78ea9 hand from Q1 rt_582cb (BSim 1.0)
-0x78f51 func rt_78f51 hand from Q1 rt_58373 (BSim 1.0)
+0x78f51 func __qread hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_78f51)
 0x7843b func rt_7843b hand from Q1 rt_5866f (BSim 1.0)
 0x784f0 func rt_784f0 hand from Q1 rt_58724 (BSim 1.0)
 0x78555 func rt_78555 hand from Q1 rt_58789 (BSim 1.0)
@@ -126,13 +126,13 @@
 0x7f0f6 func rt_7f0f6 hand from Q1 rt_5d93a (BSim 1.0)
 0x7f325 func rt_7f325 hand from Q1 rt_5db69 (BSim 1.0)
 0x7f4fa func rt_7f4fa hand from Q1 rt_5dd3e (BSim 1.0)
-0x7f700 func rt_7f700 hand from Q1 rt_5df44 (BSim 1.0)
+0x7f700 func __EmuFDLD hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_7f700)
 0x7fabe func rt_7fabe hand from Q1 rt_5e302 (BSim 1.0)
-0x7fd97 func rt_7fd97 hand from Q1 rt_5e5db (BSim 1.0)
+0x7fd97 func ___fprem hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_7fd97)
 0x7fe12 func rt_7fe12 hand from Q1 rt_5e656 (BSim 1.0)
-0x7ff00 func rt_7ff00 hand from Q1 rt_5e744 (BSim 1.0)
-0x7ff19 func rt_7ff19 hand from Q1 rt_5e75d (BSim 1.0)
-0x806f8 func rt_806f8 hand from Q1 rt_5ef3c (BSim 1.0)
+0x7ff00 func __fyl2xp1 hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_7ff00)
+0x7ff19 func __fyl2x hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_7ff19)
+0x806f8 func __poly hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_806f8)
 0x80792 func rt_80792 hand from Q1 rt_5efd6 (BSim 1.0)
 0x8085c func rt_8085c hand from Q1 rt_5f0a0 (BSim 1.0)
 0x808b6 func rt_808b6 hand from Q1 rt_5f0fa (BSim 1.0)
@@ -146,7 +146,7 @@
 0x80ec4 func rt_80ec4 hand from Q1 rt_5f955 (BSim 1.0)
 0x80eea func rt_80eea hand from Q1 rt_5f97b (BSim 1.0)
 0x81000 func rt_81000 hand from Q1 rt_5fa91 (BSim 1.0)
-0x815e8 func rt_815e8 hand from Q1 rt_5fc12 (BSim 1.0)
+0x815e8 func __CmpBigInt hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_815e8)
 0x81622 func rt_81622 hand from Q1 rt_5fc4c (BSim 1.0)
 0x8168d func rt_8168d hand from Q1 rt_5fcb7 (BSim 1.0)
 0x817ae func rt_817ae hand from Q1 rt_5fdd8 (BSim 1.0)
@@ -209,15 +209,15 @@
 0x7cb65 func sos_7cb65 hand from Q1 sos_5ac63 (BSim 1.0)
 0x7cc2d func sos_7cc2d hand from Q1 sos_5ad60 (BSim 1.0)
 0x7a93d func sos_7a93d hand from Q1 sos_5af69 (BSim 1.0)
-0x7b8a6 func sos_7b8a6 hand from Q1 sos_5b6af (BSim 1.0)
+0x7b8a6 func strcpy hand omfsig full vs Open Watcom 1.9/v2 libs (was sos_7b8a6)
 0x7adba func sos_7adba hand from Q1 sos_5b70a (BSim 1.0)
 0x7d3f4 func sos_FileRead hand from Q1 sos_FileRead (BSim 1.0)
 0x32080 func task3b980_Think hand from Q1 task3b980_Think (BSim 1.0)
 0x320b0 func task3b9ac_Think hand from Q1 task3b9ac_Think (BSim 1.0)
 0x2b5e0 func text_PutDigit hand from Q1 text_PutDigit (BSim 1.0)
 0x2bfa0 func timer_FrameRate hand from Q1 timer_FrameRate (BSim 1.0)
-0x81448 func tolower_81448 hand from Q1 tolower_00058183 (BSim 1.0)
-0x784b5 func unhook_pharlap hand from Q1 unhook_pharlap_000586e9 (BSim 1.0)
+0x81448 func toupper hand omfsig full vs Open Watcom 1.9/v2 libs (was tolower_81448)
+0x784b5 func unhook_pharlap hand from Q1 unhook_pharlap_000586e9 (BSim 1.0) | sig agrees (omfsig prefix32)
 0x2fe68 func vga_BlitPartial hand from Q1 vga_BlitPartial (BSim 1.0)
 0x30017 func vga_BlitView hand from Q1 vga_BlitView (BSim 1.0)
 0x2c470 func view_TransformEntity hand from Q1 view_TransformEntity (BSim 1.0)
@@ -248,11 +248,11 @@
 0x26830 func kbd_ClearAll hand from Q1 kbd_ClearAll (BSim 0.902)
 0x47930 func gfx_BlitRle hand from Q1 gfx_BlitRle (BSim 0.9)
 0x7eb6b func switchD_0005d37b::rt hand from Q1 switchD_0005d37b::rt_5d3af (BSim 1.0)
-0x7f2fb func __FLDS_7f2fb hand from Q1 __FLDS_0005db3f (callgraph r0)
+0x7f2fb func __FLDS_7f2fb hand from Q1 __FLDS_0005db3f (callgraph r0) | sig agrees (omfsig prefix24)
 0x32194 func io_OutByte hand from Q1 io_OutByte (callgraph r0)
 0x3219d func stub_Ret hand from Q1 stub_Ret_3c3f5 (callgraph r0)
 0x3219f func stub_Ret_3219f hand from Q1 stub_Ret_3c3f7 (callgraph r0)
-0x75dda func __CHK hand from Q1 __CHK_00055bd8 (callgraph r0)
+0x75dda func __CHK hand from Q1 __CHK_00055bd8 (callgraph r0) | sig agrees (omfsig full)
 0x56f96 func fli_Read hand from Q1 fli_Read (callgraph r0)
 0x74240 func memset_74240 hand from Q1 memset (callgraph r0)
 0x7a90a func tell_7a90a hand from Q1 tell_00059b68 (callgraph r0)
@@ -269,14 +269,14 @@
 0x78b49 func rt_78b49 hand from Q1 rt_581b9 (callgraph r0)
 0x7467e func rt_doclose_free hand from Q1 rt_doclose_free (callgraph r0)
 0x74228 func rt_74228 hand from Q1 rt_53c0c (callgraph r0)
-0x7f4d0 func __FLDS_7f4d0 hand from Q1 __FLDS_0005dd14 (callgraph r0)
+0x7f4d0 func __FLDS_7f4d0 hand from Q1 __FLDS_0005dd14 (callgraph r0) | sig agrees (omfsig prefix24)
 0x80402 func rt_80402 hand from Q1 rt_5ec46 (callgraph r0)
 0x803eb func rt_803eb hand from Q1 rt_5ec2f (callgraph r0)
 0x803f5 func rt_803f5 hand from Q1 rt_5ec39 (callgraph r0)
 0x81195 func rt_81195 hand from Q1 rt_5bae8 (callgraph r0)
 0x89ef5 func rt_89ef5 hand from Q1 rt_60360 (callgraph r0)
-0x73e86 func __CHP hand from Q1 __CHP_0005330c (callgraph r0)
-0x8a132 func modf_8a132 hand from Q1 modf_00060582 (callgraph r0)
+0x73e86 func __CHP hand from Q1 __CHP_0005330c (callgraph r0) | sig agrees (omfsig callee)
+0x8a132 func modf_8a132 hand from Q1 modf_00060582 (callgraph r0) | sig agrees (omfsig full)
 0x80932 func rt_80932 hand from Q1 rt_5a5bb (callgraph r0)
 0x790a6 func rt_remove hand from Q1 rt_remove (callgraph r0)
 0x783b1 func rt_783b1 hand from Q1 rt_585e5 (callgraph r0)
@@ -315,8 +315,8 @@
 0x7526a func sos_dispatch_callbacks hand inkling guess: iterates 16 slots, adds values, invokes callbacks when odd flag set
 0x7530a func sos_wrapper hand inkling guess: calls rt_7a609, no other logic
 0x75324 func sos_no_op_stub hand inkling guess: empty function body, no calls or effects
-0x7549c func rt_save_context hand inkling guess: stores registers and segment values into a context block
-0x7552e func rt_get_segment_registers hand inkling guess: stores all segment regs to struct
+0x7549c func _setjmp hand omfsig prefix24 vs Open Watcom 1.9/v2 libs (was rt_save_context)
+0x7552e func segread hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_get_segment_registers)
 0x75dd2 func rt_store_ss_global hand inkling guess: stores segment register to global variable
 0x75ded func rt_stack_overflow_handler hand inkling guess: stack overflow check and COMSPEC/COMMAND.COM fallback.
 0x75e0b func rt_stack_overflow hand runtime, from digest strings
@@ -324,7 +324,7 @@
 0x75e83 func rt_path_lookup hand inkling guess: builds path and queries sound library
 0x75f2c func rt_sos_wrapper hand inkling guess: forwards args to sos_7adba
 0x75f45 func rt_wrapper hand inkling guess: forwards args to rt_78216 via stack buffer
-0x75f83 func sos_ftell_wrapper hand inkling guess: reads ftell result and stores high word
+0x75f83 func fgetpos hand omfsig full vs Open Watcom 1.9/v2 libs (was sos_ftell_wrapper)
 0x75f96 func sos_fseek_wrapper hand inkling guess: wraps rt_fseek with four args
 0x75fa2 func sos_noop_stub hand inkling guess: empty function, no side effects or calls
 0x75fb7 func sos_alloc_slot hand inkling guess: find free SOS slot and link it
@@ -379,12 +379,12 @@
 0x781f0 func sos_no_op_stub_781f0 hand inkling guess: empty function body, no calls or effects
 0x78205 func sos_fputc_wrapper hand inkling guess: forwards args to rt_fputc, increments counter
 0x7829b func rt_fp_not_loaded_init hand inkling guess: stores two function pointers in a table
-0x782b6 func rt_fpu_init_guard hand inkling guess: initializes FPU if unaff_EBP set, returns zero
+0x782b6 func __sys_init_387_emulator hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_fpu_init_guard)
 0x78511 func rt_save_fpu_state hand inkling guess: copies FPU control/status/tag/pointers/opcode and ST0-7 into buffer
 0x78516 func rt_load_byte_at_offset_1c hand inkling guess: -
 0x7851a func rt_set_callbacks_and_init hand inkling guess: assigns handlers then calls init routine
 0x78595 func rt_empty_stub hand inkling guess: no calls, no strings, trivial return body
-0x78b13 func rt_int_to_lowercase hand inkling guess: maps A-Z range to a-z by adding 0x20
+0x78b13 func tolower hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_int_to_lowercase)
 0x78b39 func rt_set_errno_9 hand inkling guess: sets errno to 9, no return value
 0x78b5c func rt_sopen_wrapper hand inkling guess: calls rt_sopen then returns void
 0x78d4c func rt_int21_dispatch hand inkling guess (address cut by hand): swi 0x21 calls with stack return value
@@ -520,7 +520,7 @@
 0x7f650 func rt_rotate_word_helper hand inkling guess: rotates 32-bit value by byte count"
 0x7faff func rt_swi_dispatch hand inkling guess: calls code pointer from swi(3)
 0x7fb00 func rt_swi_call_dispatcher hand inkling guess: calls code pointer from swi(3)
-0x806d8 func rt_call_806f8_keep_field hand inkling guess (address cut by hand): calls rt_806f8, preserves second field, stores result first
+0x806d8 func __EvalPoly hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_call_806f8_keep_field)
 0x80800 func rt_dos4g_check hand runtime, from digest strings
 0x808b5 func rt_noop_stub_808b5 hand inkling guess: empty function with no callees or effects
 0x80e87 func rt_clear_and_call_rt_80d72 hand inkling guess: zeroes field then invokes runtime helper
@@ -536,7 +536,7 @@
 0x81849 func rt_int21_wrapper_81849 hand inkling guess: dispatches DOS int21 calls then cleanup routines
 0x81868 func rt_copy_words_on_tab_interrupt hand inkling guess: -
 0x8188b func rt_copy_words_via_swi21 hand inkling guess: -
-0x818ae func rt_strcpy hand inkling guess: copies source string to destination until NUL terminator
+0x818ae func stpcpy hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_strcpy)
 0x818bd func rt_build_string_buffer hand inkling guess: allocates and fills a string buffer from list"}
 0x819f5 func rt_format_string_with_spaces hand inkling guess: builds string inserting spaces between tokens
 0x81a4a func rt_int21_wrapper_81a4a hand inkling guess: DOS int21 calls and stack/global setup
@@ -1367,24 +1367,24 @@
 0x33110 func tileanim_Load hand data trakanim.dat
 0x33310 func tileanim_Reset hand guess
 0x33350 func tileanim_Tick hand guess
-0x33400 func scr_BlitMask hand 8 callers
-0x33660 func scr_BlitScaled hand 8 callers
+0x33400 func mask_BuildVGA hand MASKS: span lists from Mode X planes (dev tool, 11-25)
+0x33660 func mask_BuildSVGA hand MASKS: span lists per 64K VESA bank (dev tool, 11-25)
 0x339b0 func scr_SetPitch hand guess
 0x33a00 func scr_CopyA hand guess
 0x33b20 func scr_CopyB hand guess
-0x33ca0 func cfg_Save hand fwrite
-0x33e10 func cfg_Load hand 14 callers
-0x33ee0 func cfg_SaveAll hand guess
-0x33f80 func cfg_Read hand fread
-0x34152 func scr_CopyC hand guess
+0x33ca0 func mask_SaveVGA hand MASKS writer (11-25)
+0x33e10 func mask_Load hand MASKS: name or name.400/.480 by mode (11-25)
+0x33ee0 func mask_Save hand MASKS: VGA or SVGA writer by mode (11-25)
+0x33f80 func mask_ReadVGA hand MASKS reader (11-25)
+0x34152 func mask_BlitVGA hand MASKS span copy, Mode X (11-25)
 0x342a0 func scr_FadeA hand 34360
 0x342b4 func scr_FadeB hand 34360
 0x342e0 func scr_WipeA hand 34810
 0x34360 func scr_Fade hand guess
 0x34810 func scr_Wipe hand guess
-0x34a40 func scr_Present hand 604d0 60970
-0x34c50 func hiscore_Save hand fwrite
-0x34dc0 func hiscore_Load hand fread
+0x34a40 func mask_BlitSVGA hand MASKS span copy per VESA bank, 640x480 shifts 0x6400 (11-25)
+0x34c50 func mask_SaveSVGA hand MASKS writer (11-25)
+0x34dc0 func mask_ReadSVGA hand MASKS reader (11-25)
 0x34fd3 func asm_34fd3 hand asm fragment
 0x351b5 func frag_351b5 hand x87 split fragment, not studied
 0x35319 func frag_35319 hand x87 split fragment, not studied

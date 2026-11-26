@@ -24,7 +24,7 @@ Function names for four builds of **Quarantine**, plus the tools that produced t
 - 302 names carried over from Quarantine (DOS): Ghidra BSim matches (similarity >= 0.90) plus call-graph propagation (`tools/cgprop.py`).
 - 542 Watcom runtime, HMI SOS and x87-fragment functions (`rt_`/`sos_`/`fp_`/`frag_`) named by a local LLM (Inkling 2 Mini) from the decompiled code (`tools/inkname.py`, comment `inkling guess`). Repeated names (e.g. `rt_empty_stub`) carry an `_<addr>` suffix. These are the least reliable names here.
 - The rest (game code) is named by hand from the digest (`tools/fdigest.py`). Prefixes: `frag_` x87 split fragments, `rend_` asm renderer, `asm_` asm helpers, `vesa_` VESA video.
-- All names are guesses from the code; none was verified by playing or by a rebuild. No runtime library signatures were matched.
+- All names are guesses from the code; none was verified by playing or by a rebuild. Runtime library signatures (2026-11-25): `omfsig.py` (FLIRT-style, from the Scorcher project) against the Open Watcom 1.9 and v2 DOS libraries matched 55 addresses: 27 agree with the names above, 17 were renamed (comment `omfsig` in `work/hand_RWCD.txt`). The hit rate is low because the game was built with a 1995 Watcom 10.x runtime. No HMI SOS signatures were available, so the `sos_` names stay guesses.
 
 Data format tools for the Road Warrior disc (2026-11-25; each script's docstring has the layout and the loader address in `RWCD.bin`):
 - `tools/q2inst.py`: the installer archive `ROADWAR.1` + `IMAGE.DAT` (PKWARE DCL implode streams, a port of Mark Adler's blast.c). All 1520 files unpack at the listed size; `--check` compares them with the disc.

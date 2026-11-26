@@ -21726,7 +21726,7 @@ void img_Load(char *param_1,undefined4 param_2,undefined4 param_3,undefined2 par
     local_6c[(short)(sVar2 + 4)] = '\0';
   }
   DAT_000ab12e = param_4;
-  rt_get_segment_registers(local_1c,param_2,local_178);
+  segread(local_1c,param_2,local_178);
   DAT_000ab0d4 = local_10;
   DAT_000aafcc = extraout_EDX;
   if (DAT_000d4c30 == 0) {
@@ -21750,7 +21750,7 @@ void img_Load(char *param_1,undefined4 param_2,undefined4 param_3,undefined2 par
   if (*(int *)(extraout_EBX_02 + 8) == 0) {
     dbg_Printf();
   }
-  sVar2 = rt_save_context(&DAT_000ab0e0);
+  sVar2 = _setjmp(&DAT_000ab0e0);
   if (sVar2 == 0) {
     gif_ReadHeader(extraout_EBX_03);
     _DAT_000ab12a = 1;
@@ -57530,7 +57530,7 @@ void sla_Play(char *param_1,undefined4 param_2,undefined4 param_3)
     local_24 = iVar4;
     rt_fread(&local_14,2,1,iVar4);
     rt_fread(&local_28,4,1,iVar4);
-    sos_ftell_wrapper(iVar4,local_2c,&DAT_000aa110);
+    fgetpos(iVar4,local_2c,&DAT_000aa110);
     img_Load(s_l_obruce_img_000938d5 + 3,DAT_000aaa30);
     vesa_Clear(&DAT_000aa110,local_2c);
     sos_fseek_wrapper(iVar4,extraout_EDX,1);
@@ -57559,7 +57559,7 @@ void sla_Play(char *param_1,undefined4 param_2,undefined4 param_3)
       }
       DAT_000aadce = 0;
       rt_fread(&local_28,4,1,local_24);
-      sos_ftell_wrapper(local_24,local_2c);
+      fgetpos(local_24,local_2c);
       if ((extraout_CX_00 == 0) || ((short)local_14 != 2)) {
         uVar2 = 0;
       }
@@ -57729,7 +57729,7 @@ undefined4 sla_PlayB(char *param_1,int param_2)
   rt_fread(DAT_000d4c28,1,local_44,iVar2);
   rt_fread(&local_40,4,1,iVar2);
   DAT_000d4c34 = (local_44 * 9) / (int)(uint)local_24[0];
-  sos_ftell_wrapper(iVar2,local_48);
+  fgetpos(iVar2,local_48);
   img_Load(s_l_obruce_img_000938d5 + 3,DAT_000aaa30,&DAT_000aa110,0);
   vesa_Clear(&DAT_000aa110,local_48);
   sos_fseek_wrapper(iVar2,extraout_EDX,1);
@@ -57795,7 +57795,7 @@ LAB_0006da00:
         DAT_000d4c3c = sos_alloc_slot(DAT_000d8730,local_158);
       }
     }
-    sos_ftell_wrapper(local_2c,local_48);
+    fgetpos(local_2c,local_48);
     uVar3 = local_34 + 1;
     if (uVar3 < 0x14) {
       if ((uVar3 < 10) || ((0xd < uVar3 && ((uVar3 < 0xf || (0x12 < uVar3)))))) goto LAB_0006db84;
@@ -61650,7 +61650,7 @@ void rt_Printf3(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefin
   undefined4 uStack_4;
   
   uStack_4 = param_4;
-  rt_get_segment_registers(auStack_10,param_2,param_3,param_1);
+  segread(auStack_10,param_2,param_3,param_1);
   rt_sos_wrapper(extraout_ECX,extraout_EDX,extraout_EBX,auStack_10);
   return;
 }
@@ -62245,7 +62245,7 @@ undefined8 rt_fopen_mode(undefined1 *param_1,undefined4 param_2)
   uint extraout_EBX;
   bool bVar5;
   
-  cVar1 = rt_int_to_lowercase(*param_1,param_1,0);
+  cVar1 = tolower(*param_1,param_1,0);
   if (((cVar1 != 'r') && (cVar1 != 'w')) && (cVar1 != 'a')) {
     rt_set_errno(9);
     uVar2 = 0;
@@ -62319,7 +62319,7 @@ undefined4 rt_doopen(undefined4 param_1,undefined4 param_2,undefined4 param_3,in
   *(byte *)(param_4 + 0xc) = *(byte *)(param_4 + 0xc) & 0xfc;
   uVar3 = rt_fopen_mode(param_2);
   *(uint *)(extraout_ECX + 0xc) = *(uint *)(extraout_ECX + 0xc) | (uint)uVar3;
-  rt_int_to_lowercase(*(undefined1 *)((ulonglong)uVar3 >> 0x20));
+  tolower(*(undefined1 *)((ulonglong)uVar3 >> 0x20));
   uVar1 = rt_sopen();
   *(undefined4 *)(extraout_ECX_00 + 0x10) = uVar1;
   if (*(int *)(extraout_ECX_00 + 0x10) == -1) {
@@ -62532,7 +62532,7 @@ uint rt_fread(char *param_1,uint param_2,int param_3,int *param_4)
         if (((*(byte *)((int)param_4 + 0xd) & 4) == 0) && (0x200 < local_14)) {
           uVar4 = (uint)((uint3)(local_14 >> 8) & 0xfffffe) << 8;
         }
-        iVar2 = rt_78f51(param_4[4],local_18,uVar4);
+        iVar2 = __qread(param_4[4],local_18,uVar4);
         if (iVar2 == -1) {
           *(byte *)(param_4 + 3) = *(byte *)(param_4 + 3) | 0x20;
           goto LAB_0007463d;
@@ -63532,7 +63532,7 @@ undefined8 rt_753f1(undefined4 *param_1,undefined4 param_2)
     else {
       uVar4 = 1;
     }
-    uVar4 = rt_78f51(param_1[4],*param_1,uVar4);
+    uVar4 = __qread(param_1[4],*param_1,uVar4);
     extraout_ECX_02[1] = uVar4;
     puVar3 = extraout_ECX_02;
   }
@@ -63549,13 +63549,11 @@ undefined8 rt_753f1(undefined4 *param_1,undefined4 param_2)
 }
 
 
-// ==== rt_save_context @ 0007549c size=53
+// ==== _setjmp @ 0007549c size=53
 
-/* Hand-named: rt_save_context (hand inkling guess: stores registers and segment values into a
-   context block) */
+/* Hand-named: _setjmp (hand omfsig prefix24 vs Open Watcom 1.9/v2 libs (was rt_save_context)) */
 
-undefined4
-rt_save_context(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+undefined4 _setjmp(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   undefined4 unaff_EBP;
@@ -63587,11 +63585,12 @@ rt_save_context(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefi
 }
 
 
-// ==== rt_get_segment_registers @ 0007552e size=40
+// ==== segread @ 0007552e size=40
 
-/* Hand-named: rt_get_segment_registers (hand inkling guess: stores all segment regs to struct) */
+/* Hand-named: segread (hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_get_segment_registers))
+    */
 
-void rt_get_segment_registers(undefined2 *param_1)
+void segread(undefined2 *param_1)
 
 {
   undefined2 in_ES;
@@ -64613,11 +64612,11 @@ undefined8 sos_75f66(undefined4 param_1,undefined4 param_2)
 }
 
 
-// ==== sos_ftell_wrapper @ 00075f83 size=19
+// ==== fgetpos @ 00075f83 size=19
 
-/* Hand-named: sos_ftell_wrapper (hand inkling guess: reads ftell result and stores high word) */
+/* Hand-named: fgetpos (hand omfsig full vs Open Watcom 1.9/v2 libs (was sos_ftell_wrapper)) */
 
-bool sos_ftell_wrapper(void)
+bool fgetpos(void)
 
 {
   undefined8 uVar1;
@@ -65213,7 +65212,7 @@ int sos_set_timer_or_sound(int param_1)
       DAT_000a03c0 = 0;
     }
     else {
-      sos_7b8a6(&DAT_000a03c0,param_1);
+      strcpy(&DAT_000a03c0,param_1);
     }
     local_1c = 0;
   }
@@ -65284,7 +65283,7 @@ int sos_init_sos_state(int param_1)
         DAT_000a0940 = 0;
       }
       else {
-        sos_7b8a6(&DAT_000a0940,param_1);
+        strcpy(&DAT_000a0940,param_1);
       }
       _DAT_000a093c = 0;
       DAT_000a0a44 = 0;
@@ -65772,10 +65771,10 @@ undefined8 sos_DetectLoadDriver(int param_1,undefined4 param_2)
   uVar3 = CONCAT24(DAT_000a0868,DAT_000a0864);
   if ((DAT_000a0694 & 1) == 0) {
     if (param_1 == 0) {
-      sos_7b8a6(&DAT_000a0718,s_hmidet_386_0009472c);
+      strcpy(&DAT_000a0718,s_hmidet_386_0009472c);
     }
     else {
-      sos_7b8a6(&DAT_000a0718,param_1);
+      strcpy(&DAT_000a0718,param_1);
       sos_7d2a9(&DAT_000a0718,s_hmidet_386_0009472c);
     }
     DAT_000a0874 = rt_sopen_wrapper();
@@ -66271,13 +66270,13 @@ void rt_fp_not_loaded_init(void)
 }
 
 
-// ==== rt_fpu_init_guard @ 000782b6 size=48
+// ==== __sys_init_387_emulator @ 000782b6 size=48
 
 /* WARNING: Removing unreachable block (ram,0x000782c6) */
-/* Hand-named: rt_fpu_init_guard (hand inkling guess: initializes FPU if unaff_EBP set, returns
-   zero) */
+/* Hand-named: __sys_init_387_emulator (hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was
+   rt_fpu_init_guard)) */
 
-float10 rt_fpu_init_guard(void)
+float10 __sys_init_387_emulator(void)
 
 {
   int unaff_EBP;
@@ -67027,11 +67026,11 @@ LAB_00078ae6:
 }
 
 
-// ==== rt_int_to_lowercase @ 00078b13 size=14
+// ==== tolower @ 00078b13 size=14
 
-/* Hand-named: rt_int_to_lowercase (hand inkling guess: maps A-Z range to a-z by adding 0x20) */
+/* Hand-named: tolower (hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_int_to_lowercase)) */
 
-int rt_int_to_lowercase(int param_1)
+int tolower(int param_1)
 
 {
   if ((0x40 < param_1) && (param_1 < 0x5b)) {
@@ -67434,11 +67433,11 @@ void rt_ioalloc(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefin
 }
 
 
-// ==== rt_78f51 @ 00078f51 size=31
+// ==== __qread @ 00078f51 size=31
 
-/* Hand-named: rt_78f51 (hand from Q1 rt_58373 (BSim 1.0)) */
+/* Hand-named: __qread (hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_78f51)) */
 
-void rt_78f51(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+void __qread(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   code *pcVar1;
@@ -68565,7 +68564,7 @@ void rt_79c5e(char *param_1)
   undefined1 *extraout_EDX;
   
   while (*param_1 != '\0') {
-    uVar1 = tolower_81448(*param_1);
+    uVar1 = toupper(*param_1);
     *extraout_EDX = uVar1;
     param_1 = extraout_EDX + 1;
   }
@@ -69686,7 +69685,7 @@ void __stdcall rt_7a7e2(double param_1,int param_2,undefined4 param_3)
     uVar1 = extraout_EBX;
   }
   rt_81622(&param_1,uVar1);
-  rt_815e8(extraout_ECX,extraout_EBX_00);
+  __CmpBigInt(extraout_ECX,extraout_EBX_00);
   return;
 }
 
@@ -70488,11 +70487,11 @@ void sos_noop_stub_7b891(void)
 }
 
 
-// ==== sos_7b8a6 @ 0007b8a6 size=31
+// ==== strcpy @ 0007b8a6 size=31
 
-/* Hand-named: sos_7b8a6 (hand from Q1 sos_5b6af (BSim 1.0)) */
+/* Hand-named: strcpy (hand omfsig full vs Open Watcom 1.9/v2 libs (was sos_7b8a6)) */
 
-char * sos_7b8a6(char *param_1,char *param_2)
+char * strcpy(char *param_1,char *param_2)
 
 {
   char cVar1;
@@ -70997,7 +70996,7 @@ sos_DigiLoadDriver(uint param_1,uint param_2,undefined6 *param_3,int *param_4,un
       local_20 = 6;
     }
     else {
-      sos_7b8a6(&DAT_000a0440,&DAT_000a03c0);
+      strcpy(&DAT_000a0440,&DAT_000a03c0);
       sos_7d2a9(&DAT_000a0440,s_hmidrv_386_00094994);
       local_10 = rt_sopen_wrapper();
       if (local_10 == -1) {
@@ -73167,7 +73166,7 @@ LAB_0007db31:
            CONCAT22(DAT_000a3c44_2,
                     DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + uVar18)))
       ;
-      rt_7ff19(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
+      __fyl2x(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
                     /* WARNING: Could not recover jumptable at 0x0007e904. Too many branches */
                     /* WARNING: Treating indirect jump as call */
       (*DAT_000a3cb6)();
@@ -73301,7 +73300,7 @@ switchD_0007daa3_caseD_39:
     _DAT_000a3c44 =
          CONCAT22(DAT_000a3c44_2,
                   DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + uVar18)));
-    rt_7ff00(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
+    __fyl2xp1(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
                     /* WARNING: Could not recover jumptable at 0x0007ea2b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*DAT_000a3cb6)();
@@ -73896,7 +73895,7 @@ LAB_0007db31:
            CONCAT22(DAT_000a3c44_2,
                     DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + uVar20)))
       ;
-      rt_7ff19(&DAT_000a3c5c + uVar20,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar20));
+      __fyl2x(&DAT_000a3c5c + uVar20,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar20));
                     /* WARNING: Could not recover jumptable at 0x0007e904. Too many branches */
                     /* WARNING: Treating indirect jump as call */
       (*DAT_000a3cb6)();
@@ -74030,7 +74029,7 @@ switchD_0007daa3_caseD_39:
     _DAT_000a3c44 =
          CONCAT22(DAT_000a3c44_2,
                   DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + uVar20)));
-    rt_7ff00(&DAT_000a3c5c + uVar20,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar20));
+    __fyl2xp1(&DAT_000a3c5c + uVar20,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar20));
                     /* WARNING: Could not recover jumptable at 0x0007ea2b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*DAT_000a3cb6)();
@@ -74624,7 +74623,7 @@ LAB_0007db31:
            CONCAT22(DAT_000a3c44_2,
                     DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + uVar18)))
       ;
-      rt_7ff19(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
+      __fyl2x(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
                     /* WARNING: Could not recover jumptable at 0x0007e904. Too many branches */
                     /* WARNING: Treating indirect jump as call */
       (*DAT_000a3cb6)();
@@ -74758,7 +74757,7 @@ switchD_0007daa3_caseD_39:
     _DAT_000a3c44 =
          CONCAT22(DAT_000a3c44_2,
                   DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + uVar18)));
-    rt_7ff00(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
+    __fyl2xp1(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
                     /* WARNING: Could not recover jumptable at 0x0007ea2b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*DAT_000a3cb6)();
@@ -75339,7 +75338,7 @@ rt_7db6c:
            CONCAT22(DAT_000a3c44_2,
                     DAT_000a3c44 |
                     *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + unaff_EDI)));
-      rt_7ff19(&DAT_000a3c5c + unaff_EDI,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + unaff_EDI));
+      __fyl2x(&DAT_000a3c5c + unaff_EDI,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + unaff_EDI));
                     /* WARNING: Could not recover jumptable at 0x0007e904. Too many branches */
                     /* WARNING: Treating indirect jump as call */
       (*DAT_000a3cb6)();
@@ -75482,7 +75481,7 @@ switchD_0007daa3_caseD_39:
          CONCAT22(DAT_000a3c44_2,
                   DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + unaff_EDI))
                  );
-    rt_7ff00(&DAT_000a3c5c + unaff_EDI,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + unaff_EDI));
+    __fyl2xp1(&DAT_000a3c5c + unaff_EDI,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + unaff_EDI));
                     /* WARNING: Could not recover jumptable at 0x0007ea2b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*DAT_000a3cb6)();
@@ -76060,7 +76059,7 @@ LAB_0007db31:
            CONCAT22(DAT_000a3c44_2,
                     DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + uVar17)))
       ;
-      rt_7ff19(&DAT_000a3c5c + uVar17,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar17));
+      __fyl2x(&DAT_000a3c5c + uVar17,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar17));
                     /* WARNING: Could not recover jumptable at 0x0007e904. Too many branches */
                     /* WARNING: Treating indirect jump as call */
       (*DAT_000a3cb6)();
@@ -76196,7 +76195,7 @@ switchD_0007daa3_caseD_39:
     _DAT_000a3c44 =
          CONCAT22(DAT_000a3c44_2,
                   DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + uVar17)));
-    rt_7ff00(&DAT_000a3c5c + uVar17,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar17));
+    __fyl2xp1(&DAT_000a3c5c + uVar17,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar17));
                     /* WARNING: Could not recover jumptable at 0x0007ea2b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*DAT_000a3cb6)();
@@ -77079,7 +77078,7 @@ LAB_0007db31:
            CONCAT22(DAT_000a3c44_2,
                     DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + uVar18)))
       ;
-      rt_7ff19(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
+      __fyl2x(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
                     /* WARNING: Could not recover jumptable at 0x0007e904. Too many branches */
                     /* WARNING: Treating indirect jump as call */
       (*DAT_000a3cb6)();
@@ -77213,7 +77212,7 @@ switchD_0007daa3_caseD_39:
     _DAT_000a3c44 =
          CONCAT22(DAT_000a3c44_2,
                   DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + uVar18)));
-    rt_7ff00(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
+    __fyl2xp1(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
                     /* WARNING: Could not recover jumptable at 0x0007ea2b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*DAT_000a3cb6)();
@@ -77799,7 +77798,7 @@ rt_7db6c:
            CONCAT22(DAT_000a3c44_2,
                     DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + uVar18)))
       ;
-      rt_7ff19(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
+      __fyl2x(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
                     /* WARNING: Could not recover jumptable at 0x0007e904. Too many branches */
                     /* WARNING: Treating indirect jump as call */
       (*DAT_000a3cb6)();
@@ -77946,7 +77945,7 @@ switchD_0007daa3_caseD_39:
     _DAT_000a3c44 =
          CONCAT22(DAT_000a3c44_2,
                   DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + uVar18)));
-    rt_7ff00(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
+    __fyl2xp1(&DAT_000a3c5c + uVar18,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar18));
                     /* WARNING: Could not recover jumptable at 0x0007ea2b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*DAT_000a3cb6)();
@@ -78544,7 +78543,7 @@ LAB_0007db31:
            CONCAT22(DAT_000a3c44_2,
                     DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + uVar17)))
       ;
-      rt_7ff19(&DAT_000a3c5c + uVar17,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar17));
+      __fyl2x(&DAT_000a3c5c + uVar17,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar17));
                     /* WARNING: Could not recover jumptable at 0x0007e904. Too many branches */
                     /* WARNING: Treating indirect jump as call */
       (*DAT_000a3cb6)();
@@ -78680,7 +78679,7 @@ switchD_0007daa3_caseD_39:
     _DAT_000a3c44 =
          CONCAT22(DAT_000a3c44_2,
                   DAT_000a3c44 | *(ushort *)(&DAT_0007d57a + *(ushort *)(&DAT_0007d576 + uVar17)));
-    rt_7ff00(&DAT_000a3c5c + uVar17,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar17));
+    __fyl2xp1(&DAT_000a3c5c + uVar17,&DAT_000a3c5c + *(ushort *)(&DAT_0007d576 + uVar17));
                     /* WARNING: Could not recover jumptable at 0x0007ea2b. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*DAT_000a3cb6)();
@@ -78796,12 +78795,12 @@ void rt_copy_pair_result(undefined4 *param_1,undefined4 *param_2,undefined8 *par
 }
 
 
-// ==== __EvalPoly @ 0007f0c6 size=48
+// ==== __FLDAC @ 0007f0c6 size=48
 
-/* Hand-named: __EvalPoly (hand from Q1 __EvalPoly_0005ef1c (BSim 1.0)) */
+/* Hand-named: __FLDAC (hand omfsig prefix24 vs Open Watcom 1.9/v2 libs (was __EvalPoly)) */
 
-void __EvalPoly(undefined4 *param_1,undefined4 param_2,undefined8 *param_3,undefined4 param_4,
-               undefined4 param_5,undefined4 param_6)
+void __FLDAC(undefined4 *param_1,undefined4 param_2,undefined8 *param_3,undefined4 param_4,
+            undefined4 param_5,undefined4 param_6)
 
 {
   undefined2 uVar1;
@@ -79466,11 +79465,11 @@ void __U4LD(uint param_1,undefined4 *param_2)
 }
 
 
-// ==== rt_7f700 @ 0007f700 size=128
+// ==== __EmuFDLD @ 0007f700 size=128
 
-/* Hand-named: rt_7f700 (hand from Q1 rt_5df44 (BSim 1.0)) */
+/* Hand-named: __EmuFDLD (hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_7f700)) */
 
-void rt_7f700(uint param_1,int param_2,uint *param_3)
+void __EmuFDLD(uint param_1,int param_2,uint *param_3)
 
 {
   uint uVar1;
@@ -79919,11 +79918,11 @@ void __fpatan(int param_1,int param_2,undefined4 *param_3)
     __atan(extraout_EBX);
     if (extraout_CX < 0) {
       if ('\0' < *(char *)(extraout_EBX_00 + 9)) {
-        __EvalPoly(extraout_EBX_00);
+        __FLDAC(extraout_EBX_00);
       }
     }
     else if (*(char *)(extraout_EBX_00 + 9) < '\0') {
-      __EvalPoly(extraout_EBX_00);
+      __FLDAC(extraout_EBX_00);
     }
   }
   return;
@@ -79996,14 +79995,14 @@ void __atan(uint *param_1,undefined4 param_2,undefined4 param_3,undefined4 param
   uVar3 = CONCAT11(bVar5 >> 1,(char)extraout_CX);
   uVar6 = extraout_EDX;
   if ((bool)(bVar5 & 1)) {
-    __EvalPoly(param_1,extraout_EDX,param_1,uVar3,0x6b9b2c23,0x860a91c1,0x3ffe);
+    __FLDAC(param_1,extraout_EDX,param_1,uVar3,0x6b9b2c23,0x860a91c1,0x3ffe);
     uVar6 = extraout_EDX_00;
     uVar3 = extraout_CX_00;
   }
   bVar5 = (byte)((ushort)uVar3 >> 8);
   uVar4 = (uint)CONCAT11(bVar5 >> 1,(char)uVar3);
   if ((bool)(bVar5 & 1)) {
-    __EvalPoly(param_1,uVar6,param_1,uVar4,0x2168c235,0xc90fdaa2,0xbfff);
+    __FLDAC(param_1,uVar6,param_1,uVar4,0x2168c235,0xc90fdaa2,0xbfff);
     *(byte *)(extraout_EBX + 9) = *(byte *)(extraout_EBX + 9) ^ 0x80;
     uVar4 = extraout_ECX;
   }
@@ -80037,18 +80036,18 @@ longlong __fprem(int *param_1,int *param_2,undefined4 param_3,undefined4 param_4
   }
   iVar1 = param_1[2];
   iVar2 = param_2[2];
-  uVar3 = rt_7fd97(*param_1,param_1[1],*param_2,param_2[1],param_1,param_3,param_4);
+  uVar3 = ___fprem(*param_1,param_1[1],*param_2,param_2[1],param_1,param_3,param_4);
   *(undefined8 *)param_1 = uVar3;
   *(short *)(param_1 + 2) = (short)iVar1;
   return CONCAT44(param_2,CONCAT22((short)((uint)unaff_EDI >> 0x10),(short)iVar2));
 }
 
 
-// ==== rt_7fd97 @ 0007fd97 size=123
+// ==== ___fprem @ 0007fd97 size=123
 
-/* Hand-named: rt_7fd97 (hand from Q1 rt_5e5db (BSim 1.0)) */
+/* Hand-named: ___fprem (hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_7fd97)) */
 
-void rt_7fd97(uint param_1,uint param_2,uint param_3,uint param_4)
+void ___fprem(uint param_1,uint param_2,uint param_3,uint param_4)
 
 {
   uint uVar1;
@@ -80153,11 +80152,11 @@ void rt_7fe12(int *param_1)
 }
 
 
-// ==== rt_7ff00 @ 0007ff00 size=25
+// ==== __fyl2xp1 @ 0007ff00 size=25
 
-/* Hand-named: rt_7ff00 (hand from Q1 rt_5e744 (BSim 1.0)) */
+/* Hand-named: __fyl2xp1 (hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_7ff00)) */
 
-void rt_7ff00(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+void __fyl2xp1(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   undefined4 extraout_ECX;
@@ -80166,7 +80165,7 @@ void rt_7ff00(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined
   undefined8 *puVar2;
   undefined4 uVar3;
   
-  __EvalPoly(param_1,param_2,param_1,param_4,0,0x80000000,0x3fff);
+  __FLDAC(param_1,param_2,param_1,param_4,0,0x80000000,0x3fff);
   uVar3 = extraout_ECX;
   __log();
   puVar2 = extraout_EDX;
@@ -80179,11 +80178,11 @@ void rt_7ff00(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined
 }
 
 
-// ==== rt_7ff19 @ 0007ff19 size=67
+// ==== __fyl2x @ 0007ff19 size=67
 
-/* Hand-named: rt_7ff19 (hand from Q1 rt_5e75d (BSim 1.0)) */
+/* Hand-named: __fyl2x (hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_7ff19)) */
 
-void rt_7ff19(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+void __fyl2x(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   undefined8 *extraout_EDX;
@@ -80245,9 +80244,9 @@ void __log(uint *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_
   uVar6 = rt_7f4fa(uVar8,uVar2,uVar8,uVar2);
   *(undefined8 *)param_1 = uVar6;
   *(undefined2 *)(param_1 + 2) = 0x3ffe;
-  uVar6 = rt_806f8((int)uVar6,(int)((ulonglong)uVar6 >> 0x20),3,&DAT_0007fed8);
+  uVar6 = __poly((int)uVar6,(int)((ulonglong)uVar6 >> 0x20),3,&DAT_0007fed8);
   uVar3 = (undefined2)param_1[2];
-  uVar7 = rt_806f8(*param_1,param_1[1],2,&DAT_0007feba,0x3ffe3ffe);
+  uVar7 = __poly(*param_1,param_1[1],2,&DAT_0007feba,0x3ffe3ffe);
   uVar6 = rt_7f325((int)uVar7,(int)((ulonglong)uVar7 >> 0x20),(int)uVar6,
                    (int)((ulonglong)uVar6 >> 0x20));
   uVar6 = rt_7f4fa((int)uVar6,(int)((ulonglong)uVar6 >> 0x20),*param_1,param_1[1]);
@@ -80305,14 +80304,14 @@ void __sincos(longlong *param_1)
   lVar14 = CONCAT44(local_1c,local_20);
   lVar15 = param_1[1];
   cVar10 = -2;
-  lVar12 = rt_7fd97((int)*param_1,*(undefined4 *)((int)param_1 + 4),0x2168c235,0xc90fdaa2);
+  lVar12 = ___fprem((int)*param_1,*(undefined4 *)((int)param_1 + 4),0x2168c235,0xc90fdaa2);
   uVar8 = (undefined4)((ulonglong)lVar12 >> 0x20);
   *param_1 = lVar12;
   *(short *)(param_1 + 1) = (short)lVar15;
   bVar11 = (*(byte *)((int)param_1 + 9) & 0x80) != 0;
   plVar6 = param_1;
   if (bVar11) {
-    __EvalPoly(param_1,uVar8,param_1,param_1,0x2168c235,0xc90fdaa2,0x3ffe);
+    __FLDAC(param_1,uVar8,param_1,param_1,0x2168c235,0xc90fdaa2,0x3ffe);
     cVar10 = -3;
     plVar6 = extraout_ECX;
     uVar8 = extraout_EDX;
@@ -80320,7 +80319,7 @@ void __sincos(longlong *param_1)
   bVar1 = cVar10 + (unaff_SI & 2);
   uVar3 = CONCAT11(unaff_SI,bVar1) & 0xffffff07;
   if (bVar11) {
-    __EvalPoly(param_1,uVar8,param_1,plVar6,0x2168c235,0xc90fdaa2,0xbffe);
+    __FLDAC(param_1,uVar8,param_1,plVar6,0x2168c235,0xc90fdaa2,0xbffe);
     *(byte *)(extraout_EBX + 9) = *(byte *)(extraout_EBX + 9) ^ 0x80;
   }
   sVar5 = (short)param_1[1] + -0x3ffe;
@@ -80343,8 +80342,8 @@ void __sincos(longlong *param_1)
       local_18 = *(ushort *)(param_1 + 1);
       uVar13 = rt_7f4fa((int)*param_1,*(undefined4 *)((int)param_1 + 4),(int)*param_1,
                         *(undefined4 *)((int)param_1 + 4));
-      lVar14 = rt_806f8((int)uVar13,(int)((ulonglong)uVar13 >> 0x20),8 - uVar7,
-                        &DAT_00080188 + uVar7 * 10);
+      lVar14 = __poly((int)uVar13,(int)((ulonglong)uVar13 >> 0x20),8 - uVar7,
+                      &DAT_00080188 + uVar7 * 10);
     }
     if (((char)uVar2 == '\0') || ((char)((ushort)uVar2 >> 8) == '\x01')) {
       __OddPoly(param_1,&DAT_0008012e + uVar7 * 10,8 - uVar7);
@@ -80452,7 +80451,7 @@ void __f2xm1(uint *param_1,undefined4 param_2,undefined4 param_3,undefined4 para
   else {
     if ((short)param_1[2] < 0) {
       uVar10 = 0xffffffff;
-      __EvalPoly(param_1,param_2,param_1,(short)param_1[2],0,0x80000000,0xbfff);
+      __FLDAC(param_1,param_2,param_1,(short)param_1[2],0,0x80000000,0xbfff);
       *(byte *)(extraout_EBX + 9) = *(byte *)(extraout_EBX + 9) ^ 0x80;
     }
     uVar3 = 0;
@@ -80528,7 +80527,7 @@ void __f2xm1(uint *param_1,undefined4 param_2,undefined4 param_3,undefined4 para
     puVar11 = (undefined4 *)((int)puVar11 + 10);
   }
   *(short *)(param_1 + 2) = (short)param_1[2] + (short)uVar10;
-  __EvalPoly(param_1,uVar7,param_1,0,0,0x80000000,0xbfff);
+  __FLDAC(param_1,uVar7,param_1,0,0,0x80000000,0xbfff);
   return;
 }
 
@@ -80615,32 +80614,31 @@ LAB_0008063e:
 }
 
 
-// ==== rt_call_806f8_keep_field @ 000806d8 size=32
+// ==== __EvalPoly @ 000806d8 size=32
 
-/* Hand-named: rt_call_806f8_keep_field (hand inkling guess (address cut by hand): calls rt_806f8,
-   preserves second field, stores result first) */
+/* Hand-named: __EvalPoly (hand omfsig full vs Open Watcom 1.9/v2 libs (was
+   rt_call_806f8_keep_field)) */
 
-void rt_call_806f8_keep_field
-               (undefined8 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+void __EvalPoly(undefined8 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   undefined2 uVar1;
   undefined8 uVar2;
   
   uVar1 = *(undefined2 *)(param_1 + 1);
-  uVar2 = rt_806f8(*(undefined4 *)param_1,*(undefined4 *)((int)param_1 + 4),param_3,param_2,param_1,
-                   param_4);
+  uVar2 = __poly(*(undefined4 *)param_1,*(undefined4 *)((int)param_1 + 4),param_3,param_2,param_1,
+                 param_4);
   *param_1 = uVar2;
   *(undefined2 *)(param_1 + 1) = uVar1;
   return;
 }
 
 
-// ==== rt_806f8 @ 000806f8 size=82
+// ==== __poly @ 000806f8 size=82
 
-/* Hand-named: rt_806f8 (hand from Q1 rt_5ef3c (BSim 1.0)) */
+/* Hand-named: __poly (hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_806f8)) */
 
-void rt_806f8(undefined4 param_1,undefined4 param_2,int param_3,undefined8 *param_4)
+void __poly(undefined4 param_1,undefined4 param_2,int param_3,undefined8 *param_4)
 
 {
   undefined8 uVar1;
@@ -80672,7 +80670,7 @@ void __OddPoly(undefined8 *param_1,undefined4 param_2,undefined4 param_3,undefin
   uVar1 = *(undefined2 *)(param_1 + 1);
   uVar2 = rt_7f4fa(*(undefined4 *)param_1,*(undefined4 *)((int)param_1 + 4),*(undefined4 *)param_1,
                    *(undefined4 *)((int)param_1 + 4),param_2,param_3,param_4);
-  uVar2 = rt_806f8((int)uVar2,(int)((ulonglong)uVar2 >> 0x20),param_3,param_2);
+  uVar2 = __poly((int)uVar2,(int)((ulonglong)uVar2 >> 0x20),param_3,param_2);
   uVar2 = rt_7f4fa((int)uVar2,(int)((ulonglong)uVar2 >> 0x20),*(undefined4 *)param_1,
                    *(undefined4 *)((int)param_1 + 4));
   *param_1 = uVar2;
@@ -81792,11 +81790,11 @@ undefined4 rt_8142d(int param_1,undefined1 *param_2,int param_3,undefined4 param
 }
 
 
-// ==== tolower_81448 @ 00081448 size=14
+// ==== toupper @ 00081448 size=14
 
-/* Hand-named: tolower_81448 (hand from Q1 tolower_00058183 (BSim 1.0)) */
+/* Hand-named: toupper (hand omfsig full vs Open Watcom 1.9/v2 libs (was tolower_81448)) */
 
-int tolower_81448(int param_1)
+int toupper(int param_1)
 
 {
   if ((0x60 < param_1) && (param_1 < 0x7b)) {
@@ -81952,11 +81950,11 @@ LAB_0008151f:
 }
 
 
-// ==== rt_815e8 @ 000815e8 size=58
+// ==== __CmpBigInt @ 000815e8 size=58
 
-/* Hand-named: rt_815e8 (hand from Q1 rt_5fc12 (BSim 1.0)) */
+/* Hand-named: __CmpBigInt (hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_815e8)) */
 
-int rt_815e8(void)
+int __CmpBigInt(void)
 
 {
   uint uVar1;
@@ -82429,12 +82427,11 @@ undefined4 rt_copy_words_via_swi21(undefined4 param_1)
 }
 
 
-// ==== rt_strcpy @ 000818ae size=15
+// ==== stpcpy @ 000818ae size=15
 
-/* Hand-named: rt_strcpy (hand inkling guess: copies source string to destination until NUL
-   terminator) */
+/* Hand-named: stpcpy (hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_strcpy)) */
 
-void rt_strcpy(char *param_1,char *param_2)
+void stpcpy(char *param_1,char *param_2)
 
 {
   char cVar1;
@@ -82511,7 +82508,7 @@ uint rt_build_string_buffer
     *puVar3 = puVar2;
     if (param_2 != (int *)0x0) {
       while (*param_2 != 0) {
-        iVar6 = rt_strcpy(puVar2,*param_2);
+        iVar6 = stpcpy(puVar2,*param_2);
         puVar2 = (undefined1 *)(iVar6 + 1);
         uVar7 = extraout_EBX_03;
         param_2 = (int *)(extraout_ECX_01 + 4);
@@ -82519,7 +82516,7 @@ uint rt_build_string_buffer
     }
     *puVar2 = 0;
     if (param_7 != 0) {
-      sos_7b8a6(puVar2 + 3,*param_1);
+      strcpy(puVar2 + 3,*param_1);
       uVar7 = extraout_EBX_04;
     }
     uVar5 = 0;
@@ -82567,7 +82564,7 @@ void rt_format_string_with_spaces(undefined4 param_1,int *param_2,char *param_3,
   pcVar1 = pcVar2;
   if ((*param_2 != 0) && (param_2 = param_2 + 1, *param_2 != 0)) {
     while( true ) {
-      pcVar1 = (char *)rt_strcpy(pcVar2,*param_2);
+      pcVar1 = (char *)stpcpy(pcVar2,*param_2);
       param_2 = param_2 + 1;
       param_4 = extraout_ECX;
       if (*param_2 == 0) break;
