@@ -15205,14 +15205,14 @@ void dash_DrawCab(void)
     }
     gfx_Present();
     overlay_Drop(0);
-    scr_BlitMask(3);
+    mask_BuildVGA(3);
   }
   else {
     img_Load(s_dash_cab_img_00092044,DAT_000aaa30,local_318,0);
     vesa_Clear(local_318);
     gfx_Present();
     overlay_Drop(0);
-    scr_BlitScaled(3);
+    mask_BuildSVGA(3);
   }
   dash_ResetDirty();
   DAT_000aaf40 = 0;
@@ -15336,7 +15336,7 @@ void dash_LoadMasks(void)
   auStack_6d[~uVar4] = 0;
   if (DAT_000aadac == 0) {
     if (DAT_000a8c10 < 2) {
-      iVar3 = cfg_Load(s_masks_mskl1_0009208c,0);
+      iVar3 = mask_Load(s_masks_mskl1_0009208c,0);
       if (iVar3 == 0) {
         img_Load(s_dash_ldoor1_img_00092098,DAT_000aa9f4,local_368,0);
         puVar7 = DAT_000aa9f4;
@@ -15352,14 +15352,14 @@ void dash_LoadMasks(void)
           puVar9 = (undefined4 *)((int)puVar9 + 1);
         }
         gfx_Present();
-        scr_BlitMask(0,0);
+        mask_BuildVGA(0,0);
         pcVar2 = s_masks_mskl1_0009208c;
         uVar5 = extraout_EDX;
         goto LAB_00025beb;
       }
     }
     else {
-      iVar3 = cfg_Load(s_masks_mskl2_000920a8,0);
+      iVar3 = mask_Load(s_masks_mskl2_000920a8,0);
       if (iVar3 == 0) {
         img_Load(s_dash_ldoor2_img_000920b4,DAT_000aa9f4,local_368,0);
         puVar7 = DAT_000aa9f4;
@@ -15375,7 +15375,7 @@ void dash_LoadMasks(void)
           puVar9 = (undefined4 *)((int)puVar9 + 1);
         }
         gfx_Present();
-        scr_BlitMask(0,0);
+        mask_BuildVGA(0,0);
         pcVar2 = s_masks_mskl2_000920a8;
         uVar5 = extraout_EDX_00;
         goto LAB_00025beb;
@@ -15383,23 +15383,23 @@ void dash_LoadMasks(void)
     }
   }
   else if (DAT_000a8c10 < 2) {
-    iVar3 = cfg_Load(s_masks_mskl1_0009208c,0);
+    iVar3 = mask_Load(s_masks_mskl1_0009208c,0);
     if (iVar3 == 0) {
       img_Load(s_dash_ldoor1_img_00092098,DAT_000aaa30,local_368,0);
       gfx_Present();
-      scr_BlitScaled(0);
+      mask_BuildSVGA(0);
       uVar5 = 0;
       pcVar2 = s_masks_mskl1_0009208c;
 LAB_00025beb:
-      cfg_SaveAll(pcVar2,uVar5);
+      mask_Save(pcVar2,uVar5);
     }
   }
   else {
-    iVar3 = cfg_Load(s_masks_mskl2_000920a8,0);
+    iVar3 = mask_Load(s_masks_mskl2_000920a8,0);
     if (iVar3 == 0) {
       img_Load(s_dash_ldoor2_img_000920b4,DAT_000aaa30,local_368,0);
       gfx_Present();
-      scr_BlitScaled(0);
+      mask_BuildSVGA(0);
       uVar5 = 0;
       pcVar2 = s_masks_mskl2_000920a8;
       goto LAB_00025beb;
@@ -15407,7 +15407,7 @@ LAB_00025beb:
   }
   if (DAT_000aadac == 0) {
     if (DAT_000a8c10 < 2) {
-      iVar3 = cfg_Load(s_masks_mskr1_000920c4,1);
+      iVar3 = mask_Load(s_masks_mskr1_000920c4,1);
       if (iVar3 == 0) {
         img_Load(s_dash_rdoor1_img_000920d0,DAT_000aa9f8,local_368,0);
         puVar7 = DAT_000aa9f8;
@@ -15423,13 +15423,13 @@ LAB_00025beb:
           puVar9 = (undefined4 *)((int)puVar9 + 1);
         }
         gfx_Present();
-        scr_BlitMask(1,1);
+        mask_BuildVGA(1,1);
         pcVar2 = s_masks_mskr1_000920c4;
         goto LAB_00025d74;
       }
     }
     else {
-      iVar3 = cfg_Load(s_masks_mskr2_000920e0,1);
+      iVar3 = mask_Load(s_masks_mskr2_000920e0,1);
       if (iVar3 == 0) {
         img_Load(s_dash_rdoor2_img_000920ec,DAT_000aa9f8,local_368,0);
         puVar7 = DAT_000aa9f8;
@@ -15445,36 +15445,36 @@ LAB_00025beb:
           puVar9 = (undefined4 *)((int)puVar9 + 1);
         }
         gfx_Present();
-        scr_BlitMask(1,1);
+        mask_BuildVGA(1,1);
         pcVar2 = s_masks_mskr2_000920e0;
         goto LAB_00025d74;
       }
     }
   }
   else if (DAT_000a8c10 < 2) {
-    iVar3 = cfg_Load(s_masks_mskr1_000920c4,1);
+    iVar3 = mask_Load(s_masks_mskr1_000920c4,1);
     if (iVar3 == 0) {
       img_Load(s_dash_rdoor1_img_000920d0,DAT_000aaa30,local_368,0);
       gfx_Present();
-      scr_BlitScaled(1,1);
+      mask_BuildSVGA(1,1);
       pcVar2 = s_masks_mskr1_000920c4;
 LAB_00025d74:
-      cfg_SaveAll(pcVar2);
+      mask_Save(pcVar2);
     }
   }
   else {
-    iVar3 = cfg_Load(s_masks_mskr2_000920e0,1);
+    iVar3 = mask_Load(s_masks_mskr2_000920e0,1);
     if (iVar3 == 0) {
       img_Load(s_dash_rdoor2_img_000920ec,DAT_000aaa30,local_368,0);
       gfx_Present();
-      scr_BlitScaled(1,1);
+      mask_BuildSVGA(1,1);
       pcVar2 = s_masks_mskr2_000920e0;
       goto LAB_00025d74;
     }
   }
   if (DAT_000aadac == 0) {
     if (DAT_000aaf96 == 0) {
-      iVar3 = cfg_Load(s_masks_mskb_000920fc,2);
+      iVar3 = mask_Load(s_masks_mskb_000920fc,2);
       if (iVar3 != 0) goto LAB_00025f1a;
       img_Load(s_mdash_cabrear_img_00092107 + 1,DAT_000aa9fc,local_368,0);
       puVar7 = DAT_000aa9fc;
@@ -15490,11 +15490,11 @@ LAB_00025d74:
         puVar9 = (undefined4 *)((int)puVar9 + 1);
       }
       gfx_Present();
-      scr_BlitMask(2,2);
+      mask_BuildVGA(2,2);
       pcVar2 = s_masks_mskb_000920fc;
     }
     else {
-      iVar3 = cfg_Load(&local_68,2);
+      iVar3 = mask_Load(&local_68,2);
       if (iVar3 != 0) goto LAB_00025f1a;
       img_Load(&DAT_000aad4c,DAT_000aa9fc,local_368,0);
       puVar7 = DAT_000aa9fc;
@@ -15510,30 +15510,30 @@ LAB_00025d74:
         puVar9 = (undefined4 *)((int)puVar9 + 1);
       }
       gfx_Present();
-      scr_BlitMask(2,2);
+      mask_BuildVGA(2,2);
       pcVar2 = (char *)&local_68;
     }
   }
   else if (((DAT_000aaf96 == 0) || (*(short *)(DAT_000aad38 + 6) == 0)) || (DAT_000d1e1c == 0x78)) {
-    iVar3 = cfg_Load(s_masks_mskb_000920fc,2);
+    iVar3 = mask_Load(s_masks_mskb_000920fc,2);
     if (iVar3 != 0) goto LAB_00025f1a;
     img_Load(s_mdash_cabrear_img_00092107 + 1,DAT_000aaa30,local_368,0);
     gfx_Present();
-    scr_BlitScaled(2,2);
+    mask_BuildSVGA(2,2);
     pcVar2 = s_masks_mskb_000920fc;
   }
   else {
-    iVar3 = cfg_Load(&local_68,2);
+    iVar3 = mask_Load(&local_68,2);
     if (iVar3 != 0) goto LAB_00025f1a;
     img_Load(&DAT_000aad4c,DAT_000aaa30,local_368,0);
     gfx_Present();
-    scr_BlitScaled(2,2);
+    mask_BuildSVGA(2,2);
     pcVar2 = (char *)&local_68;
   }
-  cfg_SaveAll(pcVar2);
+  mask_Save(pcVar2);
 LAB_00025f1a:
   if (DAT_000aadac == 0) {
-    iVar3 = cfg_Load(local_40,3);
+    iVar3 = mask_Load(local_40,3);
     if (iVar3 != 0) {
       DAT_000aad94 = 0;
       return;
@@ -15553,10 +15553,10 @@ LAB_00025f1a:
     }
     gfx_Present();
     overlay_Drop(0);
-    scr_BlitMask(3,3);
+    mask_BuildVGA(3,3);
   }
   else {
-    iVar3 = cfg_Load(local_40,3);
+    iVar3 = mask_Load(local_40,3);
     if (iVar3 != 0) {
       DAT_000aad94 = 0;
       return;
@@ -15565,9 +15565,9 @@ LAB_00025f1a:
     vesa_Clear(local_368);
     gfx_Present();
     overlay_Drop(0);
-    scr_BlitScaled(3,3);
+    mask_BuildSVGA(3,3);
   }
-  cfg_SaveAll(local_40);
+  mask_Save(local_40);
   DAT_000aad94 = 0;
   return;
 }
@@ -24875,12 +24875,12 @@ void tileanim_Tick(void)
 }
 
 
-// ==== scr_BlitMask @ 00033400 size=603
+// ==== mask_BuildVGA @ 00033400 size=603
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Hand-named: scr_BlitMask (hand 8 callers) */
+/* Hand-named: mask_BuildVGA (hand MASKS: span lists from Mode X planes (dev tool, 11-25)) */
 
-void scr_BlitMask(short param_1)
+void mask_BuildVGA(short param_1)
 
 {
   bool bVar1;
@@ -24958,12 +24958,12 @@ void scr_BlitMask(short param_1)
 }
 
 
-// ==== scr_BlitScaled @ 00033660 size=836
+// ==== mask_BuildSVGA @ 00033660 size=836
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Hand-named: scr_BlitScaled (hand 8 callers) */
+/* Hand-named: mask_BuildSVGA (hand MASKS: span lists per 64K VESA bank (dev tool, 11-25)) */
 
-void scr_BlitScaled(short param_1)
+void mask_BuildSVGA(short param_1)
 
 {
   int iVar1;
@@ -25211,11 +25211,11 @@ void scr_CopyB(int param_1)
 }
 
 
-// ==== cfg_Save @ 00033ca0 size=364
+// ==== mask_SaveVGA @ 00033ca0 size=364
 
-/* Hand-named: cfg_Save (hand fwrite) */
+/* Hand-named: mask_SaveVGA (hand MASKS writer (11-25)) */
 
-void cfg_Save(undefined4 param_1,short param_2)
+void mask_SaveVGA(undefined4 param_1,short param_2)
 
 {
   int iVar1;
@@ -25250,11 +25250,11 @@ void cfg_Save(undefined4 param_1,short param_2)
 }
 
 
-// ==== cfg_Load @ 00033e10 size=200
+// ==== mask_Load @ 00033e10 size=200
 
-/* Hand-named: cfg_Load (hand 14 callers) */
+/* Hand-named: mask_Load (hand MASKS: name or name.400/.480 by mode (11-25)) */
 
-undefined4 cfg_Load(char *param_1,undefined4 param_2)
+undefined4 mask_Load(char *param_1,undefined4 param_2)
 
 {
   char cVar1;
@@ -25284,7 +25284,7 @@ undefined4 cfg_Load(char *param_1,undefined4 param_2)
       return 0;
     }
     rt_fclose();
-    cfg_Read(extraout_EBX,(int)(short)local_18);
+    mask_ReadVGA(extraout_EBX,(int)(short)local_18);
   }
   else {
     if (DAT_000aad92 == 400) {
@@ -25318,17 +25318,17 @@ undefined4 cfg_Load(char *param_1,undefined4 param_2)
       return 0;
     }
     rt_fclose();
-    hiscore_Load(local_40,(int)(short)local_18);
+    mask_ReadSVGA(local_40,(int)(short)local_18);
   }
   return 1;
 }
 
 
-// ==== cfg_SaveAll @ 00033ee0 size=147
+// ==== mask_Save @ 00033ee0 size=147
 
-/* Hand-named: cfg_SaveAll (hand guess) */
+/* Hand-named: mask_Save (hand MASKS: VGA or SVGA writer by mode (11-25)) */
 
-void cfg_SaveAll(char *param_1,short param_2)
+void mask_Save(char *param_1,short param_2)
 
 {
   char cVar1;
@@ -25350,7 +25350,7 @@ void cfg_SaveAll(char *param_1,short param_2)
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   if (DAT_000aadac == 0) {
-    cfg_Save(param_1,(int)param_2);
+    mask_SaveVGA(param_1,(int)param_2);
   }
   else {
     if (DAT_000aad92 == 400) {
@@ -25379,18 +25379,18 @@ void cfg_SaveAll(char *param_1,short param_2)
       pcVar5[1] = cVar1;
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
-    hiscore_Save(local_3c,(int)param_2);
+    mask_SaveSVGA(local_3c,(int)param_2);
   }
   return;
 }
 
 
-// ==== cfg_Read @ 00033f80 size=397
+// ==== mask_ReadVGA @ 00033f80 size=397
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Hand-named: cfg_Read (hand fread) */
+/* Hand-named: mask_ReadVGA (hand MASKS reader (11-25)) */
 
-void cfg_Read(undefined4 param_1,short param_2)
+void mask_ReadVGA(undefined4 param_1,short param_2)
 
 {
   undefined4 uVar1;
@@ -25428,11 +25428,11 @@ void cfg_Read(undefined4 param_1,short param_2)
 }
 
 
-// ==== scr_CopyC @ 00034152 size=342
+// ==== mask_BlitVGA @ 00034152 size=342
 
-/* Hand-named: scr_CopyC (hand guess) */
+/* Hand-named: mask_BlitVGA (hand MASKS span copy, Mode X (11-25)) */
 
-void scr_CopyC(int param_1,undefined4 param_2,uint param_3)
+void mask_BlitVGA(int param_1,undefined4 param_2,uint param_3)
 
 {
   ushort uVar1;
@@ -25833,11 +25833,11 @@ void scr_Wipe(undefined4 param_1,int param_2)
 }
 
 
-// ==== scr_Present @ 00034a40 size=513
+// ==== mask_BlitSVGA @ 00034a40 size=513
 
-/* Hand-named: scr_Present (hand 604d0 60970) */
+/* Hand-named: mask_BlitSVGA (hand MASKS span copy per VESA bank, 640x480 shifts 0x6400 (11-25)) */
 
-void scr_Present(int param_1)
+void mask_BlitSVGA(int param_1)
 
 {
   ushort uVar1;
@@ -25938,11 +25938,11 @@ void scr_Present(int param_1)
 }
 
 
-// ==== hiscore_Save @ 00034c50 size=364
+// ==== mask_SaveSVGA @ 00034c50 size=364
 
-/* Hand-named: hiscore_Save (hand fwrite) */
+/* Hand-named: mask_SaveSVGA (hand MASKS writer (11-25)) */
 
-void hiscore_Save(undefined4 param_1,short param_2)
+void mask_SaveSVGA(undefined4 param_1,short param_2)
 
 {
   int iVar1;
@@ -25977,12 +25977,12 @@ void hiscore_Save(undefined4 param_1,short param_2)
 }
 
 
-// ==== hiscore_Load @ 00034dc0 size=397
+// ==== mask_ReadSVGA @ 00034dc0 size=397
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Hand-named: hiscore_Load (hand fread) */
+/* Hand-named: mask_ReadSVGA (hand MASKS reader (11-25)) */
 
-void hiscore_Load(undefined4 param_1,short param_2)
+void mask_ReadSVGA(undefined4 param_1,short param_2)
 
 {
   undefined4 uVar1;
@@ -33599,7 +33599,7 @@ void sfx_Update(void)
     DAT_000aa96c = frag_38554;
     DAT_000aa97c = rend_FloorsN;
     DAT_000aa948 = rend_FloorsS;
-    DAT_000aa968 = scr_Present;
+    DAT_000aa968 = mask_BlitSVGA;
     DAT_000aa980 = rend_FloorsW;
     DAT_000aa964 = scr_WipeA;
   }
