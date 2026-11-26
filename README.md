@@ -26,6 +26,15 @@ Function names for four builds of **Quarantine**, plus the tools that produced t
 - The rest (game code) is named by hand from the digest (`tools/fdigest.py`). Prefixes: `frag_` x87 split fragments, `rend_` asm renderer, `asm_` asm helpers, `vesa_` VESA video.
 - All names are guesses from the code; none was verified by playing or by a rebuild. No runtime library signatures were matched.
 
+Data format tools for the Road Warrior disc (2026-11-25; each script's docstring has the layout and the loader address in `RWCD.bin`):
+- `tools/q2inst.py`: the installer archive `ROADWAR.1` + `IMAGE.DAT` (PKWARE DCL implode streams, a port of Mark Adler's blast.c). All 1520 files unpack at the listed size; `--check` compares them with the disc.
+- `tools/q2misdec.py`: the XOR 0x55 text files (missions, `DATA/LEVEL.*`, `TEXT/*.ENC`, `PATHS/PATH.*`, ...).
+- `tools/sprdec.py`: `.SPR` sprite sets to PNG sheets (fits all 602 files).
+- `tools/sldec.py`: `CINEMA` slideshows (IMAGEX / GIF87a slides + 8-bit PCM).
+- `tools/maskdec.py`: `MASKS` windscreen cut-outs (Mode X plane / 64 KiB bank span lists) to PNG (271 of 271 exact fit).
+- `tools/bspdec.py`: `maps/*.BSP` wall/floor BSP trees; a search parser, since the file has no counts. Reads all 16 `.BSP`/`.BSK` files to the last byte.
+- `tools/imgdec.py` (above) loads 338 of 345 Road Warrior `.IMG`/`.VGA`; the other 7 have no name string in the exe (5 empty 6-byte stubs, `MAINBG`/`SOUNDBG.VGA` in an undecoded packing).
+
 ## Contents
 - `funcinfo_*.tsv`, `work/`: function lists and names.
 - `tools/imgdec.py`: DOS `.IMG` ("IMAGEX" header, 256-colour palette, GIF-style LZW) to PNG. 39 of 44 files decode; `MISSIL0-4.IMG` are another variant.
