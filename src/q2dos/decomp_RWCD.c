@@ -8558,12 +8558,13 @@ LAB_0001bfbc:
 }
 
 
-// ==== game_Main @ 0001c010 size=2014
+// ==== main @ 0001c010 size=2014
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Hand-named: game_Main (hand from Q1 game_Main (callgraph r0)) */
+/* Hand-named: main (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module cmain386
+   (was game_Main)) */
 
-void game_Main(undefined4 param_1,undefined4 param_2)
+void main(undefined4 param_1,undefined4 param_2)
 
 {
   short sVar1;
@@ -8637,8 +8638,8 @@ void game_Main(undefined4 param_1,undefined4 param_2)
     _DAT_000c15d8 = 0x12;
   }
   DAT_000aaf6c = DAT_000aadac;
-  rt_time(0,0x100,&DAT_000aa110);
-  rt_srand();
+  time(0,0x100,&DAT_000aa110);
+  srand();
   mem_Report();
   control_Load();
   gfx_Flip();
@@ -10547,18 +10548,18 @@ void img_LoadRaw(void)
     *(undefined4 *)(unaff_EBP + -0x1c) = 0;
     *(undefined **)(unaff_EBP + -0x10) = puVar1;
     while (*(int *)(unaff_EBP + -0x1c) < 16000) {
-      rt_fread(unaff_EBP + -4,2,1);
+      fread(unaff_EBP + -4,2,1);
       if ((short)*(int *)(unaff_EBP + -4) < 0) {
         *(int *)(unaff_EBP + -4) = -*(int *)(unaff_EBP + -4);
         io_OutByte(0x3c4,2);
         io_OutByte(0x3c5,1,1);
-        rt_fread(*(undefined4 *)(unaff_EBP + -0x10),(int)*(short *)(unaff_EBP + -4));
+        fread(*(undefined4 *)(unaff_EBP + -0x10),(int)*(short *)(unaff_EBP + -4));
         io_OutByte(0x3c5,2,1);
-        rt_fread(*(undefined4 *)(unaff_EBP + -0x10),(int)*(short *)(unaff_EBP + -4));
+        fread(*(undefined4 *)(unaff_EBP + -0x10),(int)*(short *)(unaff_EBP + -4));
         io_OutByte(0x3c5,4,1);
-        rt_fread(*(undefined4 *)(unaff_EBP + -0x10),(int)*(short *)(unaff_EBP + -4));
+        fread(*(undefined4 *)(unaff_EBP + -0x10),(int)*(short *)(unaff_EBP + -4));
         io_OutByte(0x3c5,8,1);
-        rt_fread(*(undefined4 *)(unaff_EBP + -0x10),(int)*(short *)(unaff_EBP + -4));
+        fread(*(undefined4 *)(unaff_EBP + -0x10),(int)*(short *)(unaff_EBP + -4));
       }
       *(int *)(unaff_EBP + -0x10) = *(int *)(unaff_EBP + -0x10) + (int)*(short *)(unaff_EBP + -4);
       *(int *)(unaff_EBP + -0x1c) = *(int *)(unaff_EBP + -0x1c) + (int)*(short *)(unaff_EBP + -4);
@@ -10636,9 +10637,9 @@ void scr_SaveShot(void)
     *(undefined **)(unaff_EBP + -0x1c) = puVar2;
     *(undefined4 *)(unaff_EBP + -0x2c) = *(undefined4 *)(unaff_EBP + -0x18);
     iVar5 = *(int *)(unaff_EBP + -0x18) + 64000;
-    rt_fread(unaff_EBP + -0x10,2,1,*(undefined4 *)(unaff_EBP + -0x24));
-    rt_fread(iVar5 - (uint)*(ushort *)(unaff_EBP + -0x10),1,*(ushort *)(unaff_EBP + -0x10),
-             *(undefined4 *)(unaff_EBP + -0x24));
+    fread(unaff_EBP + -0x10,2,1,*(undefined4 *)(unaff_EBP + -0x24));
+    fread(iVar5 - (uint)*(ushort *)(unaff_EBP + -0x10),1,*(ushort *)(unaff_EBP + -0x10),
+          *(undefined4 *)(unaff_EBP + -0x24));
     rle_PackRow(iVar5 - (uint)*(ushort *)(unaff_EBP + -0x10),iVar5,
                 *(undefined4 *)(unaff_EBP + -0x18));
     iVar5 = extraout_EDX;
@@ -14267,12 +14268,12 @@ void floor_Build(short param_1)
     pal_Fill40();
     for (sVar6 = 0; sVar6 < 0xe; sVar6 = sVar6 + 1) {
       uStack_cc = 0x24482;
-      rt_fread((&DAT_000aa0d0)[sVar6],1,0x1000,iVar2);
+      fread((&DAT_000aa0d0)[sVar6],1,0x1000,iVar2);
     }
     uStack_cc = 0x244a1;
-    rt_fread(DAT_000aa9cc,1,0x1000,iVar2);
+    fread(DAT_000aa9cc,1,0x1000,iVar2);
     uStack_cc = 0x244b4;
-    rt_fread(&DAT_000aafad,1,1,iVar2);
+    fread(&DAT_000aafad,1,1,iVar2);
   }
   uStack_cc = 0x244bb;
   rt_fclose(iVar2);
@@ -14341,12 +14342,12 @@ void trakobj_Load(short param_1)
   _DAT_000a5bf8 = &DAT_000a5718;
   uVar5 = extraout_EBX;
   do {
-    rt_fread(local_1c,uVar5,uVar5,uVar2);
+    fread(local_1c,uVar5,uVar5,uVar2);
     if (local_1c[0] == '\n') {
-      rt_fread(local_1c,1,1,uVar2);
+      fread(local_1c,1,1,uVar2);
       if (local_1c[0] == 'E') {
-        rt_fread(local_1c,1,1,uVar2);
-        rt_fread(local_1c,1,1,uVar2);
+        fread(local_1c,1,1,uVar2);
+        fread(local_1c,1,1,uVar2);
         if (local_1c[0] == 'F') {
           rt_fclose(uVar2);
           return;
@@ -14362,7 +14363,7 @@ void trakobj_Load(short param_1)
         bVar1 = 0x100 < local_24;
         local_24 = iVar3;
         if (bVar1) {
-          rt_exit(0);
+          exit(0);
         }
       }
     }
@@ -14427,28 +14428,28 @@ void tiles_Load(short param_1)
   }
   uVar2 = rt_fsopen_wrapper((&PTR_s_data_trakfloo_dat_00090c42_2_0009619c)[param_1],&DAT_00091c9c,
                             0xf);
-  rt_fread(&DAT_000aaf98,1);
+  fread(&DAT_000aaf98,1);
   rt_fclose(uVar2);
   for (sVar3 = 0; iVar5 = (int)sVar3, iVar5 < 0xf; sVar3 = sVar3 + 1) {
     (&DAT_000aaf98)[iVar5] = (&DAT_000aaf98)[iVar5] + -0x30;
   }
   uVar2 = rt_fsopen_wrapper((&PTR_s_data_trakwall_dat_00090a62_2_0009613c)[param_1],&DAT_00091c9c,
                             0xe);
-  rt_fread(&DAT_000a5df0,1);
-  rt_fread(&DAT_000a5dfe,1,0xe,uVar2);
-  rt_fread(&DAT_000a5e0c,1,0xe,uVar2);
-  rt_fread(&DAT_000a5e1a,1,0xe,uVar2);
-  rt_fread(&DAT_000a5e28,1,0xe,uVar2);
-  rt_fread(&DAT_000a5e36,1,0xe,uVar2);
-  rt_fread(&DAT_000a5e44,1,0xe,uVar2);
-  rt_fread(&DAT_000a5e52,1,0xe,uVar2);
-  rt_fread(&DAT_000a5e60,1,0xe,uVar2);
-  rt_fread(&DAT_000a5e6e,1,0xe,uVar2);
-  rt_fread(&DAT_000a5e7c,1,0xe,uVar2);
-  rt_fread(&DAT_000a5e8a,1,0xe,uVar2);
-  rt_fread(&DAT_000a5e98,1,0xe,uVar2);
-  rt_fread(&DAT_000a5ea6,1,0xe,uVar2);
-  rt_fread(&DAT_000a5eb4,1,0xc,uVar2);
+  fread(&DAT_000a5df0,1);
+  fread(&DAT_000a5dfe,1,0xe,uVar2);
+  fread(&DAT_000a5e0c,1,0xe,uVar2);
+  fread(&DAT_000a5e1a,1,0xe,uVar2);
+  fread(&DAT_000a5e28,1,0xe,uVar2);
+  fread(&DAT_000a5e36,1,0xe,uVar2);
+  fread(&DAT_000a5e44,1,0xe,uVar2);
+  fread(&DAT_000a5e52,1,0xe,uVar2);
+  fread(&DAT_000a5e60,1,0xe,uVar2);
+  fread(&DAT_000a5e6e,1,0xe,uVar2);
+  fread(&DAT_000a5e7c,1,0xe,uVar2);
+  fread(&DAT_000a5e8a,1,0xe,uVar2);
+  fread(&DAT_000a5e98,1,0xe,uVar2);
+  fread(&DAT_000a5ea6,1,0xe,uVar2);
+  fread(&DAT_000a5eb4,1,0xc,uVar2);
   rt_fclose(uVar2);
   for (sVar3 = 0; sVar3 < 0xf; sVar3 = sVar3 + 1) {
     for (sVar4 = 0; sVar4 < 0xc; sVar4 = sVar4 + 1) {
@@ -14543,9 +14544,9 @@ void level_LoadData(void)
   dat_LoadLevelB(local_58,1,0xffffffff);
   dbg_Printf(local_58,&DAT_00091c9c);
   uVar2 = file_OpenLog(local_58,extraout_EDX,1);
-  rt_fread(&DAT_000aadc4,2);
-  rt_fread(&DAT_000aadca,2,1,uVar2);
-  rt_fread(DAT_000aa98c,(int)DAT_000aadc4 * (int)DAT_000aadca,2,uVar2);
+  fread(&DAT_000aadc4,2);
+  fread(&DAT_000aadca,2,1,uVar2);
+  fread(DAT_000aa98c,(int)DAT_000aadc4 * (int)DAT_000aadca,2,uVar2);
   iVar3 = (int)DAT_000aadca * (int)DAT_000aadc4;
   do {
     iVar3 = iVar3 + -1;
@@ -15863,21 +15864,21 @@ void mem_AllocLevel(void)
   uint uVar3;
   int iVar4;
   
-  DAT_000aa920 = rt_malloc(200000);
-  DAT_000aaa30 = rt_malloc(&DAT_0003e804);
+  DAT_000aa920 = _nmalloc(200000);
+  DAT_000aaa30 = _nmalloc(&DAT_0003e804);
   DAT_000aa9f4 = DAT_000aaa30 + 64000;
   DAT_000aa9f8 = DAT_000aaa30 + 0x1f400;
   DAT_000aa9fc = DAT_000aaa30 + 0x2ee00;
-  DAT_000aa930 = rt_malloc(64000);
-  DAT_000aa9c8 = rt_malloc(64000);
+  DAT_000aa930 = _nmalloc(64000);
+  DAT_000aa9c8 = _nmalloc(64000);
   if (DAT_000aa9c8 == 0) {
     dbg_Printf();
-    rt_exit(1);
+    exit(1);
   }
-  DAT_000aa9a8 = rt_malloc(0x24000);
+  DAT_000aa9a8 = _nmalloc(0x24000);
   if (DAT_000aa9a8 == 0) {
     dbg_Printf();
-    rt_exit(1);
+    exit(1);
   }
   uVar1 = DAT_000aa9a8 + 0xffffU & 0xffff0000;
   uVar3 = DAT_000aa9a8 + 0xffU & 0xffffff00;
@@ -15893,55 +15894,55 @@ void mem_AllocLevel(void)
     iVar2 = iVar2 + 1;
     iVar4 = iVar4 + 0x1000;
   }
-  DAT_000aa9c0 = rt_malloc(0x1100);
+  DAT_000aa9c0 = _nmalloc(0x1100);
   if (DAT_000aa9c0 == 0) {
     dbg_Printf();
-    rt_exit(1);
+    exit(1);
   }
   DAT_000aa9cc = DAT_000aa9c0 + 0xffU & 0xffffff00;
-  DAT_000aa988 = rt_malloc(&DAT_000d9490);
-  DAT_000aa990 = rt_malloc(0x145320);
+  DAT_000aa988 = _nmalloc(&DAT_000d9490);
+  DAT_000aa990 = _nmalloc(0x145320);
   if (DAT_000aa990 == 0) {
     dbg_Printf();
-    rt_exit(1);
+    exit(1);
   }
   else {
     DAT_000aa998 = DAT_000aa990 + 0x1145e0;
   }
-  DAT_000c1614 = rt_malloc(dash_FindCityCar);
+  DAT_000c1614 = _nmalloc(dash_FindCityCar);
   if (DAT_000c1614 == 0) {
     dbg_Printf();
-    rt_exit(1);
+    exit(1);
   }
-  DAT_000aa9d0 = rt_malloc(0x1194);
-  DAT_000aa9d4 = rt_malloc(0x1194);
-  DAT_000aa9d8 = rt_malloc(0x1194);
-  DAT_000aa9dc = rt_malloc(0x1194);
-  _DAT_000aa9e0 = rt_malloc(0x1194);
+  DAT_000aa9d0 = _nmalloc(0x1194);
+  DAT_000aa9d4 = _nmalloc(0x1194);
+  DAT_000aa9d8 = _nmalloc(0x1194);
+  DAT_000aa9dc = _nmalloc(0x1194);
+  _DAT_000aa9e0 = _nmalloc(0x1194);
   if ((((DAT_000aa9d0 == 0) || (DAT_000aa9d4 == 0)) || (DAT_000aa9d8 == 0)) ||
      ((DAT_000aa9dc == 0 || (_DAT_000aa9e0 == 0)))) {
     dbg_Printf();
-    rt_exit(1);
+    exit(1);
   }
-  DAT_000a44a0 = rt_malloc(10000);
-  DAT_000a44b0 = rt_malloc(10000);
-  DAT_000a44a4 = rt_malloc(300000);
-  DAT_000a44ac = rt_malloc(&DAT_0003e800);
+  DAT_000a44a0 = _nmalloc(10000);
+  DAT_000a44b0 = _nmalloc(10000);
+  DAT_000a44a4 = _nmalloc(300000);
+  DAT_000a44ac = _nmalloc(&DAT_0003e800);
   if (((DAT_000a44a0 == 0) || (DAT_000a44b0 == 0)) || ((DAT_000a44a4 == 0 || (DAT_000a44ac == 0))))
   {
     dbg_Printf();
-    rt_exit(1);
+    exit(1);
   }
-  DAT_000aa98c = rt_malloc(180000);
-  DAT_000aaa0c = rt_malloc(64000);
+  DAT_000aa98c = _nmalloc(180000);
+  DAT_000aaa0c = _nmalloc(64000);
   if ((DAT_000aa98c == 0) || (DAT_000aaa0c == 0)) {
     dbg_Printf();
-    rt_exit(1);
+    exit(1);
   }
-  DAT_000a44a8 = rt_malloc(10000);
+  DAT_000a44a8 = _nmalloc(10000);
   if (DAT_000a44a8 == 0) {
     dbg_Printf();
-    rt_exit(1);
+    exit(1);
   }
   return;
 }
@@ -15958,7 +15959,7 @@ undefined8 mem_FreeLevel(void)
   int unaff_EBP;
   
   dbg_Printf();
-  rt_free(*(undefined4 *)(unaff_EBP + -400));
+  free(*(undefined4 *)(unaff_EBP + -400));
   return CONCAT44(*(undefined4 *)(unaff_EBP + 8),99);
 }
 
@@ -19357,7 +19358,7 @@ void control_Load(void)
   DAT_000aaf3e = 0;
   DAT_000aa950 = stub_Ret2b6b0;
   uVar1 = file_OpenLog(s__control_dat_0009234f + 1,&DAT_0009234c,100);
-  uVar2 = rt_fread(local_7c,1);
+  uVar2 = fread(local_7c,1);
   rt_fclose(uVar1,0,uVar2);
   iVar5 = 0;
   iVar3 = extraout_EDX;
@@ -19620,7 +19621,7 @@ void timer_Hook74d1d(void)
 void timer_Hook75073(void)
 
 {
-  sos_TimerRecalc(DAT_000a4856);
+  sosTIMERRemoveEvent(DAT_000a4856);
   return;
 }
 
@@ -20170,19 +20171,19 @@ byte spr_LoadAlloc(undefined4 param_1,undefined4 param_2)
   if (local_24 == 0) {
     dbg_Printf();
   }
-  rt_fread(local_18,1,1,local_24);
+  fread(local_18,1,1,local_24);
   local_42c = local_18[0];
   local_1c = CONCAT22(local_1c._2_2_,(ushort)local_18[0] * 4 + 1);
   for (uVar5 = 0; (uint)uVar5 < (uint)local_18[0]; uVar5 = uVar5 + 1) {
     local_28 = (uint)uVar5 * 4;
-    rt_fread(local_42b + local_28,2,1,local_24);
+    fread(local_42b + local_28,2,1,local_24);
     iVar1 = local_28;
     local_42b[local_28 + 3] = (byte)(local_1c >> 8);
     local_42b[iVar1 + 2] = (byte)local_1c;
     local_1c = CONCAT22(local_1c._2_2_,
                         (short)local_1c + (ushort)local_42b[iVar1] * (ushort)local_42b[iVar1 + 1]);
   }
-  uVar8 = rt_malloc(local_1c & 0xffff,local_20);
+  uVar8 = _nmalloc(local_1c & 0xffff,local_20);
   piVar4 = (int *)((ulonglong)uVar8 >> 0x20);
   *piVar4 = (int)uVar8;
   uVar3 = (uint)local_18[0] * 4 + 1;
@@ -20198,8 +20199,8 @@ byte spr_LoadAlloc(undefined4 param_1,undefined4 param_2)
     pbVar6 = pbVar6 + 1;
     pbVar7 = pbVar7 + 1;
   }
-  rt_fread(*piVar4 + 1 + (uint)local_18[0] * 4,(local_1c & 0xffff) - ((uint)local_18[0] * 4 + 1),1,
-           local_24);
+  fread(*piVar4 + 1 + (uint)local_18[0] * 4,(local_1c & 0xffff) - ((uint)local_18[0] * 4 + 1),1,
+        local_24);
   rt_fclose(local_24);
   return local_18[0];
 }
@@ -20236,14 +20237,14 @@ uint spr_LoadInto(undefined4 param_1,int *param_2)
   if (local_24 == 0) {
     dbg_Printf();
   }
-  rt_fread(local_18,1,1,local_24);
+  fread(local_18,1,1,local_24);
   local_42c = local_18[0];
   uVar4 = 0;
   local_1c = CONCAT22(local_1c._2_2_,(ushort)local_18[0] * 4 + 1);
   while( true ) {
     if ((uint)local_18[0] <= (uint)uVar4) break;
     local_28 = (uint)uVar4 * 4;
-    rt_fread(local_42b + local_28,2,1,local_24);
+    fread(local_42b + local_28,2,1,local_24);
     iVar1 = local_28;
     local_42b[local_28 + 3] = (byte)(local_1c >> 8);
     local_42b[iVar1 + 2] = (byte)local_1c;
@@ -20265,7 +20266,7 @@ uint spr_LoadInto(undefined4 param_1,int *param_2)
     pbVar6 = pbVar6 + 1;
   }
   uVar3 = local_1c & 0xffff;
-  rt_fread(*local_20 + 1 + (uint)local_18[0] * 4,uVar3 - ((uint)local_18[0] * 4 + 1),1,local_24);
+  fread(*local_20 + 1 + (uint)local_18[0] * 4,uVar3 - ((uint)local_18[0] * 4 + 1),1,local_24);
   rt_fclose(local_24);
   return uVar3;
 }
@@ -20308,19 +20309,19 @@ byte spr_LoadAllocB(undefined4 param_1,int *param_2)
   if (local_30 == 0) {
     dbg_Printf();
   }
-  rt_fread(local_18,1,1,local_30);
+  fread(local_18,1,1,local_30);
   local_43c = local_18[0];
   local_1c = CONCAT22(local_1c._2_2_,(ushort)local_18[0] * 4 + 1);
   for (uVar9 = 0; (uint)uVar9 < (uint)local_18[0]; uVar9 = uVar9 + 1) {
     local_2c = (uint)uVar9 * 4;
-    rt_fread(local_43b + local_2c,2,1,local_30);
+    fread(local_43b + local_2c,2,1,local_30);
     uVar4 = local_2c;
     local_43b[local_2c + 3] = (byte)(local_1c >> 8);
     local_43b[uVar4 + 2] = (byte)local_1c;
     local_1c = CONCAT22(local_1c._2_2_,
                         (short)local_1c + (ushort)local_43b[uVar4 + 1] * (ushort)local_43b[uVar4]);
   }
-  uVar13 = rt_malloc(local_1c & 0xffff,local_34);
+  uVar13 = _nmalloc(local_1c & 0xffff,local_34);
   piVar6 = (int *)((ulonglong)uVar13 >> 0x20);
   *piVar6 = (int)uVar13;
   uVar4 = (uint)local_18[0] * 4 + 1;
@@ -20338,7 +20339,7 @@ byte spr_LoadAllocB(undefined4 param_1,int *param_2)
   }
   local_24 = DAT_000aa930;
   puVar11 = (undefined1 *)(*piVar6 + 1 + (uint)local_18[0] * 4);
-  rt_fread(puVar11,(local_1c & 0xffff) - ((uint)local_18[0] * 4 + 1),1,local_30);
+  fread(puVar11,(local_1c & 0xffff) - ((uint)local_18[0] * 4 + 1),1,local_30);
   rt_fclose(local_30);
   for (uVar9 = 0; uVar9 < local_43c; uVar9 = uVar9 + 1) {
     local_20 = local_24;
@@ -20411,14 +20412,14 @@ uint spr_LoadSet(undefined4 param_1,int *param_2)
   if (local_20 == 0) {
     dbg_Printf();
   }
-  rt_fread(local_18,1,1,local_20);
+  fread(local_18,1,1,local_20);
   local_43c = local_18[0];
   uVar9 = 0;
   local_1c = CONCAT22(local_1c._2_2_,(ushort)local_18[0] * 4 + 1);
   while( true ) {
     if ((uint)local_18[0] <= (uint)uVar9) break;
     local_30 = (uint)uVar9 * 4;
-    rt_fread(local_43b + local_30,2,1,local_20);
+    fread(local_43b + local_30,2,1,local_20);
     uVar3 = local_30;
     local_43b[local_30 + 3] = (byte)(local_1c >> 8);
     local_43b[uVar3 + 2] = (byte)local_1c;
@@ -20441,7 +20442,7 @@ uint spr_LoadSet(undefined4 param_1,int *param_2)
   }
   local_28 = DAT_000aa930;
   puVar8 = (undefined1 *)(*local_24 + 1 + (uint)local_18[0] * 4);
-  rt_fread(puVar8,(local_1c & 0xffff) - ((uint)local_18[0] * 4 + 1),1,local_20);
+  fread(puVar8,(local_1c & 0xffff) - ((uint)local_18[0] * 4 + 1),1,local_20);
   rt_fclose(local_20);
   for (uVar9 = 0; uVar9 < local_43c; uVar9 = uVar9 + 1) {
     local_34 = local_28;
@@ -21155,7 +21156,7 @@ undefined8 gif_ReadByte(int param_1,undefined4 param_2)
 {
   int iVar1;
   
-  DAT_000ab130 = rt_75339(*(undefined4 *)(param_1 + 8));
+  DAT_000ab130 = fgetc(*(undefined4 *)(param_1 + 8));
   if (DAT_000ab130 != -1) {
     return CONCAT44(param_2,(int)DAT_000ab130);
   }
@@ -21185,7 +21186,7 @@ uint gif_ReadBlock(undefined4 param_1,undefined4 param_2)
   
   DAT_000ab132 = gif_ReadByte(param_1,param_2,param_1);
   if ((0 < (short)DAT_000ab132) &&
-     (iVar1 = rt_fread(param_2,1,(int)(short)DAT_000ab132,*(undefined4 *)(extraout_EBX + 8)),
+     (iVar1 = fread(param_2,1,(int)(short)DAT_000ab132,*(undefined4 *)(extraout_EBX + 8)),
      iVar1 != (short)DAT_000ab132)) {
     (*(code *)PTR_rt_7a6b4_000a0920)(iRam000ab0fc,uRam000ab10a);
     iVar1 = iRam000ab0fc;
@@ -21445,12 +21446,12 @@ void gif_SkipExtension(undefined4 param_1)
 void gif_Alloc(void)
 
 {
-  DAT_000ab0d8 = rt_malloc(0x2000);
-  DAT_000ab0dc = rt_malloc(0x1000);
-  DAT_000aafc4 = rt_malloc(0x1000);
+  DAT_000ab0d8 = _nmalloc(0x2000);
+  DAT_000ab0dc = _nmalloc(0x1000);
+  DAT_000aafc4 = _nmalloc(0x1000);
   if (((DAT_000ab0d8 == 0) || (DAT_000ab0dc == 0)) || (DAT_000aafc4 == 0)) {
     dbg_Printf();
-    rt_exit(1);
+    exit(1);
   }
   return;
 }
@@ -21478,8 +21479,8 @@ undefined8 gif_ReadHeader(int *param_1,undefined4 param_2)
   byte local_20;
   uint local_1c;
   
-  iVar2 = rt_fread(local_28,1,6,param_1[2]);
-  if ((iVar2 == 6) && (iVar2 = rt_fread(local_28,1,7,param_1[2]), iVar2 == 7)) {
+  iVar2 = fread(local_28,1,6,param_1[2]);
+  if ((iVar2 == 6) && (iVar2 = fread(local_28,1,7,param_1[2]), iVar2 == 7)) {
     sVar1 = (short)(2 << (local_24 & 7));
     if ((local_22 != 0) && ((local_22 != 0x31 && (0 < *(short *)(param_1[1] + 8))))) {
       (**(code **)(param_1[1] + 4))(s_ludWarning__nonsquare_pixels_in_i_000923ed + 3);
@@ -21496,7 +21497,7 @@ undefined8 gif_ReadHeader(int *param_1,undefined4 param_2)
         gif_SkipExtension(param_1);
       }
     } while (sVar1 != 0x2c);
-    iVar2 = rt_fread(local_28,1,9,param_1[2]);
+    iVar2 = fread(local_28,1,9,param_1[2]);
     if (iVar2 == 9) {
       local_1c = (uint)local_21 << 8 | CONCAT22(extraout_var,(ushort)local_22);
       DAT_000ab114 = (short)(char)(local_20 & 0x40);
@@ -21833,7 +21834,7 @@ void fade_Load(short param_1)
   
   uVar1 = rt_fsopen_wrapper((&PTR_s_data_trakfade_dat_000909c2_2_0009611c)[param_1],&DAT_0009246c,1)
   ;
-  rt_fread(acStack_807c + 0x8000,100);
+  fread(acStack_807c + 0x8000,100);
   rt_strtod(acStack_807c + 0x8001,0);
   fVar4 = (float10)__CHP();
   local_18 = (uint)ROUND(fVar4);
@@ -24769,7 +24770,7 @@ void tileanim_Load(undefined4 param_1,undefined4 param_2,undefined4 param_3,unde
   dbg_Printf(uVar2,(&PTR_s_data_trakanim_dat_00090b02_2_0009615c)[extraout_ECX],0x708,uVar2,
              s_xload_anim_data_file____s_000924fb + 1,
              (&PTR_s_data_trakanim_dat_00090b02_2_0009615c)[extraout_ECX]);
-  rt_fread(&stack0xfffff8dc,1);
+  fread(&stack0xfffff8dc,1);
   sVar4 = 0;
   rt_fclose(uVar2);
   iVar3 = 0;
@@ -25407,16 +25408,16 @@ void mask_ReadVGA(undefined4 param_1,short param_2)
     _DAT_000c0c0e = 0;
   }
   iVar2 = param_2 * 2;
-  rt_fread(&DAT_000c0be0 + iVar2,2,1,uVar1);
-  rt_fread(&DAT_000c0be8 + iVar2,2,1,uVar1);
-  rt_fread(&DAT_000b11d8 + iVar2,2,1,uVar1);
-  rt_fread(&DAT_000b11d0 + iVar2,2,1,uVar1);
+  fread(&DAT_000c0be0 + iVar2,2,1,uVar1);
+  fread(&DAT_000c0be8 + iVar2,2,1,uVar1);
+  fread(&DAT_000b11d8 + iVar2,2,1,uVar1);
+  fread(&DAT_000b11d0 + iVar2,2,1,uVar1);
   for (uVar3 = 0; uVar3 < 4; uVar3 = uVar3 + 1) {
     sVar4 = *(short *)(&DAT_000c0bf0 + param_2 * 2 + (uint)uVar3 * 10);
     do {
       DAT_000c0c18 = sVar4;
       iVar2 = (uint)uVar3 * 16000;
-      rt_fread(&DAT_000b11e0 + DAT_000c0c18 * 2 + iVar2,2,1,uVar1);
+      fread(&DAT_000b11e0 + DAT_000c0c18 * 2 + iVar2,2,1,uVar1);
       sVar4 = DAT_000c0c18 + 1;
     } while (*(short *)(&DAT_000b11e0 + DAT_000c0c18 * 2 + iVar2) != -1);
     sVar4 = DAT_000c0c18 + 2;
@@ -25999,16 +26000,16 @@ void mask_ReadSVGA(undefined4 param_1,short param_2)
     _DAT_000c0c0e = 0;
   }
   iVar2 = param_2 * 2;
-  rt_fread(&DAT_000c0be0 + iVar2,2,1,uVar1);
-  rt_fread(&DAT_000c0be8 + iVar2,2,1,uVar1);
-  rt_fread(&DAT_000b11d8 + iVar2,2,1,uVar1);
-  rt_fread(&DAT_000b11d0 + iVar2,2,1,uVar1);
+  fread(&DAT_000c0be0 + iVar2,2,1,uVar1);
+  fread(&DAT_000c0be8 + iVar2,2,1,uVar1);
+  fread(&DAT_000b11d8 + iVar2,2,1,uVar1);
+  fread(&DAT_000b11d0 + iVar2,2,1,uVar1);
   for (uVar3 = 0; uVar3 < 4; uVar3 = uVar3 + 1) {
     sVar4 = *(short *)(&DAT_000c0bf0 + param_2 * 2 + (uint)uVar3 * 10);
     do {
       DAT_000c0c18 = sVar4;
       iVar2 = (uint)uVar3 * 16000;
-      rt_fread(&DAT_000b11e0 + DAT_000c0c18 * 2 + iVar2,2,1,uVar1);
+      fread(&DAT_000b11e0 + DAT_000c0c18 * 2 + iVar2,2,1,uVar1);
       sVar4 = DAT_000c0c18 + 1;
     } while (*(short *)(&DAT_000b11e0 + DAT_000c0c18 * 2 + iVar2) != -1);
     sVar4 = DAT_000c0c18 + 2;
@@ -35975,9 +35976,9 @@ undefined8 __stdcall file_Seek(undefined4 param_1)
   char *in_EAX;
   undefined8 uVar1;
   
-  uVar1 = rt_75339(DAT_000c1618,CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + *in_EAX) << 8);
-  uVar1 = rt_75339(DAT_000c1618,((int)((ulonglong)uVar1 >> 0x20) + (int)uVar1) * 0x100);
-  uVar1 = rt_75339(DAT_000c1618,((int)((ulonglong)uVar1 >> 0x20) + (int)uVar1) * 0x100);
+  uVar1 = fgetc(DAT_000c1618,CONCAT31((int3)((uint)in_EAX >> 8),(char)in_EAX + *in_EAX) << 8);
+  uVar1 = fgetc(DAT_000c1618,((int)((ulonglong)uVar1 >> 0x20) + (int)uVar1) * 0x100);
+  uVar1 = fgetc(DAT_000c1618,((int)((ulonglong)uVar1 >> 0x20) + (int)uVar1) * 0x100);
   return CONCAT44(param_1,(int)uVar1 + (int)((ulonglong)uVar1 >> 0x20));
 }
 
@@ -35993,12 +35994,12 @@ void bsp_WriteNode(uint param_1,undefined4 param_2,undefined4 param_3)
   undefined1 extraout_BL;
   undefined1 extraout_BH;
   
-  rt_fputc(param_1 >> 0x18,DAT_000c1618,
-           CONCAT31(CONCAT21((short)((uint)param_3 >> 0x10),(char)param_1),(char)(param_1 >> 0x10)),
-           param_1 >> 8 & 0xff);
-  rt_fputc(extraout_BL,DAT_000c1618);
-  rt_fputc(extraout_CL,DAT_000c1618);
-  rt_fputc(extraout_BH,DAT_000c1618);
+  fputc(param_1 >> 0x18,DAT_000c1618,
+        CONCAT31(CONCAT21((short)((uint)param_3 >> 0x10),(char)param_1),(char)(param_1 >> 0x10)),
+        param_1 >> 8 & 0xff);
+  fputc(extraout_BL,DAT_000c1618);
+  fputc(extraout_CL,DAT_000c1618);
+  fputc(extraout_BH,DAT_000c1618);
   return;
 }
 
@@ -36216,7 +36217,7 @@ LAB_0004943e:
     local_28 = local_28 + 1;
     param_1 = *(byte **)(local_30 + 0x58);
   }
-  rt_fputc(local_28,DAT_000c1618);
+  fputc(local_28,DAT_000c1618);
   puVar6 = DAT_000c1610;
   if (extraout_EBX == (byte *)0x0) {
     *DAT_000c1610 = 1;
@@ -36254,7 +36255,7 @@ LAB_0004943e:
     if (bVar2 < 2) {
       DAT_000c1610 = puVar1;
       dbg_Printf();
-      rt_exit(0xffffffff);
+      exit(0xffffffff);
       pbVar9 = extraout_EBX_03;
       puVar1 = DAT_000c1610;
     }
@@ -36317,7 +36318,7 @@ LAB_0004968d:
       else {
         iVar10 = 1;
       }
-      rt_fputc(iVar10,DAT_000c1618);
+      fputc(iVar10,DAT_000c1618);
       iVar4 = local_2c;
       iVar3 = extraout_ECX_10;
       if (iVar10 < 0) {
@@ -38590,14 +38591,14 @@ void maps_Load(short param_1)
   }
   uVar5 = rt_fsopen_wrapper((&PTR_s_maps_trak_blk_00090ce2_2_000961bc)[param_1],&DAT_00092774);
   file_Open((&PTR_s_maps_trak_bsp_00090d62_2_000961dc)[extraout_EBX],2);
-  rt_fread(&local_2c,extraout_EDX,1,uVar5);
+  fread(&local_2c,extraout_EDX,1,uVar5);
   if ((short)local_2c == 1) {
-    rt_fread(local_24,2,1,uVar5);
+    fread(local_24,2,1,uVar5);
     for (local_2c = 0; (short)local_2c < local_24[0]; local_2c = local_2c + 1) {
-      rt_fread(local_4fc + (short)local_2c,2,1,uVar5);
-      rt_fread(local_2fc + (short)local_2c,2,1,uVar5);
-      rt_fread(local_8fc + (short)local_2c,2,1,uVar5);
-      rt_fread(local_6fc + (short)local_2c,2,1,uVar5);
+      fread(local_4fc + (short)local_2c,2,1,uVar5);
+      fread(local_2fc + (short)local_2c,2,1,uVar5);
+      fread(local_8fc + (short)local_2c,2,1,uVar5);
+      fread(local_6fc + (short)local_2c,2,1,uVar5);
       iVar10 = (int)(short)local_2c;
       iVar4 = iVar10 * 0x28;
       *(short *)(&DAT_000cf5fc + iVar4) = local_4fc[iVar10];
@@ -38645,19 +38646,19 @@ void maps_Load(short param_1)
       *(int *)(&DAT_000cf608 + iVar4 * 0x28) = local_34;
       local_5c = *(int *)(&DAT_000cf614 + iVar4 * 0x28);
       for (local_40 = 0; local_40 < local_4fc[(short)local_2c]; local_40 = local_40 + 1) {
-        rt_fread(local_40 * 0x12 + local_38,1,0x12,uVar5);
+        fread(local_40 * 0x12 + local_38,1,0x12,uVar5);
       }
       for (local_3c = 0; local_3c < local_2fc[(short)local_2c]; local_3c = local_3c + 1) {
         local_7c = local_78 + local_3c * 0x14;
-        rt_fread(local_7c,1,1,uVar5);
-        rt_fread(local_7c + 3,0x11,1,uVar5);
+        fread(local_7c,1,1,uVar5);
+        fread(local_7c + 3,0x11,1,uVar5);
       }
       local_44 = 0;
       while( true ) {
         iVar4 = (int)local_8fc[(short)local_2c] >> 0x1f;
         iVar4 = (int)(((int)local_8fc[(short)local_2c] + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >> 2;
         if (iVar4 <= local_44) break;
-        rt_fread(&local_28,1,2,uVar5);
+        fread(&local_28,1,2,uVar5);
         pbVar9 = pbVar13 + local_44 * 2;
         *pbVar9 = local_28;
         pbVar9[1] = local_27;
@@ -38666,14 +38667,14 @@ void maps_Load(short param_1)
         }
         local_44 = local_44 + 1;
       }
-      rt_fseek(uVar5,iVar4 * 2,1);
+      fseek(uVar5,iVar4 * 2,1);
       iVar4 = (int)local_8fc[(short)local_2c] >> 0x1f;
-      rt_fseek(uVar5,((int)(((int)local_8fc[(short)local_2c] + iVar4 * -4) - (uint)(iVar4 << 1 < 0))
-                     >> 2) * 2,1);
+      fseek(uVar5,((int)(((int)local_8fc[(short)local_2c] + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >>
+                  2) * 2,1);
       iVar4 = (int)local_8fc[(short)local_2c] >> 0x1f;
-      rt_fseek(uVar5,((int)(((int)local_8fc[(short)local_2c] + iVar4 * -4) - (uint)(iVar4 << 1 < 0))
-                     >> 2) * 2,1,uVar5);
-      rt_fread(local_34,(int)local_6fc[(short)local_2c],0xc);
+      fseek(uVar5,((int)(((int)local_8fc[(short)local_2c] + iVar4 * -4) - (uint)(iVar4 << 1 < 0)) >>
+                  2) * 2,1,uVar5);
+      fread(local_34,(int)local_6fc[(short)local_2c],0xc);
       for (iVar4 = 0; iVar4 < local_6fc[(short)local_2c]; iVar4 = iVar4 + 1) {
       }
       for (iVar4 = 0; iVar10 = (int)(short)local_2c, iVar4 < (int)local_8fc[iVar10] >> 2;
@@ -40050,42 +40051,42 @@ undefined8 rand_Pick(uint param_1)
   iVar1 = iVar2 / 0x2d;
   _DAT_000d180c = (undefined2)((longlong)iVar2 % 0x2d);
   if (DAT_000d1800 == 0) {
-    iVar2 = rt_rand(iVar1);
+    iVar2 = rand(iVar1);
     DAT_000d180a = (short)((longlong)iVar2 % 0xe);
-    iVar2 = rt_rand(iVar2 / 0xe);
+    iVar2 = rand(iVar2 / 0xe);
     DAT_000d1804 = (undefined2)((longlong)iVar2 % 6);
-    iVar2 = rt_rand(iVar2 / 6);
+    iVar2 = rand(iVar2 / 6);
     iVar1 = iVar2 / 0xd;
     DAT_000d1802 = (undefined2)(iVar2 % 0xd);
   }
   else {
-    uVar3 = rt_rand(iVar1);
+    uVar3 = rand(iVar1);
     uVar3 = uVar3 & 3;
     switch(uVar3) {
     case 0:
       DAT_000d180a = -1;
-      iVar2 = rt_rand();
+      iVar2 = rand();
       iVar1 = iVar2 / 6;
       DAT_000d1802 = 0xffff;
       DAT_000d1804 = (undefined2)((longlong)iVar2 % 6);
       break;
     case 1:
-      iVar2 = rt_rand();
+      iVar2 = rand();
       iVar1 = iVar2 / 0xe;
       DAT_000d1804 = 0xffff;
       DAT_000d1802 = 0xffff;
       DAT_000d180a = (short)((longlong)iVar2 % 0xe);
       break;
     case 2:
-      iVar2 = rt_rand();
+      iVar2 = rand();
       DAT_000d180a = (short)(iVar2 % 3) + 0xb;
-      iVar2 = rt_rand(iVar2 / 3);
+      iVar2 = rand(iVar2 / 3);
       iVar1 = -1;
       DAT_000d1804 = (undefined2)((longlong)iVar2 % 6);
       DAT_000d1802 = 0xffff;
       break;
     case 3:
-      iVar2 = rt_rand();
+      iVar2 = rand();
       iVar1 = iVar2 / 3;
       DAT_000d180a = (short)((longlong)iVar2 % 3) + 0xb;
       DAT_000d1802 = 0xffff;
@@ -40095,7 +40096,7 @@ undefined8 rand_Pick(uint param_1)
       goto switchD_0005028f_default;
     }
   }
-  iVar2 = rt_rand(iVar1);
+  iVar2 = rand(iVar1);
   uVar3 = iVar2 / 7;
   DAT_000d1806 = (undefined2)((longlong)iVar2 % 7);
 switchD_0005028f_default:
@@ -40113,10 +40114,10 @@ undefined8 __stdcall switchD_0005028f::rand_Case0(undefined4 param_1,undefined4 
   int iVar1;
   
   DAT_000d180a = 0xffff;
-  iVar1 = rt_rand();
+  iVar1 = rand();
   DAT_000d1802 = 0xffff;
   DAT_000d1804 = (undefined2)((longlong)iVar1 % 6);
-  iVar1 = rt_rand(iVar1 / 6);
+  iVar1 = rand(iVar1 / 6);
   DAT_000d1806 = (short)((longlong)iVar1 % 7);
   return CONCAT44(param_2,iVar1 / 7);
 }
@@ -40131,11 +40132,11 @@ undefined8 __stdcall switchD_0005028f::rand_Case1(undefined4 param_1,undefined4 
 {
   int iVar1;
   
-  iVar1 = rt_rand();
+  iVar1 = rand();
   DAT_000d1804 = 0xffff;
   DAT_000d1802 = 0xffff;
   DAT_000d180a = (undefined2)((longlong)iVar1 % 0xe);
-  iVar1 = rt_rand(iVar1 / 0xe);
+  iVar1 = rand(iVar1 / 0xe);
   DAT_000d1806 = (short)((longlong)iVar1 % 7);
   return CONCAT44(param_2,iVar1 / 7);
 }
@@ -40150,12 +40151,12 @@ undefined8 __stdcall switchD_0005028f::rand_Case2(undefined4 param_1,undefined4 
 {
   int iVar1;
   
-  iVar1 = rt_rand();
+  iVar1 = rand();
   DAT_000d180a = (short)(iVar1 % 3) + 0xb;
-  iVar1 = rt_rand(iVar1 / 3);
+  iVar1 = rand(iVar1 / 3);
   DAT_000d1804 = (undefined2)((longlong)iVar1 % 6);
   DAT_000d1802 = 0xffff;
-  iVar1 = rt_rand();
+  iVar1 = rand();
   DAT_000d1806 = (short)((longlong)iVar1 % 7);
   return CONCAT44(param_2,iVar1 / 7);
 }
@@ -40170,11 +40171,11 @@ undefined8 __stdcall switchD_0005028f::rand_Case3(undefined4 param_1,undefined4 
 {
   int iVar1;
   
-  iVar1 = rt_rand();
+  iVar1 = rand();
   DAT_000d180a = (short)((longlong)iVar1 % 3) + 0xb;
   DAT_000d1804 = 0xffff;
   DAT_000d1802 = 0xffff;
-  iVar1 = rt_rand(iVar1 / 3);
+  iVar1 = rand(iVar1 / 3);
   DAT_000d1806 = (short)((longlong)iVar1 % 7);
   return CONCAT44(param_2,iVar1 / 7);
 }
@@ -41984,8 +41985,8 @@ void save_ReadName(short param_1)
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
     }
-    rt_fread((&PTR_s__0009c080)[param_1],1,1,uVar2);
-    rt_fread((&PTR_s__0009c080)[param_1],1,0x28,uVar2);
+    fread((&PTR_s__0009c080)[param_1],1,1,uVar2);
+    fread((&PTR_s__0009c080)[param_1],1,0x28,uVar2);
     param_1 = param_1 + 1;
     rt_fclose(uVar2);
   } while (param_1 < sVar3);
@@ -42066,7 +42067,7 @@ undefined8 save_ReadHeader(undefined4 param_1,undefined4 param_2)
   
   save_Name((int)DAT_000d23ec,&DAT_00092a90);
   uVar1 = file_OpenLog(&DAT_000d2388,extraout_EDX,1);
-  rt_fread(local_18,extraout_EBX);
+  fread(local_18,extraout_EBX);
   uVar1 = rt_fclose(uVar1);
   return CONCAT44(param_2,CONCAT31((int3)((uint)uVar1 >> 8),local_18[0]));
 }
@@ -42126,11 +42127,11 @@ void save_Load(undefined4 param_1)
   save_Name((int)DAT_000d23ec,&DAT_00092a90);
   uVar1 = file_OpenLog(&DAT_000d2388,extraout_EDX_00,0x29);
   sVar2 = 0;
-  rt_fread(local_e4,1);
+  fread(local_e4,1);
   while( true ) {
     local_1c = (&PTR_DAT_0009c0a0)[sVar2 * 2];
     if ((short)(&DAT_0009c0a4)[sVar2 * 4] < 1) break;
-    rt_fread(local_1c,1,(int)(short)(&DAT_0009c0a4)[sVar2 * 4],uVar1);
+    fread(local_1c,1,(int)(short)(&DAT_0009c0a4)[sVar2 * 4],uVar1);
     sVar2 = sVar2 + 1;
   }
   snd_LoadCfg(uVar1);
@@ -44615,7 +44616,7 @@ void fli_Play(undefined4 param_1,undefined4 param_2,undefined4 param_3,int *para
   DAT_000d2b6c = (int *)CONCAT31((int3)((uint)param_1 >> 8),
                                  (char)param_1 + (char)((uint)((int)param_4 - *param_4) >> 8));
   *DAT_000d2b6c = *DAT_000d2b6c + (int)DAT_000d2b6c;
-  rt_fread(DAT_000d2b68,1,1500000,DAT_000d2b6c);
+  fread(DAT_000d2b68,1,1500000,DAT_000d2b6c);
   DAT_0009c7e4 = DAT_000aaa30;
   memset_74240(DAT_000aaa30,0,64000);
   gfx_Present();
@@ -50063,7 +50064,7 @@ void vesa_LoadCfg(undefined4 param_1)
   local_1c = 0;
   uVar2 = rt_fsopen_wrapper(param_1,&DAT_00092e3c);
   do {
-    sVar1 = rt_fread(local_84,1,1,uVar2);
+    sVar1 = fread(local_84,1,1,uVar2);
     local_84[0] = local_84[0] ^ 0x55;
     pbVar4 = pbVar5;
     if (sVar1 == 0) {
@@ -50080,11 +50081,11 @@ void vesa_LoadCfg(undefined4 param_1)
       return;
     }
     for (; local_84[0] == 0x5c; local_84[0] = local_84[0] ^ 0x55) {
-      rt_fread(local_84,1,1,uVar2);
+      fread(local_84,1,1,uVar2);
       local_84[0] = local_84[0] ^ 0x55;
       if (local_84[0] != 0x6e) break;
       *pbVar4 = 10;
-      rt_fread(local_84,1,1,uVar2);
+      fread(local_84,1,1,uVar2);
       pbVar4 = pbVar4 + 1;
     }
     pbVar5 = pbVar4;
@@ -50181,7 +50182,7 @@ void vesa_Init(void)
       DAT_000aad92 = 0x1e0;
       dbg_Printf();
       dbg_Printf();
-      sos_75f66();
+      getch();
     }
     dbg_Printf();
     memset_74240(&DAT_000d3350,0,0x34,0x4f01);
@@ -50225,7 +50226,7 @@ void vesa_Init(void)
   dbg_Printf();
   dbg_Printf();
   dbg_Printf();
-  rt_exit(1);
+  exit(1);
   return;
 }
 
@@ -56011,7 +56012,7 @@ void menu_Title(undefined4 param_1)
   spr_LoadInto(s_blfonts_mfontbl_sga_000937a6 + 2,&DAT_000aa9e8);
   do {
     uVar3 = file_OpenLog(s_sound_dat_000937bf + 1,&DAT_000937bc,0x32);
-    rt_fread(local_d8,1);
+    fread(local_d8,1);
     rt_fclose(uVar3);
     local_2c._0_2_ = extraout_CX;
     while( true ) {
@@ -56021,10 +56022,10 @@ void menu_Title(undefined4 param_1)
       local_2c._0_2_ = (short)local_2c + 1;
     }
     uVar3 = file_OpenLog(s_control_dat_000937cc,&DAT_000937bc,0x28);
-    rt_fread(&local_ce,1);
+    fread(&local_ce,1);
     rt_fclose(uVar3,&DAT_000937bc);
     uVar3 = file_OpenLog(s_video_dat_000937d8,extraout_EDX_00,0x28);
-    rt_fread(local_c4,1);
+    fread(local_c4,1);
     rt_fclose(uVar3,extraout_EDX_01,&DAT_000aa410);
     img_Load((&PTR_s_screens_sndselec_img_0009e4c4)[DAT_000aaf5c],DAT_000aaa30);
     gfx_Present();
@@ -57522,19 +57523,19 @@ void sla_Play(char *param_1,undefined4 param_2,undefined4 param_3)
   param_1[~uVar6 - 2] = local_3c[DAT_000aaf5c][2];
   DAT_000a8a09 = '\0';
   uVar2 = rt_fsopen_wrapper(s_ccinema_audio_raw_000938c3 + 1,&DAT_000938c0,0xfa000);
-  uVar3 = rt_fread(local_20,1);
+  uVar3 = fread(local_20,1);
   rt_fclose(uVar2,&DAT_000938c0);
   iVar4 = rt_fsopen_wrapper(local_1c);
   if (iVar4 != 0) {
     DAT_000d4c30 = iVar4;
     local_24 = iVar4;
-    rt_fread(&local_14,2,1,iVar4);
-    rt_fread(&local_28,4,1,iVar4);
+    fread(&local_14,2,1,iVar4);
+    fread(&local_28,4,1,iVar4);
     fgetpos(iVar4,local_2c,&DAT_000aa110);
     img_Load(s_l_obruce_img_000938d5 + 3,DAT_000aaa30);
     vesa_Clear(&DAT_000aa110,local_2c);
     sos_fseek_wrapper(iVar4,extraout_EDX,1);
-    rt_fseek(iVar4,local_28);
+    fseek(iVar4,local_28);
     vesa_Blit(DAT_000aaa30,1,0xf0);
     memset_74240(local_12c,0);
     local_12c[0] = local_20;
@@ -57558,7 +57559,7 @@ void sla_Play(char *param_1,undefined4 param_2,undefined4 param_3)
         } while( true );
       }
       DAT_000aadce = 0;
-      rt_fread(&local_28,4,1,local_24);
+      fread(&local_28,4,1,local_24);
       fgetpos(local_24,local_2c);
       if ((extraout_CX_00 == 0) || ((short)local_14 != 2)) {
         uVar2 = 0;
@@ -57569,7 +57570,7 @@ void sla_Play(char *param_1,undefined4 param_2,undefined4 param_3)
       img_Load(s_l_obruce_img_000938d5 + 3,DAT_000aaa30,local_42c,uVar2);
       uVar2 = local_18;
       sos_fseek_wrapper(local_24,local_2c,1);
-      rt_fseek(local_24,local_28);
+      fseek(local_24,local_28);
       DAT_000aadce = 0;
       if (((short)uVar2 != 0) && ((local_14 & 0xffff) == 1)) {
         do {
@@ -57717,23 +57718,23 @@ undefined4 sla_PlayB(char *param_1,int param_2)
   }
   DAT_000d4c30 = iVar2;
   local_2c = iVar2;
-  rt_fread(&local_18,2,1,iVar2);
-  rt_fread(local_24,2,1,iVar2);
-  rt_fread(&local_44,4,1,iVar2);
+  fread(&local_18,2,1,iVar2);
+  fread(local_24,2,1,iVar2);
+  fread(&local_44,4,1,iVar2);
   _DAT_000d4c38 = local_44;
-  rt_fseek(iVar2,4,0);
+  fseek(iVar2,4,0);
   DAT_000d4c28 = local_3c;
   _DAT_000d4c2c = sos_timer_update_loop + local_3c;
   local_30 = (undefined4 *)(local_3c + 0xfa000);
-  rt_fread(&local_44,4,1,iVar2);
-  rt_fread(DAT_000d4c28,1,local_44,iVar2);
-  rt_fread(&local_40,4,1,iVar2);
+  fread(&local_44,4,1,iVar2);
+  fread(DAT_000d4c28,1,local_44,iVar2);
+  fread(&local_40,4,1,iVar2);
   DAT_000d4c34 = (local_44 * 9) / (int)(uint)local_24[0];
   fgetpos(iVar2,local_48);
   img_Load(s_l_obruce_img_000938d5 + 3,DAT_000aaa30,&DAT_000aa110,0);
   vesa_Clear(&DAT_000aa110,local_48);
   sos_fseek_wrapper(iVar2,extraout_EDX,1);
-  rt_fseek(iVar2,local_40);
+  fseek(iVar2,local_40);
   gfx_Present();
   memset_74240(local_158,0,0xf0);
   local_124 = 0x5622;
@@ -57771,11 +57772,11 @@ LAB_0006da00:
     }
     DAT_000aadce = 0;
     uVar3 = (uint)local_28;
-    rt_fread(&local_44,4,1,local_2c);
+    fread(&local_44,4,1,local_2c);
     iVar2 = 1 - uVar3;
     (&DAT_000d4c20)[iVar2] = local_44;
-    rt_fread((&DAT_000d4c28)[iVar2],1,local_44,local_2c);
-    rt_fread(&local_40,4,1,local_2c);
+    fread((&DAT_000d4c28)[iVar2],1,local_44,local_2c);
+    fread(&local_40,4,1,local_2c);
     if ((short)local_20 != 0) {
       local_20 = 0;
       memset_74240(local_158,0,0xf0);
@@ -57815,7 +57816,7 @@ LAB_0006db84:
     }
     img_Load(s_l_obruce_img_000938d5 + 3,puVar5,puVar6,0);
     sos_fseek_wrapper(local_2c,local_48,1);
-    rt_fseek(local_2c,local_40);
+    fseek(local_2c,local_40);
     if (((short)local_18 == 1) && (DAT_000d8732 != 0)) {
       iVar2 = ((&DAT_000d4c20)[DAT_000d4c3e] * 9) / (int)(uint)local_24[0];
       iVar7 = iVar2 + DAT_000aadce;
@@ -58045,7 +58046,7 @@ int voc_LoadSlot(int param_1,int param_2,short *param_3,int param_4)
     }
     else {
       dbg_Printf(*extraout_EBX,1);
-      rt_fread(local_ac,extraout_EDX,0x20);
+      fread(local_ac,extraout_EDX,0x20);
       if (local_94 == '3') {
         dbg_Printf();
       }
@@ -58075,7 +58076,7 @@ int voc_LoadSlot(int param_1,int param_2,short *param_3,int param_4)
       }
       local_14 = local_14 + (uVar4 & 0xffff);
       if (local_2c < 200000) {
-        rt_fread((&DAT_000d8168)[*param_3 * 3],1,uVar4 & 0xffff,local_20);
+        fread((&DAT_000d8168)[*param_3 * 3],1,uVar4 & 0xffff,local_20);
       }
       dbg_Printf();
       *param_3 = *param_3 + 1;
@@ -58095,7 +58096,7 @@ int voc_LoadSlot(int param_1,int param_2,short *param_3,int param_4)
 void snd_TimerInit(void)
 
 {
-  sos_TimerInitSystem(0xff00,0);
+  sosTIMERInitSystem(0xff00,0);
   return;
 }
 
@@ -58123,7 +58124,7 @@ void snd_Init(void)
   }
   _DAT_000aada2 = 0;
   uVar1 = file_OpenLog(s_s_sound_dat_000943be + 2,&DAT_00094320);
-  rt_fread(local_7c,100,1,uVar1);
+  fread(local_7c,100,1,uVar1);
   rt_fclose(uVar1);
   DAT_000d873e = rt_atoi(local_7c,0);
   iVar3 = extraout_EDX;
@@ -58207,15 +58208,15 @@ void snd_Shutdown(void)
 
 {
   if (DAT_000a483e != 0xffffffff) {
-    sos_TimerRecalc(DAT_000a483e);
+    sosTIMERRemoveEvent(DAT_000a483e);
   }
   if (DAT_000d8732 != 0) {
-    sos_TimerRecalc(DAT_000d8738);
+    sosTIMERRemoveEvent(DAT_000d8738);
   }
   sos_scale_timer_value(0);
   if (DAT_000d8732 != 0) {
     sos_channel_stop(DAT_000d8730,1);
-    sos_timer_tick_7690b();
+    sosDIGIUnInitSystem();
   }
   return;
 }
@@ -58382,7 +58383,7 @@ void snd_LoadCfg(undefined4 param_1)
   }
   local_1c = 0;
   do {
-    rt_fread(&DAT_000d5370 + local_1c * 0x114,1,0x114,param_1);
+    fread(&DAT_000d5370 + local_1c * 0x114,1,0x114,param_1);
     if ((&DAT_000d538e)[local_1c * 0x8a] == 0) {
       (&DAT_000d5378)[local_1c * 0x45] = 0;
     }
@@ -58422,9 +58423,9 @@ void snd_LoadCfg(undefined4 param_1)
     local_1c = local_1c + 1;
   } while (local_1c < 0x20);
   for (iVar2 = 0; iVar2 < 10; iVar2 = iVar2 + 1) {
-    rt_fread(&DAT_000d4d30 + iVar2 * 0x28,1,0xa0,param_1);
+    fread(&DAT_000d4d30 + iVar2 * 0x28,1,0xa0,param_1);
   }
-  rt_fread(&DAT_0009e846,2,1,param_1);
+  fread(&DAT_0009e846,2,1,param_1);
   return;
 }
 
@@ -61181,7 +61182,7 @@ void dat_ReadTable(undefined4 param_1,undefined4 param_2,short *param_3)
     local_88[0] = bVar3;
     dbg_Printf();
     do {
-      rt_fread(local_88,1,1,uVar2);
+      fread(local_88,1,1,uVar2);
       bVar3 = local_88[0] ^ 0x55;
       local_88[0] = bVar3;
     } while (bVar3 != 0x3a);
@@ -61189,7 +61190,7 @@ void dat_ReadTable(undefined4 param_1,undefined4 param_2,short *param_3)
     local_88[0] = 0x3a;
   } while ((short)local_1c <= (short)local_20);
 LAB_000735dd:
-  rt_fread(local_88,1,1,uVar2);
+  fread(local_88,1,1,uVar2);
   local_88[0] = local_88[0] ^ 0x55;
   if (local_88[0] != 0x2c) goto code_r0x000735fb;
   goto LAB_00073600;
@@ -61203,11 +61204,11 @@ LAB_00073600:
     }
     do {
       local_14 = 0;
-      rt_fread(local_88,1,1,uVar2);
+      fread(local_88,1,1,uVar2);
       local_88[0] = local_88[0] ^ 0x55;
       if (local_88[0] == 0x2d) {
         local_18 = 0xffffffff;
-        rt_fread(local_88,1,1,uVar2);
+        fread(local_88,1,1,uVar2);
         local_88[0] = local_88[0] ^ 0x55;
       }
       else {
@@ -61218,7 +61219,7 @@ LAB_00073600:
         break;
         local_14 = local_14 + 1;
         local_24 = (int)(short)local_14;
-        rt_fread(local_88 + local_24,1,1,uVar2);
+        fread(local_88 + local_24,1,1,uVar2);
         local_88[local_24] = local_88[local_24] ^ 0x55;
       }
       sVar1 = rt_atoi(local_88,local_18);
@@ -61307,24 +61308,24 @@ void dat_LoadLevel(void)
       do {
         do {
           local_84[0] = bVar3;
-          rt_fread(local_84,1,1,uVar2);
+          fread(local_84,1,1,uVar2);
           bVar3 = local_84[0] ^ 0x55;
         } while (bVar3 != 0x3a);
         sVar5 = sVar5 + 1;
         local_84[0] = 0x3a;
       } while (sVar5 <= (short)local_20);
       do {
-        rt_fread(local_84,1,1,uVar2);
+        fread(local_84,1,1,uVar2);
         local_84[0] = local_84[0] ^ 0x55;
       } while (local_84[0] != 0x22);
       local_1c = 0;
       pbVar6 = &DAT_000d2040 + (short)local_20 * 0x10;
-      rt_fread(local_84,1,1,uVar2);
+      fread(local_84,1,1,uVar2);
       iVar4 = extraout_EDX_00;
       while (local_84[0] = local_84[0] ^ 0x55, local_84[0] != 0x22) {
         *pbVar6 = local_84[0];
         local_1c = local_1c + 1;
-        rt_fread(local_84,1,1,uVar2);
+        fread(local_84,1,1,uVar2);
         pbVar6 = pbVar6 + 1;
         iVar4 = extraout_EDX_01;
       }
@@ -61386,14 +61387,14 @@ void path_Read(undefined4 param_1,undefined4 param_2,short *param_3,int *param_4
   do {
     do {
       local_8c[0] = bVar3;
-      rt_fread(local_8c,1,1,uVar2);
+      fread(local_8c,1,1,uVar2);
       bVar3 = local_8c[0] ^ 0x55;
     } while (bVar3 != 0x3a);
     local_14 = local_14 + 1;
     local_8c[0] = 0x3a;
   } while ((short)local_14 <= (short)local_1c);
 LAB_0007393b:
-  rt_fread(local_8c,1,1,uVar2);
+  fread(local_8c,1,1,uVar2);
   local_8c[0] = local_8c[0] ^ 0x55;
   if ((local_8c[0] != 0x2c) && (local_8c[0] != 0x3a)) goto code_r0x0007395e;
   goto LAB_00073963;
@@ -61408,11 +61409,11 @@ LAB_00073963:
     while( true ) {
       while( true ) {
         local_10 = 0;
-        rt_fread(local_8c,1,1,uVar2);
+        fread(local_8c,1,1,uVar2);
         local_8c[0] = local_8c[0] ^ 0x55;
         if (local_8c[0] == 0x2d) {
           local_18 = 0xffffffff;
-          rt_fread(local_8c,1,1,uVar2);
+          fread(local_8c,1,1,uVar2);
           local_8c[0] = local_8c[0] ^ 0x55;
         }
         else {
@@ -61423,7 +61424,7 @@ LAB_00073963:
           break;
           local_10 = local_10 + 1;
           local_28 = (int)(short)local_10;
-          rt_fread(local_8c + local_28,1,1,uVar2);
+          fread(local_8c + local_28,1,1,uVar2);
           local_8c[local_28] = local_8c[local_28] ^ 0x55;
         }
         if ((short)local_20 == 0) {
@@ -61483,12 +61484,12 @@ void mission_Load(undefined4 param_1,undefined4 param_2,byte *param_3,short para
     sVar2 = 0;
     local_14 = 1;
     while ((short)local_14 != 0) {
-      rt_fread(local_28,1,1,uVar1);
+      fread(local_28,1,1,uVar1);
       local_28[0] = local_28[0] ^ 0x55;
       if (local_28[0] == 0x22) {
         local_18 = 1;
         while ((short)local_18 != 0) {
-          rt_fread(local_28,1,1,uVar1);
+          fread(local_28,1,1,uVar1);
           local_28[0] = local_28[0] ^ 0x55;
           if (local_28[0] == 0x22) {
             sVar2 = sVar2 + 1;
@@ -61502,10 +61503,10 @@ void mission_Load(undefined4 param_1,undefined4 param_2,byte *param_3,short para
     }
   }
   do {
-    rt_fread(local_28,1,1,uVar1);
+    fread(local_28,1,1,uVar1);
     local_28[0] = local_28[0] ^ 0x55;
   } while (local_28[0] != 0x22);
-  rt_fread(local_28,1,1,uVar1);
+  fread(local_28,1,1,uVar1);
   pbVar3 = local_1c;
   while( true ) {
     local_28[0] = local_28[0] ^ 0x55;
@@ -61584,7 +61585,7 @@ void mission_Load(undefined4 param_1,undefined4 param_2,byte *param_3,short para
       }
     }
     *pbVar3 = local_28[0];
-    rt_fread(local_28,1,1,uVar1);
+    fread(local_28,1,1,uVar1);
     pbVar3 = pbVar3 + 1;
   }
   *pbVar3 = 0;
@@ -61612,7 +61613,7 @@ void dat_LoadLevelB(byte *param_1,undefined4 param_2,short param_3)
   uVar1 = file_OpenLog(s_data_level_dat_0009c056,&DAT_00094678);
   do {
     do {
-      rt_fread(local_80,1,1,uVar1);
+      fread(local_80,1,1,uVar1);
       local_80[0] = local_80[0] ^ 0x55;
     } while (local_80[0] != 0x3a);
     local_1c = local_1c + 1;
@@ -61620,14 +61621,14 @@ void dat_LoadLevelB(byte *param_1,undefined4 param_2,short param_3)
   local_80[0] = 0x3a;
   for (local_18 = 0; (int)(short)local_18 < (short)local_14 * 2 + 1; local_18 = local_18 + 1) {
     do {
-      rt_fread(local_80,1,1,uVar1);
+      fread(local_80,1,1,uVar1);
       local_80[0] = local_80[0] ^ 0x55;
     } while (local_80[0] != 0x22);
   }
-  rt_fread(local_80,1,1,uVar1);
+  fread(local_80,1,1,uVar1);
   while (local_80[0] = local_80[0] ^ 0x55, local_80[0] != 0x22) {
     *param_1 = local_80[0];
-    rt_fread(local_80,1,1,uVar1);
+    fread(local_80,1,1,uVar1);
     param_1 = param_1 + 1;
   }
   *param_1 = 0;
@@ -61671,7 +61672,7 @@ void dbg_Printf(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefin
   local_c = &stack0x00000008;
   uStack_8 = param_2;
   uStack_4 = param_3;
-  rt_78216(&DAT_0009f0de,param_5,&local_c);
+  __fprtf(&DAT_0009f0de,param_5,&local_c);
   return;
 }
 
@@ -61784,19 +61785,20 @@ longlong rt_int21_wrapper(undefined4 param_1,undefined4 param_2,uint param_3)
   pcVar1 = (code *)swi(0x21);
   (*pcVar1)(CONCAT11(0x3e,(char)param_1),param_1,param_1);
   if ((in_CF & 1) == 0) {
-    rt_80932(extraout_EDX,0);
+    __SetIOMode(extraout_EDX,0);
     return (ulonglong)param_3 << 0x20;
   }
-  rt_set_errno(4);
+  __set_errno(4);
   return CONCAT44(param_3,0xffffffff);
 }
 
 
-// ==== rt_time @ 00073ef3 size=45
+// ==== time @ 00073ef3 size=45
 
-/* Hand-named: rt_time (hand from Q1 rt_time (BSim 1.0)) */
+/* Hand-named: time (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module time (was
+   rt_time)) */
 
-void rt_time(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+void time(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   int iVar1;
@@ -61812,7 +61814,7 @@ void rt_time(undefined4 param_1,undefined4 param_2,undefined4 param_3)
   if (499 < iVar1) {
     local_2c[0] = local_2c[0] + 1;
   }
-  uVar3 = rt_7868b(local_2c);
+  uVar3 = mktime(local_2c);
   puVar2 = (undefined4 *)((ulonglong)uVar3 >> 0x20);
   if (puVar2 != (undefined4 *)0x0) {
     *puVar2 = (int)uVar3;
@@ -61821,28 +61823,30 @@ void rt_time(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 }
 
 
-// ==== rt_rand_seedptr @ 00073f20 size=6
+// ==== initrandnext @ 00073f20 size=6
 
-/* Hand-named: rt_rand_seedptr (hand from Q1 rt_rand_seedptr (callgraph r0)) */
+/* Hand-named: initrandnext (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module rand
+   (was rt_rand_seedptr)) */
 
-undefined * rt_rand_seedptr(void)
+undefined * initrandnext(void)
 
 {
   return &DAT_0009f098;
 }
 
 
-// ==== rt_rand @ 00073f26 size=36
+// ==== rand @ 00073f26 size=36
 
-/* Hand-named: rt_rand (hand from Q1 rt_rand (BSim 1.0)) */
+/* Hand-named: rand (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module rand (was
+   rt_rand)) */
 
-undefined8 rt_rand(undefined4 param_1,undefined4 param_2)
+undefined8 rand(undefined4 param_1,undefined4 param_2)
 
 {
   uint *puVar1;
   uint uVar2;
   
-  puVar1 = (uint *)rt_rand_seedptr();
+  puVar1 = (uint *)initrandnext();
   uVar2 = 0;
   if (puVar1 != (uint *)0x0) {
     uVar2 = *puVar1 * 0x41c64e6d + 0x3039;
@@ -61853,16 +61857,17 @@ undefined8 rt_rand(undefined4 param_1,undefined4 param_2)
 }
 
 
-// ==== rt_srand @ 00073f4a size=16
+// ==== srand @ 00073f4a size=16
 
-/* Hand-named: rt_srand (hand from Q1 rt_srand (BSim 1.0)) */
+/* Hand-named: srand (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module rand (was
+   rt_srand)) */
 
-void rt_srand(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+void srand(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   undefined8 uVar1;
   
-  uVar1 = rt_rand_seedptr(param_1,param_1,param_3,param_4,param_2);
+  uVar1 = initrandnext(param_1,param_1,param_3,param_4,param_2);
   if ((undefined4 *)uVar1 != (undefined4 *)0x0) {
     *(undefined4 *)uVar1 = (int)((ulonglong)uVar1 >> 0x20);
   }
@@ -61870,12 +61875,13 @@ void rt_srand(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined
 }
 
 
-// ==== rt_init_runtime_state @ 00073f5c size=2
+// ==== _cstart @ 00073f5c size=2
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Hand-named: rt_init_runtime_state (hand inkling guess: -) */
+/* Hand-named: _cstart (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module
+   cstrt386 (was rt_init_runtime_state)) */
 
-undefined4 __stdcall rt_init_runtime_state(undefined4 param_1)
+undefined4 __stdcall _cstart(undefined4 param_1)
 
 {
   code *pcVar1;
@@ -62012,10 +62018,10 @@ undefined4 __stdcall rt_init_runtime_state(undefined4 param_1)
   }
   DAT_0009f340 = &DAT_000d94e0;
   param_1 = 0x741e4;
-  rt_7882e(0xff);
+  __InitRtns(0xff);
   param_1 = 0x741eb;
-  param_1 = rt_787df();
-  rt_78879(0,0xff);
+  param_1 = __CMain();
+  __FiniRtns(0,0xff);
   pcVar1 = (code *)swi(0x21);
   uVar4 = (*pcVar1)(CONCAT11(0x4c,(char)param_1));
   return uVar4;
@@ -62164,21 +62170,22 @@ undefined4 __stdcall rt_cstart(undefined4 param_1)
   }
   DAT_0009f340 = &DAT_000d94e0;
   param_1 = 0x741e4;
-  rt_7882e(0xff);
+  __InitRtns(0xff);
   param_1 = 0x741eb;
-  param_1 = rt_787df();
-  rt_78879(0,0xff);
+  param_1 = __CMain();
+  __FiniRtns(0,0xff);
   pcVar1 = (code *)swi(0x21);
   uVar4 = (*pcVar1)(CONCAT11(0x4c,(char)param_1));
   return uVar4;
 }
 
 
-// ==== rt_open_con @ 000741ed size=59
+// ==== __do_exit_with_msg_ @ 000741ed size=59
 
-/* Hand-named: rt_open_con (hand from Q1 rt_open_con (callgraph r1)) */
+/* Hand-named: __do_exit_with_msg__ (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs),
+   module cstrt386 (was rt_open_con)) */
 
-undefined4 __stdcall rt_open_con(undefined1 param_1)
+undefined4 __stdcall __do_exit_with_msg_(undefined1 param_1)
 
 {
   char *pcVar1;
@@ -62199,7 +62206,7 @@ undefined4 __stdcall rt_open_con(undefined1 param_1)
   } while (cVar2 != '\0');
   pcVar3 = (code *)swi(0x21);
   (*pcVar3)(0x4000,in_EDX,uVar4,pcVar1 + (-1 - (int)in_EDX));
-  rt_78879(0,0xff);
+  __FiniRtns(0,0xff);
   pcVar3 = (code *)swi(0x21);
   uVar5 = (*pcVar3)(CONCAT11(0x4c,param_1));
   return uVar5;
@@ -62224,8 +62231,8 @@ void rt_74228(void)
 undefined4 memset_74240(undefined4 param_1,undefined1 param_2,undefined4 param_3,undefined4 param_4)
 
 {
-  sos_78a70(param_1,CONCAT31(CONCAT21(CONCAT11(param_2,param_2),param_2),param_2),param_3,param_3,
-            param_4);
+  __STOSB(param_1,CONCAT31(CONCAT21(CONCAT11(param_2,param_2),param_2),param_2),param_3,param_3,
+          param_4);
   return param_1;
 }
 
@@ -62247,7 +62254,7 @@ undefined8 rt_fopen_mode(undefined1 *param_1,undefined4 param_2)
   
   cVar1 = tolower(*param_1,param_1,0);
   if (((cVar1 != 'r') && (cVar1 != 'w')) && (cVar1 != 'a')) {
-    rt_set_errno(9);
+    __set_errno(9);
     uVar2 = 0;
     goto LAB_00074305;
   }
@@ -62320,10 +62327,10 @@ undefined4 rt_doopen(undefined4 param_1,undefined4 param_2,undefined4 param_3,in
   uVar3 = rt_fopen_mode(param_2);
   *(uint *)(extraout_ECX + 0xc) = *(uint *)(extraout_ECX + 0xc) | (uint)uVar3;
   tolower(*(undefined1 *)((ulonglong)uVar3 >> 0x20));
-  uVar1 = rt_sopen();
+  uVar1 = sopen();
   *(undefined4 *)(extraout_ECX_00 + 0x10) = uVar1;
   if (*(int *)(extraout_ECX_00 + 0x10) == -1) {
-    rt_freefp(extraout_ECX_00);
+    __freefp(extraout_ECX_00);
     return 0;
   }
   *(undefined4 *)(extraout_ECX_00 + 4) = 0;
@@ -62331,10 +62338,10 @@ undefined4 rt_doopen(undefined4 param_1,undefined4 param_2,undefined4 param_3,in
   *(undefined4 *)(extraout_ECX_00 + 0x14) = 0;
   iVar2 = extraout_ECX_00;
   if (extraout_DL == 'a') {
-    rt_fseek(extraout_ECX_00,0,2);
+    fseek(extraout_ECX_00,0,2);
     iVar2 = extraout_ECX_01;
   }
-  rt_78ea9(iVar2);
+  __chktty(iVar2);
   return extraout_ECX_02;
 }
 
@@ -62349,7 +62356,7 @@ void rt_fsopen(undefined4 param_1)
   undefined4 extraout_EBX;
   undefined8 uVar1;
   
-  uVar1 = rt_allocfp(0);
+  uVar1 = __allocfp(0);
   if ((int)uVar1 != 0) {
     rt_doopen(param_1,(int)((ulonglong)uVar1 >> 0x20),extraout_EBX,(int)uVar1);
   }
@@ -62369,11 +62376,12 @@ void rt_fsopen_wrapper(undefined4 param_1,undefined4 param_2,undefined4 param_3,
 }
 
 
-// ==== rt_freopen_close @ 000743f9 size=104
+// ==== close_file @ 000743f9 size=104
 
-/* Hand-named: rt_freopen_close (hand from Q1 rt_freopen_close (BSim 1.0)) */
+/* Hand-named: close_file (hand omfsig prefix24 vs Watcom 10 clib3r (Actua Soccer libs), module
+   fopen (was rt_freopen_close)) */
 
-longlong rt_freopen_close(int param_1,uint param_2)
+longlong close_file(int param_1,uint param_2)
 
 {
   int iVar1;
@@ -62389,7 +62397,7 @@ longlong rt_freopen_close(int param_1,uint param_2)
         puVar3 = puVar2;
         puVar2 = (undefined4 *)*puVar3;
         if (puVar2 == (undefined4 *)0x0) {
-          rt_set_errno(4);
+          __set_errno(4);
           return (ulonglong)param_2 << 0x20;
         }
       } while (param_1 != puVar2[1]);
@@ -62402,7 +62410,7 @@ LAB_00074420:
     iVar1 = puVar2[1];
     if (param_1 == iVar1) {
       if ((*(byte *)(iVar1 + 0xc) & 3) != 0) {
-        rt_doclose(iVar1,1);
+        __doclose(iVar1,1);
         param_1 = extraout_EBX;
       }
       goto LAB_00074420;
@@ -62422,7 +62430,7 @@ void rt_freopen(undefined4 param_1,undefined4 param_2,undefined4 param_3)
   int iVar1;
   undefined8 uVar2;
   
-  uVar2 = rt_freopen_close(param_3);
+  uVar2 = close_file(param_3);
   iVar1 = (int)uVar2;
   if (iVar1 != 0) {
     *(uint *)(iVar1 + 0xc) = *(uint *)(iVar1 + 0xc) & 0x4000;
@@ -62432,11 +62440,12 @@ void rt_freopen(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 }
 
 
-// ==== rt_fread @ 00074485 size=458
+// ==== fread @ 00074485 size=458
 
-/* Hand-named: rt_fread (hand from Q1 rt_fread (BSim 1.0)) */
+/* Hand-named: fread (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module fread
+   (was rt_fread)) */
 
-uint rt_fread(char *param_1,uint param_2,int param_3,int *param_4)
+uint fread(char *param_1,uint param_2,int param_3,int *param_4)
 
 {
   char cVar1;
@@ -62455,7 +62464,7 @@ uint rt_fread(char *param_1,uint param_2,int param_3,int *param_4)
   uint local_10;
   
   if ((*(byte *)(param_4 + 3) & 1) == 0) {
-    rt_set_errno(4);
+    __set_errno(4);
     *(byte *)(extraout_ECX + 0xc) = *(byte *)(extraout_ECX + 0xc) | 0x20;
     return 0;
   }
@@ -62464,7 +62473,7 @@ uint rt_fread(char *param_1,uint param_2,int param_3,int *param_4)
     return 0;
   }
   if (param_4[2] == 0) {
-    rt_ioalloc(param_4);
+    __ioalloc(param_4);
     local_14 = extraout_EBX;
   }
   local_10 = 0;
@@ -62473,7 +62482,7 @@ uint rt_fread(char *param_1,uint param_2,int param_3,int *param_4)
     pcVar5 = param_1 + local_14;
     do {
       if (param_4[1] == 0) {
-        uVar7 = rt_753f1(param_4);
+        uVar7 = __fill_buffer(param_4);
         param_1 = (char *)((ulonglong)uVar7 >> 0x20);
         pcVar5 = extraout_EBX_00;
         if ((int)uVar7 == 0) break;
@@ -62484,7 +62493,7 @@ uint rt_fread(char *param_1,uint param_2,int param_3,int *param_4)
       cVar1 = *pcVar6;
       if (cVar1 == '\r') {
         if (param_4[1] == 0) {
-          uVar7 = rt_753f1(param_4);
+          uVar7 = __fill_buffer(param_4);
           param_1 = (char *)((ulonglong)uVar7 >> 0x20);
           pcVar5 = extraout_EBX_01;
           if ((int)uVar7 == 0) break;
@@ -62542,7 +62551,7 @@ uint rt_fread(char *param_1,uint param_2,int param_3,int *param_4)
         local_14 = local_14 - iVar2;
         local_10 = local_10 + iVar2;
       }
-      iVar2 = rt_753f1(param_4);
+      iVar2 = __fill_buffer(param_4);
     } while (iVar2 != 0);
   }
 LAB_0007463d:
@@ -62571,34 +62580,36 @@ undefined8 rt_fclose(int param_1,undefined4 param_2)
     if (param_1 == puVar1[1]) break;
     puVar1 = (undefined4 *)*puVar1;
   }
-  uVar2 = rt_doclose_free(puVar1[1],1);
+  uVar2 = __shutdown_stream(puVar1[1],1);
   return CONCAT44(param_2,uVar2);
 }
 
 
-// ==== rt_doclose_free @ 0007467e size=21
+// ==== __shutdown_stream @ 0007467e size=21
 
-/* Hand-named: rt_doclose_free (hand from Q1 rt_doclose_free (callgraph r0)) */
+/* Hand-named: __shutdown_stream (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module
+   fclose (was rt_doclose_free)) */
 
 undefined4
-rt_doclose_free(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+__shutdown_stream(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   undefined4 uVar1;
   undefined4 extraout_EDX;
   undefined4 extraout_EBX;
   
-  uVar1 = rt_doclose(param_1,param_2,param_1,param_4,param_3);
-  rt_freefp(extraout_EBX,uVar1);
+  uVar1 = __doclose(param_1,param_2,param_1,param_4,param_3);
+  __freefp(extraout_EBX,uVar1);
   return extraout_EDX;
 }
 
 
-// ==== rt_hexdigit @ 00074693 size=12
+// ==== __hex @ 00074693 size=12
 
-/* Hand-named: rt_hexdigit (hand from Q1 rt_hexdigit (callgraph r0)) */
+/* Hand-named: __hex (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module fclose (was
+   rt_hexdigit)) */
 
-int rt_hexdigit(int param_1)
+int __hex(int param_1)
 
 {
   int iVar1;
@@ -62632,15 +62643,15 @@ void rt_tmpname(undefined4 param_1,uint param_2)
   *extraout_ECX = 0x74;
   puVar3 = extraout_ECX + 4;
   do {
-    uVar1 = rt_hexdigit(uVar2 & 0xf,puVar3);
+    uVar1 = __hex(uVar2 & 0xf,puVar3);
     *extraout_EDX = uVar1;
     puVar3 = extraout_EDX + -1;
     uVar2 = extraout_EBX >> 4;
   } while (puVar3 != extraout_ECX);
   *(undefined1 *)(extraout_ECX_00 + 5) = 0x5f;
-  uVar1 = rt_hexdigit((int)param_2 >> 4 & 0xf);
+  uVar1 = __hex((int)param_2 >> 4 & 0xf);
   *(undefined1 *)(extraout_ECX_01 + 6) = uVar1;
-  uVar1 = rt_hexdigit(param_2 & 0xf);
+  uVar1 = __hex(param_2 & 0xf);
   *(undefined1 *)(extraout_ECX_02 + 8) = 0x2e;
   *(undefined1 *)(extraout_ECX_02 + 9) = 0x74;
   *(undefined1 *)(extraout_ECX_02 + 10) = 0x6d;
@@ -62651,11 +62662,12 @@ void rt_tmpname(undefined4 param_1,uint param_2)
 }
 
 
-// ==== rt_doclose @ 00074708 size=137
+// ==== __doclose @ 00074708 size=137
 
-/* Hand-named: rt_doclose (hand from Q1 rt_doclose (BSim 1.0)) */
+/* Hand-named: __doclose (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module fclose
+   (was rt_doclose)) */
 
-uint rt_doclose(int param_1,int param_2)
+uint __doclose(int param_1,int param_2)
 
 {
   int iVar1;
@@ -62675,7 +62687,7 @@ uint rt_doclose(int param_1,int param_2)
   else {
     uVar4 = 0;
     if ((*(byte *)(param_1 + 0xd) & 0x10) != 0) {
-      uVar4 = rt_flush(param_1);
+      uVar4 = __flush(param_1);
       param_1 = extraout_ECX;
     }
     iVar1 = ftell_79035(param_1);
@@ -62690,7 +62702,7 @@ uint rt_doclose(int param_1,int param_2)
       iVar3 = extraout_ECX_02;
     }
     if ((*(byte *)(iVar3 + 0xc) & 8) != 0) {
-      rt_free(*(undefined4 *)(iVar3 + 8));
+      free(*(undefined4 *)(iVar3 + 8));
       *(undefined4 *)(extraout_ECX_03 + 8) = 0;
       iVar3 = extraout_ECX_03;
     }
@@ -62726,7 +62738,7 @@ uint rt_fwrite(undefined4 *param_1,uint param_2,int param_3,int *param_4)
   uint local_10;
   
   if ((*(byte *)(param_4 + 3) & 2) == 0) {
-    rt_set_errno(4);
+    __set_errno(4);
     *(byte *)(extraout_ECX + 0xc) = *(byte *)(extraout_ECX + 0xc) | 0x20;
     local_18 = 0;
   }
@@ -62737,7 +62749,7 @@ uint rt_fwrite(undefined4 *param_1,uint param_2,int param_3,int *param_4)
     }
     else {
       if (param_4[2] == 0) {
-        rt_ioalloc(param_4);
+        __ioalloc(param_4);
         local_14 = extraout_EBX;
       }
       uVar2 = param_4[3];
@@ -62756,7 +62768,7 @@ uint rt_fwrite(undefined4 *param_1,uint param_2,int param_3,int *param_4)
         do {
           uVar1 = *(undefined1 *)local_20;
           local_20 = (undefined4 *)((int)local_20 + 1);
-          rt_fputc(uVar1,param_4);
+          fputc(uVar1,param_4);
           if ((*(byte *)(param_4 + 3) & 0x30) != 0) break;
           local_18 = local_18 + 1;
         } while (extraout_EBX_00 != local_18);
@@ -62764,7 +62776,7 @@ uint rt_fwrite(undefined4 *param_1,uint param_2,int param_3,int *param_4)
           bVar5 = *(byte *)((int)param_4 + 0xd) & 0xfa;
           *(byte *)((int)param_4 + 0xd) = bVar5;
           *(byte *)((int)param_4 + 0xd) = bVar5 | 4;
-          rt_flush(param_4);
+          __flush(param_4);
         }
       }
       else {
@@ -62777,7 +62789,7 @@ uint rt_fwrite(undefined4 *param_1,uint param_2,int param_3,int *param_4)
             uVar4 = rt_790ab(param_4[4],local_20,local_10);
             if (uVar4 != 0xffffffff) {
               if (uVar4 == local_10) goto LAB_000748b9;
-              rt_set_errno(0xc);
+              __set_errno(0xc);
             }
             *(byte *)(param_4 + 3) = *(byte *)(param_4 + 3) | 0x20;
           }
@@ -62803,7 +62815,7 @@ uint rt_fwrite(undefined4 *param_1,uint param_2,int param_3,int *param_4)
             param_4[1] = param_4[1] + local_10;
             *(byte *)((int)param_4 + 0xd) = bVar5 | 0x10;
             if ((param_4[1] == param_4[5]) || ((bVar5 & 4) != 0)) {
-              rt_flush(param_4);
+              __flush(param_4);
             }
           }
 LAB_000748b9:
@@ -62823,58 +62835,62 @@ LAB_000748b9:
 }
 
 
-// ==== rt_exit_hook @ 00074978 size=1
+// ==== __null_int23_exit @ 00074978 size=1
 
-/* Hand-named: rt_exit_hook (hand from Q1 rt_exit_hook (callgraph r1)) */
+/* Hand-named: __null_int23_exit (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module
+   exit (was rt_exit_hook)) */
 
-void rt_exit_hook(void)
+void __null_int23_exit(void)
 
 {
   return;
 }
 
 
-// ==== rt_exit @ 00074979 size=24
+// ==== exit @ 00074979 size=24
 
-/* Hand-named: rt_exit (hand from Q1 rt_exit (callgraph r0)) */
+/* Hand-named: exit (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module exit (was
+   rt_exit)) */
 
-void rt_exit(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+void exit(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   undefined4 extraout_EDX;
   
-  (*(code *)PTR_rt_exit_hook_0009f0ac)(param_1,param_1,param_3,param_4,param_2);
-  (*(code *)PTR_rt_exit_hook_0009f0b0)();
-  rt_exit_dos(extraout_EDX);
+  (*(code *)PTR___null_int23_exit_0009f0ac)(param_1,param_1,param_3,param_4,param_2);
+  (*(code *)PTR___null_int23_exit_0009f0b0)();
+  _exit(extraout_EDX);
   return;
 }
 
 
-// ==== rt_exit_dos @ 00074991 size=22
+// ==== _exit @ 00074991 size=22
 
-/* Hand-named: rt_exit_dos (hand from Q1 rt_exit_dos (callgraph r1)) */
+/* Hand-named: _exit (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module exit (was
+   rt_exit_dos)) */
 
-undefined4 rt_exit_dos(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+undefined4 _exit(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   code *pcVar1;
   undefined4 uVar2;
   undefined1 extraout_DL;
   
-  (*(code *)PTR_rt_exit_hook_0009f0b0)(param_1,param_1,param_3,param_4,param_2);
-  (*(code *)PTR_rt_exit_hook_0009f0b4)();
-  rt_78879(0,0xff);
+  (*(code *)PTR___null_int23_exit_0009f0b0)(param_1,param_1,param_3,param_4,param_2);
+  (*(code *)PTR___null_int23_exit_0009f0b4)();
+  __FiniRtns(0,0xff);
   pcVar1 = (code *)swi(0x21);
   uVar2 = (*pcVar1)(CONCAT11(0x4c,extraout_DL));
   return uVar2;
 }
 
 
-// ==== rt_sprintf_putc @ 000749a7 size=19
+// ==== mem_putc @ 000749a7 size=19
 
-/* Hand-named: rt_sprintf_putc (hand from Q1 rt_sprintf_putc (BSim 1.0)) */
+/* Hand-named: mem_putc (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module sprintf
+   (was rt_sprintf_putc)) */
 
-void rt_sprintf_putc(int *param_1,undefined1 param_2)
+void mem_putc(int *param_1,undefined1 param_2)
 
 {
   undefined1 *puVar1;
@@ -62906,17 +62922,18 @@ void rt_vsprintf(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefi
   uStack_c = param_2;
   uStack_8 = param_4;
   uStack_4 = param_3;
-  iVar1 = rt_prtf(param_5,param_6,&local_10,rt_sprintf_putc);
+  iVar1 = __prtf(param_5,param_6,&local_10,mem_putc);
   *(undefined1 *)(param_5 + iVar1) = 0;
   return;
 }
 
 
-// ==== rt_malloc @ 000749ea size=227
+// ==== _nmalloc @ 000749ea size=227
 
-/* Hand-named: rt_malloc (hand from Q1 rt_malloc (BSim 1.0)) */
+/* Hand-named: _nmalloc (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module
+   nmalloc (was rt_malloc)) */
 
-undefined8 rt_malloc(uint param_1,undefined4 param_2)
+undefined8 _nmalloc(uint param_1,undefined4 param_2)
 
 {
   bool bVar1;
@@ -62946,7 +62963,7 @@ undefined8 rt_malloc(uint param_1,undefined4 param_2)
         }
         while (iVar2 != 0) {
           DAT_0009f0bc = iVar2;
-          iVar2 = rt_79c76(param_1,in_DS,iVar2);
+          iVar2 = __MemAllocator(param_1,in_DS,iVar2);
           if (iVar2 != 0) goto LAB_00074ab4;
           if (DAT_0009f0c0 < *(uint *)(extraout_ECX + 0x14)) {
             DAT_0009f0c0 = *(uint *)(extraout_ECX + 0x14);
@@ -62968,11 +62985,12 @@ LAB_00074ab4:
 }
 
 
-// ==== rt_free @ 00074acd size=94
+// ==== free @ 00074acd size=94
 
-/* Hand-named: rt_free (hand from Q1 rt_free (BSim 1.0)) */
+/* Hand-named: free (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module allocfp (was
+   rt_free)) */
 
-void rt_free(uint param_1)
+void free(uint param_1)
 
 {
   uint uVar1;
@@ -62983,7 +63001,7 @@ void rt_free(uint param_1)
       (*(uint *)(uVar1 + 8) != 0 && ((param_1 < uVar1 || (*(uint *)(uVar1 + 8) <= param_1))));
       uVar1 = *(uint *)(uVar1 + 8)) {
   }
-  rt_79d1e(param_1,in_DS,uVar1);
+  __MemFree(param_1,in_DS,uVar1);
   if ((extraout_ECX != DAT_0009f0bc) && (DAT_0009f0c0 < *(uint *)(extraout_ECX + 0x14))) {
     DAT_0009f0c0 = *(uint *)(extraout_ECX + 0x14);
   }
@@ -63107,21 +63125,22 @@ void rt_no_op_stub(void)
 }
 
 
-// ==== sos_TimerInitSystem @ 00074c0c size=215
+// ==== sosTIMERInitSystem @ 00074c0c size=215
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Hand-named: sos_TimerInitSystem (hand from Q1 sos_TimerInitSystem (BSim 0.91)) */
+/* Hand-named: sosTIMERInitSystem (hand omfsig prefix32 vs HMI SOS 3.x (Actua Soccer libs), module
+   C:\DONS\SOSDIGIW\SOSLIB\SRC\sostmr.c (was sos_TimerInitSystem)) */
 
-undefined4 sos_TimerInitSystem(uint param_1,uint param_2)
+undefined4 sosTIMERInitSystem(uint param_1,uint param_2)
 
 {
   DAT_000a03b0._0_1_ = (param_2 & 2) != 0;
   if ((param_2 & 1) == 0) {
     DAT_000a03ac._0_1_ = 1;
     DAT_000a0548 = DAT_000a0548 | 1;
-    rt_pic_mask();
+    sosTIMERDRVDisable();
     rt_7a47a();
-    rt_pic_unmask();
+    sosTIMERDRVEnable();
   }
   else {
     DAT_000a0548 = DAT_000a0548 & 0xfe;
@@ -63131,14 +63150,14 @@ undefined4 sos_TimerInitSystem(uint param_1,uint param_2)
   }
   else {
     if (param_1 == 0xff00) {
-      sos_TimerSetRate(0xffff);
+      sosTIMERSetRate(0xffff);
       _DAT_000a05cc = 0xff00;
     }
     else {
-      sos_TimerSetRate((int)(0x1234dc / (ulonglong)param_1),(int)(0x1234dc % (ulonglong)param_1));
+      sosTIMERSetRate((int)(0x1234dc / (ulonglong)param_1),(int)(0x1234dc % (ulonglong)param_1));
       _DAT_000a05cc = param_1;
     }
-    _DAT_000a058c = sos_wrapper;
+    _DAT_000a058c = sosTIMEROldHandler;
     _DAT_000a060c = 0x10000;
   }
   return 0;
@@ -63154,9 +63173,9 @@ longlong sos_scale_timer_value(undefined4 param_1,uint param_2)
 
 {
   if ((DAT_000a0548 & 1) != 0) {
-    rt_pic_mask();
-    rt_7a58d();
-    rt_pic_unmask();
+    sosTIMERDRVDisable();
+    sosTIMERDRVUnInit();
+    sosTIMERDRVEnable();
   }
   return (ulonglong)param_2 << 0x20;
 }
@@ -63181,12 +63200,12 @@ undefined4 sos_TimerAdd(uint param_1,undefined4 param_2,uint *param_3)
   }
   if (local_14 < 0x10) {
     if ((DAT_000a0548 & 1) != 0) {
-      rt_pic_mask();
+      sosTIMERDRVDisable();
     }
     *(undefined4 *)(&DAT_000a0550 + local_14 * 4) = param_2;
     *(uint *)(&DAT_000a0590 + local_14 * 4) = param_1;
     if ((uint)(0x1234dc / (ulonglong)param_1) < DAT_000a054c) {
-      sos_TimerSetRate((int)(0x1234dc / (ulonglong)param_1),(int)(0x1234dc % (ulonglong)param_1));
+      sosTIMERSetRate((int)(0x1234dc / (ulonglong)param_1),(int)(0x1234dc % (ulonglong)param_1));
       local_1c = (uint)((ulonglong)(DAT_000a054c << 0x10) / (0x1234dc / (ulonglong)param_1));
     }
     for (local_14 = 0; local_14 < 0x10; local_14 = local_14 + 1) {
@@ -63213,7 +63232,7 @@ undefined4 sos_TimerAdd(uint param_1,undefined4 param_2,uint *param_3)
       }
     }
     if ((DAT_000a0548 & 1) != 0) {
-      rt_pic_unmask();
+      sosTIMERDRVEnable();
     }
     *param_3 = uVar1;
     local_24 = 0;
@@ -63225,12 +63244,12 @@ undefined4 sos_TimerAdd(uint param_1,undefined4 param_2,uint *param_3)
 }
 
 
-// ==== sos_TimerSetRateAndRecompute @ 00074f0b size=360
+// ==== sosTIMERAlterEventRate @ 00074f0b size=360
 
-/* Hand-named: sos_TimerSetRateAndRecompute (hand inkling guess: Sets timer rate and recomputes
-   per-channel step values) */
+/* Hand-named: sosTIMERAlterEventRate (hand omfsig prefix32 vs HMI SOS 3.x (Actua Soccer libs),
+   module C:\DONS\SOSDIGIW\SOSLIB\SRC\sostmr.c (was sos_TimerSetRateAndRecompute)) */
 
-undefined4 sos_TimerSetRateAndRecompute(uint param_1,uint param_2)
+undefined4 sosTIMERAlterEventRate(uint param_1,uint param_2)
 
 {
   undefined4 local_1c;
@@ -63242,11 +63261,11 @@ undefined4 sos_TimerSetRateAndRecompute(uint param_1,uint param_2)
     }
     else {
       if ((DAT_000a0548 & 1) != 0) {
-        rt_pic_mask();
+        sosTIMERDRVDisable();
       }
       *(uint *)(&DAT_000a0590 + param_1 * 4) = param_2;
       if ((uint)(0x1234dc / (ulonglong)param_2) < DAT_000a054c) {
-        sos_TimerSetRate((int)(0x1234dc / (ulonglong)param_2),(int)(0x1234dc % (ulonglong)param_2));
+        sosTIMERSetRate((int)(0x1234dc / (ulonglong)param_2),(int)(0x1234dc % (ulonglong)param_2));
       }
       for (local_18 = 0; local_18 < 0x10; local_18 = local_18 + 1) {
         if (*(int *)(&DAT_000a0550 + local_18 * 4) != 0) {
@@ -63268,7 +63287,7 @@ undefined4 sos_TimerSetRateAndRecompute(uint param_1,uint param_2)
         }
       }
       if ((DAT_000a0548 & 1) != 0) {
-        rt_pic_unmask();
+        sosTIMERDRVEnable();
       }
       local_1c = 0;
     }
@@ -63280,12 +63299,12 @@ undefined4 sos_TimerSetRateAndRecompute(uint param_1,uint param_2)
 }
 
 
-// ==== sos_TimerRecalc @ 00075073 size=408
+// ==== sosTIMERRemoveEvent @ 00075073 size=408
 
-/* Hand-named: sos_TimerRecalc (hand inkling guess: recomputes timer rate and per-channel increments
-   from active timers) */
+/* Hand-named: sosTIMERRemoveEvent (hand omfsig prefix24 vs HMI SOS 3.x (Actua Soccer libs), module
+   C:\DONS\SOSDIGIW\SOSLIB\SRC\sostmr.c (was sos_TimerRecalc)) */
 
-longlong sos_TimerRecalc(int param_1,uint param_2)
+longlong sosTIMERRemoveEvent(int param_1,uint param_2)
 
 {
   uint local_20;
@@ -63301,13 +63320,13 @@ longlong sos_TimerRecalc(int param_1,uint param_2)
     }
   }
   if (local_20 == 0) {
-    sos_TimerSetRate(0xffff);
+    sosTIMERSetRate(0xffff);
   }
   else {
-    sos_TimerSetRate((int)(0x1234dc / (ulonglong)local_20),(int)(0x1234dc % (ulonglong)local_20));
+    sosTIMERSetRate((int)(0x1234dc / (ulonglong)local_20),(int)(0x1234dc % (ulonglong)local_20));
   }
   if ((DAT_000a0548 & 1) != 0) {
-    rt_pic_mask();
+    sosTIMERDRVDisable();
   }
   for (local_1c = 0; local_1c < 0x10; local_1c = local_1c + 1) {
     if (*(int *)(&DAT_000a0550 + local_1c * 4) != 0) {
@@ -63329,7 +63348,7 @@ longlong sos_TimerRecalc(int param_1,uint param_2)
     }
   }
   if ((DAT_000a0548 & 1) != 0) {
-    rt_pic_unmask();
+    sosTIMERDRVEnable();
   }
   return (ulonglong)param_2 << 0x20;
 }
@@ -63347,15 +63366,16 @@ undefined8 sos_lookup_pair(int param_1,undefined4 param_2)
 }
 
 
-// ==== sos_TimerSetRate @ 00075235 size=53
+// ==== sosTIMERSetRate @ 00075235 size=53
 
-/* Hand-named: sos_TimerSetRate (hand from Q1 sos_TimerSetRate (callgraph r0)) */
+/* Hand-named: sosTIMERSetRate (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   C:\DONS\SOSDIGIW\SOSLIB\SRC\sostmr.c (was sos_TimerSetRate)) */
 
-longlong sos_TimerSetRate(undefined4 param_1,uint param_2)
+longlong sosTIMERSetRate(undefined4 param_1,uint param_2)
 
 {
   DAT_000a054c = param_1;
-  rt_7a434();
+  sosTIMERDRVSetRate();
   return (ulonglong)param_2 << 0x20;
 }
 
@@ -63388,14 +63408,15 @@ void sos_dispatch_callbacks(void)
 }
 
 
-// ==== sos_wrapper @ 0007530a size=26
+// ==== sosTIMEROldHandler @ 0007530a size=26
 
-/* Hand-named: sos_wrapper (hand inkling guess: calls rt_7a609, no other logic) */
+/* Hand-named: sosTIMEROldHandler (hand omfsig prefix24 vs HMI SOS 3.x (Actua Soccer libs), module
+   C:\DONS\SOSDIGIW\SOSLIB\SRC\SOSTMR.C (was sos_wrapper)) */
 
-void sos_wrapper(void)
+void sosTIMEROldHandler(void)
 
 {
-  rt_swap_words_or_return_args();
+  sosTIMERDRVCallOld();
   return;
 }
 
@@ -63411,11 +63432,12 @@ void sos_no_op_stub(void)
 }
 
 
-// ==== rt_75339 @ 00075339 size=137
+// ==== fgetc @ 00075339 size=137
 
-/* Hand-named: rt_75339 (hand from Q1 rt_54414 (BSim 1.0)) */
+/* Hand-named: fgetc (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module fgetc (was
+   rt_75339)) */
 
-undefined8 rt_75339(undefined4 *param_1,undefined4 param_2)
+undefined8 fgetc(undefined4 *param_1,undefined4 param_2)
 
 {
   uint uVar1;
@@ -63424,7 +63446,7 @@ undefined8 rt_75339(undefined4 *param_1,undefined4 param_2)
   undefined8 uVar3;
   
   if ((*(byte *)(param_1 + 3) & 1) == 0) {
-    rt_set_errno(4);
+    __set_errno(4);
     uVar1 = 0xffffffff;
     *(byte *)(extraout_EDX + 3) = *(byte *)(extraout_EDX + 3) | 0x20;
     param_1 = extraout_EDX;
@@ -63433,7 +63455,7 @@ undefined8 rt_75339(undefined4 *param_1,undefined4 param_2)
     iVar2 = param_1[1];
     param_1[1] = iVar2 + -1;
     if (iVar2 + -1 < 0) {
-      uVar3 = rt_753c2(param_1);
+      uVar3 = __filbuf(param_1);
       param_1 = (undefined4 *)((ulonglong)uVar3 >> 0x20);
       uVar1 = (uint)uVar3;
     }
@@ -63448,7 +63470,7 @@ undefined8 rt_75339(undefined4 *param_1,undefined4 param_2)
       iVar2 = param_1[1];
       param_1[1] = iVar2 + -1;
       if (iVar2 + -1 < 0) {
-        uVar3 = rt_753c2(param_1);
+        uVar3 = __filbuf(param_1);
       }
       else {
         uVar3 = CONCAT44(param_1,(uint)*(byte *)*param_1);
@@ -63466,18 +63488,19 @@ undefined8 rt_75339(undefined4 *param_1,undefined4 param_2)
 }
 
 
-// ==== rt_753c2 @ 000753c2 size=47
+// ==== __filbuf @ 000753c2 size=47
 
-/* Hand-named: rt_753c2 (hand from Q1 rt_5449d (BSim 1.0)) */
+/* Hand-named: __filbuf (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module fgetc (was
+   rt_753c2)) */
 
-undefined8 rt_753c2(undefined4 param_1,undefined4 param_2)
+undefined8 __filbuf(undefined4 param_1,undefined4 param_2)
 
 {
   byte *pbVar1;
   undefined4 *puVar2;
   undefined8 uVar3;
   
-  uVar3 = rt_753f1(param_1,param_1);
+  uVar3 = __fill_buffer(param_1,param_1);
   puVar2 = (undefined4 *)((ulonglong)uVar3 >> 0x20);
   if ((int)uVar3 == 0) {
     return CONCAT44(param_2,0xffffffff);
@@ -63489,11 +63512,12 @@ undefined8 rt_753c2(undefined4 param_1,undefined4 param_2)
 }
 
 
-// ==== rt_753f1 @ 000753f1 size=171
+// ==== __fill_buffer @ 000753f1 size=171
 
-/* Hand-named: rt_753f1 (hand from Q1 rt_544cc (BSim 1.0)) */
+/* Hand-named: __fill_buffer (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module
+   fgetc (was rt_753f1)) */
 
-undefined8 rt_753f1(undefined4 *param_1,undefined4 param_2)
+undefined8 __fill_buffer(undefined4 *param_1,undefined4 param_2)
 
 {
   uint uVar1;
@@ -63506,11 +63530,11 @@ undefined8 rt_753f1(undefined4 *param_1,undefined4 param_2)
   undefined4 uVar4;
   
   if (param_1[2] == 0) {
-    rt_ioalloc();
+    __ioalloc();
     param_1 = extraout_ECX;
   }
   if (((*(byte *)((int)param_1 + 0xd) & 0x20) != 0) && ((*(byte *)((int)param_1 + 0xd) & 6) != 0)) {
-    rt_7a668(0x2000);
+    __flushall(0x2000);
     param_1 = extraout_ECX_00;
   }
   uVar1 = param_1[3];
@@ -63518,7 +63542,7 @@ undefined8 rt_753f1(undefined4 *param_1,undefined4 param_2)
   *(byte *)(param_1 + 3) = *(byte *)(param_1 + 3) & 0xfb;
   if (((uVar1 & 0x2400) == 0x2400) && (param_1[4] == 0)) {
     param_1[1] = 0;
-    iVar2 = rt_7a697();
+    iVar2 = getche();
     puVar3 = extraout_ECX_01;
     if (iVar2 != -1) {
       *(char *)*extraout_ECX_01 = (char)iVar2;
@@ -63551,7 +63575,8 @@ undefined8 rt_753f1(undefined4 *param_1,undefined4 param_2)
 
 // ==== _setjmp @ 0007549c size=53
 
-/* Hand-named: _setjmp (hand omfsig prefix24 vs Open Watcom 1.9/v2 libs (was rt_save_context)) */
+/* Hand-named: _setjmp (hand omfsig prefix24 vs Open Watcom 1.9/v2 libs (was rt_save_context) | sig
+   agrees (Watcom 10 clib3r (Actua Soccer libs) full)) */
 
 undefined4 _setjmp(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
@@ -63587,8 +63612,8 @@ undefined4 _setjmp(undefined4 *param_1,undefined4 param_2,undefined4 param_3,und
 
 // ==== segread @ 0007552e size=40
 
-/* Hand-named: segread (hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_get_segment_registers))
-    */
+/* Hand-named: segread (hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_get_segment_registers) |
+   sig agrees (Watcom 10 clib3r (Actua Soccer libs) full)) */
 
 void segread(undefined2 *param_1)
 
@@ -63716,7 +63741,7 @@ LAB_000755c9:
   }
   else {
     local_38[iVar8] = 0;
-    uVar13 = rt_7a746(local_38,&local_24,iVar10);
+    uVar13 = __ZBuf2F(local_38,&local_24,iVar10);
     if (extraout_EBX < 0x135) {
       if (extraout_EBX < -0x145) {
         rt_78b32((int)uVar13,(int)((ulonglong)uVar13 >> 0x20),0);
@@ -63751,11 +63776,12 @@ LAB_000755c9:
 }
 
 
-// ==== rt_fputc @ 000756ff size=164
+// ==== fputc @ 000756ff size=164
 
-/* Hand-named: rt_fputc (hand from Q1 rt_fputc (BSim 1.0)) */
+/* Hand-named: fputc (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module fputc (was
+   rt_fputc)) */
 
-uint rt_fputc(int param_1,int *param_2)
+uint fputc(int param_1,int *param_2)
 
 {
   uint uVar1;
@@ -63770,14 +63796,14 @@ uint rt_fputc(int param_1,int *param_2)
   undefined8 uVar4;
   
   if ((*(byte *)(param_2 + 3) & 2) == 0) {
-    rt_set_errno(4);
+    __set_errno(4);
     *(byte *)(extraout_EDX + 0xc) = *(byte *)(extraout_EDX + 0xc) | 0x20;
 LAB_0007571a:
     uVar1 = 0xffffffff;
   }
   else {
     if (param_2[2] == 0) {
-      rt_ioalloc(param_2);
+      __ioalloc(param_2);
       param_2 = extraout_EDX_00;
       param_1 = extraout_EBX;
     }
@@ -63789,7 +63815,7 @@ LAB_0007571a:
       *param_2 = *param_2 + 1;
       param_2[1] = iVar2 + 1;
       if (iVar2 + 1 == param_2[5]) {
-        uVar4 = rt_flush(param_2);
+        uVar4 = __flush(param_2);
         param_2 = (int *)((ulonglong)uVar4 >> 0x20);
         uVar1 = extraout_ECX;
         param_1 = extraout_EBX_00;
@@ -63803,7 +63829,7 @@ LAB_0007571a:
     *param_2 = *param_2 + 1;
     param_2[1] = iVar2 + 1;
     if (((uVar1 & param_2[3]) != 0) || (iVar2 + 1 == param_2[5])) {
-      iVar2 = rt_flush(param_2);
+      iVar2 = __flush(param_2);
       bVar3 = extraout_BL;
       if (iVar2 != 0) goto LAB_0007571a;
     }
@@ -63857,7 +63883,7 @@ undefined4 rt_fflush(undefined4 *param_1)
         uVar3 = 0xffffffff;
       }
       else if (iVar2 != extraout_ECX[1]) {
-        rt_set_errno(0xc);
+        __set_errno(0xc);
         uVar3 = 0xffffffff;
         *(byte *)(extraout_ECX_00 + 3) = *(byte *)(extraout_ECX_00 + 3) | 0x20;
         param_1 = extraout_ECX_00;
@@ -63870,11 +63896,12 @@ undefined4 rt_fflush(undefined4 *param_1)
 }
 
 
-// ==== rt_757b3 @ 000757b3 size=38
+// ==== byteswap @ 000757b3 size=38
 
-/* Hand-named: rt_757b3 (hand from Q1 rt_5488f (BSim 1.0)) */
+/* Hand-named: byteswap (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module qsort (was
+   rt_757b3)) */
 
-void __stdcall rt_757b3(void)
+void __stdcall byteswap(void)
 
 {
   undefined1 uVar1;
@@ -63911,11 +63938,12 @@ void __stdcall rt_757b3(void)
 }
 
 
-// ==== rt_757d9 @ 000757d9 size=88
+// ==== med3 @ 000757d9 size=88
 
-/* Hand-named: rt_757d9 (hand from Q1 rt_548b5 (BSim 1.0)) */
+/* Hand-named: med3 (hand omfsig prefix24 vs Watcom 10 clib3r (Actua Soccer libs), module qsort (was
+   rt_757d9)) */
 
-undefined4 rt_757d9(undefined4 param_1,undefined4 param_2,undefined4 param_3,code *param_4)
+undefined4 med3(undefined4 param_1,undefined4 param_2,undefined4 param_3,code *param_4)
 
 {
   int iVar1;
@@ -64026,15 +64054,15 @@ LAB_00075877:
             local_38 = param_3 * ((uint)local_164 >> 3);
             local_58 = local_38 * 2;
             local_48 = (undefined4 *)
-                       rt_757d9(local_160,(undefined4 *)((int)local_160 + local_38),
-                                (undefined1 *)((int)local_160 + local_58),local_2c);
+                       med3(local_160,(undefined4 *)((int)local_160 + local_38),
+                            (undefined1 *)((int)local_160 + local_58),local_2c);
             puVar10 = (undefined4 *)
-                      rt_757d9((int)puVar10 - local_38,puVar10,
-                               (undefined1 *)(local_38 + (int)puVar10),local_2c);
+                      med3((int)puVar10 - local_38,puVar10,(undefined1 *)(local_38 + (int)puVar10),
+                           local_2c);
             puVar9 = (undefined4 *)
-                     rt_757d9((int)puVar9 - local_58,(int)puVar9 - local_38,puVar9,local_2c);
+                     med3((int)puVar9 - local_58,(int)puVar9 - local_38,puVar9,local_2c);
           }
-          uVar11 = rt_757d9(local_48,puVar10,puVar9,local_2c);
+          uVar11 = med3(local_48,puVar10,puVar9,local_2c);
         }
         if (local_34 == 0) {
           local_44 = &local_5c;
@@ -64042,7 +64070,7 @@ LAB_00075877:
         }
         else {
           local_44 = local_160;
-          rt_757b3(local_160,(int)((ulonglong)uVar11 >> 0x20));
+          byteswap(local_160,(int)((ulonglong)uVar11 >> 0x20));
         }
         local_20 = (undefined4 *)((int)local_160 + (int)((int)local_164 + -1) * param_3);
         local_24 = local_160;
@@ -64060,7 +64088,7 @@ LAB_00075a63:
               *extraout_EBX_01 = uVar2;
             }
             else {
-              rt_757b3();
+              byteswap();
               puVar10 = extraout_EBX_02;
             }
             local_24 = (undefined4 *)((int)local_24 + param_3);
@@ -64077,7 +64105,7 @@ LAB_00075a63:
               *local_20 = uVar2;
             }
             else {
-              rt_757b3();
+              byteswap();
               puVar10 = extraout_EBX_04;
             }
             local_20 = (undefined4 *)((int)local_20 - param_3);
@@ -64090,7 +64118,7 @@ LAB_00075a63:
             *local_1c = uVar2;
           }
           else {
-            rt_757b3();
+            byteswap();
             puVar10 = extraout_EBX_05;
           }
           puVar10 = (undefined4 *)((int)puVar10 + param_3);
@@ -64192,7 +64220,7 @@ LAB_00075a63:
               puVar10 = extraout_EBX_00;
             }
             else {
-              rt_757b3();
+              byteswap();
               puVar10 = extraout_EBX;
             }
           }
@@ -64211,11 +64239,12 @@ LAB_00075915:
 }
 
 
-// ==== rt_fseek_adjust @ 00075c6e size=66
+// ==== __update_buffer @ 00075c6e size=66
 
-/* Hand-named: rt_fseek_adjust (hand from Q1 rt_fseek_adjust (BSim 1.0)) */
+/* Hand-named: __update_buffer (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module
+   fseek (was rt_fseek_adjust)) */
 
-undefined4 rt_fseek_adjust(int param_1,int *param_2)
+undefined4 __update_buffer(int param_1,int *param_2)
 
 {
   *(byte *)(param_2 + 3) = *(byte *)(param_2 + 3) & 0xef;
@@ -64230,12 +64259,13 @@ undefined4 rt_fseek_adjust(int param_1,int *param_2)
 }
 
 
-// ==== rt_fseek @ 00075cb0 size=252
+// ==== fseek @ 00075cb0 size=252
 
 /* WARNING: Removing unreachable block (ram,0x00075d2a) */
-/* Hand-named: rt_fseek (hand from Q1 rt_fseek (BSim 1.0)) */
+/* Hand-named: fseek (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module fseek
+   (was rt_fseek)) */
 
-undefined4 rt_fseek(undefined4 *param_1,int param_2,uint param_3)
+undefined4 fseek(undefined4 *param_1,int param_2,uint param_3)
 
 {
   int iVar1;
@@ -64249,7 +64279,7 @@ undefined4 rt_fseek(undefined4 *param_1,int param_2,uint param_3)
   if ((*(byte *)(param_1 + 3) & 6) == 0) {
     if (param_3 == 0) {
       iVar1 = tell_7a90a(param_1[4]);
-      iVar1 = rt_fseek_adjust(param_2 - (iVar1 - *(int *)(extraout_ECX_01 + 4)),extraout_ECX_01);
+      iVar1 = __update_buffer(param_2 - (iVar1 - *(int *)(extraout_ECX_01 + 4)),extraout_ECX_01);
       if ((iVar1 != 0) &&
          (iVar1 = __lseek(*(undefined4 *)(extraout_ECX_02 + 0x10),param_2), iVar1 == -1)) {
         return 0xffffffff;
@@ -64257,7 +64287,7 @@ undefined4 rt_fseek(undefined4 *param_1,int param_2,uint param_3)
     }
     else if (param_3 < 2) {
       iVar1 = param_1[1];
-      iVar2 = rt_fseek_adjust(param_2,param_1);
+      iVar2 = __update_buffer(param_2,param_1);
       if ((iVar2 != 0) &&
          (iVar1 = __lseek(*(undefined4 *)(extraout_ECX_00 + 0x10),param_2 - iVar1), iVar1 == -1)) {
         return 0xffffffff;
@@ -64283,7 +64313,7 @@ undefined4 rt_fseek(undefined4 *param_1,int param_2,uint param_3)
       *param_1 = param_1[2];
     }
     else {
-      iVar1 = rt_flush(param_1);
+      iVar1 = __flush(param_1);
       param_1 = extraout_ECX;
       if (iVar1 != 0) {
         if (extraout_EBX != 0) {
@@ -64293,7 +64323,7 @@ undefined4 rt_fseek(undefined4 *param_1,int param_2,uint param_3)
           return 0xffffffff;
         }
 LAB_00075cd6:
-        rt_set_errno(9);
+        __set_errno(9);
         return 0xffffffff;
       }
     }
@@ -64358,17 +64388,17 @@ undefined4 __stdcall __CHK(undefined4 param_1)
   
   LOCK();
   UNLOCK();
-  rt_stack_overflow_handler(param_1);
+  __STK(param_1);
   return in_EAX;
 }
 
 
-// ==== rt_stack_overflow_handler @ 00075ded size=30
+// ==== __STK @ 00075ded size=30
 
-/* Hand-named: rt_stack_overflow_handler (hand inkling guess: stack overflow check and
-   COMSPEC/COMMAND.COM fallback.) */
+/* Hand-named: __STK (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module stk386 (was
+   rt_stack_overflow_handler)) */
 
-uint rt_stack_overflow_handler(undefined1 *param_1)
+uint __STK(undefined1 *param_1)
 
 {
   uint uVar1;
@@ -64402,7 +64432,7 @@ uint rt_stack_overflow_handler(undefined1 *param_1)
     if (pcVar3 == (char *)0x0) {
       pcVar5 = s_COMMAND_COM_00094714;
     }
-    sos_timer_init_7a997(auStack_18,0,pcVar5,pcVar3,iVar4,0);
+    __Slash_C(auStack_18,0,pcVar5,pcVar3,iVar4,0);
     uVar1 = sos_wrapper_7ad0d();
   }
   return uVar1;
@@ -64437,7 +64467,7 @@ undefined4 rt_stack_overflow(void)
     if (pcVar2 == (char *)0x0) {
       pcVar4 = s_COMMAND_COM_00094714;
     }
-    sos_timer_init_7a997(auStack_18,0,pcVar4,pcVar2,iVar3,0);
+    __Slash_C(auStack_18,0,pcVar4,pcVar2,iVar3,0);
     uVar1 = sos_wrapper_7ad0d();
   }
   return uVar1;
@@ -64471,7 +64501,7 @@ undefined8 rt_system(undefined4 param_1,undefined4 param_2)
     if (pcVar1 == (char *)0x0) {
       pcVar4 = s_COMMAND_COM_00094714;
     }
-    sos_timer_init_7a997(local_18,0,pcVar4,pcVar1,iVar3,0);
+    __Slash_C(local_18,0,pcVar4,pcVar1,iVar3,0);
     uVar2 = sos_wrapper_7ad0d();
   }
   return CONCAT44(param_2,uVar2);
@@ -64515,7 +64545,7 @@ undefined4 rt_path_lookup(undefined4 param_1,uint param_2)
     } while (cVar2 != '\0');
     iVar5 = extraout_EBX;
     if (extraout_EBX == 0) {
-      uVar8 = rt_malloc(~uVar4);
+      uVar8 = _nmalloc(~uVar4);
       param_2 = (uint)((ulonglong)uVar8 >> 0x20);
       iVar5 = (int)uVar8;
       if (iVar5 == 0) {
@@ -64523,12 +64553,12 @@ undefined4 rt_path_lookup(undefined4 param_1,uint param_2)
         goto LAB_00075ea9;
       }
     }
-    uVar3 = sos_strncpy(iVar5,acStack_a0,param_2);
+    uVar3 = strncpy(iVar5,acStack_a0,param_2);
   }
   else {
     uVar3 = 1;
 LAB_00075ea9:
-    rt_set_errno(uVar3);
+    __set_errno(uVar3);
     uVar3 = 0;
   }
   return uVar3;
@@ -64551,7 +64581,7 @@ longlong rt_75f0d(undefined4 param_1)
   pcVar1 = (code *)swi(0x21);
   iVar2 = (*pcVar1)(CONCAT11(0x3b,(char)param_1),param_1);
   if ((in_CF & 1) != 0) {
-    uVar3 = rt_7ad54((iVar2 << 1 | (uint)in_CF) >> 1 & 0xffff);
+    uVar3 = __set_errno_dos((iVar2 << 1 | (uint)in_CF) >> 1 & 0xffff);
     return CONCAT44(unaff_retaddr,uVar3);
   }
   return (ulonglong)unaff_retaddr << 0x20;
@@ -64566,7 +64596,7 @@ undefined4
 rt_sos_wrapper(undefined4 param_1,undefined4 param_2,undefined4 *param_3,undefined4 param_4)
 
 {
-  sos_7adba(param_1,param_3,param_4);
+  __int386x(param_1,param_3,param_4);
   return *param_3;
 }
 
@@ -64586,16 +64616,17 @@ void rt_wrapper(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefin
   local_c = &stack0x0000000c;
   uStack_8 = param_2;
   uStack_4 = param_3;
-  rt_78216(param_5,param_6,&local_c);
+  __fprtf(param_5,param_6,&local_c);
   return;
 }
 
 
-// ==== sos_75f66 @ 00075f66 size=29
+// ==== getch @ 00075f66 size=29
 
-/* Hand-named: sos_75f66 (hand from Q1 sos_57a32 (BSim 1.0)) */
+/* Hand-named: getch (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module getch (was
+   sos_75f66)) */
 
-undefined8 sos_75f66(undefined4 param_1,undefined4 param_2)
+undefined8 getch(undefined4 param_1,undefined4 param_2)
 
 {
   code *pcVar1;
@@ -64614,7 +64645,8 @@ undefined8 sos_75f66(undefined4 param_1,undefined4 param_2)
 
 // ==== fgetpos @ 00075f83 size=19
 
-/* Hand-named: fgetpos (hand omfsig full vs Open Watcom 1.9/v2 libs (was sos_ftell_wrapper)) */
+/* Hand-named: fgetpos (hand omfsig full vs Open Watcom 1.9/v2 libs (was sos_ftell_wrapper) | sig
+   agrees (Watcom 10 clib3r (Actua Soccer libs) full)) */
 
 bool fgetpos(void)
 
@@ -64634,7 +64666,7 @@ bool fgetpos(void)
 void sos_fseek_wrapper(undefined4 param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4)
 
 {
-  rt_fseek(param_1,*param_2,0,param_4,param_3);
+  fseek(param_1,*param_2,0,param_4,param_3);
   return;
 }
 
@@ -65220,12 +65252,12 @@ int sos_set_timer_or_sound(int param_1)
 }
 
 
-// ==== sos_timer_tick_7690b @ 0007690b size=61
+// ==== sosDIGIUnInitSystem @ 0007690b size=61
 
-/* Hand-named: sos_timer_tick_7690b (hand inkling guess: polls SOS timer, clears bit, returns scaled
-   value) */
+/* Hand-named: sosDIGIUnInitSystem (hand omfsig prefix32 vs HMI SOS 3.x (Actua Soccer libs), module
+   C:\DONS\SOSDIGIW\SOSLIB\SRC\SOSINIT.C (was sos_timer_tick_7690b)) */
 
-longlong sos_timer_tick_7690b(undefined4 param_1,uint param_2)
+longlong sosDIGIUnInitSystem(undefined4 param_1,uint param_2)
 
 {
   int iVar1;
@@ -65308,7 +65340,7 @@ int sos_init_sos_state(int param_1)
       _DAT_000a0ade = sos_nullsub_7be6f;
       _DAT_000a0ae4 = sos_nullsub;
       _DAT_000a0aea = sos_nullsub_7bea1;
-      _DAT_000a0af0 = sos_set_timer_params;
+      _DAT_000a0af0 = callbackSetInstrumentData;
       _DAT_000a0b8c = sos_nullsub_7bf0e;
       _DAT_000a0b92 = sos_nullsub_7bf27;
       _DAT_000a0b98 = sos_nullsub_7bf40;
@@ -65490,11 +65522,11 @@ int sos_init_sound_channel(byte *param_1,uint *param_2)
         uVar3 = sos_timer_callback_7cdb5();
         *(undefined6 *)(param_1 + 0x34) = uVar3;
       }
-      sos_7cabc();
-      sos_timer_callback_7c9e7();
-      sos_timer_callback_7ca6b();
-      sos_timer_callback_7ca45();
-      sos_timer_callback_7ca1c();
+      sosDIGIInitForWindows();
+      sosDRVInit();
+      sosDRVSetAction();
+      sosDRVSetRate();
+      sosDRVStart();
       *param_1 = *param_1 | 1;
       *param_2 = local_18;
       local_24 = 0;
@@ -65527,21 +65559,20 @@ undefined4 sos_channel_stop(int param_1,int param_2,int param_3)
     pbVar1[0x31] = 0;
     pbVar1[0x32] = 0;
     pbVar1[0x33] = 0;
-    sos_timer_callback_7c8b1();
-    sos_timer_callback_7c9c4();
-    sos_timer_init_7caf1();
+    sosDRVStop();
+    sosDRVUnInit();
+    sosDIGIUnInitForWindows();
     if (((*pbVar1 & 4) != 0) && (param_2 != 0)) {
       *pbVar1 = *pbVar1 & 0xfb;
-      cVar2 = sos_timer_callback_7cc10();
+      cVar2 = sosDRVIsWindowsActive();
       if (cVar2 == '\x03') {
         sos_timer_init(*(undefined2 *)(pbVar1 + 0xf8),*(undefined4 *)(pbVar1 + 0x100),
                        *(undefined4 *)(pbVar1 + 0xf0));
       }
       else {
-        sos_timer_callback_7c7f0
-                  (*(undefined2 *)(pbVar1 + 0xf8),
-                   CONCAT22((short)((uint)pbVar1 >> 0x10),*(undefined2 *)(pbVar1 + 0xf8)),
-                   *(undefined4 *)(pbVar1 + 0xf4));
+        sosRealFree(*(undefined2 *)(pbVar1 + 0xf8),
+                    CONCAT22((short)((uint)pbVar1 >> 0x10),*(undefined2 *)(pbVar1 + 0xf8)),
+                    *(undefined4 *)(pbVar1 + 0xf4));
         *pbVar1 = *pbVar1 & 0xfb;
       }
     }
@@ -65584,11 +65615,11 @@ uint sos_wait_or_load(int param_1,uint *param_2,undefined4 param_3,uint *param_4
   uint local_14;
   undefined4 local_10;
   
-  cVar1 = sos_timer_callback_7cc10();
+  cVar1 = sosDRVIsWindowsActive();
   if (cVar1 == '\x03') {
     iVar2 = sos_init_timer_7733b(param_4,param_3,param_2);
     if (iVar2 == 0) {
-      sos_timer_callback_7c601();
+      sosDRVLockMemory();
       local_14 = *param_4;
     }
     else {
@@ -65596,9 +65627,9 @@ uint sos_wait_or_load(int param_1,uint *param_2,undefined4 param_3,uint *param_4
     }
   }
   else {
-    sos_7c7ba();
+    sosRealAlloc();
     while (0xffffU - param_1 < (*param_2 & 0xffff)) {
-      sos_7c7ba();
+      sosRealAlloc();
     }
     *(short *)(param_4 + 1) = (short)local_10;
     *param_4 = 0;
@@ -65629,15 +65660,15 @@ undefined4 sos_init_timer_7733b(undefined4 *param_1,undefined4 *param_2,uint *pa
   *param_1 = 0;
   *param_2 = 0;
   *param_3 = 0;
-  iVar2 = sos_7cc2d();
+  iVar2 = sosDRVAllocVDSStruct();
   if (iVar2 == 0) {
     *in_GS_OFFSET = 0x1000;
-    iVar2 = sos_timer_start();
+    iVar2 = sosDRVVDSGetBuffer();
     sos_memcpy(&DAT_000a04d4,in_DS,0,CONCAT22(uStack_3a,local_1c),0x10);
-    sos_irq_dispatcher();
+    sosDRVFreeVDSStruct();
     if (iVar2 == 0) {
       DAT_000a04e0 = DAT_000a04e0 & 0xfffff000;
-      uVar3 = sos_timer_callback_7cd55();
+      uVar3 = sosDRVMakeDMASelector();
       uVar1 = DAT_000a04e0;
       *(undefined2 *)(param_1 + 1) = 0;
       *param_1 = uVar3;
@@ -65665,10 +65696,10 @@ void sos_timer_init(void)
   undefined2 in_DS;
   undefined2 local_18;
   
-  sos_7cc2d();
+  sosDRVAllocVDSStruct();
   sos_memcpy(0,local_18,&DAT_000a04d4,in_DS,0x10);
-  sos_init_timer();
-  sos_irq_dispatcher();
+  sosDRVVDSFreeBuffer();
+  sosDRVFreeVDSStruct();
   return;
 }
 
@@ -65777,14 +65808,14 @@ undefined8 sos_DetectLoadDriver(int param_1,undefined4 param_2)
       strcpy(&DAT_000a0718,param_1);
       sos_7d2a9(&DAT_000a0718,s_hmidet_386_0009472c);
     }
-    DAT_000a0874 = rt_sopen_wrapper();
+    DAT_000a0874 = open();
     uVar3 = CONCAT24(DAT_000a0868,DAT_000a0864);
     if (DAT_000a0874 == -1) {
       local_24 = 0xf;
     }
     else {
       rt_read(DAT_000a0874,&DAT_000a0798,0x2c);
-      iVar2 = sos_timer_query();
+      iVar2 = sosAllocateFarMem();
       DAT_000a0868 = (undefined2)((uint6)iVar2 >> 0x20);
       DAT_000a0864 = (undefined4)iVar2;
       if (iVar2 == 0) {
@@ -65792,10 +65823,10 @@ undefined8 sos_DetectLoadDriver(int param_1,undefined4 param_2)
         uVar3 = 0;
       }
       else {
-        uVar3 = sos_timer_init_7c75d();
+        uVar3 = sosCreateAliasCS();
         DAT_000a0870 = (undefined2)((uint6)uVar3 >> 0x20);
         DAT_000a086c = (undefined4)uVar3;
-        iVar1 = sos_timer_callback_7c601();
+        iVar1 = sosDRVLockMemory();
         uVar3 = CONCAT24(DAT_000a0868,DAT_000a0864);
         if (iVar1 == 0) {
           __lseek(DAT_000a0874,0,0);
@@ -65830,10 +65861,10 @@ undefined8 sos_timer_wait(undefined4 param_1,undefined4 param_2)
   
   DAT_000a0694 = DAT_000a0694 & 0xfe;
   rt_int21_wrapper(DAT_000a0874);
-  iVar1 = sos_sound_irq_dispatcher();
+  iVar1 = sosDRVUnLockMemory();
   if (iVar1 == 0) {
-    sos_timer_callback_7c727();
-    sos_timer_callback_7c727();
+    sosFreeSelector();
+    sosFreeSelector();
     local_1c = 0;
   }
   else {
@@ -65877,8 +65908,8 @@ undefined4 sos_load_sound_region(uint param_1,int param_2)
       rt_read(DAT_000a0874,&DAT_000a07c4,0x30);
       if ((DAT_000a07ec == param_1) && ((DAT_000a07f1 & 0x80) != 0)) {
         local_18 = 1;
-        sos_FileRead(DAT_000a0874,DAT_000a07e8,DAT_000a0864,CONCAT22(extraout_var,DAT_000a0868),
-                     local_24);
+        _dos_read(DAT_000a0874,DAT_000a07e8,DAT_000a0864,CONCAT22(extraout_var,DAT_000a0868),
+                  local_24);
       }
       else {
         __lseek(DAT_000a0874,DAT_000a07e8,1);
@@ -65889,23 +65920,23 @@ undefined4 sos_load_sound_region(uint param_1,int param_2)
       local_34 = 7;
     }
     else {
-      sos_copy_buffer_and_zero_tail();
+      sosDetDRVGetCapsInfo();
       if ((DAT_000a0831 & 1) != 0) {
-        sos_set_timer_params_7cb26();
+        sosDetDRVEnvStringInit();
         while( true ) {
-          iVar1 = sos_7cb65();
+          iVar1 = sosDetDRVGetEnvString();
           if (iVar1 == 0) break;
-          sos_7cb65();
+          sosDetDRVGetEnvString();
           sos_7a93d();
-          sos_set_entry();
+          sosDetDRVSetEnvString();
         }
       }
-      local_1c = sos_timer_callback_7c8d4();
+      local_1c = sosDetDRVExist();
       if (local_1c == 0) {
         local_34 = 8;
       }
       else {
-        sos_copy_buffer_and_zero_tail();
+        sosDetDRVGetCapsInfo();
         _DAT_000a0860 = param_2 + 0x6c;
         *(int *)(param_2 + 0x5c) = local_1c;
         *(undefined4 *)(param_2 + 0x104) = *(undefined4 *)(param_2 + 0xd0);
@@ -65951,8 +65982,8 @@ undefined4 sos_FileReadById(uint param_1,int param_2)
       local_18 = DAT_000a07e8;
       if ((DAT_000a07ec == param_1) && ((DAT_000a07f1 & 0x80) != 0)) {
         local_1c = 1;
-        sos_FileRead(DAT_000a0874,DAT_000a07e8,DAT_000a0864,CONCAT22(extraout_var,DAT_000a0868),
-                     local_24);
+        _dos_read(DAT_000a0874,DAT_000a07e8,DAT_000a0864,CONCAT22(extraout_var,DAT_000a0868),
+                  local_24);
       }
       else {
         __lseek(DAT_000a0874,DAT_000a07e8,1);
@@ -65963,7 +65994,7 @@ undefined4 sos_FileReadById(uint param_1,int param_2)
       local_28 = 7;
     }
     else {
-      sos_copy_buffer_and_zero_tail();
+      sosDetDRVGetCapsInfo();
       _DAT_000a0860 = param_2 + 0x6c;
       DAT_000a0878 = local_20;
       local_28 = 0;
@@ -66008,23 +66039,23 @@ undefined8 sos_file_load_track(int param_1,undefined4 param_2)
         __lseek(DAT_000a0874,DAT_000a07e8,1);
       }
       else {
-        sos_FileRead(DAT_000a0874,DAT_000a07e8,DAT_000a0864,CONCAT22(extraout_var,DAT_000a0868),
-                     local_2c);
-        sos_copy_buffer_and_zero_tail();
+        _dos_read(DAT_000a0874,DAT_000a07e8,DAT_000a0864,CONCAT22(extraout_var,DAT_000a0868),
+                  local_2c);
+        sosDetDRVGetCapsInfo();
         if ((DAT_000a0831 & 1) != 0) {
-          sos_set_timer_params_7cb26();
+          sosDetDRVEnvStringInit();
           while( true ) {
-            iVar1 = sos_7cb65();
+            iVar1 = sosDetDRVGetEnvString();
             if (iVar1 == 0) break;
-            sos_7cb65();
+            sosDetDRVGetEnvString();
             sos_7a93d();
-            sos_set_entry();
+            sosDetDRVSetEnvString();
           }
         }
-        local_24 = sos_timer_callback_7c8d4();
+        local_24 = sosDetDRVExist();
         if (local_24 != 0) {
           DAT_000a0878 = local_28;
-          sos_copy_buffer_and_zero_tail();
+          sosDetDRVGetCapsInfo();
           _DAT_000a0860 = param_1 + 0x6c;
           *(int *)(param_1 + 0x5c) = local_24;
           *(undefined4 *)(param_1 + 0x104) = *(undefined4 *)(param_1 + 0xd0);
@@ -66073,23 +66104,23 @@ undefined8 sos_file_load_loop(int param_1,undefined4 param_2)
         __lseek(DAT_000a0874,DAT_000a07e8,1);
       }
       else {
-        sos_FileRead(DAT_000a0874,DAT_000a07e8,DAT_000a0864,CONCAT22(extraout_var,DAT_000a0868),
-                     local_2c);
-        sos_copy_buffer_and_zero_tail();
+        _dos_read(DAT_000a0874,DAT_000a07e8,DAT_000a0864,CONCAT22(extraout_var,DAT_000a0868),
+                  local_2c);
+        sosDetDRVGetCapsInfo();
         if ((DAT_000a0831 & 1) != 0) {
-          sos_set_timer_params_7cb26();
+          sosDetDRVEnvStringInit();
           while( true ) {
-            iVar1 = sos_7cb65();
+            iVar1 = sosDetDRVGetEnvString();
             if (iVar1 == 0) break;
-            sos_7cb65();
+            sosDetDRVGetEnvString();
             sos_7a93d();
-            sos_set_entry();
+            sosDetDRVSetEnvString();
           }
         }
-        local_24 = sos_timer_callback_7c8d4();
+        local_24 = sosDetDRVExist();
         if (local_24 != 0) {
           DAT_000a0878 = local_28;
-          sos_copy_buffer_and_zero_tail();
+          sosDetDRVGetCapsInfo();
           _DAT_000a0860 = param_1 + 0x6c;
           *(int *)(param_1 + 0x5c) = local_24;
           *(undefined4 *)(param_1 + 0x104) = *(undefined4 *)(param_1 + 0xd0);
@@ -66129,16 +66160,17 @@ undefined8 sos_event_dispatch(int param_1,undefined4 param_2)
     while( true ) {
       if (*(short *)(in_GS_OFFSET + *(int *)(param_1 + 0xb4) + local_1c * 2) == -1) break;
       iVar1 = (int)*(short *)(in_GS_OFFSET + *(int *)(param_1 + 0xb4) + local_1c * 2);
-      sos_7cabc(iVar1,*(undefined2 *)(param_1 + 0xb8),*(int *)(param_1 + 0xb4),local_1c * 2,iVar1);
+      sosDIGIInitForWindows
+                (iVar1,*(undefined2 *)(param_1 + 0xb8),*(int *)(param_1 + 0xb4),local_1c * 2,iVar1);
       local_1c = local_1c + 1;
     }
-    sos_timer_callback_7c8f7
+    sosDetDRVGetSettings
               (DAT_000a0870,*(undefined2 *)(param_1 + 0xb8),*(int *)(param_1 + 0xb4),local_1c * 2,
                DAT_000a086c,DAT_000a0870,DAT_000a0864,DAT_000a0868);
     local_1c = 0;
     while (*(short *)(in_GS_OFFSET + *(int *)(param_1 + 0xb4) + local_1c * 2) != -1) {
       iVar1 = (int)*(short *)(in_GS_OFFSET + *(int *)(param_1 + 0xb4) + local_1c * 2);
-      sos_timer_init_7caf1
+      sosDIGIUnInitForWindows
                 (iVar1,*(undefined2 *)(param_1 + 0xb8),*(int *)(param_1 + 0xb4),local_1c * 2,iVar1);
       local_1c = local_1c + 1;
     }
@@ -66180,9 +66212,9 @@ undefined8 sos_state_check(int param_1,undefined4 param_2)
     local_34 = 0x11;
   }
   else {
-    sos_7cabc();
-    local_34 = sos_callback_invoke();
-    sos_timer_init_7caf1();
+    sosDIGIInitForWindows();
+    local_34 = sosDetDRVVerifySettings();
+    sosDIGIUnInitForWindows();
   }
   return CONCAT44(param_2,local_34);
 }
@@ -66200,27 +66232,28 @@ void sos_no_op_stub_781f0(void)
 }
 
 
-// ==== sos_fputc_wrapper @ 00078205 size=17
+// ==== file_putc @ 00078205 size=17
 
-/* Hand-named: sos_fputc_wrapper (hand inkling guess: forwards args to rt_fputc, increments counter)
-    */
+/* Hand-named: file_putc (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module fprtf
+   (was sos_fputc_wrapper)) */
 
-void sos_fputc_wrapper(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+void file_putc(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   int extraout_EBX;
   
-  rt_fputc(param_2,*param_1,param_1,param_4,param_3);
+  fputc(param_2,*param_1,param_1,param_4,param_3);
   *(int *)(extraout_EBX + 0x10) = *(int *)(extraout_EBX + 0x10) + 1;
   return;
 }
 
 
-// ==== rt_78216 @ 00078216 size=133
+// ==== __fprtf @ 00078216 size=133
 
-/* Hand-named: rt_78216 (hand from Q1 rt_593a6 (BSim 1.0)) */
+/* Hand-named: __fprtf (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module fprtf
+   (was rt_78216)) */
 
-undefined4 rt_78216(int param_1)
+undefined4 __fprtf(int param_1)
 
 {
   uint uVar1;
@@ -66232,7 +66265,7 @@ undefined4 rt_78216(int param_1)
   uVar1 = *(uint *)(param_1 + 0xc);
   *(byte *)(param_1 + 0xc) = *(byte *)(param_1 + 0xc) & 0xcf;
   if (*(int *)(param_1 + 8) == 0) {
-    rt_ioalloc(param_1);
+    __ioalloc(param_1);
   }
   bVar4 = (*(byte *)(param_1 + 0xd) & 4) != 0;
   if (bVar4) {
@@ -66240,12 +66273,12 @@ undefined4 rt_78216(int param_1)
     *(byte *)(param_1 + 0xd) = bVar3;
     *(byte *)(param_1 + 0xd) = bVar3 | 1;
   }
-  uVar2 = rt_prtf(param_1);
+  uVar2 = __prtf(param_1);
   if (bVar4) {
     bVar3 = *(byte *)(param_1 + 0xd) & 0xfa;
     *(byte *)(param_1 + 0xd) = bVar3;
     *(byte *)(param_1 + 0xd) = bVar3 | 4;
-    rt_flush(param_1);
+    __flush(param_1);
     uVar2 = extraout_EDX;
   }
   if ((*(byte *)(param_1 + 0xc) & 0x20) != 0) {
@@ -66525,19 +66558,19 @@ unkbyte10 rt_load_byte_at_offset_1c(int param_1)
 }
 
 
-// ==== rt_set_callbacks_and_init @ 0007851a size=49
+// ==== __init_8087 @ 0007851a size=49
 
-/* Hand-named: rt_set_callbacks_and_init (hand inkling guess: assigns handlers then calls init
-   routine) */
+/* Hand-named: __init_8087 (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module chk8087
+   (was rt_set_callbacks_and_init)) */
 
-void rt_set_callbacks_and_init(void)
+void __init_8087(void)
 
 {
   if (DAT_0009f095 != '\0') {
     PTR_rt_noop_stub_808b5_000a3cc4 = rt_save_fpu_state;
     PTR_rt_noop_stub_808b5_000a3cc8 = rt_load_byte_at_offset_1c;
   }
-  rt_808b6(DAT_000a3cc0);
+  __init_80x87(DAT_000a3cc0);
   return;
 }
 
@@ -66553,7 +66586,7 @@ void rt_78555(void)
   
   if (DAT_0009f094 == '\0') {
     DAT_0009f095 = DAT_0009f094;
-    cVar1 = rt_set_callbacks_and_init();
+    cVar1 = __init_8087();
     if (DAT_0009f368 == '\0') {
       DAT_0009f094 = cVar1;
       DAT_0009f095 = cVar1;
@@ -66588,10 +66621,10 @@ longlong rt_close_handle(undefined4 param_1,undefined4 param_2,uint param_3)
   pcVar1 = (code *)swi(0x21);
   (*pcVar1)(CONCAT11(0x3e,(char)param_1),param_1,param_1);
   if ((in_CF & 1) == 0) {
-    rt_80932(extraout_EDX,0);
+    __SetIOMode(extraout_EDX,0);
     return (ulonglong)param_3 << 0x20;
   }
-  rt_set_errno(4);
+  __set_errno(4);
   return CONCAT44(param_3,0xffffffff);
 }
 
@@ -66650,12 +66683,13 @@ undefined8 __getctime(undefined4 param_1,undefined4 param_2)
 }
 
 
-// ==== rt_7868b @ 0007868b size=340
+// ==== mktime @ 0007868b size=340
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Hand-named: rt_7868b (hand from Q1 rt_59d25 (BSim 1.0)) */
+/* Hand-named: mktime (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module mktime
+   (was rt_7868b)) */
 
-undefined8 rt_7868b(int *param_1,undefined4 param_2)
+undefined8 mktime(int *param_1,undefined4 param_2)
 
 {
   int iVar1;
@@ -66671,7 +66705,7 @@ undefined8 rt_7868b(int *param_1,undefined4 param_2)
       iVar4 = iVar4 + -1;
     }
     if (-1 < iVar4) {
-      iVar1 = rt_80947(iVar4 + 0x76c,param_1[4] % 0xc,&DAT_00094b6c);
+      iVar1 = __leapyear(iVar4 + 0x76c,param_1[4] % 0xc,&DAT_00094b6c);
       puVar3 = extraout_EBX;
       if (iVar1 != 0) {
         puVar3 = &DAT_00094b86;
@@ -66685,11 +66719,11 @@ undefined8 rt_7868b(int *param_1,undefined4 param_2)
           iVar2 = (int)&PTR_DAT_00015180 + iVar2) {
         iVar1 = iVar1 + -1;
       }
-      rt_80d72(iVar1,iVar2,0,param_1);
+      __brktime(iVar1,iVar2,0,param_1);
       rt_tzset();
       iVar2 = iVar2 + DAT_000a3d6c;
       if (param_1[8] < 0) {
-        rt_80a8f(param_1);
+        __isindst(param_1);
       }
       if (0 < param_1[8]) {
         iVar2 = iVar2 - _DAT_000a3d70;
@@ -66713,17 +66747,18 @@ LAB_000787d8:
 }
 
 
-// ==== rt_787df @ 000787df size=79
+// ==== __CMain @ 000787df size=79
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Hand-named: rt_787df (hand from Q1 rt_59b79 (BSim 1.0)) */
+/* Hand-named: __CMain (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module cmain386
+   (was rt_787df)) */
 
-void rt_787df(undefined4 param_1)
+void __CMain(undefined4 param_1)
 
 {
   undefined8 uVar1;
   
-  uVar1 = rt_81181(param_1,DAT_0009f354 + 3U & 0xfffffffc);
+  uVar1 = stackavail(param_1,DAT_0009f354 + 3U & 0xfffffffc);
   if ((uint)((ulonglong)uVar1 >> 0x20) < (uint)uVar1) {
     _DAT_0009f358 = &stack0xfffffff8;
   }
@@ -66731,18 +66766,19 @@ void rt_787df(undefined4 param_1)
     _DAT_0009f358 = (undefined1 *)0x0;
   }
   _DAT_0009f358 = _DAT_0009f358 + DAT_0009f354;
-  rt_8118a();
-  game_Main(DAT_000d94cc,DAT_000d94d0);
-  rt_exit();
+  __CommonInit();
+  main(DAT_000d94cc,DAT_000d94d0);
+  exit();
   return;
 }
 
 
-// ==== rt_7882e @ 0007882e size=75
+// ==== __InitRtns @ 0007882e size=75
 
-/* Hand-named: rt_7882e (hand from Q1 rt_59bc8 (BSim 1.0)) */
+/* Hand-named: __InitRtns (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module inirt386
+   (was rt_7882e)) */
 
-void rt_7882e(byte param_1)
+void __InitRtns(byte param_1)
 
 {
   byte bVar1;
@@ -66770,11 +66806,12 @@ void rt_7882e(byte param_1)
 }
 
 
-// ==== rt_78879 @ 00078879 size=79
+// ==== __FiniRtns @ 00078879 size=79
 
-/* Hand-named: rt_78879 (hand from Q1 rt_59c13 (BSim 1.0)) */
+/* Hand-named: __FiniRtns (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module inirt386
+   (was rt_78879)) */
 
-void rt_78879(byte param_1,byte param_2)
+void __FiniRtns(byte param_1,byte param_2)
 
 {
   byte bVar1;
@@ -66824,7 +66861,7 @@ void rt_788c8(void)
   iVar3 = rt_78985(DAT_0009f340,0,&local_20);
   iVar3 = iVar3 + 1;
   local_1c = iVar3 * 4;
-  puVar4 = (undefined4 *)rt_malloc(local_1c + (local_20 - (int)DAT_0009f340) + 5);
+  puVar4 = (undefined4 *)_nmalloc(local_1c + (local_20 - (int)DAT_0009f340) + 5);
   iVar2 = local_1c;
   if (puVar4 == (undefined4 *)0x0) {
     _DAT_0009f0a4 = 0;
@@ -66928,11 +66965,12 @@ LAB_00078a5e:
 }
 
 
-// ==== sos_78a70 @ 00078a70 size=49
+// ==== __STOSB @ 00078a70 size=49
 
-/* Hand-named: sos_78a70 (hand from Q1 sos_580e0 (BSim 1.0)) */
+/* Hand-named: __STOSB (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module __stos (was
+   sos_78a70)) */
 
-void sos_78a70(undefined1 *param_1,uint param_2,undefined4 param_3,uint param_4)
+void __STOSB(undefined1 *param_1,uint param_2,undefined4 param_3,uint param_4)
 
 {
   undefined1 *puVar1;
@@ -66947,7 +66985,7 @@ void sos_78a70(undefined1 *param_1,uint param_2,undefined4 param_3,uint param_4)
       param_2 = param_2 >> 8 | param_2 << 0x18;
       param_4 = param_4 - 1;
     } while (param_4 != 0);
-    uVar3 = rt_78aa7();
+    uVar3 = __STOSD();
     puVar1 = (undefined1 *)uVar3;
     param_4 = param_4 & 3;
     if (param_4 != 0) {
@@ -66962,11 +67000,12 @@ void sos_78a70(undefined1 *param_1,uint param_2,undefined4 param_3,uint param_4)
 }
 
 
-// ==== rt_78aa7 @ 00078aa7 size=108
+// ==== __STOSD @ 00078aa7 size=108
 
-/* Hand-named: rt_78aa7 (hand from Q1 rt_58117 (BSim 1.0)) */
+/* Hand-named: __STOSD (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module __stos (was
+   rt_78aa7)) */
 
-undefined4 * rt_78aa7(undefined4 *param_1,undefined4 param_2,undefined4 param_3,uint param_4)
+undefined4 * __STOSD(undefined4 *param_1,undefined4 param_2,undefined4 param_3,uint param_4)
 
 {
   undefined4 *puVar1;
@@ -67028,7 +67067,8 @@ LAB_00078ae6:
 
 // ==== tolower @ 00078b13 size=14
 
-/* Hand-named: tolower (hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_int_to_lowercase)) */
+/* Hand-named: tolower (hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_int_to_lowercase) | sig
+   agrees (Watcom 10 clib3r (Actua Soccer libs) full)) */
 
 int tolower(int param_1)
 
@@ -67040,11 +67080,12 @@ int tolower(int param_1)
 }
 
 
-// ==== rt_set_errno @ 00078b26 size=12
+// ==== __set_errno @ 00078b26 size=12
 
-/* Hand-named: rt_set_errno (hand from Q1 rt_set_errno (callgraph r0)) */
+/* Hand-named: __set_errno (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module fread
+   (was rt_set_errno)) */
 
-void rt_set_errno(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+void __set_errno(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   undefined8 uVar1;
@@ -67070,23 +67111,25 @@ void rt_78b32(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined
 }
 
 
-// ==== rt_set_errno_9 @ 00078b39 size=16
+// ==== __set_EINVAL @ 00078b39 size=16
 
-/* Hand-named: rt_set_errno_9 (hand inkling guess: sets errno to 9, no return value) */
+/* Hand-named: __set_EINVAL (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module
+   seterrno (was rt_set_errno_9)) */
 
-undefined4 rt_set_errno_9(void)
+undefined4 __set_EINVAL(void)
 
 {
-  rt_set_errno(9);
+  __set_errno(9);
   return 0xffffffff;
 }
 
 
-// ==== rt_78b49 @ 00078b49 size=12
+// ==== __set_doserrno @ 00078b49 size=12
 
-/* Hand-named: rt_78b49 (hand from Q1 rt_581b9 (callgraph r0)) */
+/* Hand-named: __set_doserrno (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module
+   cenvarg (was rt_78b49)) */
 
-void rt_78b49(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+void __set_doserrno(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   undefined8 uVar1;
@@ -67097,24 +67140,26 @@ void rt_78b49(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined
 }
 
 
-// ==== rt_sopen_wrapper @ 00078b5c size=36
+// ==== open @ 00078b5c size=36
 
-/* Hand-named: rt_sopen_wrapper (hand inkling guess: calls rt_sopen then returns void) */
+/* Hand-named: open (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module open (was
+   rt_sopen_wrapper)) */
 
-void rt_sopen_wrapper(void)
+void open(void)
 
 {
-  rt_sopen();
+  sopen();
   return;
 }
 
 
-// ==== rt_sopen @ 00078b80 size=453
+// ==== sopen @ 00078b80 size=453
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Hand-named: rt_sopen (hand from Q1 rt_sopen (BSim 1.0)) */
+/* Hand-named: sopen (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module open (was
+   rt_sopen)) */
 
-undefined8 __stdcall rt_sopen(char *param_1,byte param_2,uint param_3,byte param_4,uint param_5)
+undefined8 __stdcall sopen(char *param_1,byte param_2,uint param_3,byte param_4,uint param_5)
 
 {
   code *pcVar1;
@@ -67145,8 +67190,8 @@ undefined8 __stdcall rt_sopen(char *param_1,byte param_2,uint param_3,byte param
 LAB_00078c41:
     if (uVar5 != 0xffffffff) {
 LAB_00078ccf:
-      uVar4 = rt_808dd(uVar5);
-      uVar8 = rt_isatty(uVar5,uVar4 & 0xffffff3c);
+      uVar4 = __IOMode(uVar5);
+      uVar8 = isatty(uVar5,uVar4 & 0xffffff3c);
       uVar4 = (uint)((ulonglong)uVar8 >> 0x20);
       if ((int)uVar8 != 0) {
         uVar4 = uVar4 | 0x2000;
@@ -67171,7 +67216,7 @@ LAB_00078ccf:
 LAB_00078d31:
         uVar4 = uVar4 | 0x40;
       }
-      rt_80932(uVar5,uVar4);
+      __SetIOMode(uVar5,uVar4);
       goto LAB_00078d3c;
     }
     if (((param_3 & 0x20) != 0) && ((short)uStack_18 == 2)) {
@@ -67207,12 +67252,12 @@ LAB_00078d31:
     }
   }
   else {
-    uVar7 = rt_isatty(uVar5);
+    uVar7 = isatty(uVar5);
     if ((int)uVar7 != 0) goto LAB_00078c41;
     if ((param_3 & 0x400) != 0) {
       pcVar1 = (code *)swi(0x21);
       (*pcVar1)(0x3e00,(int)(uVar7 >> 0x20),uVar5);
-      rt_set_errno(7);
+      __set_errno(7);
       uVar5 = 0xffffffff;
       goto LAB_00078d3c;
     }
@@ -67228,7 +67273,7 @@ LAB_00078d31:
     (*pcVar1)(CONCAT22((short)(uStack_18 >> 0x10),CONCAT11(0x3e,(char)uVar4)),
               (int)((ulonglong)uVar8 >> 0x20),uVar5);
   }
-  uVar5 = rt_7ad54(uStack_18 & 0xffff);
+  uVar5 = __set_errno_dos(uStack_18 & 0xffff);
 LAB_00078d3c:
   return CONCAT44(in_ECX,uVar5);
 }
@@ -67256,8 +67301,8 @@ undefined8 rt_int21_dispatch(undefined4 param_1)
   byte bVar6;
   undefined4 in_stack_00000008;
   
-  uVar3 = rt_808dd();
-  rt_80932(param_1,uVar3 | 0x40);
+  uVar3 = __IOMode();
+  __SetIOMode(param_1,uVar3 | 0x40);
   bVar6 = 0;
   if ((extraout_EBX & 0x2000) == 0) {
 LAB_00078da0:
@@ -67277,17 +67322,18 @@ LAB_00078da0:
       uVar5 = (extraout_EDX_01 << 1 | (uint)bVar6) >> 1;
       if ((bVar6 & 1) == 0) goto LAB_00078da0;
     }
-    uVar4 = rt_7ad54(uVar5 & 0xffff);
+    uVar4 = __set_errno_dos(uVar5 & 0xffff);
   }
   return CONCAT44(in_stack_00000008,uVar4);
 }
 
 
-// ==== rt_allocfp @ 00078daa size=168
+// ==== __allocfp @ 00078daa size=168
 
-/* Hand-named: rt_allocfp (hand from Q1 rt_allocfp (BSim 1.0)) */
+/* Hand-named: __allocfp (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module
+   allocfp (was rt_allocfp)) */
 
-undefined8 rt_allocfp(undefined4 param_1,undefined4 param_2)
+undefined8 __allocfp(undefined4 param_1,undefined4 param_2)
 
 {
   undefined4 *puVar1;
@@ -67301,7 +67347,7 @@ undefined8 rt_allocfp(undefined4 param_1,undefined4 param_2)
   if (DAT_000d9414 == (undefined4 *)0x0) {
     for (puVar3 = &DAT_0009f0c4; puVar3 < &DAT_0009f2cc; puVar3 = puVar3 + 0x1a) {
       if ((puVar3[0xc] & 3) == 0) {
-        puVar1 = (undefined4 *)rt_malloc(8);
+        puVar1 = (undefined4 *)_nmalloc(8);
         if (puVar1 == (undefined4 *)0x0) goto LAB_00078e40;
         uVar5 = 3;
         puVar4 = extraout_ECX;
@@ -67309,10 +67355,10 @@ undefined8 rt_allocfp(undefined4 param_1,undefined4 param_2)
       }
     }
     uVar5 = 0x4003;
-    puVar1 = (undefined4 *)rt_malloc(0x22);
+    puVar1 = (undefined4 *)_nmalloc(0x22);
     if (puVar1 == (undefined4 *)0x0) {
 LAB_00078e40:
-      rt_set_errno(5);
+      __set_errno(5);
       iVar2 = 0;
       goto LAB_00078e4c;
     }
@@ -67336,11 +67382,12 @@ LAB_00078e4c:
 }
 
 
-// ==== rt_freefp @ 00078e52 size=57
+// ==== __freefp @ 00078e52 size=57
 
-/* Hand-named: rt_freefp (hand from Q1 rt_freefp (BSim 1.0)) */
+/* Hand-named: __freefp (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module allocfp
+   (was rt_freefp)) */
 
-void rt_freefp(int param_1)
+void __freefp(int param_1)
 
 {
   undefined4 *puVar1;
@@ -67362,11 +67409,12 @@ void rt_freefp(int param_1)
 }
 
 
-// ==== rt_78ea9 @ 00078ea9 size=49
+// ==== __chktty @ 00078ea9 size=49
 
-/* Hand-named: rt_78ea9 (hand from Q1 rt_582cb (BSim 1.0)) */
+/* Hand-named: __chktty (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module chktty
+   (was rt_78ea9)) */
 
-void rt_78ea9(int param_1)
+void __chktty(int param_1)
 
 {
   byte bVar1;
@@ -67374,7 +67422,7 @@ void rt_78ea9(int param_1)
   undefined8 uVar3;
   
   if ((*(byte *)(param_1 + 0xd) & 0x20) == 0) {
-    uVar3 = rt_isatty(*(undefined4 *)(param_1 + 0x10));
+    uVar3 = isatty(*(undefined4 *)(param_1 + 0x10));
     iVar2 = (int)((ulonglong)uVar3 >> 0x20);
     if ((int)uVar3 != 0) {
       bVar1 = *(byte *)(iVar2 + 0xd);
@@ -67388,11 +67436,12 @@ void rt_78ea9(int param_1)
 }
 
 
-// ==== rt_ioalloc @ 00078eda size=119
+// ==== __ioalloc @ 00078eda size=119
 
-/* Hand-named: rt_ioalloc (hand from Q1 rt_ioalloc (BSim 1.0)) */
+/* Hand-named: __ioalloc (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module
+   ioalloc (was rt_ioalloc)) */
 
-void rt_ioalloc(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+void __ioalloc(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   byte bVar1;
@@ -67400,7 +67449,7 @@ void rt_ioalloc(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefin
   undefined4 *puVar2;
   undefined8 uVar3;
   
-  rt_78ea9(param_1,param_1,param_3,param_4,param_2,param_4);
+  __chktty(param_1,param_1,param_3,param_4,param_2,param_4);
   if (*(int *)(extraout_EDX + 0x14) == 0) {
     if ((*(byte *)(extraout_EDX + 0xd) & 2) == 0) {
       if ((*(byte *)(extraout_EDX + 0xd) & 4) == 0) {
@@ -67414,7 +67463,7 @@ void rt_ioalloc(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefin
       *(undefined4 *)(extraout_EDX + 0x14) = 0x86;
     }
   }
-  uVar3 = rt_malloc(*(undefined4 *)(extraout_EDX + 0x14));
+  uVar3 = _nmalloc(*(undefined4 *)(extraout_EDX + 0x14));
   puVar2 = (undefined4 *)((ulonglong)uVar3 >> 0x20);
   puVar2[2] = (int)uVar3;
   if ((int)uVar3 == 0) {
@@ -67451,7 +67500,7 @@ void __qread(undefined4 param_1,undefined4 param_2,undefined4 param_3)
   bVar3 = (in_CF & 1) != 0;
   uVar2 = (iVar4 << 1 | (uint)in_CF) >> 1;
   if (bVar3) {
-    rt_7ad54(uVar2 & 0xffff,uVar2 | (uint)bVar3 << 0x1f);
+    __set_errno_dos(uVar2 & 0xffff,uVar2 | (uint)bVar3 << 0x1f);
   }
   return;
 }
@@ -67469,11 +67518,12 @@ undefined4 rt_78f70(void)
 }
 
 
-// ==== rt_flush @ 00078f76 size=191
+// ==== __flush @ 00078f76 size=191
 
-/* Hand-named: rt_flush (hand from Q1 rt_flush (BSim 1.0)) */
+/* Hand-named: __flush (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module flushall
+   (was rt_flush)) */
 
-undefined8 rt_flush(undefined4 *param_1,undefined4 param_2)
+undefined8 __flush(undefined4 *param_1,undefined4 param_2)
 
 {
   ushort uVar1;
@@ -67509,7 +67559,7 @@ undefined8 rt_flush(undefined4 *param_1,undefined4 param_2)
         uVar3 = 0xffffffff;
       }
       else if (iVar2 != extraout_ECX[1]) {
-        rt_set_errno(0xc);
+        __set_errno(0xc);
         uVar3 = 0xffffffff;
         *(byte *)(extraout_ECX_00 + 3) = *(byte *)(extraout_ECX_00 + 3) | 0x20;
         param_1 = extraout_ECX_00;
@@ -67563,7 +67613,7 @@ undefined4 __lseek(undefined4 param_1,uint param_2,undefined1 param_3)
   pcVar1 = (code *)swi(0x21);
   iVar2 = (*pcVar1)(CONCAT11(0x42,param_3),param_2,param_1,param_2 >> 0x10);
   if ((bVar3 & 1) != 0) {
-    rt_7ad54((iVar2 << 1 | (uint)bVar3) >> 1 & 0xffff);
+    __set_errno_dos((iVar2 << 1 | (uint)bVar3) >> 1 & 0xffff);
     unaff_EDI = 0xffffffff;
   }
   return unaff_EDI;
@@ -67586,7 +67636,7 @@ longlong rt_remove(undefined4 param_1)
   pcVar1 = (code *)swi(0x21);
   iVar2 = (*pcVar1)(CONCAT11(0x41,(char)param_1),param_1);
   if ((in_CF & 1) != 0) {
-    uVar3 = rt_7ad54((iVar2 << 1 | (uint)in_CF) >> 1 & 0xffff);
+    uVar3 = __set_errno_dos((iVar2 << 1 | (uint)in_CF) >> 1 & 0xffff);
     return CONCAT44(unaff_retaddr,uVar3);
   }
   return (ulonglong)unaff_retaddr << 0x20;
@@ -67625,12 +67675,12 @@ uint rt_790ab(undefined4 param_1,char *param_2,uint param_3)
   local_34 = param_3;
   local_30 = param_2;
   local_2c = param_1;
-  uVar3 = rt_808dd();
+  uVar3 = __IOMode();
   local_28 = uVar3;
   if (uVar3 == 0) {
     uVar4 = 4;
 LAB_000790ca:
-    rt_set_errno(uVar4);
+    __set_errno(uVar4);
     return 0xffffffff;
   }
   if ((uVar3 & 2) == 0) {
@@ -67649,7 +67699,7 @@ LAB_000790ca:
   }
   bVar8 = 0;
   if ((local_28 & 0x40) == 0) {
-    uVar3 = rt_81181();
+    uVar3 = stackavail();
     if (uVar3 < 0xb0) {
       rt_stack_overflow();
       uVar3 = extraout_EDX_00;
@@ -67696,7 +67746,7 @@ LAB_000790ca:
         if (uVar3 != uVar7) {
 LAB_000791d5:
           local_20 = uVar3;
-          rt_set_errno(0xc);
+          __set_errno(0xc);
           return local_24 + uVar3;
         }
         local_24 = local_14;
@@ -67715,7 +67765,7 @@ LAB_000791d5:
       if (local_20 == uVar3) {
         return local_34;
       }
-      rt_set_errno(0xc,local_20);
+      __set_errno(0xc,local_20);
       return local_24 + extraout_EDX_01;
     }
   }
@@ -67728,21 +67778,22 @@ LAB_000791d5:
       if (local_20 == local_34) {
         return local_34;
       }
-      rt_set_errno(0xc,local_20);
+      __set_errno(0xc,local_20);
       return extraout_EDX;
     }
   }
 LAB_0007910b:
-  uVar3 = rt_7ad54(local_20 & 0xffff);
+  uVar3 = __set_errno_dos(local_20 & 0xffff);
   return uVar3;
 }
 
 
-// ==== rt_prtf @ 0007927c size=641
+// ==== __prtf @ 0007927c size=641
 
-/* Hand-named: rt_prtf (hand from Q1 rt_prtf (BSim 1.0)) */
+/* Hand-named: __prtf (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module prtf
+   (was rt_prtf)) */
 
-undefined4 rt_prtf(undefined4 param_1,char *param_2,int *param_3,code *param_4)
+undefined4 __prtf(undefined4 param_1,char *param_2,int *param_3,code *param_4)
 
 {
   int iVar1;
@@ -67791,7 +67842,7 @@ undefined4 rt_prtf(undefined4 param_1,char *param_2,int *param_3,code *param_4)
           if (cVar2 == '%') break;
           (*local_18)(&local_34,cVar2);
         }
-        param_2 = (char *)rt_794fd(param_2,param_3,&local_34);
+        param_2 = (char *)getprintspecs(param_2,param_3,&local_34);
         cStack_1f = *param_2;
         param_2 = param_2 + 1;
         if (cStack_1f == '\0') {
@@ -67913,11 +67964,12 @@ LAB_000792e2:
 }
 
 
-// ==== rt_794fd @ 000794fd size=307
+// ==== getprintspecs @ 000794fd size=307
 
-/* Hand-named: rt_794fd (hand from Q1 rt_58a4b (BSim 1.0)) */
+/* Hand-named: getprintspecs (hand omfsig prefix24 vs Watcom 10 clib3r (Actua Soccer libs), module
+   prtf (was rt_794fd)) */
 
-byte * rt_794fd(undefined4 param_1,int *param_2,int param_3)
+byte * getprintspecs(undefined4 param_1,int *param_2,int param_3)
 
 {
   byte bVar1;
@@ -67929,7 +67981,7 @@ byte * rt_794fd(undefined4 param_1,int *param_2,int param_3)
   
   *(undefined1 *)(param_3 + 0x17) = 0;
   *(undefined1 *)(param_3 + 0x16) = 0x20;
-  pbVar4 = (byte *)rt_79630(param_1,param_3);
+  pbVar4 = (byte *)evalflags(param_1,param_3);
   *(undefined4 *)(extraout_EBX + 4) = 0;
   if ((*pbVar4 < 0x30) || (0x39 < *pbVar4)) {
     if (*pbVar4 == 0x2a) {
@@ -68011,11 +68063,12 @@ byte * rt_794fd(undefined4 param_1,int *param_2,int param_3)
 }
 
 
-// ==== rt_79630 @ 00079630 size=91
+// ==== evalflags @ 00079630 size=91
 
-/* Hand-named: rt_79630 (hand from Q1 rt_58b7e (BSim 1.0)) */
+/* Hand-named: evalflags (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module prtf
+   (was rt_79630)) */
 
-void rt_79630(char *param_1,int param_2)
+void evalflags(char *param_1,int param_2)
 
 {
   char cVar1;
@@ -68126,11 +68179,12 @@ void fmt4hex_796d2(undefined4 param_1,char *param_2,int param_3)
 }
 
 
-// ==== rt_prtf_number @ 00079733 size=219
+// ==== FixedPoint_Format @ 00079733 size=219
 
-/* Hand-named: rt_prtf_number (hand from Q1 rt_prtf_number (BSim 1.0)) */
+/* Hand-named: FixedPoint_Format (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs),
+   module prtf (was rt_prtf_number)) */
 
-void rt_prtf_number(undefined1 *param_1,uint param_2,int param_3)
+void FixedPoint_Format(undefined1 *param_1,uint param_2,int param_3)
 
 {
   int iVar1;
@@ -68374,7 +68428,7 @@ LAB_00079ace:
           rt_utoa(unaff_EBP,param_1,uVar11);
           puVar10 = extraout_ECX_04;
           if (*(char *)(param_3 + 0x15) == 'X') {
-            rt_79c5e(param_1);
+            zupstr(param_1);
             puVar10 = extraout_ECX_05;
           }
           goto LAB_000799a3;
@@ -68416,7 +68470,7 @@ LAB_00079aed:
     fmt4hex_796d2(uVar11,puVar10,8);
     puVar10 = extraout_ECX_06;
     if (*(char *)(param_3 + 0x15) == 'P') {
-      rt_79c5e(param_1);
+      zupstr(param_1);
       puVar10 = extraout_ECX_07;
     }
 LAB_000799b2:
@@ -68445,7 +68499,7 @@ LAB_0007994c:
         if ((*(byte *)(param_3 + 0x14) & 0x10) != 0) {
           puVar5 = (undefined4 *)*param_2;
           *param_2 = (int)(puVar5 + 1);
-          rt_prtf_number(param_1,*puVar5,param_3);
+          FixedPoint_Format(param_1,*puVar5,param_3);
           uVar11 = 0xffffffff;
           uVar8 = (uint)uVar12;
           in_DS = uVar12;
@@ -68553,11 +68607,12 @@ LAB_00079c09:
 }
 
 
-// ==== rt_79c5e @ 00079c5e size=24
+// ==== zupstr @ 00079c5e size=24
 
-/* Hand-named: rt_79c5e (hand from Q1 rt_591ac (BSim 1.0)) */
+/* Hand-named: zupstr (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module prtf (was
+   rt_79c5e)) */
 
-void rt_79c5e(char *param_1)
+void zupstr(char *param_1)
 
 {
   undefined1 uVar1;
@@ -68572,11 +68627,12 @@ void rt_79c5e(char *param_1)
 }
 
 
-// ==== rt_79c76 @ 00079c76 size=163
+// ==== __MemAllocator @ 00079c76 size=163
 
-/* Hand-named: rt_79c76 (hand from Q1 rt_5942c (BSim 1.0)) */
+/* Hand-named: __MemAllocator (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module
+   memalloc (was rt_79c76)) */
 
-uint * rt_79c76(uint param_1,undefined4 param_2,int param_3)
+uint * __MemAllocator(uint param_1,undefined4 param_2,int param_3)
 
 {
   uint uVar1;
@@ -68630,11 +68686,12 @@ uint * rt_79c76(uint param_1,undefined4 param_2,int param_3)
 }
 
 
-// ==== rt_79d1e @ 00079d1e size=272
+// ==== __MemFree @ 00079d1e size=272
 
-/* Hand-named: rt_79d1e (hand from Q1 rt_594d4 (BSim 1.0)) */
+/* Hand-named: __MemFree (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module memalloc
+   (was rt_79d1e)) */
 
-void rt_79d1e(undefined4 *param_1,undefined4 param_2,int param_3)
+void __MemFree(undefined4 *param_1,undefined4 param_2,int param_3)
 
 {
   uint uVar1;
@@ -68731,11 +68788,12 @@ LAB_00079ddc:
 }
 
 
-// ==== rt_79e29 @ 00079e29 size=63
+// ==== __unlink @ 00079e29 size=63
 
-/* Hand-named: rt_79e29 (hand from Q1 rt_595df (BSim 1.0)) */
+/* Hand-named: __unlink (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module grownear
+   (was rt_79e29)) */
 
-void rt_79e29(int param_1)
+void __unlink(int param_1)
 
 {
   int iVar1;
@@ -68777,7 +68835,7 @@ undefined8 rt_79e68(undefined4 param_1,undefined4 param_2)
   uVar5 = CONCAT44(DAT_0009f0b8,param_1);
   while (piVar3 = (int *)((ulonglong)uVar5 >> 0x20), piVar3 != (int *)0x0) {
     if (*(int *)piVar3[9] + 0x2c == *piVar3) {
-      rt_79e29(piVar3,piVar3,piVar3 + -2,piVar3[2]);
+      __unlink(piVar3,piVar3,piVar3 + -2,piVar3[2]);
       iVar1 = *(int *)(extraout_EBX + 4);
       bVar4 = 0;
       if (iVar1 == 0) {
@@ -68838,7 +68896,7 @@ uint * rt_alloc_and_link_record(undefined4 param_1,int param_2)
     if ((uVar8 + 0x2c == extraout_EBX) && (*(int *)(uVar8 + 0x18) == 1)) break;
     uVar8 = *(uint *)(uVar8 + 8);
   }
-  rt_79e29(uVar8);
+  __unlink(uVar8);
   if (extraout_EDX[-1] != 0) {
     return (uint *)0x0;
   }
@@ -68859,7 +68917,7 @@ uint * rt_alloc_and_link_record(undefined4 param_1,int param_2)
   if (puVar5 != (undefined2 *)0x0) {
     *(undefined4 *)(puVar5 + 2) = 0;
     *(int *)(puVar5 + 4) = extraout_EDX_00 + -0xc;
-    puVar6 = (uint *)rt_79fc9(puVar5 + 4);
+    puVar6 = (uint *)__LinkUpNewMHeap(puVar5 + 4);
     *(undefined4 *)(extraout_EBX_01 + 0x18) = 1;
     uVar9 = param_2 + 1U & 0xfffffffe;
     uVar8 = *puVar6;
@@ -68871,18 +68929,19 @@ uint * rt_alloc_and_link_record(undefined4 param_1,int param_2)
     *(uint *)((int)puVar6 + uVar9) = uVar8 - uVar9 | 1;
     *(undefined4 *)(extraout_EBX_01 + 0x14) = 0xffffffff;
     *(int *)(extraout_EBX_01 + 0x18) = *(int *)(extraout_EBX_01 + 0x18) + 1;
-    rt_free((uint *)((int)puVar6 + uVar9) + 1);
+    free((uint *)((int)puVar6 + uVar9) + 1);
     return puVar6;
   }
   return (uint *)0x0;
 }
 
 
-// ==== rt_79fc9 @ 00079fc9 size=116
+// ==== __LinkUpNewMHeap @ 00079fc9 size=116
 
-/* Hand-named: rt_79fc9 (hand from Q1 rt_59766 (BSim 1.0)) */
+/* Hand-named: __LinkUpNewMHeap (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module
+   grownear (was rt_79fc9)) */
 
-undefined8 rt_79fc9(int *param_1,undefined4 param_2)
+undefined8 __LinkUpNewMHeap(int *param_1,undefined4 param_2)
 
 {
   int *piVar1;
@@ -69030,11 +69089,12 @@ LAB_0007a155:
 }
 
 
-// ==== rt_7a15e @ 0007a15e size=175
+// ==== __CreateNewNHeap @ 0007a15e size=175
 
-/* Hand-named: rt_7a15e (hand from Q1 rt_598fb (BSim 1.0)) */
+/* Hand-named: __CreateNewNHeap (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs),
+   module grownear (was rt_7a15e)) */
 
-undefined8 rt_7a15e(uint param_1,undefined4 param_2)
+undefined8 __CreateNewNHeap(uint param_1,undefined4 param_2)
 
 {
   code *pcVar1;
@@ -69070,14 +69130,14 @@ undefined8 rt_7a15e(uint param_1,undefined4 param_2)
     if (((puVar3 != (uint *)0x0) && (uVar4 = local_18 - 4, uVar4 <= local_18)) && (0x37 < uVar4)) {
       *puVar3 = uVar4;
       local_18 = uVar4;
-      uVar8 = rt_79fc9(puVar3,puVar3,puVar6);
+      uVar8 = __LinkUpNewMHeap(puVar3,puVar3,puVar6);
       iVar5 = (int)((ulonglong)uVar8 >> 0x20);
       puVar6 = (uint *)uVar8;
       local_18 = *puVar6;
       *puVar6 = local_18 | 1;
       *(undefined4 *)(iVar5 + 0x14) = 0xffffffff;
       *(int *)(iVar5 + 0x18) = *(int *)(iVar5 + 0x18) + 1;
-      rt_free(puVar6 + 1);
+      free(puVar6 + 1);
       uVar2 = 1;
       goto LAB_0007a155;
     }
@@ -69109,7 +69169,7 @@ undefined8 rt_7a20d(uint param_1,undefined4 param_2)
   
   local_18 = param_1;
   if (((DAT_0009f36a == 1) && (DAT_0009f36b == '\0')) || (DAT_0009f36a == 9)) {
-    uVar3 = rt_7a15e(param_1);
+    uVar3 = __CreateNewNHeap(param_1);
     goto LAB_0007a348;
   }
   if ((DAT_000a3dc4 == 0) || (DAT_0009f33c == 0xfffffffe)) goto LAB_0007a244;
@@ -69139,7 +69199,7 @@ undefined8 rt_7a20d(uint param_1,undefined4 param_2)
 LAB_0007a30b:
         if (local_18 < 0x38) goto LAB_0007a244;
         *puVar5 = local_18;
-        uVar9 = rt_79fc9(puVar5,puVar5);
+        uVar9 = __LinkUpNewMHeap(puVar5,puVar5);
         local_18 = *(uint *)uVar9;
       }
       else {
@@ -69155,7 +69215,7 @@ LAB_0007a30b:
       piVar1 = (int *)(iVar4 + 0x18);
       *piVar1 = *piVar1 + 1;
       *(undefined4 *)(iVar4 + 0x14) = 0xffffffff;
-      rt_free((uint *)uVar9 + 1);
+      free((uint *)uVar9 + 1);
       uVar3 = 1;
       goto LAB_0007a348;
     }
@@ -69275,11 +69335,12 @@ undefined4 rt_context_save_and_call_rt_74228(void)
 }
 
 
-// ==== rt_7a434 @ 0007a434 size=70
+// ==== sosTIMERDRVSetRate @ 0007a434 size=70
 
-/* Hand-named: rt_7a434 (hand from Q1 rt_5a0a1 (BSim 1.0)) */
+/* Hand-named: sosTIMERDRVSetRate (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sostimer.asm (was rt_7a434)) */
 
-uint __stdcall rt_7a434(undefined4 param_1)
+uint __stdcall sosTIMERDRVSetRate(undefined4 param_1)
 
 {
   byte bVar1;
@@ -69354,11 +69415,12 @@ uint __stdcall rt_7a47a(undefined4 param_1,undefined4 param_2)
 }
 
 
-// ==== rt_pic_mask @ 0007a535 size=44
+// ==== sosTIMERDRVDisable @ 0007a535 size=44
 
-/* Hand-named: rt_pic_mask (hand from Q1 rt_pic_mask (BSim 1.0)) */
+/* Hand-named: sosTIMERDRVDisable (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sostimer.asm (was rt_pic_mask)) */
 
-byte rt_pic_mask(byte param_1)
+byte sosTIMERDRVDisable(byte param_1)
 
 {
   if (DAT_000a03ac != 0) {
@@ -69370,11 +69432,12 @@ byte rt_pic_mask(byte param_1)
 }
 
 
-// ==== rt_pic_unmask @ 0007a561 size=44
+// ==== sosTIMERDRVEnable @ 0007a561 size=44
 
-/* Hand-named: rt_pic_unmask (hand from Q1 rt_pic_unmask (BSim 1.0)) */
+/* Hand-named: sosTIMERDRVEnable (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sostimer.asm (was rt_pic_unmask)) */
 
-byte rt_pic_unmask(byte param_1)
+byte sosTIMERDRVEnable(byte param_1)
 
 {
   if (DAT_000a03ac != 0) {
@@ -69386,11 +69449,12 @@ byte rt_pic_unmask(byte param_1)
 }
 
 
-// ==== rt_7a58d @ 0007a58d size=121
+// ==== sosTIMERDRVUnInit @ 0007a58d size=121
 
-/* Hand-named: rt_7a58d (hand from Q1 rt_5a201 (BSim 1.0)) */
+/* Hand-named: sosTIMERDRVUnInit (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sostimer.asm (was rt_7a58d)) */
 
-ushort rt_7a58d(ushort param_1,undefined4 param_2,undefined4 param_3)
+ushort sosTIMERDRVUnInit(ushort param_1,undefined4 param_2,undefined4 param_3)
 
 {
   code *pcVar1;
@@ -69417,14 +69481,14 @@ ushort rt_7a58d(ushort param_1,undefined4 param_2,undefined4 param_3)
 }
 
 
-// ==== rt_swap_words_or_return_args @ 0007a609 size=89
+// ==== sosTIMERDRVCallOld @ 0007a609 size=89
 
 /* WARNING: Stack frame is not setup normally: Input value of stackpointer is not used */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Hand-named: rt_swap_words_or_return_args (hand inkling guess: swaps via global state or returns
-   args unchanged) */
+/* Hand-named: sosTIMERDRVCallOld (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sostimer.asm (was rt_swap_words_or_return_args)) */
 
-undefined8 rt_swap_words_or_return_args(undefined4 param_1,undefined4 param_2)
+undefined8 sosTIMERDRVCallOld(undefined4 param_1,undefined4 param_2)
 
 {
   undefined4 uVar1;
@@ -69468,7 +69532,7 @@ undefined8 rt_7a663(undefined4 param_1,undefined4 param_2)
   for (puVar2 = DAT_000d9418; puVar2 != (undefined4 *)0x0; puVar2 = (undefined4 *)*puVar2) {
     if (((*(uint *)(puVar2[1] + 0xc) & uVar1) != 0) &&
        (iVar3 = iVar3 + 1, (*(byte *)(puVar2[1] + 0xd) & 0x10) != 0)) {
-      rt_flush();
+      __flush();
       uVar1 = extraout_ECX;
       puVar2 = extraout_EDX;
       iVar3 = extraout_EBX;
@@ -69478,11 +69542,12 @@ undefined8 rt_7a663(undefined4 param_1,undefined4 param_2)
 }
 
 
-// ==== rt_7a668 @ 0007a668 size=47
+// ==== __flushall @ 0007a668 size=47
 
-/* Hand-named: rt_7a668 (hand from Q1 rt_5a2c5 (BSim 1.0)) */
+/* Hand-named: __flushall (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module flushall
+   (was rt_7a668)) */
 
-undefined8 rt_7a668(uint param_1,undefined4 param_2)
+undefined8 __flushall(uint param_1,undefined4 param_2)
 
 {
   uint extraout_ECX;
@@ -69495,7 +69560,7 @@ undefined8 rt_7a668(uint param_1,undefined4 param_2)
   for (puVar1 = DAT_000d9418; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
     if (((*(uint *)(puVar1[1] + 0xc) & param_1) != 0) &&
        (iVar2 = iVar2 + 1, (*(byte *)(puVar1[1] + 0xd) & 0x10) != 0)) {
-      rt_flush();
+      __flush();
       param_1 = extraout_ECX;
       puVar1 = extraout_EDX;
       iVar2 = extraout_EBX;
@@ -69505,11 +69570,12 @@ undefined8 rt_7a668(uint param_1,undefined4 param_2)
 }
 
 
-// ==== rt_7a697 @ 0007a697 size=29
+// ==== getche @ 0007a697 size=29
 
-/* Hand-named: rt_7a697 (hand from Q1 rt_5a2f4 (callgraph r0)) */
+/* Hand-named: getche (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module gtche (was
+   rt_7a697)) */
 
-undefined8 rt_7a697(undefined4 param_1,undefined4 param_2)
+undefined8 getche(undefined4 param_1,undefined4 param_2)
 
 {
   code *pcVar1;
@@ -69537,11 +69603,12 @@ void rt_7a6b4(void)
 }
 
 
-// ==== rt_7a6b6 @ 0007a6b6 size=144
+// ==== __ModF @ 0007a6b6 size=144
 
-/* Hand-named: rt_7a6b6 (hand from Q1 rt_5a312 (BSim 1.0)) */
+/* Hand-named: __ModF (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module amodf386
+   (was rt_7a6b6)) */
 
-void rt_7a6b6(uint *param_1,uint *param_2)
+void __ModF(uint *param_1,uint *param_2)
 
 {
   uint uVar1;
@@ -69586,11 +69653,12 @@ void rt_7a6b6(uint *param_1,uint *param_2)
 }
 
 
-// ==== rt_7a746 @ 0007a746 size=75
+// ==== __ZBuf2F @ 0007a746 size=75
 
-/* Hand-named: rt_7a746 (hand from Q1 rt_5a3a2 (BSim 1.0)) */
+/* Hand-named: __ZBuf2F (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module amodf386
+   (was rt_7a746)) */
 
-void rt_7a746(byte *param_1,undefined8 *param_2)
+void __ZBuf2F(byte *param_1,undefined8 *param_2)
 
 {
   uint uVar1;
@@ -69753,9 +69821,9 @@ void rt_7a920(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined
   undefined4 extraout_EBX;
   undefined2 in_DS;
   
-  iVar1 = rt_817ae(param_1,in_DS,param_1,param_2,param_4,param_3);
+  iVar1 = __EnterWVIDEO(param_1,in_DS,param_1,param_2,param_4,param_3);
   if (iVar1 == 0) {
-    rt_open_con(extraout_EBX,extraout_ECX);
+    __do_exit_with_msg_(extraout_EBX,extraout_ECX);
   }
   return;
 }
@@ -69800,11 +69868,12 @@ LAB_0007a990:
 }
 
 
-// ==== sos_timer_init_7a997 @ 0007a997 size=38
+// ==== __Slash_C @ 0007a997 size=38
 
-/* Hand-named: sos_timer_init_7a997 (hand inkling guess: sets timer via int21, writes 0x2f,99,0) */
+/* Hand-named: __Slash_C (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module spve (was
+   sos_timer_init_7a997)) */
 
-undefined8 sos_timer_init_7a997(undefined1 *param_1,undefined4 param_2,undefined4 param_3)
+undefined8 __Slash_C(undefined1 *param_1,undefined4 param_2,undefined4 param_3)
 
 {
   code *pcVar1;
@@ -69838,7 +69907,7 @@ undefined8 sos_check_sound_result(undefined4 param_1,undefined4 param_2)
   int iVar1;
   undefined1 local_38 [44];
   
-  iVar1 = rt_int21_wrapper_8182c(param_1,7,local_38);
+  iVar1 = _dos_findfirst(param_1,7,local_38);
   return CONCAT44(param_2,(uint)(iVar1 == 0));
 }
 
@@ -69853,16 +69922,17 @@ void sos_dispatch_and_flush
 
 {
   rt_format_string_with_spaces(param_2,param_5,param_3,0,param_1,param_4);
-  rt_int21_wrapper_81a4a();
+  __dospawn();
   return;
 }
 
 
-// ==== rt_init_cmdline @ 0007aa0f size=766
+// ==== spawnve @ 0007aa0f size=766
 
-/* Hand-named: rt_init_cmdline (hand runtime, from digest strings) */
+/* Hand-named: spawnve (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module spve
+   (was rt_init_cmdline)) */
 
-int rt_init_cmdline(void)
+int spawnve(void)
 
 {
   undefined4 *puVar1;
@@ -69899,21 +69969,20 @@ int rt_init_cmdline(void)
   local_c4 = (uint)uVar6;
   local_14 = '\0';
   if (1 < local_c4) {
-    rt_set_errno(9);
+    __set_errno(9);
     return -1;
   }
   local_24 = extraout_EBX;
-  local_1c = rt_build_string_buffer
-                       (extraout_EBX,extraout_ECX,&local_34,local_38,local_3c,&local_40,0);
+  local_1c = __cenvarg(extraout_EBX,extraout_ECX,&local_34,local_38,local_3c,&local_40,0);
   if (local_1c == -1) {
     return -1;
   }
-  iVar2 = rt_strlen(uVar5);
-  uVar6 = rt_malloc(iVar2 + 0x9a);
+  iVar2 = strlen(uVar5);
+  uVar6 = _nmalloc(iVar2 + 0x9a);
   iVar2 = (int)((ulonglong)uVar6 >> 0x20);
   local_2c = (int)uVar6;
   if (local_2c == 0) {
-    uVar6 = rt_81181(0,iVar2,iVar2 + 3U & 0xfffffffc);
+    uVar6 = stackavail(0,iVar2,iVar2 + 3U & 0xfffffffc);
     if (extraout_EBX_00 < (uint)uVar6) {
       local_18 = (undefined1 *)&local_c4;
     }
@@ -69922,7 +69991,7 @@ int rt_init_cmdline(void)
     }
     uVar6 = CONCAT44((int)((ulonglong)uVar6 >> 0x20),local_18);
     if (local_18 == (undefined1 *)0x0) {
-      rt_free(local_34);
+      free(local_34);
       return -1;
     }
   }
@@ -69930,11 +69999,11 @@ int rt_init_cmdline(void)
   rt_path_normalize(uVar5,(int)local_18 + (int)((ulonglong)uVar6 >> 0x20) + -0x93,&local_4c,
                     &local_48,&local_54,&local_50);
   (*(code *)PTR_rt_noop_stub_808b5_000a3cc4)(local_c0);
-  local_30 = (undefined1 *)rt_malloc(local_40);
+  local_30 = (undefined1 *)_nmalloc(local_40);
   local_20 = local_30;
   if (local_30 == (undefined1 *)0x0) {
     uVar3 = local_40 + 3U & 0xfffffffc;
-    uVar6 = rt_81181(uVar3,uVar3);
+    uVar6 = stackavail(uVar3,uVar3);
     if ((uint)((ulonglong)uVar6 >> 0x20) < (uint)uVar6) {
       local_20 = (undefined1 *)&local_c4;
     }
@@ -69942,9 +70011,9 @@ int rt_init_cmdline(void)
       local_20 = (undefined1 *)0x0;
     }
     if (local_20 == (undefined1 *)0x0) {
-      rt_set_errno(2);
+      __set_errno(2);
       local_1c = -1;
-      rt_78b49(10);
+      __set_doserrno(10);
       goto LAB_0007acde;
     }
   }
@@ -69952,30 +70021,30 @@ int rt_init_cmdline(void)
     local_48 = &DAT_0009496c;
   }
   rt_normalize_path(local_18,local_4c,local_48,local_54,local_50);
-  rt_set_errno(1);
+  __set_errno(1);
   if (*local_50 == '\0') {
-    uVar6 = rt_strlen(local_18,local_18);
+    uVar6 = strlen(local_18,local_18);
     local_28 = (undefined4 *)((int)((ulonglong)uVar6 >> 0x20) + (int)uVar6);
     if (local_14 == '\0') {
       *local_28 = DAT_00094974;
       *(undefined1 *)(local_28 + 1) = DAT_00094978;
-      rt_set_errno(0,local_18,local_20);
+      __set_errno(0,local_18,local_20);
       local_1c = sos_dispatch_and_flush(local_c4);
     }
     else {
-      rt_set_errno(1);
+      __set_errno(1);
     }
     piVar4 = (int *)rt_81195();
     puVar1 = local_28;
     if (*piVar4 != 1) goto LAB_0007acde;
-    rt_set_errno(0,local_18,local_20);
+    __set_errno(0,local_18,local_20);
     *puVar1 = DAT_00094979;
     *(undefined1 *)(puVar1 + 1) = DAT_0009497d;
     local_1c = sos_dispatch_and_flush(local_c4);
     piVar4 = (int *)rt_81195();
     puVar1 = local_28;
     if (*piVar4 != 1) goto LAB_0007acde;
-    rt_set_errno(0);
+    __set_errno(0);
     *puVar1 = DAT_0009496f;
     *(undefined1 *)(puVar1 + 1) = DAT_00094973;
     iVar2 = sos_check_sound_result(local_18);
@@ -69983,7 +70052,7 @@ int rt_init_cmdline(void)
   else {
     iVar2 = rt_stricmp(local_50,&DAT_0009496f);
     if (iVar2 != 0) {
-      rt_set_errno(0,local_18,local_20);
+      __set_errno(0,local_18,local_20);
       local_1c = sos_dispatch_and_flush(local_c4);
       goto LAB_0007acde;
     }
@@ -69991,17 +70060,17 @@ int rt_init_cmdline(void)
     iVar2 = sos_check_sound_result(local_18);
   }
   if (iVar2 != 0) {
-    rt_free(local_34,local_24,local_20,1);
+    free(local_34,local_24,local_20,1);
     local_34 = 0;
     rt_format_string_with_spaces(local_18);
-    sos_timer_init_7a997(local_44,local_14);
+    __Slash_C(local_44,local_14);
     sos_7a93d(s_COMSPEC_0009497e);
     local_1c = rt_init_cmdline_wrapper();
   }
 LAB_0007acde:
-  rt_free(local_30);
-  rt_free(local_2c);
-  rt_free(local_34);
+  free(local_30);
+  free(local_2c);
+  free(local_34);
   (*(code *)PTR_rt_noop_stub_808b5_000a3cc8)(local_c0);
   return local_1c;
 }
@@ -70020,11 +70089,12 @@ void sos_wrapper_7ad0d(undefined4 param_1,undefined4 param_2,undefined4 param_3,
 }
 
 
-// ==== sos_strncpy @ 0007ad23 size=37
+// ==== strncpy @ 0007ad23 size=37
 
-/* Hand-named: sos_strncpy (hand inkling guess: copies up to n chars then zero-pads) */
+/* Hand-named: strncpy (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module strncpy
+   (was sos_strncpy)) */
 
-char * sos_strncpy(char *param_1,char *param_2,int param_3)
+char * strncpy(char *param_1,char *param_2,int param_3)
 
 {
   char *pcVar1;
@@ -70043,12 +70113,12 @@ char * sos_strncpy(char *param_1,char *param_2,int param_3)
 }
 
 
-// ==== sos_timer_callback_7ad4f @ 0007ad4f size=5
+// ==== _dosretax @ 0007ad4f size=5
 
-/* Hand-named: sos_timer_callback_7ad4f (hand inkling guess: sets errno from timer state and returns
-   packed code) */
+/* Hand-named: _dosretax (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module
+   spawn386 (was sos_timer_callback_7ad4f)) */
 
-ulonglong sos_timer_callback_7ad4f(uint param_1,int param_2,undefined4 param_3,undefined4 param_4)
+ulonglong _dosretax(uint param_1,int param_2,undefined4 param_3,undefined4 param_4)
 
 {
   uint uVar1;
@@ -70060,7 +70130,7 @@ ulonglong sos_timer_callback_7ad4f(uint param_1,int param_2,undefined4 param_3,u
   if (param_2 == 0) {
     return (ulonglong)param_1;
   }
-  rt_78b49(param_1 & 0xff,param_1,param_1 & 0xff,param_4,param_2,param_3);
+  __set_doserrno(param_1 & 0xff,param_1,param_1 & 0xff,param_4,param_2,param_3);
   if (extraout_EDX < 0x100) {
     bVar3 = extraout_BL;
     if (2 < DAT_0009f373) {
@@ -70085,16 +70155,17 @@ ulonglong sos_timer_callback_7ad4f(uint param_1,int param_2,undefined4 param_3,u
   else {
     uVar1 = extraout_EDX >> 8 & 0xff;
   }
-  rt_set_errno(uVar1);
+  __set_errno(uVar1);
   return CONCAT44(param_2,0xffffffff);
 }
 
 
-// ==== rt_7ad54 @ 0007ad54 size=102
+// ==== __set_errno_dos @ 0007ad54 size=102
 
-/* Hand-named: rt_7ad54 (hand from Q1 rt_5a5dc (BSim 1.0)) */
+/* Hand-named: __set_errno_dos (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module
+   error386 (was rt_7ad54)) */
 
-undefined8 rt_7ad54(uint param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+undefined8 __set_errno_dos(uint param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   uint uVar1;
@@ -70103,7 +70174,7 @@ undefined8 rt_7ad54(uint param_1,undefined4 param_2,undefined4 param_3,undefined
   byte extraout_BL;
   byte bVar3;
   
-  rt_78b49(param_1 & 0xff,param_1,param_1 & 0xff,param_4,param_2,param_3);
+  __set_doserrno(param_1 & 0xff,param_1,param_1 & 0xff,param_4,param_2,param_3);
   if (extraout_EDX < 0x100) {
     bVar3 = extraout_BL;
     if (2 < DAT_0009f373) {
@@ -70128,16 +70199,17 @@ undefined8 rt_7ad54(uint param_1,undefined4 param_2,undefined4 param_3,undefined
   else {
     uVar1 = extraout_EDX >> 8 & 0xff;
   }
-  rt_set_errno(uVar1);
+  __set_errno(uVar1);
   return CONCAT44(param_2,0xffffffff);
 }
 
 
-// ==== sos_7adba @ 0007adba size=56
+// ==== __int386x @ 0007adba size=56
 
-/* Hand-named: sos_7adba (hand from Q1 sos_5b70a (BSim 1.0)) */
+/* Hand-named: __int386x (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module intxa386
+   (was sos_7adba)) */
 
-void sos_7adba(undefined4 param_1,undefined4 *param_2,undefined2 *param_3)
+void __int386x(undefined4 param_1,undefined4 *param_2,undefined2 *param_3)
 
 {
   undefined4 extraout_ECX;
@@ -70214,45 +70286,45 @@ undefined8 sos_waitForSoundReady(undefined4 param_1,undefined4 param_2)
   int iVar1;
   undefined4 local_1c;
   
-  iVar1 = sos_timer_callback_7c601();
+  iVar1 = sosDRVLockMemory();
   if (iVar1 == 0) {
-    iVar1 = sos_timer_callback_7c601();
+    iVar1 = sosDRVLockMemory();
     if (iVar1 == 0) {
-      iVar1 = sos_timer_callback_7c601();
+      iVar1 = sosDRVLockMemory();
       if (iVar1 == 0) {
-        iVar1 = sos_timer_callback_7c601();
+        iVar1 = sosDRVLockMemory();
         if (iVar1 == 0) {
-          iVar1 = sos_timer_callback_7c601();
+          iVar1 = sosDRVLockMemory();
           if (iVar1 == 0) {
-            iVar1 = sos_timer_callback_7c601();
+            iVar1 = sosDRVLockMemory();
             if (iVar1 == 0) {
-              iVar1 = sos_timer_callback_7c601();
+              iVar1 = sosDRVLockMemory();
               if (iVar1 == 0) {
-                iVar1 = sos_timer_callback_7c601();
+                iVar1 = sosDRVLockMemory();
                 if (iVar1 == 0) {
-                  iVar1 = sos_timer_callback_7c601();
+                  iVar1 = sosDRVLockMemory();
                   if (iVar1 == 0) {
-                    iVar1 = sos_timer_callback_7c601();
+                    iVar1 = sosDRVLockMemory();
                     if (iVar1 == 0) {
-                      iVar1 = sos_timer_callback_7c601();
+                      iVar1 = sosDRVLockMemory();
                       if (iVar1 == 0) {
-                        iVar1 = sos_timer_callback_7c601();
+                        iVar1 = sosDRVLockMemory();
                         if (iVar1 == 0) {
-                          iVar1 = sos_timer_callback_7c601();
+                          iVar1 = sosDRVLockMemory();
                           if (iVar1 == 0) {
-                            iVar1 = sos_timer_callback_7c601();
+                            iVar1 = sosDRVLockMemory();
                             if (iVar1 == 0) {
-                              iVar1 = sos_timer_callback_7c601();
+                              iVar1 = sosDRVLockMemory();
                               if (iVar1 == 0) {
-                                iVar1 = sos_timer_callback_7c601();
+                                iVar1 = sosDRVLockMemory();
                                 if (iVar1 == 0) {
-                                  iVar1 = sos_timer_callback_7c601();
+                                  iVar1 = sosDRVLockMemory();
                                   if (iVar1 == 0) {
-                                    iVar1 = sos_timer_callback_7c601();
+                                    iVar1 = sosDRVLockMemory();
                                     if (iVar1 == 0) {
-                                      iVar1 = sos_timer_callback_7c601();
+                                      iVar1 = sosDRVLockMemory();
                                       if (iVar1 == 0) {
-                                        iVar1 = sos_timer_callback_7c601();
+                                        iVar1 = sosDRVLockMemory();
                                         if (iVar1 == 0) {
                                           local_1c = 0;
                                         }
@@ -70350,45 +70422,45 @@ undefined8 sos_wait_for_sos_ready(undefined4 param_1,undefined4 param_2)
   int iVar1;
   undefined4 local_1c;
   
-  iVar1 = sos_sound_irq_dispatcher();
+  iVar1 = sosDRVUnLockMemory();
   if (iVar1 == 0) {
-    iVar1 = sos_sound_irq_dispatcher();
+    iVar1 = sosDRVUnLockMemory();
     if (iVar1 == 0) {
-      iVar1 = sos_sound_irq_dispatcher();
+      iVar1 = sosDRVUnLockMemory();
       if (iVar1 == 0) {
-        iVar1 = sos_sound_irq_dispatcher();
+        iVar1 = sosDRVUnLockMemory();
         if (iVar1 == 0) {
-          iVar1 = sos_sound_irq_dispatcher();
+          iVar1 = sosDRVUnLockMemory();
           if (iVar1 == 0) {
-            iVar1 = sos_sound_irq_dispatcher();
+            iVar1 = sosDRVUnLockMemory();
             if (iVar1 == 0) {
-              iVar1 = sos_sound_irq_dispatcher();
+              iVar1 = sosDRVUnLockMemory();
               if (iVar1 == 0) {
-                iVar1 = sos_sound_irq_dispatcher();
+                iVar1 = sosDRVUnLockMemory();
                 if (iVar1 == 0) {
-                  iVar1 = sos_sound_irq_dispatcher();
+                  iVar1 = sosDRVUnLockMemory();
                   if (iVar1 == 0) {
-                    iVar1 = sos_sound_irq_dispatcher();
+                    iVar1 = sosDRVUnLockMemory();
                     if (iVar1 == 0) {
-                      iVar1 = sos_sound_irq_dispatcher();
+                      iVar1 = sosDRVUnLockMemory();
                       if (iVar1 == 0) {
-                        iVar1 = sos_sound_irq_dispatcher();
+                        iVar1 = sosDRVUnLockMemory();
                         if (iVar1 == 0) {
-                          iVar1 = sos_sound_irq_dispatcher();
+                          iVar1 = sosDRVUnLockMemory();
                           if (iVar1 == 0) {
-                            iVar1 = sos_sound_irq_dispatcher();
+                            iVar1 = sosDRVUnLockMemory();
                             if (iVar1 == 0) {
-                              iVar1 = sos_sound_irq_dispatcher();
+                              iVar1 = sosDRVUnLockMemory();
                               if (iVar1 == 0) {
-                                iVar1 = sos_sound_irq_dispatcher();
+                                iVar1 = sosDRVUnLockMemory();
                                 if (iVar1 == 0) {
-                                  iVar1 = sos_sound_irq_dispatcher();
+                                  iVar1 = sosDRVUnLockMemory();
                                   if (iVar1 == 0) {
-                                    iVar1 = sos_sound_irq_dispatcher();
+                                    iVar1 = sosDRVUnLockMemory();
                                     if (iVar1 == 0) {
-                                      iVar1 = sos_sound_irq_dispatcher();
+                                      iVar1 = sosDRVUnLockMemory();
                                       if (iVar1 == 0) {
-                                        iVar1 = sos_sound_irq_dispatcher();
+                                        iVar1 = sosDRVUnLockMemory();
                                         if (iVar1 == 0) {
                                           local_1c = 0;
                                         }
@@ -70489,7 +70561,8 @@ void sos_noop_stub_7b891(void)
 
 // ==== strcpy @ 0007b8a6 size=31
 
-/* Hand-named: strcpy (hand omfsig full vs Open Watcom 1.9/v2 libs (was sos_7b8a6)) */
+/* Hand-named: strcpy (hand omfsig full vs Open Watcom 1.9/v2 libs (was sos_7b8a6) | sig agrees
+   (Watcom 10 clib3r (Actua Soccer libs) full)) */
 
 char * strcpy(char *param_1,char *param_2)
 
@@ -70532,29 +70605,29 @@ void sos_no_op(void)
 longlong sos_timer_shift(undefined4 param_1,uint param_2)
 
 {
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
-  sos_timer_callback_7c601();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
+  sosDRVLockMemory();
   return (ulonglong)param_2 << 0x20;
 }
 
@@ -70571,25 +70644,25 @@ undefined8 sos_timer_tick_7bbe4(byte *param_1,undefined4 param_2,int param_3)
   int unaff_EBP;
   
   *(char *)(param_3 + -0x647f73c) = *(char *)(param_3 + -0x647f73c) + ((byte)param_1 | *param_1);
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
-  sos_sound_irq_dispatcher();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
+  sosDRVUnLockMemory();
   *(undefined4 *)(unaff_EBP + -4) = 0;
   return CONCAT44(*(undefined4 *)(unaff_EBP + 0xc),*(undefined4 *)(unaff_EBP + -4));
 }
@@ -70667,11 +70740,13 @@ undefined4 sos_nullsub_7bea1(void)
 }
 
 
-// ==== sos_set_timer_params @ 0007beba size=42
+// ==== callbackSetInstrumentData @ 0007beba size=42
 
-/* Hand-named: sos_set_timer_params (hand inkling guess: stores timer mode/value into globals) */
+/* Hand-named: callbackSetInstrumentData (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs),
+   module C:\DONS\SOSMIDIW\SOSMLIB\SRC\SOSMCBCK.C (was sos_set_timer_params)) */
 
-undefined4 __stdcall sos_set_timer_params(undefined4 param_1,undefined4 param_2,undefined2 param_3)
+undefined4 __stdcall
+callbackSetInstrumentData(undefined4 param_1,undefined4 param_2,undefined2 param_3)
 
 {
   DAT_000a19d4 = param_3;
@@ -70998,7 +71073,7 @@ sos_DigiLoadDriver(uint param_1,uint param_2,undefined6 *param_3,int *param_4,un
     else {
       strcpy(&DAT_000a0440,&DAT_000a03c0);
       sos_7d2a9(&DAT_000a0440,s_hmidrv_386_00094994);
-      local_10 = rt_sopen_wrapper();
+      local_10 = open();
       if (local_10 == -1) {
         local_20 = 0xf;
       }
@@ -71008,18 +71083,18 @@ sos_DigiLoadDriver(uint param_1,uint param_2,undefined6 *param_3,int *param_4,un
           rt_read(local_10,&DAT_000a0510,0x30);
           if ((DAT_000a0538 == param_1) && ((DAT_000a053d & 0x80) != 0)) {
             local_18 = 1;
-            uVar2 = sos_timer_query();
+            uVar2 = sosAllocateFarMem();
             *(undefined6 *)param_4 = uVar2;
             if ((*param_4 == 0) && ((short)param_4[1] == 0)) {
               return 5;
             }
-            uVar2 = sos_timer_init_7c75d();
+            uVar2 = sosCreateAliasCS();
             *param_3 = uVar2;
-            iVar1 = sos_timer_callback_7c601();
+            iVar1 = sosDRVLockMemory();
             if (iVar1 != 0) {
               return 5;
             }
-            sos_FileRead(local_10,_DAT_000a0534,*param_4,(short)param_4[1],local_1c);
+            _dos_read(local_10,_DAT_000a0534,*param_4,(short)param_4[1],local_1c);
             *param_6 = DAT_000a0534;
           }
           else {
@@ -71054,10 +71129,10 @@ undefined8 sos_timer_select(uint param_1,undefined4 param_2)
       local_20 = 10;
     }
     else {
-      iVar1 = sos_sound_irq_dispatcher();
+      iVar1 = sosDRVUnLockMemory();
       if (iVar1 == 0) {
-        sos_timer_callback_7c727();
-        sos_timer_callback_7c727();
+        sosFreeSelector();
+        sosFreeSelector();
         local_20 = 0;
       }
       else {
@@ -71107,8 +71182,8 @@ undefined8 sos_alloc_or_hook(undefined4 param_1,undefined4 param_2)
   int local_20;
   
   if (DAT_000a0540 == (code *)0x0) {
-    local_20 = rt_malloc(param_1);
-    if ((local_20 != 0) && (iVar1 = sos_timer_callback_7c601(), iVar1 != 0)) {
+    local_20 = _nmalloc(param_1);
+    if ((local_20 != 0) && (iVar1 = sosDRVLockMemory(), iVar1 != 0)) {
       local_20 = 0;
     }
   }
@@ -71128,8 +71203,8 @@ void sos_free_or_dispatch(undefined4 param_1,undefined4 param_2)
 
 {
   if (DAT_000a0540 == 0) {
-    sos_sound_irq_dispatcher();
-    rt_free(param_1);
+    sosDRVUnLockMemory();
+    free(param_1);
   }
   else {
     (*DAT_000a0544)(param_1,param_2);
@@ -71219,12 +71294,12 @@ void sos_no_op_stub_7c5eb(void)
 }
 
 
-// ==== sos_timer_callback_7c601 @ 0007c601 size=61
+// ==== sosDRVLockMemory @ 0007c601 size=61
 
-/* Hand-named: sos_timer_callback_7c601 (hand inkling guess: dispatches SOS timer callback via int
-   0x31) */
+/* Hand-named: sosDRVLockMemory (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_timer_callback_7c601)) */
 
-undefined1 __stdcall sos_timer_callback_7c601(undefined4 param_1)
+undefined1 __stdcall sosDRVLockMemory(undefined4 param_1)
 
 {
   code *pcVar1;
@@ -71237,11 +71312,12 @@ undefined1 __stdcall sos_timer_callback_7c601(undefined4 param_1)
 }
 
 
-// ==== sos_sound_irq_dispatcher @ 0007c63e size=61
+// ==== sosDRVUnLockMemory @ 0007c63e size=61
 
-/* Hand-named: sos_sound_irq_dispatcher (hand inkling guess: calls SOS IRQ handler with args) */
+/* Hand-named: sosDRVUnLockMemory (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_sound_irq_dispatcher)) */
 
-undefined1 __stdcall sos_sound_irq_dispatcher(undefined4 param_1)
+undefined1 __stdcall sosDRVUnLockMemory(undefined4 param_1)
 
 {
   code *pcVar1;
@@ -71254,12 +71330,13 @@ undefined1 __stdcall sos_sound_irq_dispatcher(undefined4 param_1)
 }
 
 
-// ==== sos_timer_query @ 0007c67b size=169
+// ==== sosAllocateFarMem @ 0007c67b size=169
 
-/* Hand-named: sos_timer_query (hand inkling guess: reads SOS timer/state via swi calls) */
+/* Hand-named: sosAllocateFarMem (hand omfsig prefix24 vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_timer_query)) */
 
-longlong sos_timer_query(uint param_1,undefined4 param_2,uint param_3,undefined4 param_4,
-                        undefined4 param_5,undefined2 *param_6,undefined2 *param_7)
+longlong sosAllocateFarMem(uint param_1,undefined4 param_2,uint param_3,undefined4 param_4,
+                          undefined4 param_5,undefined2 *param_6,undefined2 *param_7)
 
 {
   code *pcVar1;
@@ -71306,12 +71383,12 @@ longlong sos_timer_query(uint param_1,undefined4 param_2,uint param_3,undefined4
 }
 
 
-// ==== sos_timer_callback_7c727 @ 0007c727 size=54
+// ==== sosFreeSelector @ 0007c727 size=54
 
-/* Hand-named: sos_timer_callback_7c727 (hand inkling guess: invokes SOS timer handlers via
-   swi(0x31)) */
+/* Hand-named: sosFreeSelector (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_timer_callback_7c727)) */
 
-void __stdcall sos_timer_callback_7c727(undefined4 param_1,undefined2 param_2)
+void __stdcall sosFreeSelector(undefined4 param_1,undefined2 param_2)
 
 {
   code *pcVar1;
@@ -71327,14 +71404,13 @@ void __stdcall sos_timer_callback_7c727(undefined4 param_1,undefined2 param_2)
 }
 
 
-// ==== sos_timer_init_7c75d @ 0007c75d size=93
+// ==== sosCreateAliasCS @ 0007c75d size=93
 
-/* Hand-named: sos_timer_init_7c75d (hand inkling guess: initializes SOS timer/sound state via
-   interrupt 31h calls) */
+/* Hand-named: sosCreateAliasCS (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_timer_init_7c75d)) */
 
-longlong sos_timer_init_7c75d
-                   (uint param_1,undefined4 param_2,uint param_3,undefined4 param_4,
-                   undefined4 param_5,ushort param_6)
+longlong sosCreateAliasCS(uint param_1,undefined4 param_2,uint param_3,undefined4 param_4,
+                         undefined4 param_5,ushort param_6)
 
 {
   code *pcVar1;
@@ -71366,11 +71442,12 @@ longlong sos_timer_init_7c75d
 }
 
 
-// ==== sos_7c7ba @ 0007c7ba size=54
+// ==== sosRealAlloc @ 0007c7ba size=54
 
-/* Hand-named: sos_7c7ba (hand from Q1 sos_5a883 (BSim 1.0)) */
+/* Hand-named: sosRealAlloc (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm
+   (was sos_7c7ba)) */
 
-void __stdcall sos_7c7ba(int param_1,int *param_2,undefined2 *param_3)
+void __stdcall sosRealAlloc(int param_1,int *param_2,undefined2 *param_3)
 
 {
   code *pcVar1;
@@ -71385,12 +71462,12 @@ void __stdcall sos_7c7ba(int param_1,int *param_2,undefined2 *param_3)
 }
 
 
-// ==== sos_timer_callback_7c7f0 @ 0007c7f0 size=43
+// ==== sosRealFree @ 0007c7f0 size=43
 
-/* Hand-named: sos_timer_callback_7c7f0 (hand inkling guess: dispatches SOS timer event via swi
-   0x31) */
+/* Hand-named: sosRealFree (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm
+   (was sos_timer_callback_7c7f0)) */
 
-void __stdcall sos_timer_callback_7c7f0(undefined4 param_1)
+void __stdcall sosRealFree(undefined4 param_1)
 
 {
   code *pcVar1;
@@ -71457,11 +71534,12 @@ void __stdcall sos_copy_block_and_zero_tail(void)
 }
 
 
-// ==== sos_timer_callback_7c8b1 @ 0007c8b1 size=35
+// ==== sosDRVStop @ 0007c8b1 size=35
 
-/* Hand-named: sos_timer_callback_7c8b1 (hand inkling guess: invokes callback with argument 5) */
+/* Hand-named: sosDRVStop (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm
+   (was sos_timer_callback_7c8b1)) */
 
-void sos_timer_callback_7c8b1(void)
+void sosDRVStop(void)
 
 {
   (*(code *)&stack0x00000004)(5);
@@ -71469,12 +71547,12 @@ void sos_timer_callback_7c8b1(void)
 }
 
 
-// ==== sos_timer_callback_7c8d4 @ 0007c8d4 size=35
+// ==== sosDetDRVExist @ 0007c8d4 size=35
 
-/* Hand-named: sos_timer_callback_7c8d4 (hand inkling guess: indirect call through stored pointer
-   with zero arg) */
+/* Hand-named: sosDetDRVExist (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_timer_callback_7c8d4)) */
 
-void sos_timer_callback_7c8d4(void)
+void sosDetDRVExist(void)
 
 {
   (*(code *)&stack0x00000004)(0);
@@ -71482,12 +71560,12 @@ void sos_timer_callback_7c8d4(void)
 }
 
 
-// ==== sos_timer_callback_7c8f7 @ 0007c8f7 size=68
+// ==== sosDetDRVGetSettings @ 0007c8f7 size=68
 
-/* Hand-named: sos_timer_callback_7c8f7 (hand inkling guess: invokes callback and stores CX/DX
-   bytes/word) */
+/* Hand-named: sosDetDRVGetSettings (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_timer_callback_7c8f7)) */
 
-void sos_timer_callback_7c8f7(void)
+void sosDetDRVGetSettings(void)
 
 {
   undefined2 extraout_CX;
@@ -71501,11 +71579,12 @@ void sos_timer_callback_7c8f7(void)
 }
 
 
-// ==== sos_copy_buffer_and_zero_tail @ 0007c93b size=89
+// ==== sosDetDRVGetCapsInfo @ 0007c93b size=89
 
-/* Hand-named: sos_copy_buffer_and_zero_tail (hand inkling guess: -) */
+/* Hand-named: sosDetDRVGetCapsInfo (hand omfsig prefix24 vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_copy_buffer_and_zero_tail)) */
 
-void __stdcall sos_copy_buffer_and_zero_tail(void)
+void __stdcall sosDetDRVGetCapsInfo(void)
 
 {
   int iVar1;
@@ -71531,13 +71610,15 @@ void __stdcall sos_copy_buffer_and_zero_tail(void)
 }
 
 
-// ==== sos_callback_invoke @ 0007c994 size=48
+// ==== sosDetDRVVerifySettings @ 0007c994 size=48
 
-/* Hand-named: sos_callback_invoke (hand inkling guess: invokes callback with packed args) */
+/* Hand-named: sosDetDRVVerifySettings (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_callback_invoke)) */
 
-void sos_callback_invoke(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4
-                        ,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8
-                        ,undefined4 param_9)
+void sosDetDRVVerifySettings
+               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+               undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,
+               undefined4 param_9)
 
 {
   (*(code *)&param_5)(3,param_2,param_7,
@@ -71547,12 +71628,12 @@ void sos_callback_invoke(undefined4 param_1,undefined4 param_2,undefined4 param_
 }
 
 
-// ==== sos_timer_callback_7c9c4 @ 0007c9c4 size=35
+// ==== sosDRVUnInit @ 0007c9c4 size=35
 
-/* Hand-named: sos_timer_callback_7c9c4 (hand inkling guess: calls stored function pointer with arg
-   1) */
+/* Hand-named: sosDRVUnInit (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm
+   (was sos_timer_callback_7c9c4)) */
 
-void sos_timer_callback_7c9c4(void)
+void sosDRVUnInit(void)
 
 {
   (*(code *)&stack0x00000004)(1);
@@ -71560,11 +71641,12 @@ void sos_timer_callback_7c9c4(void)
 }
 
 
-// ==== sos_timer_callback_7c9e7 @ 0007c9e7 size=53
+// ==== sosDRVInit @ 0007c9e7 size=53
 
-/* Hand-named: sos_timer_callback_7c9e7 (hand inkling guess: invokes callback with packed args) */
+/* Hand-named: sosDRVInit (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm
+   (was sos_timer_callback_7c9e7)) */
 
-void __stdcall sos_timer_callback_7c9e7(void)
+void __stdcall sosDRVInit(void)
 
 {
   undefined2 in_stack_00000014;
@@ -71578,12 +71660,12 @@ void __stdcall sos_timer_callback_7c9e7(void)
 }
 
 
-// ==== sos_timer_callback_7ca1c @ 0007ca1c size=41
+// ==== sosDRVStart @ 0007ca1c size=41
 
-/* Hand-named: sos_timer_callback_7ca1c (hand inkling guess: invokes callback with args 4, param_2,
-   param_3) */
+/* Hand-named: sosDRVStart (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm
+   (was sos_timer_callback_7ca1c)) */
 
-void sos_timer_callback_7ca1c(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+void sosDRVStart(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   undefined4 in_stack_00000018;
@@ -71593,12 +71675,12 @@ void sos_timer_callback_7ca1c(undefined4 param_1,undefined4 param_2,undefined4 p
 }
 
 
-// ==== sos_timer_callback_7ca45 @ 0007ca45 size=38
+// ==== sosDRVSetRate @ 0007ca45 size=38
 
-/* Hand-named: sos_timer_callback_7ca45 (hand inkling guess: invokes timer callback with param_2 and
-   stack arg) */
+/* Hand-named: sosDRVSetRate (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm
+   (was sos_timer_callback_7ca45)) */
 
-void sos_timer_callback_7ca45(undefined4 param_1,undefined4 param_2)
+void sosDRVSetRate(undefined4 param_1,undefined4 param_2)
 
 {
   undefined4 in_stack_00000014;
@@ -71608,12 +71690,12 @@ void sos_timer_callback_7ca45(undefined4 param_1,undefined4 param_2)
 }
 
 
-// ==== sos_timer_callback_7ca6b @ 0007ca6b size=39
+// ==== sosDRVSetAction @ 0007ca6b size=39
 
-/* Hand-named: sos_timer_callback_7ca6b (hand inkling guess: invokes SOS timer callback with args
-   3,param_2,8) */
+/* Hand-named: sosDRVSetAction (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_timer_callback_7ca6b)) */
 
-void sos_timer_callback_7ca6b(undefined4 param_1,undefined4 param_2)
+void sosDRVSetAction(undefined4 param_1,undefined4 param_2)
 
 {
   (*(code *)&stack0x00000004)(3,param_2,8);
@@ -71621,12 +71703,12 @@ void sos_timer_callback_7ca6b(undefined4 param_1,undefined4 param_2)
 }
 
 
-// ==== sos_timer_init_7ca92 @ 0007ca92 size=42
+// ==== sosDIGIHandleVDS @ 0007ca92 size=42
 
-/* Hand-named: sos_timer_init_7ca92 (hand inkling guess: swi 0x2f returns handler, calls with
-   0x1600) */
+/* Hand-named: sosDIGIHandleVDS (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_timer_init_7ca92)) */
 
-undefined4 __stdcall sos_timer_init_7ca92(void)
+undefined4 __stdcall sosDIGIHandleVDS(void)
 
 {
   code *pcVar1;
@@ -71638,11 +71720,12 @@ undefined4 __stdcall sos_timer_init_7ca92(void)
 }
 
 
-// ==== sos_7cabc @ 0007cabc size=53
+// ==== sosDIGIInitForWindows @ 0007cabc size=53
 
-/* Hand-named: sos_7cabc (hand from Q1 sos_5abba (BSim 1.0)) */
+/* Hand-named: sosDIGIInitForWindows (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_7cabc)) */
 
-undefined2 __stdcall sos_7cabc(undefined4 param_1)
+undefined2 __stdcall sosDIGIInitForWindows(undefined4 param_1)
 
 {
   code *pcVar1;
@@ -71659,12 +71742,12 @@ undefined2 __stdcall sos_7cabc(undefined4 param_1)
 }
 
 
-// ==== sos_timer_init_7caf1 @ 0007caf1 size=53
+// ==== sosDIGIUnInitForWindows @ 0007caf1 size=53
 
-/* Hand-named: sos_timer_init_7caf1 (hand inkling guess: checks DOS version, sets timer via int 4b)
-    */
+/* Hand-named: sosDIGIUnInitForWindows (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_timer_init_7caf1)) */
 
-undefined2 __stdcall sos_timer_init_7caf1(undefined4 param_1)
+undefined2 __stdcall sosDIGIUnInitForWindows(undefined4 param_1)
 
 {
   code *pcVar1;
@@ -71681,14 +71764,13 @@ undefined2 __stdcall sos_timer_init_7caf1(undefined4 param_1)
 }
 
 
-// ==== sos_set_timer_params_7cb26 @ 0007cb26 size=63
+// ==== sosDetDRVEnvStringInit @ 0007cb26 size=63
 
-/* Hand-named: sos_set_timer_params_7cb26 (hand inkling guess: stores timer fields and invokes
-   callback with 4) */
+/* Hand-named: sosDetDRVEnvStringInit (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_set_timer_params_7cb26)) */
 
 void __stdcall
-sos_set_timer_params_7cb26
-          (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined2 param_4)
+sosDetDRVEnvStringInit(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined2 param_4)
 
 {
   undefined4 uVar1;
@@ -71704,11 +71786,12 @@ sos_set_timer_params_7cb26
 }
 
 
-// ==== sos_7cb65 @ 0007cb65 size=71
+// ==== sosDetDRVGetEnvString @ 0007cb65 size=71
 
-/* Hand-named: sos_7cb65 (hand from Q1 sos_5ac63 (BSim 1.0)) */
+/* Hand-named: sosDetDRVGetEnvString (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_7cb65)) */
 
-undefined1 * __stdcall sos_7cb65(int param_1)
+undefined1 * __stdcall sosDetDRVGetEnvString(int param_1)
 
 {
   undefined1 *puVar1;
@@ -71732,11 +71815,12 @@ undefined1 * __stdcall sos_7cb65(int param_1)
 }
 
 
-// ==== sos_set_entry @ 0007cbaf size=54
+// ==== sosDetDRVSetEnvString @ 0007cbaf size=54
 
-/* Hand-named: sos_set_entry (hand inkling guess: writes 6-byte record at indexed offset) */
+/* Hand-named: sosDetDRVSetEnvString (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_set_entry)) */
 
-void __stdcall sos_set_entry(int param_1,undefined4 param_2)
+void __stdcall sosDetDRVSetEnvString(int param_1,undefined4 param_2)
 
 {
   int iVar1;
@@ -71749,12 +71833,12 @@ void __stdcall sos_set_entry(int param_1,undefined4 param_2)
 }
 
 
-// ==== sos_timer_callback_7cbe5 @ 0007cbe5 size=43
+// ==== sosDRVGetFreeMemory @ 0007cbe5 size=43
 
-/* Hand-named: sos_timer_callback_7cbe5 (hand inkling guess: dispatches SOS timer callbacks via swi
-   0x31) */
+/* Hand-named: sosDRVGetFreeMemory (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_timer_callback_7cbe5)) */
 
-undefined4 sos_timer_callback_7cbe5(void)
+undefined4 sosDRVGetFreeMemory(void)
 
 {
   code *pcVar1;
@@ -71767,12 +71851,12 @@ undefined4 sos_timer_callback_7cbe5(void)
 }
 
 
-// ==== sos_timer_callback_7cc10 @ 0007cc10 size=29
+// ==== sosDRVIsWindowsActive @ 0007cc10 size=29
 
-/* Hand-named: sos_timer_callback_7cc10 (hand inkling guess: swi 0x2f returns code, calls it with
-   0x1600) */
+/* Hand-named: sosDRVIsWindowsActive (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_timer_callback_7cc10)) */
 
-void sos_timer_callback_7cc10(void)
+void sosDRVIsWindowsActive(void)
 
 {
   code *pcVar1;
@@ -71783,11 +71867,12 @@ void sos_timer_callback_7cc10(void)
 }
 
 
-// ==== sos_7cc2d @ 0007cc2d size=62
+// ==== sosDRVAllocVDSStruct @ 0007cc2d size=62
 
-/* Hand-named: sos_7cc2d (hand from Q1 sos_5ad60 (BSim 1.0)) */
+/* Hand-named: sosDRVAllocVDSStruct (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_7cc2d)) */
 
-bool __stdcall sos_7cc2d(undefined4 param_1,undefined2 *param_2,undefined2 *param_3)
+bool __stdcall sosDRVAllocVDSStruct(undefined4 param_1,undefined2 *param_2,undefined2 *param_3)
 
 {
   code *pcVar1;
@@ -71806,12 +71891,12 @@ bool __stdcall sos_7cc2d(undefined4 param_1,undefined2 *param_2,undefined2 *para
 }
 
 
-// ==== sos_irq_dispatcher @ 0007cc6e size=46
+// ==== sosDRVFreeVDSStruct @ 0007cc6e size=46
 
-/* Hand-named: sos_irq_dispatcher (hand inkling guess: fetches SOS handler and calls it with param)
-    */
+/* Hand-named: sosDRVFreeVDSStruct (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_irq_dispatcher)) */
 
-undefined4 __stdcall sos_irq_dispatcher(undefined2 param_1)
+undefined4 __stdcall sosDRVFreeVDSStruct(undefined2 param_1)
 
 {
   code *pcVar1;
@@ -71822,12 +71907,13 @@ undefined4 __stdcall sos_irq_dispatcher(undefined2 param_1)
 }
 
 
-// ==== sos_timer_start @ 0007cc9c size=105
+// ==== sosDRVVDSGetBuffer @ 0007cc9c size=105
 
-/* Hand-named: sos_timer_start (hand inkling guess: sets SOS timer via interrupt 0x31) */
+/* Hand-named: sosDRVVDSGetBuffer (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_timer_start)) */
 
-bool sos_timer_start(undefined4 param_1,undefined4 param_2,undefined4 param_3,uint param_4,
-                    undefined2 param_5)
+bool sosDRVVDSGetBuffer(undefined4 param_1,undefined4 param_2,undefined4 param_3,uint param_4,
+                       undefined2 param_5)
 
 {
   code *pcVar1;
@@ -71843,13 +71929,13 @@ bool sos_timer_start(undefined4 param_1,undefined4 param_2,undefined4 param_3,ui
 }
 
 
-// ==== sos_init_timer @ 0007cd08 size=77
+// ==== sosDRVVDSFreeBuffer @ 0007cd08 size=77
 
-/* Hand-named: sos_init_timer (hand inkling guess: initializes SOS timer/sound state and dispatches
-   swi 0x31) */
+/* Hand-named: sosDRVVDSFreeBuffer (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   sosdrv.asm (was sos_init_timer)) */
 
-void sos_init_timer(undefined4 param_1,undefined4 param_2,undefined4 param_3,uint param_4,
-                   undefined2 param_5)
+void sosDRVVDSFreeBuffer(undefined4 param_1,undefined4 param_2,undefined4 param_3,uint param_4,
+                        undefined2 param_5)
 
 {
   code *pcVar1;
@@ -71864,12 +71950,12 @@ void sos_init_timer(undefined4 param_1,undefined4 param_2,undefined4 param_3,uin
 }
 
 
-// ==== sos_timer_callback_7cd55 @ 0007cd55 size=54
+// ==== sosDRVMakeDMASelector @ 0007cd55 size=54
 
-/* Hand-named: sos_timer_callback_7cd55 (hand inkling guess: invokes SOS handler with EDX and param
-   fields) */
+/* Hand-named: sosDRVMakeDMASelector (hand omfsig prefix32 vs HMI SOS 3.x (Actua Soccer libs),
+   module sosdrv.asm (was sos_timer_callback_7cd55)) */
 
-undefined4 __stdcall sos_timer_callback_7cd55(undefined4 param_1)
+undefined4 __stdcall sosDRVMakeDMASelector(undefined4 param_1)
 
 {
   code *pcVar1;
@@ -72406,7 +72492,7 @@ uint rt_read(undefined4 param_1,char *param_2)
   int local_24;
   uint local_20;
   
-  uVar3 = rt_808dd();
+  uVar3 = __IOMode();
   if (uVar3 == 0) {
     uVar4 = 4;
   }
@@ -72464,22 +72550,23 @@ uint rt_read(undefined4 param_1,char *param_2)
           return uVar8 | (uint)bVar2 << 0x1f;
         }
       }
-      uVar3 = rt_7ad54(uVar8 & 0xffff);
+      uVar3 = __set_errno_dos(uVar8 & 0xffff);
       return uVar3;
     }
     uVar4 = 6;
   }
-  rt_set_errno(uVar4);
+  __set_errno(uVar4);
   return 0xffffffff;
 }
 
 
-// ==== sos_FileRead @ 0007d3f4 size=42
+// ==== _dos_read @ 0007d3f4 size=42
 
-/* Hand-named: sos_FileRead (hand from Q1 sos_FileRead (BSim 1.0)) */
+/* Hand-named: _dos_read (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module io386
+   (was sos_FileRead)) */
 
-void sos_FileRead(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-                 undefined4 param_5,undefined4 *param_6)
+void _dos_read(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+              undefined4 param_5,undefined4 *param_6)
 
 {
   code *pcVar1;
@@ -72491,7 +72578,7 @@ void sos_FileRead(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
   if (!(bool)in_CF) {
     *param_6 = uVar2;
   }
-  rt_call_7ad54_if_carry();
+  __doserror();
   return;
 }
 
@@ -80804,11 +80891,12 @@ void rt_noop_stub_808b5(void)
 }
 
 
-// ==== rt_808b6 @ 000808b6 size=39
+// ==== __init_80x87 @ 000808b6 size=39
 
-/* Hand-named: rt_808b6 (hand from Q1 rt_5f0fa (BSim 1.0)) */
+/* Hand-named: __init_80x87 (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module
+   ini87386 (was rt_808b6)) */
 
-ushort rt_808b6(void)
+ushort __init_80x87(void)
 
 {
   byte bVar2;
@@ -80830,11 +80918,12 @@ ushort rt_808b6(void)
 }
 
 
-// ==== rt_808dd @ 000808dd size=85
+// ==== __IOMode @ 000808dd size=85
 
-/* Hand-named: rt_808dd (hand from Q1 rt_5a566 (BSim 1.0)) */
+/* Hand-named: __IOMode (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module iomode
+   (was rt_808dd)) */
 
-longlong rt_808dd(uint param_1,uint param_2)
+longlong __IOMode(uint param_1,uint param_2)
 
 {
   int extraout_EBX;
@@ -80846,7 +80935,7 @@ longlong rt_808dd(uint param_1,uint param_2)
   if ((int)param_1 < 6) {
     if ((PTR_DAT_000a3d20[param_1 * 4 + 1] & 0x40) == 0) {
       PTR_DAT_000a3d20[param_1 * 4 + 1] = PTR_DAT_000a3d20[param_1 * 4 + 1] | 0x40;
-      uVar1 = rt_isatty(param_1);
+      uVar1 = isatty(param_1);
       param_1 = (uint)((ulonglong)uVar1 >> 0x20);
       if ((int)uVar1 != 0) {
         PTR_DAT_000a3d20[extraout_EBX + 1] = PTR_DAT_000a3d20[extraout_EBX + 1] | 0x20;
@@ -80857,11 +80946,12 @@ longlong rt_808dd(uint param_1,uint param_2)
 }
 
 
-// ==== rt_80932 @ 00080932 size=21
+// ==== __SetIOMode @ 00080932 size=21
 
-/* Hand-named: rt_80932 (hand from Q1 rt_5a5bb (callgraph r0)) */
+/* Hand-named: __SetIOMode (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module iomode
+   (was rt_80932)) */
 
-void rt_80932(int param_1,uint param_2)
+void __SetIOMode(int param_1,uint param_2)
 
 {
   *(uint *)(PTR_DAT_000a3d20 + param_1 * 4) = param_2 | 0x4000;
@@ -80869,11 +80959,12 @@ void rt_80932(int param_1,uint param_2)
 }
 
 
-// ==== rt_80947 @ 00080947 size=59
+// ==== __leapyear @ 00080947 size=59
 
-/* Hand-named: rt_80947 (hand from Q1 rt_5f3e7 (BSim 1.0)) */
+/* Hand-named: __leapyear (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module timeutil
+   (was rt_80947)) */
 
-longlong rt_80947(uint param_1,uint param_2)
+longlong __leapyear(uint param_1,uint param_2)
 
 {
   if (((param_1 & 3) == 0) && (((int)param_1 % 100 != 0 || ((int)param_1 % 400 == 0)))) {
@@ -80883,11 +80974,12 @@ longlong rt_80947(uint param_1,uint param_2)
 }
 
 
-// ==== rt_80982 @ 00080982 size=229
+// ==== calc_yday @ 00080982 size=229
 
-/* Hand-named: rt_80982 (hand from Q1 rt_5f422 (BSim 1.0)) */
+/* Hand-named: calc_yday (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module timeutil
+   (was rt_80982)) */
 
-int rt_80982(int param_1,int param_2)
+int calc_yday(int param_1,int param_2)
 
 {
   int iVar1;
@@ -80908,7 +81000,7 @@ int rt_80982(int param_1,int param_2)
   undefined4 local_18;
   
   if (*(int *)(param_1 + 0x20) == 0) {
-    uVar5 = rt_80947(param_2 + 0x76c,param_2,param_1);
+    uVar5 = __leapyear(param_2 + 0x76c,param_2,param_1);
     local_24 = (undefined4)((ulonglong)uVar5 >> 0x20);
     if ((int)uVar5 == 0) {
       iVar3 = *(int *)(&DAT_00094b6c + *(int *)(extraout_EBX + 0x10) * 2);
@@ -80924,7 +81016,7 @@ int rt_80982(int param_1,int param_2)
     local_2c = 1;
     local_28 = *(undefined4 *)(extraout_EBX + 0x10);
     local_18 = 0;
-    rt_7868b(&local_38);
+    mktime(&local_38);
     iVar4 = ((*(int *)(extraout_EBX_00 + 0x18) - local_20) + 7) % 7;
     if (*(int *)(extraout_EBX_00 + 0xc) == 5) {
       iVar2 = 4;
@@ -80960,8 +81052,8 @@ undefined4 rt_80a67(undefined4 param_1,undefined4 param_2,undefined4 param_3)
   undefined4 uVar3;
   undefined4 extraout_EBX;
   
-  iVar1 = rt_80982(param_1,param_3);
-  iVar2 = rt_80982(param_2,extraout_EBX);
+  iVar1 = calc_yday(param_1,param_3);
+  iVar2 = calc_yday(param_2,extraout_EBX);
   uVar3 = extraout_ECX;
   if (iVar2 < iVar1) {
     uVar3 = 1;
@@ -80970,11 +81062,12 @@ undefined4 rt_80a67(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 }
 
 
-// ==== rt_80a8f @ 00080a8f size=691
+// ==== __isindst @ 00080a8f size=691
 
-/* Hand-named: rt_80a8f (hand from Q1 rt_5f52f (callgraph r0)) */
+/* Hand-named: __isindst (hand omfsig prefix24 vs Watcom 10 clib3r (Actua Soccer libs), module
+   timeutil (was rt_80a8f)) */
 
-undefined8 rt_80a8f(int param_1,undefined4 param_2)
+undefined8 __isindst(int param_1,undefined4 param_2)
 
 {
   bool bVar1;
@@ -81012,7 +81105,7 @@ undefined8 rt_80a8f(int param_1,undefined4 param_2)
     puVar10 = &DAT_000a3d24;
   }
   iVar7 = *(int *)(extraout_ECX + 0x10);
-  iVar3 = rt_80947(*(int *)(extraout_ECX + 0x14) + 0x76c,(int)((ulonglong)uVar12 >> 0x20),puVar8);
+  iVar3 = __leapyear(*(int *)(extraout_ECX + 0x14) + 0x76c,(int)((ulonglong)uVar12 >> 0x20),puVar8);
   iVar6 = iVar7 * 2;
   if (iVar3 == 0) {
     iVar3 = *(int *)(&DAT_00094b6c + iVar6);
@@ -81052,7 +81145,7 @@ LAB_00080c14:
   else {
     iVar9 = *(int *)(extraout_EBX + 0x1c);
     if (*(int *)(extraout_EBX + 0x20) == 1) {
-      uVar12 = rt_80947(*(int *)(extraout_ECX_00 + 0x14) + 0x76c);
+      uVar12 = __leapyear(*(int *)(extraout_ECX_00 + 0x14) + 0x76c);
       iVar9 = (int)((ulonglong)uVar12 >> 0x20);
       if (((int)uVar12 != 0) && (DAT_00094b6e >> 0x10 < iVar9)) {
         iVar9 = iVar9 + 1;
@@ -81065,7 +81158,7 @@ LAB_00080c14:
     goto LAB_00080c14;
   }
   if (bVar1) {
-    iVar6 = rt_80d42(param_1,iVar6);
+    iVar6 = time_less(param_1,iVar6);
     uVar11 = (uint)(iVar6 == 0);
     param_1 = extraout_ECX_02;
   }
@@ -81110,7 +81203,7 @@ LAB_00080cb9:
   else {
     iVar7 = *(int *)(puVar10 + 0x1c);
     if (*(int *)(puVar10 + 0x20) == 1) {
-      uVar12 = rt_80947(*(int *)(param_1 + 0x14) + 0x76c);
+      uVar12 = __leapyear(*(int *)(param_1 + 0x14) + 0x76c);
       iVar7 = (int)((ulonglong)uVar12 >> 0x20);
       if (((int)uVar12 != 0) && (DAT_00094b6e >> 0x10 < iVar7)) {
         iVar7 = iVar7 + 1;
@@ -81123,7 +81216,7 @@ LAB_00080cb9:
     goto LAB_00080d11;
   }
   if (iVar6 != 0) {
-    uVar11 = rt_80d42(param_1,puVar10);
+    uVar11 = time_less(param_1,puVar10);
     param_1 = extraout_ECX_04;
   }
   if (uVar2 != 0) {
@@ -81135,11 +81228,12 @@ LAB_00080d33:
 }
 
 
-// ==== rt_80d42 @ 00080d42 size=48
+// ==== time_less @ 00080d42 size=48
 
-/* Hand-named: rt_80d42 (hand from Q1 rt_5f7d3 (BSim 1.0)) */
+/* Hand-named: time_less (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module timeutil
+   (was rt_80d42)) */
 
-undefined4 rt_80d42(int *param_1,int *param_2)
+undefined4 time_less(int *param_1,int *param_2)
 
 {
   undefined4 uVar1;
@@ -81154,11 +81248,12 @@ undefined4 rt_80d42(int *param_1,int *param_2)
 }
 
 
-// ==== rt_80d72 @ 00080d72 size=277
+// ==== __brktime @ 00080d72 size=277
 
-/* Hand-named: rt_80d72 (hand from Q1 rt_5f803 (BSim 1.0)) */
+/* Hand-named: __brktime (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module
+   gmtime (was rt_80d72)) */
 
-int rt_80d72(int param_1,uint param_2,int param_3,undefined4 *param_4)
+int __brktime(int param_1,uint param_2,int param_3,undefined4 *param_4)
 
 {
   ulonglong uVar1;
@@ -81190,7 +81285,7 @@ int rt_80d72(int param_1,uint param_2,int param_3,undefined4 *param_4)
   if (uVar2 != 0) {
     iVar4 = iVar4 - (uVar2 - 1 >> 2);
   }
-  uVar7 = rt_80947(uVar2 + 0x76c,uVar2,iVar4);
+  uVar7 = __leapyear(uVar2 + 0x76c,uVar2,iVar4);
   iVar4 = (int)((ulonglong)uVar7 >> 0x20);
   uVar3 = (int)uVar7 + 0x16d;
   for (uVar2 = extraout_EBX; uVar3 <= uVar2; uVar2 = uVar2 - uVar3) {
@@ -81199,7 +81294,7 @@ int rt_80d72(int param_1,uint param_2,int param_3,undefined4 *param_4)
   puVar5 = &DAT_00094b6c;
   *(uint *)(extraout_ECX + 0x1c) = uVar2;
   *(int *)(extraout_ECX + 0x14) = iVar4;
-  iVar4 = rt_80947(iVar4 + 0x76c);
+  iVar4 = __leapyear(iVar4 + 0x76c);
   if (iVar4 != 0) {
     puVar5 = &DAT_00094b86;
   }
@@ -81224,7 +81319,7 @@ void rt_clear_and_call_rt_80d72
 
 {
   *(undefined4 *)(param_2 + 0x20) = 0;
-  rt_80d72(0x63df,*param_1,0,param_2,param_4,param_3);
+  __brktime(0x63df,*param_1,0,param_2,param_4,param_3);
   return;
 }
 
@@ -81450,22 +81545,24 @@ char * rt_81000(char *param_1,int param_2)
 }
 
 
-// ==== rt_81181 @ 00081181 size=9
+// ==== stackavail @ 00081181 size=9
 
-/* Hand-named: rt_81181 (hand from Q1 rt_5f242 (callgraph r0)) */
+/* Hand-named: stackavail (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module
+   cmain386 (was rt_81181)) */
 
-int rt_81181(void)
+int stackavail(void)
 
 {
   return (int)&stack0x00000000 - DAT_0009f34c;
 }
 
 
-// ==== rt_8118a @ 0008118a size=11
+// ==== __CommonInit @ 0008118a size=11
 
-/* Hand-named: rt_8118a (hand from Q1 rt_5f3dc (callgraph r0)) */
+/* Hand-named: __CommonInit (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module
+   cmain386 (was rt_8118a)) */
 
-void rt_8118a(void)
+void __CommonInit(void)
 
 {
   DAT_000a3dc8 = 0x8000;
@@ -81496,11 +81593,12 @@ undefined * rt_return_global_pointer(void)
 }
 
 
-// ==== rt_isatty @ 000811a1 size=30
+// ==== isatty @ 000811a1 size=30
 
-/* Hand-named: rt_isatty (hand from Q1 rt_isatty (callgraph r0)) */
+/* Hand-named: isatty (hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module chktty
+   (was rt_isatty)) */
 
-undefined8 rt_isatty(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+undefined8 isatty(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   code *pcVar1;
@@ -81512,11 +81610,12 @@ undefined8 rt_isatty(undefined4 param_1,undefined4 param_2,undefined4 param_3,un
 }
 
 
-// ==== rt_init_files @ 000811bf size=120
+// ==== __InitFiles @ 000811bf size=120
 
-/* Hand-named: rt_init_files (hand from Q1 rt_init_files (BSim 0.921)) */
+/* Hand-named: __InitFiles (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module
+   initfile (was rt_init_files)) */
 
-void rt_init_files(void)
+void __InitFiles(void)
 
 {
   undefined4 *puVar1;
@@ -81530,10 +81629,10 @@ void rt_init_files(void)
   DAT_0009f105 = DAT_0009f105 & 0xf8 | 4;
   puVar2 = &DAT_0009f0c4;
   while (*(int *)(puVar2 + 0xc) != 0) {
-    puVar1 = (undefined4 *)rt_malloc(8);
+    puVar1 = (undefined4 *)_nmalloc(8);
     iVar3 = extraout_ECX;
     if (puVar1 == (undefined4 *)0x0) {
-      puVar1 = (undefined4 *)rt_malloc(8);
+      puVar1 = (undefined4 *)_nmalloc(8);
       iVar3 = extraout_ECX_00;
       if (puVar1 == (undefined4 *)0x0) {
         rt_7a920(s_Not_enough_memory_to_allocate_fi_000949d8,1);
@@ -81568,12 +81667,12 @@ void rt_81237(void)
   undefined4 extraout_EBX_00;
   undefined4 uVar3;
   
-  rt_81248(0);
+  docloseall(0);
   uVar3 = extraout_EDX_00;
   uVar1 = extraout_ECX_00;
   uVar2 = extraout_EBX_00;
   while (DAT_000d9414 != (undefined4 *)0x0) {
-    rt_free(DAT_000d9414,*DAT_000d9414,uVar2,uVar1,uVar3);
+    free(DAT_000d9414,*DAT_000d9414,uVar2,uVar1,uVar3);
     DAT_000d9414 = extraout_EDX;
     uVar1 = extraout_ECX;
     uVar2 = extraout_EBX;
@@ -81582,11 +81681,12 @@ void rt_81237(void)
 }
 
 
-// ==== rt_81248 @ 00081248 size=82
+// ==== docloseall @ 00081248 size=82
 
-/* Hand-named: rt_81248 (hand from Q1 rt_5bb7d (BSim 1.0)) */
+/* Hand-named: docloseall (hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module
+   ioexit (was rt_81248)) */
 
-undefined8 rt_81248(int param_1,undefined4 param_2)
+undefined8 docloseall(int param_1,undefined4 param_2)
 
 {
   undefined *puVar1;
@@ -81613,7 +81713,7 @@ code_r0x0008127a:
       uVar3 = 0;
     }
 LAB_00081287:
-    rt_doclose_free(puVar1,uVar3);
+    __shutdown_stream(puVar1,uVar3);
     iVar4 = extraout_EBX + 1;
     puVar2 = extraout_ECX;
   }
@@ -81636,7 +81736,7 @@ uint rt_8129a(undefined4 param_1,undefined4 param_2,uint param_3)
   uint extraout_EDX;
   byte bVar6;
   
-  uVar3 = rt_808dd();
+  uVar3 = __IOMode();
   if ((uVar3 & 0x80) != 0) {
     bVar6 = 0;
     pcVar1 = (code *)swi(0x21);
@@ -81653,11 +81753,11 @@ uint rt_8129a(undefined4 param_1,undefined4 param_2,uint param_3)
     if (uVar5 == param_3) {
       return uVar5;
     }
-    rt_set_errno(0xc);
+    __set_errno(0xc);
     return extraout_EDX;
   }
 LAB_000812d7:
-  uVar3 = rt_7ad54(uVar3 & 0xffff);
+  uVar3 = __set_errno_dos(uVar3 & 0xffff);
   return uVar3;
 }
 
@@ -81679,18 +81779,19 @@ longlong rt_int21_wrapper_81316(undefined4 param_1)
   pcVar1 = (code *)swi(0x21);
   iVar2 = (*pcVar1)(CONCAT11(0x41,(char)param_1),param_1);
   if ((in_CF & 1) != 0) {
-    uVar3 = rt_7ad54((iVar2 << 1 | (uint)in_CF) >> 1 & 0xffff);
+    uVar3 = __set_errno_dos((iVar2 << 1 | (uint)in_CF) >> 1 & 0xffff);
     return CONCAT44(unaff_retaddr,uVar3);
   }
   return (ulonglong)unaff_retaddr << 0x20;
 }
 
 
-// ==== rt_ultoa @ 0008135a size=74
+// ==== utoa @ 0008135a size=74
 
-/* Hand-named: rt_ultoa (hand from Q1 rt_ultoa (BSim 1.0)) */
+/* Hand-named: utoa (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module itoa (was
+   rt_ultoa)) */
 
-char * rt_ultoa(uint param_1,char *param_2,uint param_3)
+char * utoa(uint param_1,char *param_2,uint param_3)
 
 {
   char cVar1;
@@ -81733,7 +81834,7 @@ undefined4 itoa_813a4(int param_1,undefined1 *param_2,int param_3,undefined4 par
     *param_2 = 0x2d;
     puVar1 = param_2 + 1;
   }
-  rt_ultoa(param_1,puVar1,param_3,param_2,param_4);
+  utoa(param_1,puVar1,param_3,param_2,param_4);
   return extraout_ECX;
 }
 
@@ -81792,7 +81893,8 @@ undefined4 rt_8142d(int param_1,undefined1 *param_2,int param_3,undefined4 param
 
 // ==== toupper @ 00081448 size=14
 
-/* Hand-named: toupper (hand omfsig full vs Open Watcom 1.9/v2 libs (was tolower_81448)) */
+/* Hand-named: toupper (hand omfsig full vs Open Watcom 1.9/v2 libs (was tolower_81448) | sig agrees
+   (Watcom 10 clib3r (Actua Soccer libs) full)) */
 
 int toupper(int param_1)
 
@@ -82247,11 +82349,12 @@ void getpow10_getpow10(void)
 }
 
 
-// ==== rt_817ae @ 000817ae size=21
+// ==== __EnterWVIDEO @ 000817ae size=21
 
-/* Hand-named: rt_817ae (hand from Q1 rt_5fdd8 (BSim 1.0)) */
+/* Hand-named: __EnterWVIDEO (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module
+   enterdb (was rt_817ae)) */
 
-undefined4 rt_817ae(void)
+undefined4 __EnterWVIDEO(void)
 
 {
   code *pcVar1;
@@ -82322,13 +82425,12 @@ int rt_817d4(byte *param_1,byte *param_2,int param_3)
 }
 
 
-// ==== rt_int21_wrapper_8182c @ 0008182c size=29
+// ==== _dos_findfirst @ 0008182c size=29
 
-/* Hand-named: rt_int21_wrapper_8182c (hand inkling guess: calls DOS interrupts 0x21 with 0x1a/0x4e
-   then runtime cleanup) */
+/* Hand-named: _dos_findfirst (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module
+   find386 (was rt_int21_wrapper_8182c)) */
 
-void rt_int21_wrapper_8182c
-               (undefined1 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+void _dos_findfirst(undefined1 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   code *pcVar1;
@@ -82340,18 +82442,18 @@ void rt_int21_wrapper_8182c
   uVar2 = (*pcVar1)(CONCAT11(0x1a,param_1),param_3);
   pcVar1 = (code *)swi(0x21);
   (*pcVar1)(CONCAT11(0x4e,uVar2),param_4);
-  uVar3 = rt_call_7ad54_if_carry();
+  uVar3 = __doserror();
   rt_copy_words_on_tab_interrupt(uVar3,extraout_EBX);
   return;
 }
 
 
-// ==== rt_int21_wrapper_81849 @ 00081849 size=28
+// ==== _dos_findnext @ 00081849 size=28
 
-/* Hand-named: rt_int21_wrapper_81849 (hand inkling guess: dispatches DOS int21 calls then cleanup
-   routines) */
+/* Hand-named: _dos_findnext (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module
+   find386 (was rt_int21_wrapper_81849)) */
 
-void rt_int21_wrapper_81849(undefined4 param_1)
+void _dos_findnext(undefined4 param_1)
 
 {
   code *pcVar1;
@@ -82361,7 +82463,7 @@ void rt_int21_wrapper_81849(undefined4 param_1)
   rt_copy_words_via_swi21();
   pcVar1 = (code *)swi(0x21);
   (*pcVar1)();
-  rt_call_7ad54_if_carry();
+  __doserror();
   rt_copy_words_on_tab_interrupt();
   return;
 }
@@ -82429,7 +82531,8 @@ undefined4 rt_copy_words_via_swi21(undefined4 param_1)
 
 // ==== stpcpy @ 000818ae size=15
 
-/* Hand-named: stpcpy (hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_strcpy)) */
+/* Hand-named: stpcpy (hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_strcpy) | sig agrees
+   (Watcom 10 clib3r (Actua Soccer libs) full)) */
 
 void stpcpy(char *param_1,char *param_2)
 
@@ -82443,14 +82546,13 @@ void stpcpy(char *param_1,char *param_2)
 }
 
 
-// ==== rt_build_string_buffer @ 000818bd size=312
+// ==== __cenvarg @ 000818bd size=312
 
-/* Hand-named: rt_build_string_buffer (hand inkling guess: allocates and fills a string buffer from
-   list"}) */
+/* Hand-named: __cenvarg (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module cenvarg
+   (was rt_build_string_buffer)) */
 
-uint rt_build_string_buffer
-               (int *param_1,int *param_2,undefined4 *param_3,undefined4 param_4,undefined4 *param_5
-               ,undefined4 *param_6,int param_7)
+uint __cenvarg(int *param_1,int *param_2,undefined4 *param_3,undefined4 param_4,undefined4 *param_5,
+              undefined4 *param_6,int param_7)
 
 {
   undefined4 uVar1;
@@ -82479,26 +82581,26 @@ uint rt_build_string_buffer
   piVar4 = param_2;
   if (param_2 != (int *)0x0) {
     while (*piVar4 != 0) {
-      uVar8 = rt_strlen(*piVar4);
+      uVar8 = strlen(*piVar4);
       iVar6 = extraout_EBX + (int)uVar8 + 1;
       piVar4 = (int *)((int)((ulonglong)uVar8 >> 0x20) + 4);
     }
   }
   iVar6 = iVar6 + 1;
   if (param_7 != 0) {
-    iVar6 = rt_strlen(*param_1);
+    iVar6 = strlen(*param_1);
     iVar6 = extraout_EBX_00 + iVar6 + 3;
   }
   uVar1 = DAT_000a3dc8;
   DAT_000a3dc8 = 0x10;
-  puVar2 = (undefined1 *)rt_malloc(iVar6 + 0xf);
+  puVar2 = (undefined1 *)_nmalloc(iVar6 + 0xf);
   puVar3 = extraout_ECX;
   uVar7 = extraout_EBX_01;
   if ((puVar2 == (undefined1 *)0x0) &&
-     (puVar2 = (undefined1 *)rt_malloc(extraout_EBX_01), puVar3 = extraout_ECX_00,
+     (puVar2 = (undefined1 *)_nmalloc(extraout_EBX_01), puVar3 = extraout_ECX_00,
      uVar7 = extraout_EBX_02, puVar2 == (undefined1 *)0x0)) {
-    rt_set_errno(5);
-    rt_78b49(8);
+    __set_errno(5);
+    __set_doserrno(8);
     DAT_000a3dc8 = uVar1;
   }
   else {
@@ -82527,7 +82629,7 @@ uint rt_build_string_buffer
         if (uVar5 != 0) {
           uVar5 = uVar5 + 1;
         }
-        uVar8 = rt_strlen(*param_1,uVar5);
+        uVar8 = strlen(*param_1,uVar5);
         uVar5 = (int)((ulonglong)uVar8 >> 0x20) + (int)uVar8;
         uVar7 = extraout_EBX_05;
       }
@@ -82536,9 +82638,9 @@ uint rt_build_string_buffer
       *param_6 = 0x90;
       return uVar7 >> 4;
     }
-    rt_set_errno(2);
-    rt_78b49(10);
-    rt_free(*param_3);
+    __set_errno(2);
+    __set_doserrno(10);
+    free(*param_3);
   }
   return 0xffffffff;
 }
@@ -82583,16 +82685,15 @@ void rt_format_string_with_spaces(undefined4 param_1,int *param_2,char *param_3,
 }
 
 
-// ==== rt_int21_wrapper_81a4a @ 00081a4a size=206
+// ==== __dospawn @ 00081a4a size=206
 
 /* WARNING: Unable to track spacebase fully for stack */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Hand-named: rt_int21_wrapper_81a4a (hand inkling guess: DOS int21 calls and stack/global setup)
-    */
+/* Hand-named: __dospawn (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module spawn386
+   (was rt_int21_wrapper_81a4a)) */
 
-void rt_int21_wrapper_81a4a
-               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-               int param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8)
+void __dospawn(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+              int param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8)
 
 {
   code *pcVar1;
@@ -82653,16 +82754,17 @@ void rt_int21_wrapper_81a4a
     puVar7 = puVar6;
   }
   *(undefined4 *)(puVar7 + -4) = 0x81b0f;
-  sos_timer_callback_7ad4f(uVar2,-(uint)bVar8);
+  _dosretax(uVar2,-(uint)bVar8);
   return;
 }
 
 
-// ==== rt_strlen @ 00081b18 size=25
+// ==== strlen @ 00081b18 size=25
 
-/* Hand-named: rt_strlen (hand inkling guess: counts chars until NUL terminator) */
+/* Hand-named: strlen (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module strlen (was
+   rt_strlen)) */
 
-int rt_strlen(char *param_1)
+int strlen(char *param_1)
 
 {
   char cVar1;
@@ -82885,7 +82987,7 @@ void rt_init_cmdline_wrapper
                undefined4 param_5,undefined4 param_6)
 
 {
-  rt_init_cmdline(param_5,param_6,&stack0x0000000c,DAT_000a3dd0,param_2,param_4,param_3);
+  spawnve(param_5,param_6,&stack0x0000000c,DAT_000a3dd0,param_2,param_4,param_3);
   return;
 }
 
@@ -88349,11 +88451,12 @@ void rt_clear_region_state(int param_1,undefined4 param_2)
 }
 
 
-// ==== rt_noop_stub_85792 @ 00085792 size=24
+// ==== digiQueueUnInit @ 00085792 size=24
 
-/* Hand-named: rt_noop_stub_85792 (hand inkling guess: empty function with no callers or callees) */
+/* Hand-named: digiQueueUnInit (hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module
+   C:\DONS\SOSMIDIW\SOSMLIB\SRC\SOSMDQ.C (was rt_noop_stub_85792)) */
 
-void rt_noop_stub_85792(void)
+void digiQueueUnInit(void)
 
 {
   return;
@@ -89306,7 +89409,7 @@ undefined4 rt_dispatch_sound_event(uint param_1,int param_2)
     else {
       rt_sound_play_sequence(param_1);
       if (*(int *)(&DAT_000a0fe4 + param_1 * 0x13e) == 0xa00a) {
-        sos_TimerRecalc(*(undefined4 *)(&DAT_000a10be + param_1 * 0x13e));
+        sosTIMERRemoveEvent(*(undefined4 *)(&DAT_000a10be + param_1 * 0x13e));
       }
       (*(code *)(&DAT_000a0ffe + param_1 * 0x13e))();
       if ((param_2 != 0) && (((&DAT_000a0fe1)[param_1 * 0x13e] & 1) != 0)) {
@@ -89433,7 +89536,7 @@ int rt_sound_play_loop(int param_1,uint param_2,undefined4 param_3,undefined2 pa
       DAT_000a0ad4 = 0;
       (*(code *)(&DAT_000a100a + param_1 * 0x13e))();
     }
-    sos_TimerRecalc(local_14);
+    sosTIMERRemoveEvent(local_14);
   }
   return 0;
 }
@@ -89488,7 +89591,7 @@ undefined4 rt_load_sound_track_data(char *param_1,undefined4 param_2,undefined4 
   (&DAT_000a09c2)[CONCAT31((int3)((uint)param_1 >> 8),(char)param_1 + *param_1)] =
        (&DAT_000a09c2)[CONCAT31((int3)((uint)param_1 >> 8),(char)param_1 + *param_1)] +
        (char)((uint)param_3 >> 8);
-  uVar1 = rt_sopen_wrapper();
+  uVar1 = open();
   *(undefined4 *)(unaff_EBP + -4) = uVar1;
   if (*(int *)(unaff_EBP + -4) == -1) {
     *(undefined4 *)(unaff_EBP + -0x20) = 0xf;
@@ -89504,17 +89607,17 @@ undefined4 rt_load_sound_track_data(char *param_1,undefined4 param_2,undefined4 
       if (*(int *)(&DAT_000a1116 + *(int *)(unaff_EBP + -0x28) * 0x13e) ==
           *(int *)(unaff_EBP + -0x2c)) {
         *(undefined4 *)(unaff_EBP + -0xc) = 1;
-        uVar2 = sos_timer_query();
+        uVar2 = sosAllocateFarMem();
         *(undefined6 *)(unaff_EBP + -0x3c) = uVar2;
         if ((*(int *)(unaff_EBP + -0x3c) == 0) && (*(short *)(unaff_EBP + -0x38) == 0)) {
           *(undefined4 *)(unaff_EBP + -0x20) = 5;
           goto LAB_00087bbc;
         }
-        uVar2 = sos_timer_init_7c75d();
+        uVar2 = sosCreateAliasCS();
         *(undefined6 *)(unaff_EBP + -0x34) = uVar2;
-        sos_timer_callback_7c601();
-        sos_FileRead(*(undefined4 *)(unaff_EBP + -4),*(undefined4 *)(unaff_EBP + -8),
-                     *(undefined4 *)(unaff_EBP + -0x3c),*(undefined4 *)(unaff_EBP + -0x38));
+        sosDRVLockMemory();
+        _dos_read(*(undefined4 *)(unaff_EBP + -4),*(undefined4 *)(unaff_EBP + -8),
+                  *(undefined4 *)(unaff_EBP + -0x3c),*(undefined4 *)(unaff_EBP + -0x38));
         *(short *)(*(int *)(unaff_EBP + -0x24) + 4) = (short)*(undefined4 *)(unaff_EBP + -0x30);
         **(undefined4 **)(unaff_EBP + -0x24) = *(undefined4 *)(unaff_EBP + -0x34);
         *(short *)(*(int *)(unaff_EBP + -0x18) + 4) = (short)*(undefined4 *)(unaff_EBP + -0x38);
@@ -89551,9 +89654,9 @@ undefined8 rt_sound_irq_dispatcher_wrapper(uint param_1,undefined4 param_2)
   undefined4 local_1c;
   
   if (param_1 < 8) {
-    sos_sound_irq_dispatcher();
-    sos_timer_callback_7c727();
-    sos_timer_callback_7c727();
+    sosDRVUnLockMemory();
+    sosFreeSelector();
+    sosFreeSelector();
     local_1c = 0;
   }
   else {
@@ -89887,7 +89990,7 @@ undefined8 rt_sound_trigger_or_clear(uint param_1,undefined4 param_2)
     }
     else {
       if (*(short *)(iVar1 + 0xc6) != -1) {
-        sos_TimerRecalc((int)*(short *)(iVar1 + 0xc6));
+        sosTIMERRemoveEvent((int)*(short *)(iVar1 + 0xc6));
       }
       *(undefined4 *)(&DAT_000a0650 + *(short *)(iVar1 + 0xc6) * 4) = 0xff;
       *(undefined2 *)(iVar1 + 0xc6) = 0xffff;
@@ -90189,7 +90292,7 @@ undefined4 rt_sound_trigger_scaled(uint param_1,int param_2)
       if (local_1c == 0) {
         local_1c = 1;
       }
-      sos_TimerSetRateAndRecompute((int)*(short *)(iVar1 + 0xc6),local_1c);
+      sosTIMERAlterEventRate((int)*(short *)(iVar1 + 0xc6),local_1c);
       local_24 = sos_lookup_pair((int)*(short *)(iVar1 + 0xc6));
     }
   }
@@ -90751,18 +90854,18 @@ void rt_no_op_89750(void)
 }
 
 
-// ==== rt_call_7ad54_if_carry @ 0008980e size=19
+// ==== __doserror @ 0008980e size=19
 
-/* Hand-named: rt_call_7ad54_if_carry (hand inkling guess (address cut by hand): calls rt_7ad54 when
-   carry flag set, else returns zero) */
+/* Hand-named: __doserror (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module error386
+   (was rt_call_7ad54_if_carry)) */
 
-undefined2 rt_call_7ad54_if_carry(undefined2 param_1)
+undefined2 __doserror(undefined2 param_1)
 
 {
   bool in_CF;
   
   if (in_CF) {
-    rt_7ad54();
+    __set_errno_dos();
   }
   else {
     param_1 = 0;
@@ -91042,12 +91145,13 @@ LAB_00089a79:
 }
 
 
-// ==== rt_89bc0 @ 00089bc0 size=212
+// ==== __setenvp @ 00089bc0 size=212
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Hand-named: rt_89bc0 (hand from Q1 rt_60208 (BSim 1.0)) */
+/* Hand-named: __setenvp (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module setenvp
+   (was rt_89bc0)) */
 
-void rt_89bc0(undefined4 param_1,uint param_2,char *param_3)
+void __setenvp(undefined4 param_1,uint param_2,char *param_3)
 
 {
   char cVar1;
@@ -91077,11 +91181,11 @@ void rt_89bc0(undefined4 param_1,uint param_2,char *param_3)
     if (iVar2 == 0) {
       iVar2 = 1;
     }
-    iVar4 = rt_malloc(iVar2,param_2,param_3,iVar4);
+    iVar4 = _nmalloc(iVar2,param_2,param_3,iVar4);
     if (iVar4 != 0) {
-      uVar6 = rt_malloc(extraout_ECX * 5 + 4,iVar4,iVar4);
+      uVar6 = _nmalloc(extraout_ECX * 5 + 4,iVar4,iVar4);
       if ((int)uVar6 == 0) {
-        rt_free((int)((ulonglong)uVar6 >> 0x20));
+        free((int)((ulonglong)uVar6 >> 0x20));
       }
       else {
         iVar2 = 0;
@@ -91140,7 +91244,7 @@ int rt_searchenv_path(void)
   local_b0 = (undefined4)uVar5;
   local_18 = extraout_ECX;
   local_14 = extraout_EBX;
-  iVar1 = rt_init_cmdline();
+  iVar1 = spawnve();
   if (iVar1 == -1) {
     uVar5 = rt_81195();
     iVar1 = (int)((ulonglong)uVar5 >> 0x20);
@@ -91148,7 +91252,7 @@ int rt_searchenv_path(void)
       uVar5 = sos_7a93d(&DAT_00094a28);
       iVar1 = extraout_ECX_00;
       if ((int)uVar5 != 0) {
-        uVar5 = rt_strlen(pcVar4,(int)((ulonglong)uVar5 >> 0x20),(int)uVar5);
+        uVar5 = strlen(pcVar4,(int)((ulonglong)uVar5 >> 0x20),(int)uVar5);
         iVar1 = (int)((ulonglong)uVar5 >> 0x20);
         local_10 = (int)uVar5 + 1;
         local_1c = 0x90 - local_10;
@@ -91156,13 +91260,13 @@ int rt_searchenv_path(void)
           pcVar2 = (char *)rt_find_byte(pcVar2,0x3b);
           iVar1 = extraout_EBX_01;
           if (pcVar2 == (char *)0x0) {
-            iVar1 = rt_strlen(extraout_EBX_01);
+            iVar1 = strlen(extraout_EBX_01);
             pcVar2 = (char *)(extraout_EBX_02 + iVar1);
             iVar1 = extraout_EBX_02;
           }
           if (local_1c < (uint)((int)pcVar2 - iVar1)) {
-            rt_set_errno(2);
-            rt_78b49(10);
+            __set_errno(2);
+            __set_doserrno(10);
             return -1;
           }
           rt_memcpy(local_ac,iVar1,(int)pcVar2 - iVar1);
@@ -91172,7 +91276,7 @@ int rt_searchenv_path(void)
             puVar3 = local_ac + extraout_ECX_01 + 1;
           }
           rt_memcpy(puVar3,pcVar4,local_10,local_18);
-          iVar1 = rt_init_cmdline(local_b0,local_ac,local_14);
+          iVar1 = spawnve(local_b0,local_ac,local_14);
           if (iVar1 != -1) {
             return iVar1;
           }
@@ -91192,12 +91296,12 @@ int rt_searchenv_path(void)
 }
 
 
-// ==== rt_memcmp @ 00089dd0 size=161
+// ==== strcmp @ 00089dd0 size=161
 
-/* Hand-named: rt_memcmp (hand inkling guess: compares memory byte-wise returning sign of
-   difference) */
+/* Hand-named: strcmp (hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module cmp386 (was
+   rt_memcmp)) */
 
-uint rt_memcmp(uint *param_1,uint *param_2)
+uint strcmp(uint *param_1,uint *param_2)
 
 {
   byte bVar1;

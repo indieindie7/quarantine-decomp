@@ -13,9 +13,9 @@
 0x7fb18 func __fpatan hand from Q1 __fpatan_0005e35c (BSim 1.0) | sig agrees (omfsig prefix32)
 0x7fd31 func __fprem hand from Q1 __fprem_0005e575 (BSim 1.0) | sig agrees (omfsig full)
 0x7f98b func __frndint hand from Q1 __frndint_0005e1cf (BSim 1.0) | sig agrees (omfsig prefix32)
-0x785c8 func __getctime hand from Q1 __getctime_00059c62 (BSim 1.0) | sig agrees (omfsig prefix24)
+0x785c8 func __getctime hand from Q1 __getctime_00059c62 (BSim 1.0) | sig agrees (omfsig prefix24) | sig agrees (Watcom 10 clib3r (Actua Soccer libs) prefix24)
 0x7ff5c func __log hand from Q1 __log_0005e7a0 (BSim 1.0) | sig agrees (omfsig prefix32)
-0x79065 func __lseek hand from Q1 __lseek_00058457 (BSim 1.0)
+0x79065 func __lseek hand from Q1 __lseek_00058457 (BSim 1.0) | sig agrees (Watcom 10 clib3r (Actua Soccer libs) callee)
 0x801f4 func __sincos hand from Q1 __sincos_0005ea38 (BSim 1.0) | sig agrees (omfsig prefix32)
 0x8060c func __sqrt hand from Q1 __sqrt_0005ee50 (BSim 1.0) | sig agrees (omfsig full)
 0x5ea00 func ai_InBox hand from Q1 ai_InBox (BSim 1.0)
@@ -42,9 +42,9 @@
 0x571b4 func fli_Frames hand from Q1 fli_Frames (BSim 1.0)
 0x34f50 func floor_DrawSpan hand from Q1 floor_DrawSpan (BSim 1.0)
 0x41133 func floor_SpanAsmA hand from Q1 floor_SpanAsmA (BSim 1.0)
-0x796d2 func fmt4hex_796d2 hand from Q1 fmt4hex_00058c20 (BSim 1.0) | sig agrees (omfsig prefix24)
+0x796d2 func fmt4hex_796d2 hand from Q1 fmt4hex_00058c20 (BSim 1.0) | sig agrees (omfsig prefix24) | sig agrees (Watcom 10 clib3r (Actua Soccer libs) prefix32)
 0x7dc98 func fp_7dc98 hand from Q1 fp_5c4dc (BSim 1.0)
-0x79035 func ftell_79035 hand from Q1 ftell_0005385a (BSim 1.0) | sig agrees (omfsig callee)
+0x79035 func ftell_79035 hand from Q1 ftell_0005385a (BSim 1.0) | sig agrees (omfsig callee) | sig agrees (Watcom 10 clib3r (Actua Soccer libs) prefix24)
 0x816f7 func getpow10_816f7 hand from Q1 getpow10_0005fd21 (BSim 1.0) | sig agrees (omfsig full)
 0x1aec9 func gfx_GlyphA hand from Q1 gfx_GlyphA (BSim 1.0)
 0x1acdc func gfx_GlyphB hand from Q1 gfx_GlyphB (BSim 1.0)
@@ -66,53 +66,53 @@
 0x2f6d0 func rgb_TintC hand from Q1 rgb_TintC (BSim 1.0)
 0x2f750 func rgb_TintD hand from Q1 rgb_TintD (BSim 1.0)
 0x4fb10 func rle_PackRow hand from Q1 rle_PackRow (BSim 1.0)
-0x75339 func rt_75339 hand from Q1 rt_54414 (BSim 1.0)
-0x753c2 func rt_753c2 hand from Q1 rt_5449d (BSim 1.0)
-0x753f1 func rt_753f1 hand from Q1 rt_544cc (BSim 1.0)
-0x757b3 func rt_757b3 hand from Q1 rt_5488f (BSim 1.0)
-0x757d9 func rt_757d9 hand from Q1 rt_548b5 (BSim 1.0)
-0x78aa7 func rt_78aa7 hand from Q1 rt_58117 (BSim 1.0)
-0x78ea9 func rt_78ea9 hand from Q1 rt_582cb (BSim 1.0)
+0x75339 func fgetc hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module fgetc (was rt_75339)
+0x753c2 func __filbuf hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module fgetc (was rt_753c2)
+0x753f1 func __fill_buffer hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module fgetc (was rt_753f1)
+0x757b3 func byteswap hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module qsort (was rt_757b3)
+0x757d9 func med3 hand omfsig prefix24 vs Watcom 10 clib3r (Actua Soccer libs), module qsort (was rt_757d9)
+0x78aa7 func __STOSD hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module __stos (was rt_78aa7)
+0x78ea9 func __chktty hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module chktty (was rt_78ea9)
 0x78f51 func __qread hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_78f51)
 0x7843b func rt_7843b hand from Q1 rt_5866f (BSim 1.0)
 0x784f0 func rt_784f0 hand from Q1 rt_58724 (BSim 1.0)
 0x78555 func rt_78555 hand from Q1 rt_58789 (BSim 1.0)
-0x794fd func rt_794fd hand from Q1 rt_58a4b (BSim 1.0)
-0x79630 func rt_79630 hand from Q1 rt_58b7e (BSim 1.0)
+0x794fd func getprintspecs hand omfsig prefix24 vs Watcom 10 clib3r (Actua Soccer libs), module prtf (was rt_794fd)
+0x79630 func evalflags hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module prtf (was rt_79630)
 0x7968b func rt_7968b hand from Q1 rt_58bd9 (BSim 1.0)
 0x796af func rt_796af hand from Q1 rt_58bfd (BSim 1.0)
-0x79c5e func rt_79c5e hand from Q1 rt_591ac (BSim 1.0)
+0x79c5e func zupstr hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module prtf (was rt_79c5e)
 0x790ab func rt_790ab hand from Q1 rt_591c4 (BSim 1.0)
-0x78216 func rt_78216 hand from Q1 rt_593a6 (BSim 1.0)
-0x79c76 func rt_79c76 hand from Q1 rt_5942c (BSim 1.0)
-0x79d1e func rt_79d1e hand from Q1 rt_594d4 (BSim 1.0)
-0x79e29 func rt_79e29 hand from Q1 rt_595df (BSim 1.0)
+0x78216 func __fprtf hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module fprtf (was rt_78216)
+0x79c76 func __MemAllocator hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module memalloc (was rt_79c76)
+0x79d1e func __MemFree hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module memalloc (was rt_79d1e)
+0x79e29 func __unlink hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module grownear (was rt_79e29)
 0x79e68 func rt_79e68 hand from Q1 rt_5961e (BSim 1.0)
-0x79fc9 func rt_79fc9 hand from Q1 rt_59766 (BSim 1.0)
+0x79fc9 func __LinkUpNewMHeap hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module grownear (was rt_79fc9)
 0x7a03d func rt_7a03d hand from Q1 rt_597da (BSim 1.0)
 0x7a08b func rt_7a08b hand from Q1 rt_59828 (BSim 1.0)
-0x7a15e func rt_7a15e hand from Q1 rt_598fb (BSim 1.0)
+0x7a15e func __CreateNewNHeap hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module grownear (was rt_7a15e)
 0x7a20d func rt_7a20d hand from Q1 rt_599aa (BSim 1.0)
 0x7a351 func rt_7a351 hand from Q1 rt_59aee (BSim 1.0)
-0x787df func rt_787df hand from Q1 rt_59b79 (BSim 1.0)
-0x7882e func rt_7882e hand from Q1 rt_59bc8 (BSim 1.0)
-0x78879 func rt_78879 hand from Q1 rt_59c13 (BSim 1.0)
-0x7868b func rt_7868b hand from Q1 rt_59d25 (BSim 1.0)
+0x787df func __CMain hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module cmain386 (was rt_787df)
+0x7882e func __InitRtns hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module inirt386 (was rt_7882e)
+0x78879 func __FiniRtns hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module inirt386 (was rt_78879)
+0x7868b func mktime hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module mktime (was rt_7868b)
 0x788c8 func rt_788c8 hand from Q1 rt_59e79 (BSim 1.0)
 0x78985 func rt_78985 hand from Q1 rt_59f36 (BSim 1.0)
-0x7a434 func rt_7a434 hand from Q1 rt_5a0a1 (BSim 1.0)
-0x7a58d func rt_7a58d hand from Q1 rt_5a201 (BSim 1.0)
+0x7a434 func sosTIMERDRVSetRate hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sostimer.asm (was rt_7a434)
+0x7a58d func sosTIMERDRVUnInit hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sostimer.asm (was rt_7a58d)
 0x7a663 func rt_7a663 hand from Q1 rt_5a2c0 (BSim 1.0)
-0x7a668 func rt_7a668 hand from Q1 rt_5a2c5 (BSim 1.0)
-0x7a6b6 func rt_7a6b6 hand from Q1 rt_5a312 (BSim 1.0)
-0x7a746 func rt_7a746 hand from Q1 rt_5a3a2 (BSim 1.0)
+0x7a668 func __flushall hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module flushall (was rt_7a668)
+0x7a6b6 func __ModF hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module amodf386 (was rt_7a6b6)
+0x7a746 func __ZBuf2F hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module amodf386 (was rt_7a746)
 0x7a791 func rt_7a791 hand from Q1 rt_5a3ed (BSim 1.0)
 0x7a7e2 func rt_7a7e2 hand from Q1 rt_5a43e (BSim 1.0)
 0x7a823 func rt_7a823 hand from Q1 rt_5a47f (BSim 1.0)
-0x808dd func rt_808dd hand from Q1 rt_5a566 (BSim 1.0)
-0x7ad54 func rt_7ad54 hand from Q1 rt_5a5dc (BSim 1.0)
+0x808dd func __IOMode hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module iomode (was rt_808dd)
+0x7ad54 func __set_errno_dos hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module error386 (was rt_7ad54)
 0x81237 func rt_81237 hand from Q1 rt_5bb6c (BSim 1.0)
-0x81248 func rt_81248 hand from Q1 rt_5bb7d (BSim 1.0)
+0x81248 func docloseall hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module ioexit (was rt_81248)
 0x8129a func rt_8129a hand from Q1 rt_5bbcf (BSim 1.0)
 0x75f0d func rt_75f0d hand from Q1 rt_5bc4b (BSim 1.0)
 0x7d425 func rt_7d425 hand from Q1 rt_5bc6a (BSim 1.0)
@@ -135,88 +135,88 @@
 0x806f8 func __poly hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_806f8)
 0x80792 func rt_80792 hand from Q1 rt_5efd6 (BSim 1.0)
 0x8085c func rt_8085c hand from Q1 rt_5f0a0 (BSim 1.0)
-0x808b6 func rt_808b6 hand from Q1 rt_5f0fa (BSim 1.0)
+0x808b6 func __init_80x87 hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module ini87386 (was rt_808b6)
 0x81466 func rt_81466 hand from Q1 rt_5f25b (BSim 1.0)
 0x81525 func rt_81525 hand from Q1 rt_5f31a (BSim 1.0)
-0x80947 func rt_80947 hand from Q1 rt_5f3e7 (BSim 1.0)
-0x80982 func rt_80982 hand from Q1 rt_5f422 (BSim 1.0)
+0x80947 func __leapyear hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module timeutil (was rt_80947)
+0x80982 func calc_yday hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module timeutil (was rt_80982)
 0x80a67 func rt_80a67 hand from Q1 rt_5f507 (BSim 1.0)
-0x80d42 func rt_80d42 hand from Q1 rt_5f7d3 (BSim 1.0)
-0x80d72 func rt_80d72 hand from Q1 rt_5f803 (BSim 1.0)
+0x80d42 func time_less hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module timeutil (was rt_80d42)
+0x80d72 func __brktime hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module gmtime (was rt_80d72)
 0x80ec4 func rt_80ec4 hand from Q1 rt_5f955 (BSim 1.0)
 0x80eea func rt_80eea hand from Q1 rt_5f97b (BSim 1.0)
 0x81000 func rt_81000 hand from Q1 rt_5fa91 (BSim 1.0)
 0x815e8 func __CmpBigInt hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_815e8)
 0x81622 func rt_81622 hand from Q1 rt_5fc4c (BSim 1.0)
 0x8168d func rt_8168d hand from Q1 rt_5fcb7 (BSim 1.0)
-0x817ae func rt_817ae hand from Q1 rt_5fdd8 (BSim 1.0)
+0x817ae func __EnterWVIDEO hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module enterdb (was rt_817ae)
 0x817d4 func rt_817d4 hand from Q1 rt_5fe12 (BSim 1.0)
 0x89827 func rt_89827 hand from Q1 rt_5fe6f (BSim 1.0)
 0x898ce func rt_898ce hand from Q1 rt_5ff16 (BSim 1.0)
 0x89931 func rt_89931 hand from Q1 rt_5ff79 (BSim 1.0)
 0x8999c func rt_8999c hand from Q1 rt_5ffe4 (BSim 1.0)
-0x89bc0 func rt_89bc0 hand from Q1 rt_60208 (BSim 1.0)
+0x89bc0 func __setenvp hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module setenvp (was rt_89bc0)
 0x89e71 func rt_89e71 hand from Q1 rt_602dc (BSim 1.0)
 0x89f31 func rt_89f31 hand from Q1 rt_6039c (BSim 1.0)
 0x8a14b func rt_8a14b hand from Q1 rt_6059b (BSim 1.0)
-0x78daa func rt_allocfp hand from Q1 rt_allocfp (BSim 1.0)
+0x78daa func __allocfp hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module allocfp (was rt_allocfp)
 0x74ba0 func rt_atoi hand from Q1 rt_atoi (BSim 1.0)
 0x78596 func rt_close_handle hand from Q1 rt_close_handle (BSim 1.0)
-0x74708 func rt_doclose hand from Q1 rt_doclose (BSim 1.0)
+0x74708 func __doclose hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module fclose (was rt_doclose)
 0x7430c func rt_doopen hand from Q1 rt_doopen (BSim 1.0)
 0x74b5f func rt_dos_setvect hand from Q1 rt_dos_setvect (BSim 1.0)
 0x7464f func rt_fclose hand from Q1 rt_fclose (BSim 1.0)
 0x757a3 func rt_fflush hand from Q1 rt_fflush (BSim 1.0)
-0x78f76 func rt_flush hand from Q1 rt_flush (BSim 1.0)
+0x78f76 func __flush hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module flushall (was rt_flush)
 0x74258 func rt_fopen_mode hand from Q1 rt_fopen_mode (BSim 1.0)
-0x756ff func rt_fputc hand from Q1 rt_fputc (BSim 1.0)
-0x74485 func rt_fread hand from Q1 rt_fread (BSim 1.0)
-0x74acd func rt_free hand from Q1 rt_free (BSim 1.0)
-0x78e52 func rt_freefp hand from Q1 rt_freefp (BSim 1.0)
+0x756ff func fputc hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module fputc (was rt_fputc)
+0x74485 func fread hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module fread (was rt_fread)
+0x74acd func free hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module allocfp (was rt_free)
+0x78e52 func __freefp hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module allocfp (was rt_freefp)
 0x74461 func rt_freopen hand from Q1 rt_freopen (BSim 1.0)
-0x743f9 func rt_freopen_close hand from Q1 rt_freopen_close (BSim 1.0)
-0x75cb0 func rt_fseek hand from Q1 rt_fseek (BSim 1.0)
-0x75c6e func rt_fseek_adjust hand from Q1 rt_fseek_adjust (BSim 1.0)
+0x743f9 func close_file hand omfsig prefix24 vs Watcom 10 clib3r (Actua Soccer libs), module fopen (was rt_freopen_close)
+0x75cb0 func fseek hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module fseek (was rt_fseek)
+0x75c6e func __update_buffer hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module fseek (was rt_fseek_adjust)
 0x743d4 func rt_fsopen hand from Q1 rt_fsopen (BSim 1.0)
 0x74791 func rt_fwrite hand from Q1 rt_fwrite (BSim 1.0)
 0x74b2b func rt_getsetvect hand from Q1 rt_getsetvect (BSim 1.0)
 0x782e6 func rt_init_fpu hand from Q1 rt_init_fpu (BSim 1.0)
-0x78eda func rt_ioalloc hand from Q1 rt_ioalloc (BSim 1.0)
-0x749ea func rt_malloc hand from Q1 rt_malloc (BSim 1.0)
+0x78eda func __ioalloc hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module ioalloc (was rt_ioalloc)
+0x749ea func _nmalloc hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module nmalloc (was rt_malloc)
 0x75dac func rt_memcpy hand from Q1 rt_memcpy (BSim 1.0)
-0x7a535 func rt_pic_mask hand from Q1 rt_pic_mask (BSim 1.0)
-0x7a561 func rt_pic_unmask hand from Q1 rt_pic_unmask (BSim 1.0)
-0x7927c func rt_prtf hand from Q1 rt_prtf (BSim 1.0)
+0x7a535 func sosTIMERDRVDisable hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sostimer.asm (was rt_pic_mask)
+0x7a561 func sosTIMERDRVEnable hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sostimer.asm (was rt_pic_unmask)
+0x7927c func __prtf hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module prtf (was rt_prtf)
 0x79815 func rt_prtf_format hand from Q1 rt_prtf_format (BSim 1.0)
-0x79733 func rt_prtf_number hand from Q1 rt_prtf_number (BSim 1.0)
-0x73f26 func rt_rand hand from Q1 rt_rand (BSim 1.0)
+0x79733 func FixedPoint_Format hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module prtf (was rt_prtf_number)
+0x73f26 func rand hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module rand (was rt_rand)
 0x7d2e0 func rt_read hand from Q1 rt_read (BSim 1.0)
-0x78b80 func rt_sopen hand from Q1 rt_sopen (BSim 1.0)
-0x749a7 func rt_sprintf_putc hand from Q1 rt_sprintf_putc (BSim 1.0)
-0x73f4a func rt_srand hand from Q1 rt_srand (BSim 1.0)
+0x78b80 func sopen hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module open (was rt_sopen)
+0x749a7 func mem_putc hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module sprintf (was rt_sprintf_putc)
+0x73f4a func srand hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module rand (was rt_srand)
 0x73eb5 func rt_stricmp hand from Q1 rt_stricmp (BSim 1.0)
 0x75556 func rt_strtod hand from Q1 rt_strtod (BSim 1.0)
-0x73ef3 func rt_time hand from Q1 rt_time (BSim 1.0)
+0x73ef3 func time hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module time (was rt_time)
 0x7469f func rt_tmpname hand from Q1 rt_tmpname (BSim 1.0)
 0x80eb1 func rt_tzset hand from Q1 rt_tzset (BSim 1.0)
-0x8135a func rt_ultoa hand from Q1 rt_ultoa (BSim 1.0)
+0x8135a func utoa hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module itoa (was rt_ultoa)
 0x53a50 func save_ClearNames hand from Q1 save_ClearNames (BSim 1.0)
-0x75f66 func sos_75f66 hand from Q1 sos_57a32 (BSim 1.0)
-0x78a70 func sos_78a70 hand from Q1 sos_580e0 (BSim 1.0)
+0x75f66 func getch hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module getch (was sos_75f66)
+0x78a70 func __STOSB hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module __stos (was sos_78a70)
 0x7d2a9 func sos_7d2a9 hand from Q1 sos_5a6a1 (BSim 1.0)
-0x7c7ba func sos_7c7ba hand from Q1 sos_5a883 (BSim 1.0)
-0x7cabc func sos_7cabc hand from Q1 sos_5abba (BSim 1.0)
-0x7cb65 func sos_7cb65 hand from Q1 sos_5ac63 (BSim 1.0)
-0x7cc2d func sos_7cc2d hand from Q1 sos_5ad60 (BSim 1.0)
+0x7c7ba func sosRealAlloc hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_7c7ba)
+0x7cabc func sosDIGIInitForWindows hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_7cabc)
+0x7cb65 func sosDetDRVGetEnvString hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_7cb65)
+0x7cc2d func sosDRVAllocVDSStruct hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_7cc2d)
 0x7a93d func sos_7a93d hand from Q1 sos_5af69 (BSim 1.0)
-0x7b8a6 func strcpy hand omfsig full vs Open Watcom 1.9/v2 libs (was sos_7b8a6)
-0x7adba func sos_7adba hand from Q1 sos_5b70a (BSim 1.0)
-0x7d3f4 func sos_FileRead hand from Q1 sos_FileRead (BSim 1.0)
+0x7b8a6 func strcpy hand omfsig full vs Open Watcom 1.9/v2 libs (was sos_7b8a6) | sig agrees (Watcom 10 clib3r (Actua Soccer libs) full)
+0x7adba func __int386x hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module intxa386 (was sos_7adba)
+0x7d3f4 func _dos_read hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module io386 (was sos_FileRead)
 0x32080 func task3b980_Think hand from Q1 task3b980_Think (BSim 1.0)
 0x320b0 func task3b9ac_Think hand from Q1 task3b9ac_Think (BSim 1.0)
 0x2b5e0 func text_PutDigit hand from Q1 text_PutDigit (BSim 1.0)
 0x2bfa0 func timer_FrameRate hand from Q1 timer_FrameRate (BSim 1.0)
-0x81448 func toupper hand omfsig full vs Open Watcom 1.9/v2 libs (was tolower_81448)
+0x81448 func toupper hand omfsig full vs Open Watcom 1.9/v2 libs (was tolower_81448) | sig agrees (Watcom 10 clib3r (Actua Soccer libs) full)
 0x784b5 func unhook_pharlap hand from Q1 unhook_pharlap_000586e9 (BSim 1.0) | sig agrees (omfsig prefix32)
 0x2fe68 func vga_BlitPartial hand from Q1 vga_BlitPartial (BSim 1.0)
 0x30017 func vga_BlitView hand from Q1 vga_BlitView (BSim 1.0)
@@ -239,11 +239,11 @@
 0x7a47a func rt_7a47a hand from Q1 rt_5a0e7 (BSim 0.929)
 0x26920 func frag_26920 hand from Q1 frag_32fd4 (BSim 0.927)
 0x12930 func car_AtLaneCenter hand from Q1 car_AtLaneCenter (BSim 0.924)
-0x811bf func rt_init_files hand from Q1 rt_init_files (BSim 0.921)
+0x811bf func __InitFiles hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module initfile (was rt_init_files)
 0x31d10 func dac_WriteAllVsync hand from Q1 dac_WriteAllVsync (BSim 0.92)
 0x475b0 func gfx_BlitScaledRle hand from Q1 gfx_BlitScaledRle (BSim 0.92)
 0x2d420 func task_Alloc hand from Q1 task_Alloc (BSim 0.919)
-0x74c0c func sos_TimerInitSystem hand from Q1 sos_TimerInitSystem (BSim 0.91)
+0x74c0c func sosTIMERInitSystem hand omfsig prefix32 vs HMI SOS 3.x (Actua Soccer libs), module C:\DONS\SOSDIGIW\SOSLIB\SRC\sostmr.c (was sos_TimerInitSystem)
 0x95223 func vga_SetStartAddr hand from Q1 vga_SetStartAddr (BSim 0.903)
 0x26830 func kbd_ClearAll hand from Q1 kbd_ClearAll (BSim 0.902)
 0x47930 func gfx_BlitRle hand from Q1 gfx_BlitRle (BSim 0.9)
@@ -252,22 +252,22 @@
 0x32194 func io_OutByte hand from Q1 io_OutByte (callgraph r0)
 0x3219d func stub_Ret hand from Q1 stub_Ret_3c3f5 (callgraph r0)
 0x3219f func stub_Ret_3219f hand from Q1 stub_Ret_3c3f7 (callgraph r0)
-0x75dda func __CHK hand from Q1 __CHK_00055bd8 (callgraph r0) | sig agrees (omfsig full)
+0x75dda func __CHK hand from Q1 __CHK_00055bd8 (callgraph r0) | sig agrees (omfsig full) | sig agrees (Watcom 10 clib3r (Actua Soccer libs) full)
 0x56f96 func fli_Read hand from Q1 fli_Read (callgraph r0)
-0x74240 func memset_74240 hand from Q1 memset (callgraph r0)
-0x7a90a func tell_7a90a hand from Q1 tell_00059b68 (callgraph r0)
+0x74240 func memset_74240 hand from Q1 memset (callgraph r0) | sig agrees (Watcom 10 clib3r (Actua Soccer libs) full)
+0x7a90a func tell_7a90a hand from Q1 tell_00059b68 (callgraph r0) | sig agrees (Watcom 10 clib3r (Actua Soccer libs) full)
 0x7a6b4 func rt_7a6b4 hand from Q1 rt_5a311 (callgraph r0)
 0x2bef9 func frag_2bef9 hand from Q1 frag_36458 (callgraph r0)
-0x78b26 func rt_set_errno hand from Q1 rt_set_errno (callgraph r0)
-0x7a697 func rt_7a697 hand from Q1 rt_5a2f4 (callgraph r0)
-0x811a1 func rt_isatty hand from Q1 rt_isatty (callgraph r0)
-0x81181 func rt_81181 hand from Q1 rt_5f242 (callgraph r0)
-0x8118a func rt_8118a hand from Q1 rt_5f3dc (callgraph r0)
-0x1c010 func game_Main hand from Q1 game_Main (callgraph r0)
-0x74979 func rt_exit hand from Q1 rt_exit (callgraph r0)
-0x80a8f func rt_80a8f hand from Q1 rt_5f52f (callgraph r0)
-0x78b49 func rt_78b49 hand from Q1 rt_581b9 (callgraph r0)
-0x7467e func rt_doclose_free hand from Q1 rt_doclose_free (callgraph r0)
+0x78b26 func __set_errno hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module fread (was rt_set_errno)
+0x7a697 func getche hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module gtche (was rt_7a697)
+0x811a1 func isatty hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module chktty (was rt_isatty)
+0x81181 func stackavail hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module cmain386 (was rt_81181)
+0x8118a func __CommonInit hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module cmain386 (was rt_8118a)
+0x1c010 func main hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module cmain386 (was game_Main)
+0x74979 func exit hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module exit (was rt_exit)
+0x80a8f func __isindst hand omfsig prefix24 vs Watcom 10 clib3r (Actua Soccer libs), module timeutil (was rt_80a8f)
+0x78b49 func __set_doserrno hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module cenvarg (was rt_78b49)
+0x7467e func __shutdown_stream hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module fclose (was rt_doclose_free)
 0x74228 func rt_74228 hand from Q1 rt_53c0c (callgraph r0)
 0x7f4d0 func __FLDS_7f4d0 hand from Q1 __FLDS_0005dd14 (callgraph r0) | sig agrees (omfsig prefix24)
 0x80402 func rt_80402 hand from Q1 rt_5ec46 (callgraph r0)
@@ -277,16 +277,16 @@
 0x89ef5 func rt_89ef5 hand from Q1 rt_60360 (callgraph r0)
 0x73e86 func __CHP hand from Q1 __CHP_0005330c (callgraph r0) | sig agrees (omfsig callee)
 0x8a132 func modf_8a132 hand from Q1 modf_00060582 (callgraph r0) | sig agrees (omfsig full)
-0x80932 func rt_80932 hand from Q1 rt_5a5bb (callgraph r0)
+0x80932 func __SetIOMode hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module iomode (was rt_80932)
 0x790a6 func rt_remove hand from Q1 rt_remove (callgraph r0)
 0x783b1 func rt_783b1 hand from Q1 rt_585e5 (callgraph r0)
 0x7a3c8 func rt_7a3c8 hand from Q1 rt_59b65 (callgraph r0)
 0x7980e func rt_7980e hand from Q1 rt_58d5c (callgraph r0)
 0x8142d func rt_8142d hand from Q1 rt_5f219 (callgraph r0)
-0x73f20 func rt_rand_seedptr hand from Q1 rt_rand_seedptr (callgraph r0)
+0x73f20 func initrandnext hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module rand (was rt_rand_seedptr)
 0x78b32 func rt_78b32 hand from Q1 rt_581a2 (callgraph r0)
 0x78f70 func rt_78f70 hand from Q1 rt_58392 (callgraph r0)
-0x74693 func rt_hexdigit hand from Q1 rt_hexdigit (callgraph r0)
+0x74693 func __hex hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module fclose (was rt_hexdigit)
 0x2d550 func cur_EndTask hand from Q1 cur_EndTask (callgraph r0)
 0x2d4b0 func cur_SetHandler hand from Q1 cur_SetHandler (callgraph r0)
 0x22090 func player_FireWeapon4 hand from Q1 player_FireWeapon4 (callgraph r0)
@@ -296,35 +296,35 @@
 0x74b92 func rt_outp hand from Q1 rt_outp (callgraph r0)
 0x7a920 func rt_7a920 hand from Q1 rt_5a665 (callgraph r0)
 0x32170 func vga_WaitVsyncStart hand from Q1 vga_WaitVsyncStart (callgraph r0)
-0x75235 func sos_TimerSetRate hand from Q1 sos_TimerSetRate (callgraph r0)
-0x74978 func rt_exit_hook hand from Q1 rt_exit_hook (callgraph r1)
-0x74991 func rt_exit_dos hand from Q1 rt_exit_dos (callgraph r1)
-0x741ed func rt_open_con hand from Q1 rt_open_con (callgraph r1)
+0x75235 func sosTIMERSetRate hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module C:\DONS\SOSDIGIW\SOSLIB\SRC\sostmr.c (was sos_TimerSetRate)
+0x74978 func __null_int23_exit hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module exit (was rt_exit_hook)
+0x74991 func _exit hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module exit (was rt_exit_dos)
+0x741ed func __do_exit_with_msg__ hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module cstrt386 (was rt_open_con)
 0x73ea9 func rt_dispatcher hand inkling guess: branches on globals, calls handlers/hooks
 0x73eae func rt_abs_int hand inkling guess: returns absolute value of integer input
 0x73eee func rt_int21_wrapper hand inkling guess: calls DOS int 21h, returns shifted value or errno-4 error
-0x73f5c func rt_init_runtime_state hand inkling guess: -
+0x73f5c func _cstart hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module cstrt386 (was rt_init_runtime_state)
 0x743ef func rt_fsopen_wrapper hand inkling guess: thin wrapper forwarding args to rt_fsopen
 0x749ba func rt_vsprintf hand inkling guess: formats via prtf into caller buffer then NUL-terminates
 0x74bf7 func rt_no_op_stub hand inkling guess: empty function body, no calls or effects
 0x74ce3 func sos_scale_timer_value hand inkling guess: masks PIC, reads timer, returns scaled value
 0x74d1d func sos_TimerAdd hand inkling guess: registers a timer slot and recomputes rates
-0x74f0b func sos_TimerSetRateAndRecompute hand inkling guess: Sets timer rate and recomputes per-channel step values
-0x75073 func sos_TimerRecalc hand inkling guess: recomputes timer rate and per-channel increments from active timers
+0x74f0b func sosTIMERAlterEventRate hand omfsig prefix32 vs HMI SOS 3.x (Actua Soccer libs), module C:\DONS\SOSDIGIW\SOSLIB\SRC\sostmr.c (was sos_TimerSetRateAndRecompute)
+0x75073 func sosTIMERRemoveEvent hand omfsig prefix24 vs HMI SOS 3.x (Actua Soccer libs), module C:\DONS\SOSDIGIW\SOSLIB\SRC\sostmr.c (was sos_TimerRecalc)
 0x7520b func sos_lookup_pair hand inkling guess: indexed table lookup concatenating two 32-bit words
 0x7526a func sos_dispatch_callbacks hand inkling guess: iterates 16 slots, adds values, invokes callbacks when odd flag set
-0x7530a func sos_wrapper hand inkling guess: calls rt_7a609, no other logic
+0x7530a func sosTIMEROldHandler hand omfsig prefix24 vs HMI SOS 3.x (Actua Soccer libs), module C:\DONS\SOSDIGIW\SOSLIB\SRC\SOSTMR.C (was sos_wrapper)
 0x75324 func sos_no_op_stub hand inkling guess: empty function body, no calls or effects
-0x7549c func _setjmp hand omfsig prefix24 vs Open Watcom 1.9/v2 libs (was rt_save_context)
-0x7552e func segread hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_get_segment_registers)
+0x7549c func _setjmp hand omfsig prefix24 vs Open Watcom 1.9/v2 libs (was rt_save_context) | sig agrees (Watcom 10 clib3r (Actua Soccer libs) full)
+0x7552e func segread hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_get_segment_registers) | sig agrees (Watcom 10 clib3r (Actua Soccer libs) full)
 0x75dd2 func rt_store_ss_global hand inkling guess: stores segment register to global variable
-0x75ded func rt_stack_overflow_handler hand inkling guess: stack overflow check and COMSPEC/COMMAND.COM fallback.
+0x75ded func __STK hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module stk386 (was rt_stack_overflow_handler)
 0x75e0b func rt_stack_overflow hand runtime, from digest strings
 0x75e1a func rt_system hand runtime, from digest strings
 0x75e83 func rt_path_lookup hand inkling guess: builds path and queries sound library
 0x75f2c func rt_sos_wrapper hand inkling guess: forwards args to sos_7adba
 0x75f45 func rt_wrapper hand inkling guess: forwards args to rt_78216 via stack buffer
-0x75f83 func fgetpos hand omfsig full vs Open Watcom 1.9/v2 libs (was sos_ftell_wrapper)
+0x75f83 func fgetpos hand omfsig full vs Open Watcom 1.9/v2 libs (was sos_ftell_wrapper) | sig agrees (Watcom 10 clib3r (Actua Soccer libs) full)
 0x75f96 func sos_fseek_wrapper hand inkling guess: wraps rt_fseek with four args
 0x75fa2 func sos_noop_stub hand inkling guess: empty function, no side effects or calls
 0x75fb7 func sos_alloc_slot hand inkling guess: find free SOS slot and link it
@@ -349,7 +349,7 @@
 0x76885 func sos_noop_stub_76885 hand inkling guess: empty function, no calls or strings
 0x7689a func sos_no_op_stub_7689a hand inkling guess: empty function, no calls or effects
 0x768af func sos_set_timer_or_sound hand inkling guess: starts timer or loads sound when idle
-0x7690b func sos_timer_tick_7690b hand inkling guess: polls SOS timer, clears bit, returns scaled value
+0x7690b func sosDIGIUnInitSystem hand omfsig prefix32 vs HMI SOS 3.x (Actua Soccer libs), module C:\DONS\SOSDIGIW\SOSLIB\SRC\SOSINIT.C (was sos_timer_tick_7690b)
 0x76948 func sos_noop hand inkling guess: empty function, no callers/callees/strings
 0x7695d func sos_no_op_stub_7695d hand inkling guess: empty function body, no calls or effects
 0x76972 func sos_init_sos_state hand inkling guess: one-time SOS globals reset guarded by flag
@@ -377,27 +377,27 @@
 0x77fb5 func sos_event_dispatch hand inkling guess: iterates event table, calls handlers, validates range
 0x78135 func sos_state_check hand inkling guess: validates param_1 state and returns code/param_2 packing
 0x781f0 func sos_no_op_stub_781f0 hand inkling guess: empty function body, no calls or effects
-0x78205 func sos_fputc_wrapper hand inkling guess: forwards args to rt_fputc, increments counter
+0x78205 func file_putc hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module fprtf (was sos_fputc_wrapper)
 0x7829b func rt_fp_not_loaded_init hand inkling guess: stores two function pointers in a table
 0x782b6 func __sys_init_387_emulator hand omfsig prefix16 vs Open Watcom 1.9/v2 libs (was rt_fpu_init_guard)
 0x78511 func rt_save_fpu_state hand inkling guess: copies FPU control/status/tag/pointers/opcode and ST0-7 into buffer
 0x78516 func rt_load_byte_at_offset_1c hand inkling guess: -
-0x7851a func rt_set_callbacks_and_init hand inkling guess: assigns handlers then calls init routine
+0x7851a func __init_8087 hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module chk8087 (was rt_set_callbacks_and_init)
 0x78595 func rt_empty_stub hand inkling guess: no calls, no strings, trivial return body
-0x78b13 func tolower hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_int_to_lowercase)
-0x78b39 func rt_set_errno_9 hand inkling guess: sets errno to 9, no return value
-0x78b5c func rt_sopen_wrapper hand inkling guess: calls rt_sopen then returns void
+0x78b13 func tolower hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_int_to_lowercase) | sig agrees (Watcom 10 clib3r (Actua Soccer libs) full)
+0x78b39 func __set_EINVAL hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module seterrno (was rt_set_errno_9)
+0x78b5c func open hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module open (was rt_sopen_wrapper)
 0x78d4c func rt_int21_dispatch hand inkling guess (address cut by hand): swi 0x21 calls with stack return value
 0x79ec6 func rt_alloc_and_link_record hand inkling guess: allocates/links record, checks bounds, frees tail
 0x7a3cd func rt_context_save_and_call_rt_74228 hand inkling guess: -
-0x7a609 func rt_swap_words_or_return_args hand inkling guess: swaps via global state or returns args unchanged
-0x7a997 func sos_timer_init_7a997 hand inkling guess: sets timer via int21, writes 0x2f,99,0
+0x7a609 func sosTIMERDRVCallOld hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sostimer.asm (was rt_swap_words_or_return_args)
+0x7a997 func __Slash_C hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module spve (was sos_timer_init_7a997)
 0x7a9bd func sos_check_sound_result hand inkling guess: calls rt_8182c, returns param_2 with flag from result
 0x7a9dc func sos_dispatch_and_flush hand inkling guess: calls rt_819f5 then rt_81a4a cleanup
-0x7aa0f func rt_init_cmdline hand runtime, from digest strings
+0x7aa0f func spawnve hand omfsig prefix32 vs Watcom 10 clib3r (Actua Soccer libs), module spve (was rt_init_cmdline)
 0x7ad0d func sos_wrapper_7ad0d hand inkling guess: forwards args to rt_81cf9
-0x7ad23 func sos_strncpy hand inkling guess: copies up to n chars then zero-pads
-0x7ad4f func sos_timer_callback_7ad4f hand inkling guess: sets errno from timer state and returns packed code
+0x7ad23 func strncpy hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module strncpy (was sos_strncpy)
+0x7ad4f func _dosretax hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module spawn386 (was sos_timer_callback_7ad4f)
 0x7adf2 func sos_timer_read_7adf2 hand inkling guess: reads 32-bit timer/counter from EDI-pointed structure
 0x7ae98 func sos_swi_dispatch_call hand inkling guess: indirect call through swi(0) result
 0x7b198 func sos_noop_stub_7b198 hand inkling guess: empty function, no calls or effects
@@ -413,7 +413,7 @@
 0x7be6f func sos_nullsub_7be6f hand inkling guess: empty sos function, no callees or strings
 0x7be88 func sos_nullsub hand inkling guess: empty function, no callees or strings
 0x7bea1 func sos_nullsub_7bea1 hand inkling guess: empty function, no calls or strings
-0x7beba func sos_set_timer_params hand inkling guess: stores timer mode/value into globals
+0x7beba func callbackSetInstrumentData hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module C:\DONS\SOSMIDIW\SOSMLIB\SRC\SOSMCBCK.C (was sos_set_timer_params)
 0x7bee4 func sos_noop_stub_7bee4 hand inkling guess: empty function with no callers or callees
 0x7bef9 func sos_no_op_stub_7bef9 hand inkling guess: empty function body, no calls or effects
 0x7bf0e func sos_nullsub_7bf0e hand inkling guess: empty function, no calls or effects
@@ -450,34 +450,34 @@
 0x7c551 func sos_noop_7c551 hand inkling guess: empty function, no callers/callees/strings
 0x7c566 func sos_dispatch_timer hand inkling guess: branches on flag and param_2, calls sos_7c855 otherwise
 0x7c5eb func sos_no_op_stub_7c5eb hand inkling guess: empty function, no calls or effects
-0x7c601 func sos_timer_callback_7c601 hand inkling guess: dispatches SOS timer callback via int 0x31
-0x7c63e func sos_sound_irq_dispatcher hand inkling guess: calls SOS IRQ handler with args
-0x7c67b func sos_timer_query hand inkling guess: reads SOS timer/state via swi calls
-0x7c727 func sos_timer_callback_7c727 hand inkling guess: invokes SOS timer handlers via swi(0x31)
-0x7c75d func sos_timer_init_7c75d hand inkling guess: initializes SOS timer/sound state via interrupt 31h calls
-0x7c7f0 func sos_timer_callback_7c7f0 hand inkling guess: dispatches SOS timer event via swi 0x31
+0x7c601 func sosDRVLockMemory hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_callback_7c601)
+0x7c63e func sosDRVUnLockMemory hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_sound_irq_dispatcher)
+0x7c67b func sosAllocateFarMem hand omfsig prefix24 vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_query)
+0x7c727 func sosFreeSelector hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_callback_7c727)
+0x7c75d func sosCreateAliasCS hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_init_7c75d)
+0x7c7f0 func sosRealFree hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_callback_7c7f0)
 0x7c81b func sos_timer_tick_copy hand inkling guess: copies 106 bytes from pointer to stack buffer
 0x7c855 func sos_copy_block_and_zero_tail hand inkling guess: -
-0x7c8b1 func sos_timer_callback_7c8b1 hand inkling guess: invokes callback with argument 5
-0x7c8d4 func sos_timer_callback_7c8d4 hand inkling guess: indirect call through stored pointer with zero arg
-0x7c8f7 func sos_timer_callback_7c8f7 hand inkling guess: invokes callback and stores CX/DX bytes/word
-0x7c93b func sos_copy_buffer_and_zero_tail hand inkling guess: -
-0x7c994 func sos_callback_invoke hand inkling guess: invokes callback with packed args
-0x7c9c4 func sos_timer_callback_7c9c4 hand inkling guess: calls stored function pointer with arg 1
-0x7c9e7 func sos_timer_callback_7c9e7 hand inkling guess: invokes callback with packed args
-0x7ca1c func sos_timer_callback_7ca1c hand inkling guess: invokes callback with args 4, param_2, param_3
-0x7ca45 func sos_timer_callback_7ca45 hand inkling guess: invokes timer callback with param_2 and stack arg
-0x7ca6b func sos_timer_callback_7ca6b hand inkling guess: invokes SOS timer callback with args 3,param_2,8
-0x7ca92 func sos_timer_init_7ca92 hand inkling guess: swi 0x2f returns handler, calls with 0x1600
-0x7caf1 func sos_timer_init_7caf1 hand inkling guess: checks DOS version, sets timer via int 4b
-0x7cb26 func sos_set_timer_params_7cb26 hand inkling guess: stores timer fields and invokes callback with 4
-0x7cbaf func sos_set_entry hand inkling guess: writes 6-byte record at indexed offset
-0x7cbe5 func sos_timer_callback_7cbe5 hand inkling guess: dispatches SOS timer callbacks via swi 0x31
-0x7cc10 func sos_timer_callback_7cc10 hand inkling guess: swi 0x2f returns code, calls it with 0x1600
-0x7cc6e func sos_irq_dispatcher hand inkling guess: fetches SOS handler and calls it with param
-0x7cc9c func sos_timer_start hand inkling guess: sets SOS timer via interrupt 0x31
-0x7cd08 func sos_init_timer hand inkling guess: initializes SOS timer/sound state and dispatches swi 0x31
-0x7cd55 func sos_timer_callback_7cd55 hand inkling guess: invokes SOS handler with EDX and param fields
+0x7c8b1 func sosDRVStop hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_callback_7c8b1)
+0x7c8d4 func sosDetDRVExist hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_callback_7c8d4)
+0x7c8f7 func sosDetDRVGetSettings hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_callback_7c8f7)
+0x7c93b func sosDetDRVGetCapsInfo hand omfsig prefix24 vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_copy_buffer_and_zero_tail)
+0x7c994 func sosDetDRVVerifySettings hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_callback_invoke)
+0x7c9c4 func sosDRVUnInit hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_callback_7c9c4)
+0x7c9e7 func sosDRVInit hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_callback_7c9e7)
+0x7ca1c func sosDRVStart hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_callback_7ca1c)
+0x7ca45 func sosDRVSetRate hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_callback_7ca45)
+0x7ca6b func sosDRVSetAction hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_callback_7ca6b)
+0x7ca92 func sosDIGIHandleVDS hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_init_7ca92)
+0x7caf1 func sosDIGIUnInitForWindows hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_init_7caf1)
+0x7cb26 func sosDetDRVEnvStringInit hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_set_timer_params_7cb26)
+0x7cbaf func sosDetDRVSetEnvString hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_set_entry)
+0x7cbe5 func sosDRVGetFreeMemory hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_callback_7cbe5)
+0x7cc10 func sosDRVIsWindowsActive hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_callback_7cc10)
+0x7cc6e func sosDRVFreeVDSStruct hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_irq_dispatcher)
+0x7cc9c func sosDRVVDSGetBuffer hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_start)
+0x7cd08 func sosDRVVDSFreeBuffer hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_init_timer)
+0x7cd55 func sosDRVMakeDMASelector hand omfsig prefix32 vs HMI SOS 3.x (Actua Soccer libs), module sosdrv.asm (was sos_timer_callback_7cd55)
 0x7cdb5 func sos_timer_callback_7cdb5 hand inkling guess: invokes stored callback with 0xb argument
 0x7cddb func sos_noop_stub_7cddb hand inkling guess: empty function, no calls or effects
 0x7cde4 func sos_memcpy hand inkling guess: copies param_5 bytes from source to dest pointers
@@ -532,15 +532,15 @@
 0x817ac func getpow10_getpow10 hand inkling guess: empty stub matching region name; no callees/strings.
 0x817c0 func rt_nullsub hand inkling guess: empty function with no calls or effects
 0x817c8 func rt_nullsub_817c8 hand inkling guess: empty function with no callees or strings
-0x8182c func rt_int21_wrapper_8182c hand inkling guess: calls DOS interrupts 0x21 with 0x1a/0x4e then runtime cleanup
-0x81849 func rt_int21_wrapper_81849 hand inkling guess: dispatches DOS int21 calls then cleanup routines
+0x8182c func _dos_findfirst hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module find386 (was rt_int21_wrapper_8182c)
+0x81849 func _dos_findnext hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module find386 (was rt_int21_wrapper_81849)
 0x81868 func rt_copy_words_on_tab_interrupt hand inkling guess: -
 0x8188b func rt_copy_words_via_swi21 hand inkling guess: -
-0x818ae func stpcpy hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_strcpy)
-0x818bd func rt_build_string_buffer hand inkling guess: allocates and fills a string buffer from list"}
+0x818ae func stpcpy hand omfsig full vs Open Watcom 1.9/v2 libs (was rt_strcpy) | sig agrees (Watcom 10 clib3r (Actua Soccer libs) full)
+0x818bd func __cenvarg hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module cenvarg (was rt_build_string_buffer)
 0x819f5 func rt_format_string_with_spaces hand inkling guess: builds string inserting spaces between tokens
-0x81a4a func rt_int21_wrapper_81a4a hand inkling guess: DOS int21 calls and stack/global setup
-0x81b18 func rt_strlen hand inkling guess: counts chars until NUL terminator
+0x81a4a func __dospawn hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module spawn386 (was rt_int21_wrapper_81a4a)
+0x81b18 func strlen hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module strlen (was rt_strlen)
 0x81b31 func rt_strcpy_81b31 hand inkling guess: copies source to dest with bounds clamp and null terminator
 0x81b75 func rt_path_normalize hand inkling guess: normalizes path segments and resolves dot/dotdot components
 0x81bfe func rt_normalize_path_segment hand inkling guess: collapses separator into empty path buffer
@@ -734,7 +734,7 @@
 0x8569a func rt_empty_stub_8569a hand inkling guess: no statements, returns immediately
 0x856af func rt_noop_stub_856af hand inkling guess: empty function body, no calls or effects
 0x856c4 func rt_clear_region_state hand inkling guess: zeroes per-index region fields and sets one param_2 field
-0x85792 func rt_noop_stub_85792 hand inkling guess: empty function with no callers or callees
+0x85792 func digiQueueUnInit hand omfsig full vs HMI SOS 3.x (Actua Soccer libs), module C:\DONS\SOSMIDIW\SOSMLIB\SRC\SOSMDQ.C (was rt_noop_stub_85792)
 0x857aa func rt_enqueue_slot hand inkling guess: appends record to ring buffer slot
 0x85862 func rt_find_and_move_to_front hand inkling guess: searches table, moves match to front, decrements count
 0x859d6 func rt_find_and_remove_entry hand inkling guess: Searches ring buffer, shifts entries, clears slot, decrements count.
@@ -808,9 +808,9 @@
 0x8965c func rt_apply_volume_change_8965c hand inkling guess: Iterates 32 slots, applies per-slot volume change, returns param_2 shifted.
 0x896d3 func rt_set_param_2_fields hand inkling guess: writes param_2 into byte-array entries then calls rt_8965c
 0x89750 func rt_no_op_89750 hand inkling guess: empty function body, no calls or effects
-0x8980e func rt_call_7ad54_if_carry hand inkling guess (address cut by hand): calls rt_7ad54 when carry flag set, else returns zero
+0x8980e func __doserror hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module error386 (was rt_call_7ad54_if_carry)
 0x89c94 func rt_searchenv_path hand runtime, from digest strings
-0x89dd0 func rt_memcmp hand inkling guess: compares memory byte-wise returning sign of difference
+0x89dd0 func strcmp hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module cmp386 (was rt_memcmp)
 0x8a117 func rt_find_byte hand inkling guess: scans bytes until match or NUL, returns null
 0x95059 func rt_io_port_read_concat hand inkling guess: reads port 0x3d4/0x3d5 and merges with param_2
 0x9507c func rt_outb_init_sound hand inkling guess: writes ports to configure sound hardware
