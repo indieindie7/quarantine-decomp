@@ -268,7 +268,7 @@
 0x80a8f func __isindst hand omfsig prefix24 vs Watcom 10 clib3r (Actua Soccer libs), module timeutil (was rt_80a8f)
 0x78b49 func __set_doserrno hand omfsig callee vs Watcom 10 clib3r (Actua Soccer libs), module cenvarg (was rt_78b49)
 0x7467e func __shutdown_stream hand omfsig full vs Watcom 10 clib3r (Actua Soccer libs), module fclose (was rt_doclose_free)
-0x74228 func rt_74228 hand from Q1 rt_53c0c (callgraph r0)
+0x74228 func __GETDS hand omfsig callee vs Watcom 10 emu387 (Actua Soccer libs), module emu387 (was rt_74228)
 0x7f4d0 func __FLDS_7f4d0 hand from Q1 __FLDS_0005dd14 (callgraph r0) | sig agrees (omfsig prefix24)
 0x80402 func rt_80402 hand from Q1 rt_5ec46 (callgraph r0)
 0x803eb func rt_803eb hand from Q1 rt_5ec2f (callgraph r0)
@@ -486,7 +486,7 @@
 0x7d54a func rt_strtod_wrapper hand inkling guess: converts strtod result to double via float10
 0x7d558 func rt_fp_not_loaded hand runtime, from digest strings
 0x7d586 func rt_byte_array_update hand inkling guess: mutates pointers and bytes with carry-like arithmetic
-0x7d954 func rt_combine_params hand inkling guess: calls runtime then returns concatenated args
+0x7d954 func __int7 hand omfsig full vs Watcom 10 emu387 (Actua Soccer libs), module emu387 (was rt_combine_params)
 0x7dbd6 func rt_empty_stub_7dbd6 hand inkling guess: no-op function with no callers or callees
 0x7dbdc func rt_empty_stub_7dbdc hand inkling guess: no-op function with no calls or effects
 0x7dbe2 func rt_empty_stub_7dbe2 hand inkling guess: no-op function with no callers or callees
@@ -2100,3 +2100,6 @@
 0x73d60 func dat_LoadLevelB hand level.dat
 0x73e49 func rt_Printf3 hand guess
 0x73e64 func dbg_Printf hand 236 callers
+
+0x7d8e4 func __int7_pl3 hand omfsig full vs Watcom 10 emu387 (Actua Soccer libs), module emu387 (new function)
+0x7d908 func __int7_X32VM hand omfsig full vs Watcom 10 emu387 (Actua Soccer libs), module emu387 (new function)

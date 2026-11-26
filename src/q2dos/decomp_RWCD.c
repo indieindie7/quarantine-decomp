@@ -16081,7 +16081,7 @@ undefined8 frag_26920(undefined4 param_1,undefined4 param_2)
   ushort uVar1;
   undefined4 extraout_EDX;
   
-  rt_74228();
+  __GETDS();
   DAT_000aafa9 = rt_inp(0x60,0x20);
   rt_outp(extraout_EDX);
   if (((DAT_000aafa9 != 0xe0) && (DAT_000aafa9 != 0xe1)) && ((DAT_000aafa9 & 0x7f) < 0x59)) {
@@ -62213,11 +62213,12 @@ undefined4 __stdcall __do_exit_with_msg_(undefined1 param_1)
 }
 
 
-// ==== rt_74228 @ 00074228 size=9
+// ==== __GETDS @ 00074228 size=9
 
-/* Hand-named: rt_74228 (hand from Q1 rt_53c0c (callgraph r0)) */
+/* Hand-named: __GETDS (hand omfsig callee vs Watcom 10 emu387 (Actua Soccer libs), module emu387
+   (was rt_74228)) */
 
-void rt_74228(void)
+void __GETDS(void)
 
 {
   return;
@@ -66354,7 +66355,7 @@ void rt_init_fpu(undefined4 param_1,undefined4 param_2)
   if (DAT_0009f36c == '\0') {
     if (DAT_0009f36a == '\0') {
       pcVar2 = (code *)swi(0x21);
-      (*pcVar2)(0x2507,rt_combine_params,iVar5,in_CS);
+      (*pcVar2)(0x2507,__int7,iVar5,in_CS);
       pcVar2 = (code *)swi(0x21);
       (*pcVar2)(CONCAT22(extraout_var,0xf304));
     }
@@ -66415,11 +66416,11 @@ void hook_pharlap(undefined4 param_1,undefined4 param_2,undefined4 param_3)
   DAT_0009f330 = in_ES;
   if (DAT_0009f36a < '\x03') {
     pcVar1 = (code *)swi(0x21);
-    (*pcVar1)(0x2504,rt_combine_params);
+    (*pcVar1)(0x2504,__int7);
   }
   else {
     pcVar1 = (code *)swi(0x21);
-    (*pcVar1)(0x2504,&UNK_0007d8e4);
+    (*pcVar1)(0x2504,__int7_pl3);
     func_0x0007841b();
   }
   return;
@@ -69303,7 +69304,7 @@ undefined4 rt_context_save_and_call_rt_74228(void)
   undefined8 uVar5;
   undefined1 auStack_4 [4];
   
-  uVar5 = rt_74228();
+  uVar5 = __GETDS();
   uVar2 = (undefined4)uVar5;
   if (DAT_000a03aa != 1) {
     out(0x20,0x20);
@@ -72771,12 +72772,48 @@ undefined4 rt_byte_array_update(byte *param_1,char *param_2,char *param_3,int *p
 }
 
 
-// ==== rt_combine_params @ 0007d954 size=35
+// ==== __int7_pl3 @ 0007d8e4 size=33
 
-/* Hand-named: rt_combine_params (hand inkling guess: calls runtime then returns concatenated args)
-    */
+/* Hand-named: __int7_pl3 (hand omfsig full vs Watcom 10 emu387 (Actua Soccer libs), module emu387
+   (new function)) */
 
-undefined8 rt_combine_params(undefined4 param_1,undefined4 param_2)
+undefined8 __int7_pl3(undefined4 param_1,undefined4 param_2)
+
+{
+  rt_7d978();
+  return CONCAT44(param_2,param_1);
+}
+
+
+// ==== __int7_X32VM @ 0007d908 size=74
+
+/* Hand-named: __int7_X32VM (hand omfsig full vs Watcom 10 emu387 (Actua Soccer libs), module emu387
+   (new function)) */
+
+undefined8 __int7_X32VM(undefined4 param_1,undefined4 param_2)
+
+{
+  undefined4 uVar1;
+  undefined4 uVar2;
+  undefined4 *in_stack_0000000c;
+  
+  uVar1 = in_stack_0000000c[4];
+  uVar2 = *in_stack_0000000c;
+  rt_7d978();
+  LOCK();
+  UNLOCK();
+  *in_stack_0000000c = uVar2;
+  in_stack_0000000c[4] = uVar1;
+  return CONCAT44(param_2,*in_stack_0000000c);
+}
+
+
+// ==== __int7 @ 0007d954 size=35
+
+/* Hand-named: __int7 (hand omfsig full vs Watcom 10 emu387 (Actua Soccer libs), module emu387 (was
+   rt_combine_params)) */
+
+undefined8 __int7(undefined4 param_1,undefined4 param_2)
 
 {
   rt_7d978();
@@ -72864,14 +72901,14 @@ code_r0x0007d978:
     uVar15 = CONCAT11(bVar11 >> 3,bVar11) & 0x1807;
     uVar19 = (*(code *)(&PTR_rt_empty_stub_7dbd6_0007d624)
                        [(byte)((byte)uVar15 | (byte)(uVar15 >> 8))])();
-    rt_74228((int)uVar19,(int)((ulonglong)uVar19 >> 0x20),
-             (byte)((ulonglong)uVar19 >> 8) & 0x38 | (byte)uVar19);
+    __GETDS((int)uVar19,(int)((ulonglong)uVar19 >> 0x20),
+            (byte)((ulonglong)uVar19 >> 8) & 0x38 | (byte)uVar19);
                     /* WARNING: Could not recover jumptable at 0x0007d9f6. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*(code *)(&PTR_fp_load_call_indirect_0007d6e4)[extraout_EBX])();
     return;
   }
-  param_1 = (undefined *)rt_74228(uVar18,uVar4,uVar15,uVar16);
+  param_1 = (undefined *)__GETDS(uVar18,uVar4,uVar15,uVar16);
   bVar11 = (byte)((uint)param_1 >> 8);
   uVar15 = (_DAT_000a3c44 & 0x3800) >> 0xb;
   param_3 = (undefined4 *)(bVar11 & 7);
@@ -73583,14 +73620,14 @@ code_r0x0007d978:
     uVar15 = CONCAT11(bVar11 >> 3,bVar11) & 0x1807;
     uVar21 = (*(code *)(&PTR_rt_empty_stub_7dbd6_0007d624)
                        [(byte)((byte)uVar15 | (byte)(uVar15 >> 8))])();
-    rt_74228((int)uVar21,(int)((ulonglong)uVar21 >> 0x20),
-             (byte)((ulonglong)uVar21 >> 8) & 0x38 | (byte)uVar21);
+    __GETDS((int)uVar21,(int)((ulonglong)uVar21 >> 0x20),
+            (byte)((ulonglong)uVar21 >> 8) & 0x38 | (byte)uVar21);
                     /* WARNING: Could not recover jumptable at 0x0007d9f6. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*(code *)(&PTR_fp_load_call_indirect_0007d6e4)[extraout_EBX])();
     return;
   }
-  uVar15 = rt_74228(uVar9,uVar19,uVar20,uVar15);
+  uVar15 = __GETDS(uVar9,uVar19,uVar20,uVar15);
   bVar11 = (byte)(uVar15 >> 8);
   bVar13 = bVar11 & 0x38 | (byte)uVar15;
   uVar22 = (ulonglong)CONCAT14(bVar13,uVar15);
@@ -74311,14 +74348,14 @@ code_r0x0007d978:
     uVar13 = CONCAT11(bVar9 >> 3,bVar9) & 0x1807;
     uVar19 = (*(code *)(&PTR_rt_empty_stub_7dbd6_0007d624)
                        [(byte)((byte)uVar13 | (byte)(uVar13 >> 8))])();
-    rt_74228((int)uVar19,(int)((ulonglong)uVar19 >> 0x20),
-             (byte)((ulonglong)uVar19 >> 8) & 0x38 | (byte)uVar19);
+    __GETDS((int)uVar19,(int)((ulonglong)uVar19 >> 0x20),
+            (byte)((ulonglong)uVar19 >> 8) & 0x38 | (byte)uVar19);
                     /* WARNING: Could not recover jumptable at 0x0007d9f6. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*(code *)(&PTR_fp_load_call_indirect_0007d6e4)[extraout_EBX])();
     return;
   }
-  uVar13 = rt_74228(uVar7,uVar17,uVar18,uVar13);
+  uVar13 = __GETDS(uVar7,uVar17,uVar18,uVar13);
   bVar9 = (byte)(uVar13 >> 8);
   bVar11 = bVar9 & 0x38 | (byte)uVar13;
   uVar20 = (ulonglong)CONCAT14(bVar11,uVar13);
@@ -75034,14 +75071,14 @@ code_r0x0007d978:
     uVar9 = CONCAT11(bVar11 >> 3,bVar11) & 0x1807;
     uVar19 = (*(code *)(&PTR_rt_empty_stub_7dbd6_0007d624)[(byte)((byte)uVar9 | (byte)(uVar9 >> 8))]
              )();
-    rt_74228((int)uVar19,(int)((ulonglong)uVar19 >> 0x20),
-             (byte)((ulonglong)uVar19 >> 8) & 0x38 | (byte)uVar19);
+    __GETDS((int)uVar19,(int)((ulonglong)uVar19 >> 0x20),
+            (byte)((ulonglong)uVar19 >> 8) & 0x38 | (byte)uVar19);
                     /* WARNING: Could not recover jumptable at 0x0007d9f6. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*(code *)(&PTR_fp_load_call_indirect_0007d6e4)[extraout_EBX])();
     return;
   }
-  uVar9 = rt_74228(uVar8,uVar18,uVar15,uVar9);
+  uVar9 = __GETDS(uVar8,uVar18,uVar15,uVar9);
   unaff_EBP = &DAT_000a3c40;
   bVar11 = (byte)(uVar9 >> 8);
   bVar13 = bVar11 & 0x38 | (byte)uVar9;
@@ -75757,14 +75794,14 @@ code_r0x0007d978:
     uVar13 = CONCAT11(bVar9 >> 3,bVar9) & 0x1807;
     uVar18 = (*(code *)(&PTR_rt_empty_stub_7dbd6_0007d624)
                        [(byte)((byte)uVar13 | (byte)(uVar13 >> 8))])();
-    rt_74228((int)uVar18,(int)((ulonglong)uVar18 >> 0x20),
-             (byte)((ulonglong)uVar18 >> 8) & 0x38 | (byte)uVar18);
+    __GETDS((int)uVar18,(int)((ulonglong)uVar18 >> 0x20),
+            (byte)((ulonglong)uVar18 >> 8) & 0x38 | (byte)uVar18);
                     /* WARNING: Could not recover jumptable at 0x0007d9f6. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*(code *)(&PTR_fp_load_call_indirect_0007d6e4)[extraout_EBX])();
     return;
   }
-  uVar13 = rt_74228(uVar7,uVar16,uVar17,uVar13);
+  uVar13 = __GETDS(uVar7,uVar16,uVar17,uVar13);
   unaff_EBP = &DAT_000a3c40;
   bVar9 = (byte)(uVar13 >> 8);
   bVar11 = bVar9 & 0x38 | (byte)uVar13;
@@ -76776,14 +76813,14 @@ code_r0x0007d978:
     uVar15 = CONCAT11(bVar11 >> 3,bVar11) & 0x1807;
     uVar19 = (*(code *)(&PTR_rt_empty_stub_7dbd6_0007d624)
                        [(byte)((byte)uVar15 | (byte)(uVar15 >> 8))])();
-    rt_74228((int)uVar19,(int)((ulonglong)uVar19 >> 0x20),
-             (byte)((ulonglong)uVar19 >> 8) & 0x38 | (byte)uVar19);
+    __GETDS((int)uVar19,(int)((ulonglong)uVar19 >> 0x20),
+            (byte)((ulonglong)uVar19 >> 8) & 0x38 | (byte)uVar19);
                     /* WARNING: Could not recover jumptable at 0x0007d9f6. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*(code *)(&PTR_fp_load_call_indirect_0007d6e4)[extraout_EBX])();
     return;
   }
-  param_1 = (undefined *)rt_74228(uVar18,uVar4,uVar15,uVar16);
+  param_1 = (undefined *)__GETDS(uVar18,uVar4,uVar15,uVar16);
   bVar11 = (byte)((uint)param_1 >> 8);
   uVar15 = (_DAT_000a3c44 & 0x3800) >> 0xb;
   param_3 = (undefined4 *)(bVar11 & 7);
@@ -77498,14 +77535,14 @@ code_r0x0007d978:
     uVar15 = CONCAT11(bVar11 >> 3,bVar11) & 0x1807;
     uVar19 = (*(code *)(&PTR_rt_empty_stub_7dbd6_0007d624)
                        [(byte)((byte)uVar15 | (byte)(uVar15 >> 8))])();
-    rt_74228((int)uVar19,(int)((ulonglong)uVar19 >> 0x20),
-             (byte)((ulonglong)uVar19 >> 8) & 0x38 | (byte)uVar19);
+    __GETDS((int)uVar19,(int)((ulonglong)uVar19 >> 0x20),
+            (byte)((ulonglong)uVar19 >> 8) & 0x38 | (byte)uVar19);
                     /* WARNING: Could not recover jumptable at 0x0007d9f6. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*(code *)(&PTR_fp_load_call_indirect_0007d6e4)[extraout_EBX])();
     return;
   }
-  param_1 = (undefined *)rt_74228(uVar18,uVar4,uVar15,uVar16);
+  param_1 = (undefined *)__GETDS(uVar18,uVar4,uVar15,uVar16);
   bVar11 = (byte)((uint)param_1 >> 8);
   uVar15 = (_DAT_000a3c44 & 0x3800) >> 0xb;
   param_3 = (undefined4 *)(bVar11 & 7);
@@ -78235,14 +78272,14 @@ code_r0x0007d978:
     uVar14 = CONCAT11(bVar10 >> 3,bVar10) & 0x1807;
     uVar18 = (*(code *)(&PTR_rt_empty_stub_7dbd6_0007d624)
                        [(byte)((byte)uVar14 | (byte)(uVar14 >> 8))])();
-    rt_74228((int)uVar18,(int)((ulonglong)uVar18 >> 0x20),
-             (byte)((ulonglong)uVar18 >> 8) & 0x38 | (byte)uVar18);
+    __GETDS((int)uVar18,(int)((ulonglong)uVar18 >> 0x20),
+            (byte)((ulonglong)uVar18 >> 8) & 0x38 | (byte)uVar18);
                     /* WARNING: Could not recover jumptable at 0x0007d9f6. Too many branches */
                     /* WARNING: Treating indirect jump as call */
     (*(code *)(&PTR_fp_load_call_indirect_0007d6e4)[extraout_EBX])();
     return;
   }
-  param_1 = rt_74228(uVar7,uVar17,uVar9,uVar14);
+  param_1 = __GETDS(uVar7,uVar17,uVar9,uVar14);
   unaff_EBP = &DAT_000a3c40;
   bVar10 = (byte)(param_1 >> 8);
   bVar12 = bVar10 & 0x38 | (byte)param_1;
@@ -80805,7 +80842,7 @@ undefined4 rt_80792(int param_1)
     pcVar1 = (code *)swi(0x31);
     (*pcVar1)(0xa00);
     if (cVar2 == '\0') {
-      rt_dos_setvect(7,extraout_EDX,rt_combine_params,in_CS);
+      rt_dos_setvect(7,extraout_EDX,__int7,in_CS);
       *(undefined1 *)(param_1 + 0x3e) = 1;
       *(byte *)(param_1 + 0x40) = *(byte *)(param_1 + 0x40) | 4;
       pcVar1 = (code *)swi(0x21);
@@ -80838,7 +80875,7 @@ uint rt_dos4g_check(uint param_1,int param_2)
     (*pcVar1)(0xa00);
     param_1 = -(uint)bVar2;
     if (param_1 == 0) {
-      rt_dos_setvect(7,extraout_EDX,rt_combine_params,in_CS);
+      rt_dos_setvect(7,extraout_EDX,__int7,in_CS);
       *(undefined1 *)(unaff_EBP + 0x3e) = 1;
       *(byte *)(unaff_EBP + 0x40) = *(byte *)(unaff_EBP + 0x40) | 4;
       pcVar1 = (code *)swi(0x21);
